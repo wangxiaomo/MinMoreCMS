@@ -1,0 +1,6 @@
+# Added from https://raw.githubusercontent.com/github/gitignore/master/Composer.gitignore
+composer.phar
+/vendor/
+# Added from https://raw.githubusercontent.com/github/gitignore/master/Sass.gitignore
+.sass-cache/
+*.css.map
