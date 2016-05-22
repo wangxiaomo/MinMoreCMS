@@ -4,3 +4,10 @@ composer.phar
 # Added from https://raw.githubusercontent.com/github/gitignore/master/Sass.gitignore
 .sass-cache/
 *.css.map
+# Added By CLI
+*.swp
+*runtime
+phpmyadmin
+.DS_Store
+install.lock
+dataconfig.php
