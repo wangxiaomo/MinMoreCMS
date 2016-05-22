@@ -1,0 +1,10 @@
+#
+# robots.txt for MinMoreCMS
+#
+
+User-agent: *
+
+Disallow: /MinMore/
+Disallow: /api/
+Disallow: /api.php
+Disallow: /admin.php
