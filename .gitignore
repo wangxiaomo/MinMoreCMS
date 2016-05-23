@@ -5,4 +5,6 @@ composer.phar
 .sass-cache/
 *.css.map
 # Added By CLI
+*.swp
 \#runtime
+phpmyadmin
