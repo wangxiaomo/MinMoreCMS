@@ -91,6 +91,12 @@ if(!IS_CLI) {
     }
 }
 
+if(APP_DEBUG) {
+    foreach(array('content_form', 'content_input', 'content_output', 'content_update', 'content_delete') as $v){
+        @unlink(RUNTIME_PATH . "$v.class.php");
+    }
+}
+
 // 加载核心Think类
 require CORE_PATH.'Think'.EXT;
 // 应用初始化 
