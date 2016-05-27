@@ -42,7 +42,7 @@ body{background-color:#f0f0f0}
 .wrap .inner{width:1000px;margin:0 auto}
 iframe{background-color:transparent}
 .header{padding:19px 0 0 100px}
-.header h1{ background-image:url({$config_siteurl}statics/images/logo.gif);background-repeat:no-repeat;width:227px;height:78px;line-height:150px;overflow:hidden;font-size:0}
+.header h1{ background-image:url({$config_siteurl}statics/images/logo.png);background-repeat:no-repeat;width:227px;height:78px;line-height:150px;overflow:hidden;font-size:0}
 .qzone_login{margin-top:55px}
 .qzone_login .qzone_cont{float:left;margin-left:112px;position:relative;width:429px;_display:inline;overflow:hidden;height:321px}
 .qzone_cont .img_list{width:429px;height:321px}

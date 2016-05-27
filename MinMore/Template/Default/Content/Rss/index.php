@@ -23,7 +23,7 @@
 </head>
 <body class="rss-channel">
 <div class="body-top special-body-top">
-  <div class="content"> <span class="rt"> </span> <a href="{:U('Rss/index')}" class="logo"><img src="{$Config.siteurl}statics/images/logo.gif" height="30"></a>
+  <div class="content"> <span class="rt"> </span> <a href="{:U('Rss/index')}" class="logo"><img src="{$Config.siteurl}statics/images/logo.png" height="30"></a>
     <div class="nav"> <a href="{$Config.siteurl}">首页</a><span>|</span>
       <content action="category" catid="0" order="listorder ASC">
         <volist name="data" id="vo"> <a href="{$vo.url}" target="_blank">{$vo.catname}</a><span>|</span> </volist>
