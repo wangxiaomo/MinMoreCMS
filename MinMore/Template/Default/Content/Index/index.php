@@ -378,4 +378,4 @@ jQuery(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", au
 <template file="Content/footer.php"/>
 <script type="text/javascript">$(function (){$(window).toTop({showHeight : 100,});});</script>
 </body>
-</html>l>
+</html>
