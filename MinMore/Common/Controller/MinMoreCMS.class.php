@@ -99,6 +99,10 @@ class MinMoreCMS extends \Think\Controller {
         }
     }
 
+    protected function jsonReturn($data) {
+        return $this->ajaxReturn($data, 'JSON');
+    }
+
     /**
      * 分页输出
      * @param type $total 信息总数

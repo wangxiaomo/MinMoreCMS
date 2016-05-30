@@ -7,4 +7,6 @@ var GV = {
 };
 </script>
 <script src="{$config_siteurl}statics/js/wind.js"></script>
-<script src="{$config_siteurl}statics/js/jquery.js"></script>
+<script src="{$config_siteurl}statics/vendor/jquery/dist/jquery.min.js"></script>
+<script src="{$config_siteurl}statics/vendor/jquery.browser/dist/jquery.browser.min.js"></script>
+<script src="{$config_siteurl}statics/vendor/bootstrap/dist/js/bootstrap.min.js"></script>

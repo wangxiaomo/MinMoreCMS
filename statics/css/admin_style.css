@@ -3139,7 +3139,27 @@ TAG切换样式，需要白色背景
 .pop_cont{
 	padding:0 15px;
 }
+/*
+===================
+wangxiaomo: common hacks
+===================
+*/
 .menu-warn {
   color:red;
   padding-left:10px;
+}
+.table-head {
+  background-color:#e6e6e6;
+}
+.table-head th {
+  font-weight:bold;
+}
+.admin-button,
+.admin-button:hover,
+.admin-button:active,
+.admin-button:visited {
+  color:#000;
+}
+#home_toptip {
+  margin-top:15px;
 }

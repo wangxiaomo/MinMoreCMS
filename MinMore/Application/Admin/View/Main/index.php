@@ -16,7 +16,6 @@
     <ul>
       <li> <em>版权所有</em> <span><a href="http://www.minmore.com" target="_blank">http://www.minmore.com/</a></span> </li>
       <li> <em>负责人</em> <span>王小默</span> </li>
-      <li> <em>微博</em> <span><a href="http://t.qq.com/minmore" target="_blank">http://t.qq.com/minmore</a></span> </li>
       <li> <em>联系邮箱</em> <span>codevvip@yeah.net</span> </li>
     </ul>
   </div>

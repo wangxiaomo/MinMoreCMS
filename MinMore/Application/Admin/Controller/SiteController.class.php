@@ -15,8 +15,15 @@ use Common\Controller\AdminBase;
 class SiteController extends AdminBase {
     public function template_prefix() {
         if(IS_POST){
-
+            $id = I("id");
+            $prefix = I("prefix");
+            D("RoleLevel")->where("id=$id")->save(Array(
+                "template_prefix"=>$prefix,
+            ));
+            $this->jsonReturn(Array("r"=>1));
         }else{
+            $levels = D("RoleLevel")->order("listorder")->select();
+            $this->assign("levels", $levels);
             $this->display();
         }
     }

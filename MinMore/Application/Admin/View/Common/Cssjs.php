@@ -1,3 +1,5 @@
-<?php if (!defined('MINMORE_VERSION')) exit(); ?><link href="{$config_siteurl}statics/css/admin_style.css" rel="stylesheet" />
+<?php if (!defined('MINMORE_VERSION')) exit(); ?>
+<link href="{$config_siteurl}statics/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="{$config_siteurl}statics/css/admin_style.css" rel="stylesheet" />
 <link href="{$config_siteurl}statics/js/artDialog/skins/default.css" rel="stylesheet" />
 <Admintemplate file="Admin/Common/Js"/>
