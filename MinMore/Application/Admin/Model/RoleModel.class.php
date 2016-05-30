@@ -20,13 +20,36 @@ class RoleModel extends Model {
         array('name', '', '该名称已经存在！', 0, 'unique', 3),
         array('status', 'require', '缺少状态！'),
         array('status', array(0, 1), '状态错误，状态只能是1或者0！', 2, 'in'),
+        array('level', 'checkLevel', '角色等级没有按规定选择', 1, 'callback'),
     );
     //array(填充字段,填充内容,[填充条件,附加规则])
     protected $_auto = array(
         array('create_time', 'time', 1, 'function'),
         array('update_time', 'time', 3, 'function'),
         array('listorder', '0'),
+        array('level', 'setLevel', 3, 'callback'),
     );
+
+    public function checkLevel() {
+        //wangxiaomo: 检查level值是否有效
+        $parentRoleID = intval(I("parentid"));
+        $level = I("level");
+        if($parentRoleID === 4 && $level == ""){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public function setLevel() {
+        //wangxiaomo: 获取ParentRole来判断level是否有效
+        $parentRoleID = intval(I("parentid"));
+        if($parentRoleID !== 4){
+            return "";
+        }else{
+            return I("level");
+        }
+    }
 
     /**
      * 通过递归的方式获取该角色下的全部子角色

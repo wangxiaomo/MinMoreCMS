@@ -16,6 +16,18 @@
           <td><input type="text" name="name" value="{$data.name}" class="input" id="rolename"></input></td>
         </tr>
         <tr>
+          <th>角色等级</th>
+          <td>
+            <select name="level">
+              <option value=""></option>
+              <foreach name="levels" item="v">
+                <option value="{$v.name}">{$v.name}</option>
+              </foreach>
+            </select>
+            <span class="menu-warn">用于区分站点等级,非站点角色此选项不生效</span>
+          </td>
+        </tr>
+        <tr>
           <th>角色描述</th>
           <td><textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height:100px;width:500px;">{$data.remark}</textarea></td>
         </tr>

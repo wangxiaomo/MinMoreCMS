@@ -10,6 +10,7 @@
         <tr>
           <td width="20">ID</td>
           <td>角色名称</td>
+          <td>角色等级</td>
           <td width="200" align='center'>角色描述</td>
           <td width="50"   align='center'>状态</td>
           <td width="250" align='center'>管理操作</td>

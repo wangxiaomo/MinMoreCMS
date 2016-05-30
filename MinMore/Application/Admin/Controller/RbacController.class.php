@@ -32,6 +32,7 @@ class RbacController extends AdminBase {
         $str = "<tr>
           <td>\$id</td>
           <td>\$spacer\$name</td>
+          <td>\$level</td>
           <td>\$remark</td>
           <td align='center'><font color='red'>√</font></td>
           <td align='center'>\$operating</td>
@@ -56,6 +57,8 @@ class RbacController extends AdminBase {
                 $this->error($error ? $error : '添加失败！');
             }
         } else {
+            $levels = D("RoleLevel")->order("listorder")->select();
+            $this->assign("levels", $levels);
             $this->display();
         }
     }
@@ -96,6 +99,8 @@ class RbacController extends AdminBase {
             if (empty($data)) {
                 $this->error("该角色不存在！", U('rolemanage'));
             }
+            $levels = D("RoleLevel")->order("listorder")->select();
+            $this->assign("levels", $levels);
             $this->assign("data", $data)
                     ->display();
         }
