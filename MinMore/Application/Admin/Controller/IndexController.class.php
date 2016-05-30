@@ -15,6 +15,15 @@ use Admin\Service\User;
 
 class IndexController extends AdminBase {
 
+    public function _initialize() {
+        parent::_initialize();
+        if($this->isSiteUser()){
+            $this->role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        }else{
+            $this->role = 0;
+        }
+    }
+
     //后台框架首页
     public function index() {
         if (IS_AJAX) {
@@ -76,7 +85,7 @@ class IndexController extends AdminBase {
                         //需要更新的缓存信息
                         $cacheInfo = $modules[$stop - 1];
                         if ($cacheInfo) {
-                            if ($cache->runUpdate($cacheInfo) !== false) {
+                            if ($cache->runUpdate($cacheInfo, $this->role) !== false) {
                                 $this->assign("waitSecond", 200);
                                 $this->success('更新缓存：' . $cacheInfo['name'], U('Index/cache', array('type' => 'site', 'stop' => $stop + 1)));
                                 exit;

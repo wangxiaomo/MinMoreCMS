@@ -251,8 +251,8 @@ class ConfigModel extends Model {
      * 更新缓存
      * @return type
      */
-    public function config_cache() {
-        $data = M("Config")->getField("varname,value");
+    public function config_cache($role=0) {
+        $data = M("Config")->where("role=$role")->getField("varname,value");
         cache("Config", $data);
         return $data;
     }

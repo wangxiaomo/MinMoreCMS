@@ -88,7 +88,7 @@ class CacheModel extends Model {
      * @param array $config 缓存配置
      * @return boolean
      */
-    public function runUpdate(array $config) {
+    public function runUpdate(array $config, $role=0) {
         if (empty($config)) {
             $this->error = '没有可需要更新的缓存信息！';
             return false;
@@ -102,7 +102,11 @@ class CacheModel extends Model {
         $model = D($mo);
         if ($config['action']) {
             $action = $config['action'];
-            $model->$action();
+            if(in_array($config['module'], array('Config'))){
+                $model->$action($role);
+            }else{
+                $model->$action();
+            }
             return true;
         }
         return false;
