@@ -33,26 +33,28 @@ class MinMoreCMS extends \Think\Controller {
     }
 
     protected function setTheme($theme) {
+        if(!$theme) _404();
         \Common\Controller\MinMoreCMS::$Cache["Config"]['theme'] = $theme;
         $config = cache("Config");
         $config["theme"] = $theme;
         cache("Config", $config);
     }
 
-    protected function getThemeByDomain(){
+    protected function syncThemeAndRole() {
         $domain = get_request_domain();
         $r = D("Role")->where("domain='$domain'")->find();
-        return $r?$r["theme"]:"";
+        if($r["domain"] && $r["theme"]){
+            $this->setTheme($r["theme"]);
+            \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["name"];
+        }else{
+            _404();
+        }
     }
 
     //初始化
     protected function _initialize() {
         $this->initSite();
-
-        //wangxiaomo: site dispatch
-        $theme = $this->getThemeByDomain();
-        $this->setTheme($theme);
-
+        $this->syncThemeAndRole();
         //默认跳转时间
         $this->assign("waitSecond", 3000);
     }

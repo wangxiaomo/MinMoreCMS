@@ -920,6 +920,11 @@ function SendMail($address, $title, $message) {
 }
 
 //wangxiaomo: common functions
+function _404() {
+    send_http_status(404);
+    exit;
+}
+
 function get_request_domain() {
     return $_SERVER["HTTP_HOST"];
 }
