@@ -19,7 +19,13 @@
           <td>{$v.id}</td>
           <td>{$v.level}</td>
           <td class="red-font">{$v.name}</td>
-          <td><input type="text" value="{$v.domain}" style="width:200px;"></td>
+          <td>
+            <if condition="$isSiteUser">
+              <input type="text" value="{$v.domain}" style="width:200px;" disabled>
+            <else />
+              <input type="text" value="{$v.domain}" style="width:200px;">
+            </if>
+          </td>
           <td>
             <select style="width:250px;">
               <option value=""></option>

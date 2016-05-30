@@ -13,6 +13,7 @@ namespace Admin\Controller;
 use Common\Controller\AdminBase;
 
 class SiteController extends AdminBase {
+
     public function template_prefix() {
         if(IS_POST){
             $id = I("id");
@@ -44,14 +45,21 @@ class SiteController extends AdminBase {
             }
         }else{
             $table_prefix = C("DB_PREFIX");
+            if($this->isSiteUser()) {
+                $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+                $condition = " and ${table_prefix}role.id=$role_id";
+            }else{
+                $condition = "";
+            }
             $data = D("Role")->join("${table_prefix}role_level as rl on ${table_prefix}role.level=rl.name")
-                    ->where("parentid=" . C("SITE_ROLE_PARENT"))
+                    ->where("parentid=" . C("SITE_ROLE_PARENT") . $condition)
                     ->field("${table_prefix}role.id,${table_prefix}role.name,domain,theme,level,remark,rl.template_prefix")
                     ->order("rl.listorder")
                     ->select();
             foreach($data as &$v){
                 $v["theme_list"] = get_theme_list_by_role_level($v["level"]);
             }
+            $this->assign("isSiteUser", $this->isSiteUser());
             $this->assign("data", $data);
             $this->display();
         }

@@ -46,14 +46,32 @@ class AdminBase extends MinMoreCMS {
     private function syncAdminRole() {
         $request_domain = get_request_domain();
         $user = User::getInstance()->getInfo();
+        \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $user["role_id"];
         $r = D("Role")->where("id=" . $user["role_id"])->find();
-        if($request_domain != $r["domain"]){
+        if($r["level"] && $request_domain != $r["domain"]){
             User::getInstance()->logout();
             $this->error(
                 "即将为您跳转到正确的登录后台，请重新登录!",
                 "http://" . $r["domain"] . "/admin.php"
             );
         }
+    }
+
+    protected function isSuperUser() {
+        $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        return intval($role_id) === 1;
+    }
+
+    protected function isSiteUser($cache=true) {
+        if($cache){
+            $r = cache(C("MINMORE_CACHE_PREFIX") . "is_site_user");
+            if($r) return $r;
+        }
+        $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $role = D("Role")->where("id=$role_id")->find();
+        $r = (bool)$role && $role["parentid"] == C("SITE_ROLE_PARENT");
+        cache(C("MINMORE_CACHE_PREFIX") . "is_site_user", $r);
+        return $r;
     }
 
     /**
