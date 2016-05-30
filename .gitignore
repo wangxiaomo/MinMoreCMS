@@ -8,3 +8,4 @@ composer.phar
 *.swp
 \#runtime
 phpmyadmin
+statics/vendor
