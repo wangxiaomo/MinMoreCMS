@@ -45,7 +45,7 @@ class MinMoreCMS extends \Think\Controller {
         $r = D("Role")->where("domain='$domain'")->find();
         if($r["domain"] && $r["theme"]){
             $this->setTheme($r["theme"]);
-            \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["name"];
+            \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["id"];
         }else{
             _404();
         }

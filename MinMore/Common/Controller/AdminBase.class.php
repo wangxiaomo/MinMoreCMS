@@ -38,7 +38,22 @@ class AdminBase extends MinMoreCMS {
         }
         parent::_initialize();
         //验证登录
-        $this->competence();
+        if($this->competence()){
+            $this->syncAdminRole();
+        }
+    }
+
+    private function syncAdminRole() {
+        $request_domain = get_request_domain();
+        $user = User::getInstance()->getInfo();
+        $r = D("Role")->where("id=" . $user["role_id"])->find();
+        if($request_domain != $r["domain"]){
+            User::getInstance()->logout();
+            $this->error(
+                "即将为您跳转到正确的登录后台，请重新登录!",
+                "http://" . $r["domain"] . "/admin.php"
+            );
+        }
     }
 
     /**
