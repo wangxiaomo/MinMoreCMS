@@ -15,7 +15,7 @@
         <tr data-id="{$v.id}">
           <td>{$v.id}</td>
           <td>{$v.name}</td>
-          <td><input type="text" value="{$v.template_prefix}" data-val="{$v.template_prefix}"></td>
+          <td><input type="text" value="{$v.template_prefix}" /></td>
           <td><button type="button" class="btn admin-button update-template-prefix">修改</button></td>
         </tr>
       </foreach>
@@ -30,15 +30,10 @@ $(function(){
     var tr = $(this).closest("tr"),
         id = $(tr).data("id"),
         input = $(tr).find("input"),
-        val = $(input).data("val"),
         prefix = $.trim($(input).val());
-    if(val != prefix){
-      $.post("{:U('Admin/Site/template_prefix')}", {id:id,prefix:prefix}, function(d){
-        alert("修改成功!");
-      });
-    }else{
-      alert("数值没有变动!");
-    }
+    $.post("{:U('Admin/Site/template_prefix')}", {id:id,prefix:prefix}, function(d){
+      alert("修改成功!");
+    });
   });
 });
 </script>

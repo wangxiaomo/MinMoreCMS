@@ -19,6 +19,7 @@ return array(
         CONF_PATH . 'dataconfig' . CONF_EXT, //数据库配置
         CONF_PATH . 'addition' . CONF_EXT, //用户扩展配置
         CONF_PATH . 'version' . CONF_EXT, //系统版本配置
+        CONF_PATH . 'minmore' . CONF_EXT, //minmore配置
     ),
     // 别名定义
     'alias' => array(

@@ -918,3 +918,28 @@ function SendMail($address, $title, $message) {
         return $e->errorMessage();
     }
 }
+
+//wangxiaomo: common functions
+function get_request_domain() {
+    return $_SERVER["HTTP_HOST"];
+}
+
+function get_theme_prefix_by_role_level($level){
+    $r = D("RoleLevel")->where("name='$level'")->find();
+    return $r?$r["template_prefix"]:"";
+}
+
+function get_theme_list_by_role_level($level) {
+    $theme_list_cache = cache(C("MINMORE_CACHE_PREFIX") . "theme_list_${level}");
+    if($theme_list_cache) return $theme_list_cache;
+    $prefix = get_theme_prefix_by_role_level($level);
+    $files = glob(TEMPLATE_PATH . '*');
+    foreach($files as $v) {
+        if(is_dir($v) == false) continue;
+        $basename = basename($v);
+        if($prefix and strpos($basename, $prefix) !== 0) continue;
+        $themes[] = $basename;
+    }
+    cache(C("MINMORE_CACHE_PREFIX") . "theme_list_${level}", $themes);
+    return $themes;
+}

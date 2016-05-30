@@ -34,7 +34,7 @@ class RoleModel extends Model {
         //wangxiaomo: 检查level值是否有效
         $parentRoleID = intval(I("parentid"));
         $level = I("level");
-        if($parentRoleID === 4 && $level == ""){
+        if($parentRoleID === C("SITE_ROLE_PARENT") && $level == ""){
             return false;
         }else{
             return true;
@@ -44,7 +44,7 @@ class RoleModel extends Model {
     public function setLevel() {
         //wangxiaomo: 获取ParentRole来判断level是否有效
         $parentRoleID = intval(I("parentid"));
-        if($parentRoleID !== 4){
+        if($parentRoleID !== C("SITE_ROLE_PARENT")){
             return "";
         }else{
             return I("level");
