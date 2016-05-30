@@ -55,25 +55,25 @@
           <th class="y-bg">
           <switch name="vo.type">
              <case value="input">
-             <input type="text" class="input" style="{$setting.style}"  name="{$vo.fieldname}" value="{$Site[$vo['fieldname']]}">
+             <input type="text" class="input" style="{$setting.style}"  name="{$vo.role}*_*{$vo.fieldname}" value="{$Site[$vo['fieldname']]}">
              </case>
              <case value="select">
-             <select name="{$vo.fieldname}">
+             <select name="{$vo.role}*_*{$vo.fieldname}">
              <volist name="setting['option']" id="rs">
              <option value="{$rs.value}" <if condition=" $Site[$vo['fieldname']] == $rs['value'] ">selected</if>>{$rs.title}</option>
              </volist>
              </select>
              </case>
              <case value="textarea">
-             <textarea name="{$vo.fieldname}" style="{$setting.style}">{$Site[$vo['fieldname']]}</textarea>
+             <textarea name="{$vo.role}*_*{$vo.fieldname}" style="{$setting.style}">{$Site[$vo['fieldname']]}</textarea>
              </case>
              <case value="radio">
              <volist name="setting['option']" id="rs">
-             <input name="{$vo.fieldname}" value="{$rs.value}" type="radio"  <if condition=" $Site[$vo['fieldname']] == $rs['value'] ">checked</if>> {$rs.title}
+             <input name="{$vo.role}*_*{$vo.fieldname}" value="{$rs.value}" type="radio"  <if condition=" $Site[$vo['fieldname']] == $rs['value'] ">checked</if>> {$rs.title}
              </volist>
              </case>
              <case value="password">
-             <input type="password" class="input" style="{$setting.style}"  name="{$vo.fieldname}" value="{$Site[$vo['fieldname']]}">
+             <input type="password" class="input" style="{$setting.style}"  name="{$vo.role}*_*{$vo.fieldname}" value="{$Site[$vo['fieldname']]}">
              </case>
           </switch>
            <span class="gray"> {$setting.tips}</span>

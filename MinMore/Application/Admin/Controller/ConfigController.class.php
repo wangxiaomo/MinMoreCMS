@@ -18,15 +18,32 @@ class ConfigController extends AdminBase {
 
     protected function _initialize() {
         parent::_initialize();
-        $this->Config = D('Common/Config');
+        //wangxiaomo: get site config
+        if($this->isSiteUser()){
+            $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        }else{
+            $role = 0;
+        }
+        $this->role = $role;
+        $this->Config = D('Common/Config')->where("role=$role");
         $configList = $this->Config->getField("varname,value");
+        if(empty($configList)) {
+            //deep copy configuration from role 0
+            $configList = D('Common/Config')->where("role=0")->field("varname,info,value,groupid")->select();
+            foreach($configList as &$c){
+                $c["role"] = $role;
+            }
+            D("Config")->addAll($configList);
+            $this->Config = D('Common/Config')->where("role=$role");
+            $configList = $this->Config->getField("varname,value");
+        }
         $this->assign('Site', $configList);
     }
 
     //网站基本设置
     public function index() {
         if (IS_POST) {
-            if ($this->Config->saveConfig($_POST)) {
+            if ($this->Config->saveConfig($_POST, $this->role)) {
                 $this->success("更新成功！");
             } else {
                 $error = $this->Config->getError();
@@ -95,6 +112,10 @@ class ConfigController extends AdminBase {
                 $this->error($error ? $error : "高级配置更新失败！");
             }
         } else {
+            if($this->isSiteUser()){
+                $this->assign("halt", "高级配置只能由超级管理员设置，请联系超级管理员进行相关配置、修改!");
+                return $this->display();
+            }
             $addition = include COMMON_PATH . 'Conf/addition.php';
             if (empty($addition) || !is_array($addition)) {
                 $addition = array();
@@ -112,6 +133,7 @@ class ConfigController extends AdminBase {
                 //添加扩展项
                 if ($action == 'add') {
                     $data = array(
+                        'role'  =>  $this->role,
                         'fieldname' => trim(I('post.fieldname')),
                         'type' => trim(I('post.type')),
                         'setting' => I('post.setting'),
@@ -150,7 +172,7 @@ class ConfigController extends AdminBase {
                     }
                 }
             }
-            $extendList = $db->order(array('fid' => 'DESC'))->select();
+            $extendList = $db->where("role=" . $this->role)->order(array('fid' => 'DESC'))->select();
             $this->assign('extendList', $extendList);
             $this->display();
         }

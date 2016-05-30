@@ -3,6 +3,9 @@
 <body class="J_scroll_fixed">
     <div class="wrap J_check_wrap">
         <Admintemplate file="Common/Nav"/>
+        <if condition="$halt">
+          <p class="red-font">{$halt}</p>
+        <else />
         <div class="table_full">
             <form method='post'   id="myform" class="J_ajaxForm"  action="{:U('Config/addition')}">
                 <div class="h_a">云平台设置</div>
@@ -186,6 +189,7 @@
                 </div>
             </form>
         </div>
+        </if>
     </div>
     <script src="{$config_siteurl}statics/js/common.js?v"></script> 
     <script type="text/javascript">
@@ -205,4 +209,4 @@
         }
     </script>
 </body>
-</html>tml>
+</html>

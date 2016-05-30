@@ -31,7 +31,6 @@ class ConfigModel extends Model {
         //验证规则
         $validate = array(
             array('fieldname', 'require', '键名不能为空！', 1, 'regex', 3),
-            array('fieldname', '', '该键名已经存在！', 0, 'unique', 1),
             array('type', 'require', '类型不能为空！', 1, 'regex', 3),
             array('fieldname', '/^[a-z_0-9]+$/i', '键名只支持英文、数字、下划线！', 0, 'regex', 3),
         );
@@ -65,6 +64,7 @@ class ConfigModel extends Model {
             if ($id) {
                 //增加配置项
                 $this->add(array(
+                    'role'  =>  $data['role'],
                     'varname' => $data['fieldname'],
                     'info' => $setting['title'],
                     'groupid' => 2,
@@ -129,9 +129,10 @@ class ConfigModel extends Model {
             if (empty($key)) {
                 continue;
             }
+            list($role, $k) = explode("*_*", $key);
             $saveData = array();
             $saveData["value"] = trim($value);
-            if ($this->where(array("varname" => $key, 'groupid' => 2))->save($saveData) === false) {
+            if ($this->where(array("role" => $role, "varname" => $k, 'groupid' => 2))->save($saveData) === false) {
                 $this->error = "更新到{$key}项时，更新失败！";
                 return false;
             }
@@ -144,7 +145,7 @@ class ConfigModel extends Model {
      * @param type $data 数据
      * @return boolean
      */
-    public function saveConfig($data) {
+    public function saveConfig($data, $role=0) {
         if (empty($data) || !is_array($data)) {
             $this->error = '配置数据不能为空！';
             return false;
@@ -162,7 +163,7 @@ class ConfigModel extends Model {
             }
             $saveData = array();
             $saveData["value"] = trim($value);
-            if ($this->where(array("varname" => $key))->save($saveData) === false) {
+            if ($this->where(array("role" => $role, "varname" => $key))->save($saveData) === false) {
                 $this->error = "更新到{$key}项时，更新失败！";
                 return false;
             }
