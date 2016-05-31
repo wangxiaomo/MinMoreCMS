@@ -114,7 +114,7 @@ class PositionDataModel extends Model {
             return true;
         } else {
             //有可能副表
-            $tablename = ucwords(getModel($modelid, 'tablename'));
+            $tablename = strtolower(getModel($modelid, 'tablename'));
             if ($this->field_exists("{$tablename}_data", 'posid')) {
                 return M($tablename . 'Data')->where(array('id' => $id))->save(array('posid' => $posids)) !== false ? true : false;
             }

@@ -6,6 +6,7 @@
  * @param type $value 字段内容
  */
 function posid($field, $value) {
+    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
     if (!empty($value) && is_array($value)) {
         //新增
         if (ACTION_NAME == 'add') {
@@ -29,7 +30,7 @@ function posid($field, $value) {
                     $posid[] = $r;
                 }
             }
-            $position_data_db->positionUpdate($this->id, $this->modelid, $catid, $posid, $textcontent, 0, 1);
+            $position_data_db->positionUpdate($this->id, $this->modelid, $catid, $posid, $role, $textcontent, 0, 1);
         } else {
             $posids = array();
             $catid = $this->data['catid'];
@@ -52,7 +53,7 @@ function posid($field, $value) {
                 $textcontent['style'] = $textcontent['style'] . ';' . strip_tags($_POST['style_font_weight']);
             }
             //颜色选择为隐藏域 在这里进行取值
-            $position_data_db->positionUpdate($this->id, $this->modelid, $catid, $posids, $textcontent);
+            $position_data_db->positionUpdate($this->id, $this->modelid, $catid, $posids, $role, $textcontent);
         }
     }
 }

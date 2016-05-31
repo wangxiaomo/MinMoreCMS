@@ -2,7 +2,9 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <Admintemplate file="Common/Nav"/>
+  <if condition="$isSuperUser">
+      <Admintemplate file="Common/Nav"/>
+  </if>
   <div class="h_a">推荐位修改</div>
   <form name="myform" action="{:U("add")}" method="post" class="J_ajaxForm">
   <div class="table_full"> 

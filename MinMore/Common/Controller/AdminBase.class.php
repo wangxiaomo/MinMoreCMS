@@ -47,6 +47,7 @@ class AdminBase extends MinMoreCMS {
         $request_domain = get_request_domain();
         $user = User::getInstance()->getInfo();
         \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $user["role_id"];
+        \Common\Controller\MinMoreCMS::$Cache["IS_SUPER_USER"] = $this->isSuperUser();
         $r = D("Role")->where("id=" . $user["role_id"])->find();
         if($r["level"] && $request_domain != $r["domain"]){
             User::getInstance()->logout();

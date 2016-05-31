@@ -14,6 +14,12 @@ use Common\Controller\AdminBase;
 
 class PositionController extends AdminBase {
 
+    public function _initialize() {
+        parent::_initialize();
+        $this->role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $this->assign("isSuperUser", $this->isSuperUser());
+    }
+
     //推荐位列表
     public function index() {
         $data = M('Position')->order(array('listorder' => 'ASC', 'posid' => 'DESC'))->select();
@@ -167,6 +173,7 @@ class PositionController extends AdminBase {
             $db = M('PositionData');
             $where = array();
             $where['posid'] = $posid;
+            $where['role'] = $this->role;
             $count = $db->where($where)->count();
             $page = $this->page($count, 20);
             $data = $db->where($where)->order(array("listorder" => "DESC", "id" => "DESC"))->limit($page->firstRow . ',' . $page->listRows)->select();

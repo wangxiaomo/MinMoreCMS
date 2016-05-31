@@ -108,15 +108,13 @@ class PositionModel extends Model {
      * @param int $id 推荐文章ID
      * @param int $modelid 模型ID
      * @param array $posid 推送到的推荐位ID
+     * @param array $role 推送到的角色ID
      * @param array $data 推送数据
      * @param int $expiration 过期时间设置
      * @param int $undel 是否判断推荐位去除情况
      * @param string $model 调取的数据模型
-     * 调用方式
-     * $push = D("Position");
-     * $push->positionUpdate(323, 25, 45, array(20,21), array('title'=>'文章标题','thumb'=>'缩略图路径','inputtime'='时间戳'));
      */
-    public function positionUpdate($id, $modelid, $catid, $posid, $data, $expiration = 0, $undel = 0, $model = 'content') {
+    public function positionUpdate($id, $modelid, $catid, $posid, $role, $data, $expiration = 0, $undel = 0, $model = 'content') {
         $arr = $param = array();
         $id = intval($id);
         if (empty($id)) {
@@ -128,6 +126,7 @@ class PositionModel extends Model {
         //组装属性参数
         $arr['modelid'] = $modelid;
         $arr['catid'] = $catid;
+        $arr['role'] = $role;
         $arr['posid'] = $posid;
         $arr['dosubmit'] = '1';
 
@@ -230,15 +229,16 @@ class PositionModel extends Model {
                         $info['thumb'] = $info['data']['thumb'] ? 1 : 0;
                         $info['data'] = serialize($info['data']);
                         $info['expiration'] = $expiration;
+                        $info['role'] = $arr['role'];
 
                         //判断推荐位数据是否存在，不存在新增
-                        $r = $pos_data->where(array('id' => $d['id'], 'posid' => $pid, 'catid' => $info['catid']))->find();
+                        $r = $pos_data->where(array('id' => $d['id'], 'role' => $arr['role'],  'posid' => $pid, 'catid' => $info['catid']))->find();
                         if ($r) {
                             //是否同步编辑
                             if ($r['synedit'] == '0') {
                                 //同步时，不从新设置排序值
                                 unset($info['listorder']);
-                                $pos_data->where(array('id' => $d['id'], 'posid' => $pid, 'catid' => $info['catid']))->data($info)->save();
+                                $pos_data->where(array('id' => $d['id'], 'role' => $arr['role'], 'posid' => $pid, 'catid' => $info['catid']))->data($info)->save();
                             }
                         } else {
                             $status = $pos_data->data($info)->add();
@@ -250,10 +250,10 @@ class PositionModel extends Model {
                     }
                     //最大存储数据量
                     $maxnum = (int) $position_info[$pid]['maxnum'];
-                    $r = $pos_data->where(array('posid' => $pid))->order("listorder DESC, id DESC")->limit($maxnum . ",100")->select();
+                    $r = $pos_data->where(array('posid' => $pid, 'role' => $arr['role']))->order("listorder DESC, id DESC")->limit($maxnum . ",100")->select();
                     if ($r && $position_info[$pid]['maxnum']) {
                         foreach ($r as $k => $v) {
-                            $pos_data->where(array('id' => $v['id'], 'posid' => $v['posid'], 'catid' => $v['catid']))->delete();
+                            $pos_data->where(array('id' => $v['id'], 'role' => $arr['role'], 'posid' => $v['posid'], 'catid' => $v['catid']))->delete();
                             service('Attachment')->api_delete('position-' . $v['modelid'] . '-' . $v['id']);
                             $this->content_pos($v['id'], $v['modelid']);
                         }

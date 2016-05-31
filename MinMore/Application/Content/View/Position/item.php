@@ -2,7 +2,9 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <Admintemplate file="Common/Nav"/>
+  <if condition="$isSuperUser">
+      <Admintemplate file="Common/Nav"/>
+  </if>
   <form name="myform" class="J_ajaxForm" action="{:U("item")}" method="post">
     <div class="table_list"> 
     <table width="100%" cellspacing="0">

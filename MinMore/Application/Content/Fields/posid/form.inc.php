@@ -8,6 +8,7 @@
  * @return string
  */
 function posid($field, $value, $fieldinfo) {
+    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
     //扩展配置
     $setting = unserialize($fieldinfo['setting']);
     //推荐位缓存
@@ -33,7 +34,7 @@ function posid($field, $value, $fieldinfo) {
     }
     $posids = array();
     if (ACTION_NAME == 'edit') {
-        $result = M('PositionData')->where(array('id' => $this->id, 'modelid' => $this->modelid))->getField("posid,id,catid,posid,module,modelid,thumb,data,listorder,expiration,extention,synedit");
+        $result = M('PositionData')->where(array('id' => $this->id, 'role'=>$role, 'modelid' => $this->modelid))->getField("posid,id,catid,posid,module,modelid,thumb,data,listorder,expiration,extention,synedit");
         $posids = implode(',', array_keys($result));
     } else {
         $posids = $setting['defaultvalue'];

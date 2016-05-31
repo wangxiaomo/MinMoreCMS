@@ -3169,3 +3169,6 @@ wangxiaomo: common hacks
 .blue-font {
   color:blue;
 }
+label.ib {
+  display:inline;
+}

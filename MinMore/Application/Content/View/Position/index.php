@@ -2,8 +2,12 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <Admintemplate file="Common/Nav"/>
-  <div class="h_a">温馨提示</div>
+  <if condition="$isSuperUser">
+      <Admintemplate file="Common/Nav"/>
+      <div class="h_a">温馨提示</div>
+  <else />
+      <div class="h_a" style="margin-top:15px;">温馨提示</div>
+  </if>
   <div class="prompt_text">
     <p>如果您已经修改模型字段管理中“<font color="#FF0000">在推荐位标签中调用</font>”这个选项，可以使用“<font color="#FF0000">数据重建</font>”功能进行数据重建！</p>
   </div>
@@ -12,7 +16,7 @@
       <thead>
         <tr>
           <td width="50">排序</td>
-          <td width="20"  align="center">ID</td>
+          <td align="center">ID</td>
           <td>推荐位名称</td>
           <td width="50" align="center">所属栏目</td>
           <td width="50" align="center">所属模型</td>
@@ -48,12 +52,15 @@
 		   if(\Libs\System\RBAC::authenticate('rebuilding')){
 			  $op[] =  '<a href="'.U('Position/rebuilding',array('posid'=>$vo['posid'])).'">数据重建</a>';
 		  }
-		  if(\Libs\System\RBAC::authenticate('edit')){
-			  $op[] = '<a href="'.U('Position/edit',array('posid'=>$vo['posid'])).'">修改</a>';
-		  }
-		  if(\Libs\System\RBAC::authenticate('delete')){
-			  $op[] = '<a class="J_ajax_del" href="'.U('Position/delete',array('posid'=>$vo['posid'])).'">删除</a>';
-		  }
+          $app = MinMoreCMS();
+          if($app::$Cache["IS_SUPER_USER"]){
+              if(\Libs\System\RBAC::authenticate('edit')){
+                  $op[] = '<a href="'.U('Position/edit',array('posid'=>$vo['posid'])).'">修改</a>';
+              }
+              if(\Libs\System\RBAC::authenticate('delete')){
+                  $op[] = '<a class="J_ajax_del" href="'.U('Position/delete',array('posid'=>$vo['posid'])).'">删除</a>';
+              }
+          }
 		  echo implode(" | ",$op);
 		  ?>
           </tr>
