@@ -55,8 +55,7 @@ if (C('LAYOUT_ON')) {
             <p>
                 <a title="官方网站" href="http://www.minmore.com" target="_blank">MinMoreCMS</a>
                 <sup><?php echo MINMORE_VERSION ?> - <?php echo MINMORE_BUILD ?></sup>
-                官方交流群：<a href="http://wp.qq.com/wpa/qunwpa?idkey=7a6237a52fb5861c4b6e0c12255b78eef46ba7378ace9423f9ad292fd66e4ef7" title="QQ群" target="_blank">49219815</a>
             </p>
         </div>
     </body>
-</html>>
+</html>
