@@ -45,8 +45,15 @@ class OperationlogModel extends Model {
      * 删除一个月前的日志
      * @return boolean
      */
-    public function deleteAMonthago() {
-        $status = $this->where(array("time" => array("lt", time() - (86400 * 30))))->delete();
+    public function deleteAMonthago($role) {
+        $r = D("User")->where("role_id=$role")->field("id")->select();
+        foreach($r as $v){
+            $uids[] = $v["id"];
+        }
+        $status = $this->where(array(
+            "time" => array("lt", time() - (86400 * 30)),
+            "uid"  => array("in", $uids),
+        ))->delete();
         return $status !== false ? true : false;
     }
 

@@ -3,6 +3,7 @@
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
   <Admintemplate file="Common/Nav"/>
+  <if condition="$isSuperUser">
   <div class="h_a">搜索</div>
   <form method="post" action="{:U('index')}">
   <div class="search_type cc mb10">
@@ -22,6 +23,7 @@
       <button class="btn">搜索</button>
       </span> </div>
   </div>
+  </if>
     <div class="table_list">
       <table width="100%" cellspacing="0">
         <thead>

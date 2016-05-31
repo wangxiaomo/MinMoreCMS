@@ -18,10 +18,10 @@ class SiteController extends AdminBase {
         if(IS_POST){
             $id = I("id");
             $prefix = I("prefix");
-            D("RoleLevel")->where("id=$id")->save(Array(
+            D("RoleLevel")->where("id=$id")->save(array(
                 "template_prefix"=>$prefix,
             ));
-            $this->jsonReturn(Array("r"=>1));
+            $this->jsonReturn(array("r"=>1));
         }else{
             $levels = D("RoleLevel")->order("listorder")->select();
             $this->assign("levels", $levels);
@@ -35,13 +35,13 @@ class SiteController extends AdminBase {
             $domain = I("domain");
             $theme = I("theme");
             if($domain && $theme){
-                D("Role")->where("id=$id")->save(Array(
+                D("Role")->where("id=$id")->save(array(
                     "domain"=>$domain,
                     "theme"=>$theme,
                 ));
-                $this->jsonReturn(Array("r"=>1));
+                $this->jsonReturn(array("r"=>1));
             }else{
-                $this->jsonReturn(Array("r"=>0));
+                $this->jsonReturn(array("r"=>0));
             }
         }else{
             $table_prefix = C("DB_PREFIX");

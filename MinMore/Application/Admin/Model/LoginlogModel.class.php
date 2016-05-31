@@ -24,8 +24,15 @@ class LoginlogModel extends Model {
      * 删除一个月前的日志
      * @return boolean
      */
-    public function deleteAMonthago() {
-        $status = $this->where(array("logintime" => array("lt", time() - (86400 * 30))))->delete();
+    public function deleteAMonthago($role) {
+        $r = D("User")->where("role_id=$role")->field("username")->select();
+        foreach($r as $v){
+            $usernames[] = $v["username"];
+        }
+        $status = $this->where(array(
+            "logintime" => array("lt", time() - (86400 * 30)),
+            "username"  => array("in", $usernames),
+        ))->delete();
         return $status !== false ? true : false;
     }
 
