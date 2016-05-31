@@ -2,6 +2,7 @@ CREATE TABLE `@minmore@@zhubiao@` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
   `catid` smallint(5) unsigned NOT NULL DEFAULT '0',
   `typeid` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `role` smallint(5) unsigned NOT NULL DEFAULT '1',
   `title` varchar(255) NOT NULL DEFAULT '',
   `style` varchar(24) NOT NULL DEFAULT '',
   `thumb` varchar(255) NOT NULL DEFAULT '',
@@ -28,4 +29,4 @@ CREATE TABLE `@minmore@@zhubiao@` (
   KEY `listorder` (`catid`,`status`,`listorder`,`id`),
   KEY `catid` (`catid`,`weekviews`,`views`,`dayviews`,`monthviews`,`status`,`id`),
   KEY `thumb` (`thumb`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;i;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
