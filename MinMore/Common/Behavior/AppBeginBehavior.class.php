@@ -38,7 +38,7 @@ class AppBeginBehavior {
                 exit;
             }
         }
-        $config = cache('Config');
+        $config = get_site_config();
         if (MODULE_NAME == 'Admin' && isModuleInstall('Domains') && $config['domainaccess']) {
             $Module_Domains_list = cache('Module_Domains_list');
             $http_host = strtolower($_SERVER['HTTP_HOST']);

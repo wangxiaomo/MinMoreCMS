@@ -24,7 +24,7 @@ class Ftp extends Attachment {
      */
     function __construct($options = array()) {
         //网站配置
-        $this->config = cache("Config");
+        $this->config = get_site_config();
         $options = array_merge(array(
             //上传用户ID
             'userid' => 0,

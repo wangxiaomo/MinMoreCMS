@@ -67,7 +67,7 @@ class Url {
      */
     public function index($page = 1) {
         //网站配置
-        $config = cache('Config');
+        $config = get_site_config();
         //取分页最大值
         $page = max($page, 1);
         //URL规则ID 
@@ -137,7 +137,7 @@ class Url {
         }
         $guid = to_guid_string($data);
         //网站配置
-        $config = cache("Config");
+        $config = get_site_config();
         //栏目id
         $catid = (int) $data['catid'];
         //信息id
@@ -331,7 +331,7 @@ class Url {
         //栏目扩展配置信息
         $setting = $category['setting'];
         //网站配置
-        $config = cache("Config");
+        $config = get_site_config();
         //页码
         $page = max(intval($page), 1);
         static $_category_url = array();
@@ -478,7 +478,7 @@ class Url {
         }
         $guid = to_guid_string($data);
         //网站配置
-        $config = cache('Config');
+        $config = get_site_config();
         if (!isset($_tags[$guid])) {
             //字符串表示 tags
             if (is_string($data)) {
@@ -564,7 +564,7 @@ class Url {
         }
         static $_createListUrl = array();
         //网站配置
-        $config = cache('Config');
+        $config = get_site_config();
         //页码
         $page = max(intval($page), 1);
         //取得规则

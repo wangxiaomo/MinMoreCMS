@@ -272,7 +272,7 @@ class Html extends Base {
      * @return boolean
      */
     public function index() {
-        $config = cache('Config');
+        $config = get_site_config();
         if (empty($config['generate'])) {
             return false;
         }

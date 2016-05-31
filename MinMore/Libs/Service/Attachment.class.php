@@ -244,7 +244,7 @@ class Attachment extends \Libs\System\Service {
         if ($isurl == 2 || empty($content)) {
             $this->api_update_cookie($keyid);
         } else {
-            $config = cache('Config');
+            $config = get_site_config();
             $att_index_db = M("AttachmentIndex");
             //http附件地址 http://file.www.minmore.com/d/file/
             $upload_url = $config['sitefileurl'];

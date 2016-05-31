@@ -35,26 +35,32 @@ class MinMoreCMS extends \Think\Controller {
     protected function setTheme($theme) {
         if(!$theme) _404();
         \Common\Controller\MinMoreCMS::$Cache["Config"]['theme'] = $theme;
-        $config = cache("Config");
+        $config = get_site_config();
         $config["theme"] = $theme;
-        cache("Config", $config);
+        update_site_config($config);
     }
 
-    protected function syncThemeAndRole() {
+    protected function syncRole() {
         $domain = get_request_domain();
         $r = D("Role")->where("domain='$domain'")->find();
-        if($r["domain"] && $r["theme"]){
-            $this->setTheme($r["theme"]);
+        if($r){
             \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["id"];
         }else{
             _404();
         }
     }
 
+    protected function setThemeBasedOnRole() {
+        $domain = get_request_domain();
+        $r = D("Role")->where("domain='$domain'")->find();
+        $this->setTheme($r["theme"]);
+    }
+
     //初始化
     protected function _initialize() {
+        $this->syncRole();
         $this->initSite();
-        $this->syncThemeAndRole();
+        $this->setThemeBasedOnRole();
         //默认跳转时间
         $this->assign("waitSecond", 3000);
     }
@@ -72,7 +78,7 @@ class MinMoreCMS extends \Think\Controller {
      * @return Arry 配置数组
      */
     protected function initSite() {
-        $Config = cache("Config");
+        $Config = get_site_config(false);
         self::$Cache['Config'] = $Config;
         $config_siteurl = $Config['siteurl'];
         if (isModuleInstall('Domains')) {

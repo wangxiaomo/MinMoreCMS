@@ -119,7 +119,7 @@ class Passport extends \Libs\System\Service {
      * @return type 返回头像地址
      */
     public function getUserAvatar($uid, $format = 90, $dbs = false) {
-        $config = cache('Config');
+        $config = get_site_config();
         return "{$config['siteurl']}statics/images/member/nophoto.gif";
     }
 

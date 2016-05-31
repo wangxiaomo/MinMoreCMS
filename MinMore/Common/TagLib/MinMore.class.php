@@ -92,7 +92,7 @@ class MinMore extends TagLib {
      * @return string|array 返回模板解析后的内容
      */
     public function _template($attr, $content) {
-        $config = cache('Config');
+        $config = get_site_config();
         $theme = $attr['theme']? : $config['theme'];
         $templateFile = $attr['file'];
         //不是直接指定模板路径的

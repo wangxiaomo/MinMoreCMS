@@ -335,7 +335,7 @@ class Form {
      * @param $pre 模板前缀
      */
     public static function select_template($style, $module, $id = '', $str = '', $pre = '') {
-        $config = cache("Config");
+        $config = get_site_config();
         if (empty($config['theme'])) {
             $config['theme'] = "Default";
         }

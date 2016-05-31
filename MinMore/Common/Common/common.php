@@ -138,7 +138,7 @@ function seo($catid = '', $title = '', $description = '', $keyword = '') {
         $description = strip_tags($description);
     if (!empty($keyword))
         $keyword = str_replace(' ', ',', strip_tags($keyword));
-    $site = cache("Config");
+    $site = get_site_config();
     $cat = getCategory($catid);
     $seo['site_title'] = $site['sitename'];
     $titleKeywords = "";
@@ -482,7 +482,7 @@ function initupload($module, $catid, $args, $userid, $groupid = 8, $isadmin = fa
         return false;
     }
     //网站配置
-    $config = cache('Config');
+    $config = get_site_config();
     //检查用户是否有上传权限
     if ($isadmin) {
         //后台用户
@@ -628,7 +628,7 @@ function file_icon($file, $type = 'png') {
         else
             $ext = 'do';
     }
-    $config = cache('Config');
+    $config = get_site_config();
     if (in_array($ext, $ext_arr)) {
         return $config['siteurl'] . 'statics/images/ext/' . $ext . '.' . $type;
     } else {
@@ -874,7 +874,7 @@ function getavatar($uid, $format = 90, $dbs = false) {
  * @param type $message 邮件内容
  */
 function SendMail($address, $title, $message) {
-    $config = cache('Config');
+    $config = get_site_config();
     import('PHPMailer');
     try {
         $mail = new \PHPMailer();
@@ -923,6 +923,22 @@ function SendMail($address, $title, $message) {
 function _404() {
     send_http_status(404);
     exit;
+}
+
+function get_site_config($cache=true) {
+    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    $role = $role?$role:0;
+    $config = cache("Config$role");
+    if(!$cache || empty($config)){
+        $config = D("Common/Config")->config_cache($role);
+        update_site_config($config);
+    }
+    return $config;
+}
+
+function update_site_config($config){
+    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    cache("Config$role", $config);
 }
 
 function get_request_domain() {

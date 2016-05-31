@@ -253,13 +253,13 @@ class ConfigModel extends Model {
      */
     public function config_cache($role=0) {
         $data = M("Config")->where("role=$role")->getField("varname,value");
-        cache("Config", $data);
+        cache("Config$role", $data);
         return $data;
     }
 
     // 写入数据前的回调方法 包括新增和更新
     protected function _before_write(&$data) {
-        cache('Config', NULL);
+        cache('Config' . $data['role'], NULL);
     }
 
 }

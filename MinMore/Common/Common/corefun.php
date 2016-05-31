@@ -872,7 +872,7 @@ function layout($layout) {
  */
 function U($url = '', $vars = '', $suffix = true, $domain = true) {
     //网站配置
-    $config = cache('Config');
+    $config = get_site_config();
     // 解析URL
     $info = parse_url($url);
     $url = !empty($info['path']) ? $info['path'] : ACTION_NAME;
