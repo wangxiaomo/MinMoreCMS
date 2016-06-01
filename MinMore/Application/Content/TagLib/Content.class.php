@@ -48,6 +48,10 @@ class Content {
         //审核状态
         $where['status'] = array("EQ", 99);
         $this->where = $where;
+        //wangxiaomo: inject role info
+        $app = MinMoreCMS();
+        $role = $app::$Cache["GLOBAL_ROLE"];
+        $where['role'] = $role;
         return $this->where;
     }
 

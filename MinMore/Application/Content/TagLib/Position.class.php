@@ -63,6 +63,10 @@ class Position {
                 }
             }
         }
+        //wangxiaomo: inject role info
+        $app = MinMoreCMS();
+        $role = $app::$Cache["GLOBAL_ROLE"];
+        $where['role'] = $role;
         $data = $db->where($where)->order($order)->limit($num)->select();
         foreach ($data as $k => $v) {
             $data[$k]['data'] = unserialize($v['data']);
