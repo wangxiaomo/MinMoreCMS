@@ -7,8 +7,7 @@
   <div class="prompt_text">
     <ul>
       <li>模块管理可以很好的扩展网站运营中所需功能！</li>
-      <li><font color="#FF0000">获取更多模块请到官方网站模块扩展中下载安装！安装非官方发表模块需谨慎，有被清空数据库的危险！</font></li>
-      <li>官网地址：<font color="#FF0000">http://www.minmore.com</font>，<a href="http://www.minmore.com" target="_blank">立即前往</a>！</li>
+      <li><font color="#FF0000">获取更多模块请联系官方索取！安装非官方发表模块需谨慎，有被清空数据库的危险！</font></li>
     </ul>
   </div>
   <div class="table_list">
@@ -74,4 +73,4 @@
 </div>
 <script src="{$config_siteurl}statics/js/common.js"></script>
 </body>
-</html>ml>
+</html>

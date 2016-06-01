@@ -599,6 +599,3 @@ class Module {
     }
 
 }
-
-
-}
