@@ -41,6 +41,7 @@ class MinMoreCMS extends \Think\Controller {
     }
 
     protected function syncRole() {
+        //wangxiaomo: based on domain
         $domain = get_request_domain();
         $r = D("Role")->where("domain='$domain'")->find();
         if($r){

@@ -44,35 +44,46 @@ class AdminBase extends MinMoreCMS {
     }
 
     private function syncAdminRole() {
+        //wangxiaomo: site user will dispatch to the right admin url.
+        //            but super user will fake site role to do admin-job.
         $request_domain = get_request_domain();
         $user = User::getInstance()->getInfo();
-        \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $user["role_id"];
         \Common\Controller\MinMoreCMS::$Cache["IS_SUPER_USER"] = $this->isSuperUser();
-        $r = D("Role")->where("id=" . $user["role_id"])->find();
-        if($r["level"] && $request_domain != $r["domain"]){
-            User::getInstance()->logout();
-            $this->error(
-                "即将为您跳转到正确的登录后台，请重新登录!",
-                "http://" . $r["domain"] . "/admin.php"
-            );
+        if($this->isSiteUser(false)){
+            //wangxiaomo: find site domain
+            $nodes = array_map(intval, explode(",", D("Admin/Role")->getArrparentid($user["role_id"])));
+            if($user) $nodes[] = intval($user["role_id"]);
+            $nodes = array_reverse($nodes);
+            foreach($nodes as $v){
+                $role = D("Role")->where("id=$v")->find();
+                if($role and $role["domain"] && $request_domain != $role["domain"]){
+                    User::getInstance()->logout();
+                    $this->error(
+                        "即将为您跳转到正确的登录后台，请重新登录!",
+                        "http://" . $role["domain"] . "/admin.php"
+                    );
+                }
+            }
         }
     }
 
     protected function isSuperUser() {
-        $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
-        return intval($role_id) === 1;
+        //wangxiaomo: based on real user info
+        $user = User::getInstance()->getInfo();
+        return intval($user["id"]) === 1;
     }
 
     protected function isSiteUser($cache=true) {
+        //wangxiaomo: check if user is behind site role parent
         if($cache){
-            $r = cache(C("MINMORE_CACHE_PREFIX") . "is_site_user");
-            if($r) return $r;
+            $isSiteUser = cache(C("MINMORE_CACHE_PREFIX") . "is_site_user");
+            if($isSiteUser) return $isSiteUser;
         }
-        $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
-        $role = D("Role")->where("id=$role_id")->find();
-        $r = (bool)$role && $role["parentid"] == C("SITE_ROLE_PARENT");
-        cache(C("MINMORE_CACHE_PREFIX") . "is_site_user", $r);
-        return $r;
+        $user = User::getInstance()->getInfo();
+        $parents = array_map(intval, explode(",", D("Admin/Role")->getArrparentid($user["role_id"])));
+        $isSiteUser = in_array(C("SITE_ROLE_PARENT"), $parents);
+        cache(C("MINMORE_CACHE_PREFIX") . "is_site_user", $isSiteUser);
+        return $isSiteUser;
     }
 
     /**
