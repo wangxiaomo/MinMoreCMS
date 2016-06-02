@@ -9,6 +9,6 @@
 // +----------------------------------------------------------------------
 
 return array(
-    "SITE_ROLE_PARENT" => 4, //wangxiaomo: update after install
+    "SITE_ROLE_PARENT" => 2,
     "MINMORE_CACHE_PREFIX"  =>  "cache:minmore:",
 );
