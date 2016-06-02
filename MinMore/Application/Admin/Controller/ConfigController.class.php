@@ -28,12 +28,7 @@ class ConfigController extends AdminBase {
         $this->Config = D('Common/Config')->where("role=$role");
         $configList = $this->Config->getField("varname,value");
         if(empty($configList)) {
-            //deep copy configuration from role 0
-            $configList = D('Common/Config')->where("role=0")->field("varname,info,value,groupid")->select();
-            foreach($configList as &$c){
-                $c["role"] = $role;
-            }
-            D("Config")->addAll($configList);
+            generate_site_config($role);
             $this->Config = D('Common/Config')->where("role=$role");
             $configList = $this->Config->getField("varname,value");
         }

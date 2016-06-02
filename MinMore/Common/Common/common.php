@@ -925,12 +925,24 @@ function _404() {
     exit;
 }
 
+function generate_site_config($role) {
+    $configList = D('Common/Config')->where("role=0")->field("varname,info,value,groupid")->select();
+    foreach($configList as &$c){
+        $c["role"] = $role;
+    }
+    D("Config")->addAll($configList);
+    return $configList;
+}
+
 function get_site_config($cache=true) {
     $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
     $role = $role?$role:0;
     $config = cache("Config$role");
     if(!$cache || empty($config)){
         $config = D("Common/Config")->config_cache($role);
+        if(empty($config)) {
+            $config = generate_site_config($role);
+        }
         update_site_config($config);
     }
     return $config;
