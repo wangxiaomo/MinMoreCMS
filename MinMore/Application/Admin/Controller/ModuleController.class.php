@@ -20,7 +20,10 @@ class ModuleController extends AdminBase {
     //已安装模块列表
     protected $moduleList = array();
     //系统模块，隐藏
-    protected $systemModuleList = array('Admin', 'Api', 'Install', 'Attachment', 'Template', 'Content');
+    protected $systemModuleList = array(
+        'Admin', 'Api', 'Install', 'Attachment', 'Template', 'Content',
+        'Collection', 'Search', 'Member', 'Addons',
+    );
 
     //初始化
     protected function _initialize() {
@@ -46,6 +49,7 @@ class ModuleController extends AdminBase {
         //取得已安装模块列表
         $moduleList = array();
         foreach ($this->moduleList as $v) {
+            if(in_array($v['module'], $this->systemModuleList)) continue;
             $moduleList[$v['module']] = $v;
             //检查是否系统模块，如果是，直接不显示
             if ($v['iscore']) {
