@@ -19,11 +19,7 @@ class ConfigController extends AdminBase {
     protected function _initialize() {
         parent::_initialize();
         //wangxiaomo: get site config
-        if($this->isSiteUser()){
-            $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
-        }else{
-            $role = 0;
-        }
+        $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
         $this->role = $role;
         $this->Config = D('Common/Config')->where("role=$role");
         $configList = $this->Config->getField("varname,value");
