@@ -42,19 +42,26 @@ class MinMoreCMS extends \Think\Controller {
 
     protected function syncRole() {
         //wangxiaomo: based on domain
+        //wangxiaomo: when request domain didnt exist, user can only request admin url or api resource
         $domain = get_request_domain();
         $r = D("Role")->where("domain='$domain'")->find();
+    
+        if(empty($r) && preg_match("/(admin|api)/i", $_SERVER["REQUEST_URI"])) return;
+
         if($r){
             \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["id"];
         }else{
-            _404();
+            $url = sprintf("%s://%s/%s", $_SERVER["REQUEST_SCHEME"], $domain, 'admin.php');
+            die(header("Location:$url"));
         }
     }
 
     protected function setThemeBasedOnRole() {
         $domain = get_request_domain();
         $r = D("Role")->where("domain='$domain'")->find();
-        $this->setTheme($r["theme"]);
+        if($r){
+            $this->setTheme($r["theme"]);
+        }
     }
 
     //初始化
