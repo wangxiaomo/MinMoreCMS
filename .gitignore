@@ -9,5 +9,5 @@ composer.phar
 \#runtime
 phpmyadmin
 statics/vendor
-MinMore/Template
 statics/themes
+L1_Global
