@@ -37,7 +37,7 @@ class CreatehtmlController extends AdminBase {
     //更新首页
     public function index() {
         if (IS_POST) {
-            $config = cache('Config');
+            $config = get_site_config();
             if (!$config['generate']) {
                 $this->error('系统关闭了首页生成静态！');
             }

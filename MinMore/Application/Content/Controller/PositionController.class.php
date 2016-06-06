@@ -16,7 +16,7 @@ class PositionController extends AdminBase {
 
     public function _initialize() {
         parent::_initialize();
-        $this->role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $this->role = get_site_role();
         $this->assign("isSuperUser", $this->isSuperUser());
     }
 

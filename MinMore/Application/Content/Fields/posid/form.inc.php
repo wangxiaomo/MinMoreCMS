@@ -8,7 +8,7 @@
  * @return string
  */
 function posid($field, $value, $fieldinfo) {
-    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    $role = get_site_role();
     //扩展配置
     $setting = unserialize($fieldinfo['setting']);
     //推荐位缓存

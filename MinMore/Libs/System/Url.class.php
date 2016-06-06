@@ -77,6 +77,15 @@ class Url {
         if (!$urlrule) {
             $urlrule = 'index.php|index.php?page={$page}';
         }
+        //使用自定义函数生成规则
+        if (substr($urlrule, 0, 1) == '=') {
+            load("Content/urlrule");
+            $fun = str_replace(substr($urlrule, 0, 1), "", $urlrule);
+            $urlrule = call_user_func_array(trim($fun), array(
+                "data" => $data,
+                "page" => $page,
+            ));
+        }
 
         $urlrule = explode("|", $urlrule);
         $url = array(

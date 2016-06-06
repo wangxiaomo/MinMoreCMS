@@ -6,7 +6,7 @@
  * @param type $value 字段内容
  */
 function posid($field, $value) {
-    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    $role = get_site_role();
     if (!empty($value) && is_array($value)) {
         //新增
         if (ACTION_NAME == 'add') {

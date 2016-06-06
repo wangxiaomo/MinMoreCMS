@@ -49,9 +49,7 @@ class Content {
         $where['status'] = array("EQ", 99);
         $this->where = $where;
         //wangxiaomo: inject role info
-        $app = MinMoreCMS();
-        $role = $app::$Cache["GLOBAL_ROLE"];
-        $where['role'] = $role;
+        $where['role'] = get_site_role();
         return $this->where;
     }
 

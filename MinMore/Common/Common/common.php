@@ -925,6 +925,11 @@ function _404() {
     exit;
 }
 
+function get_site_role() {
+    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    return $role?$role:0;
+}
+
 function generate_site_config($role) {
     $configList = D('Common/Config')->where("role=0")->field("varname,info,value,groupid")->select();
     foreach($configList as &$c){
@@ -935,8 +940,7 @@ function generate_site_config($role) {
 }
 
 function get_site_config($cache=true) {
-    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
-    $role = $role?$role:0;
+    $role = get_site_role();
     $config = cache("Config$role");
     if(!$cache || empty($config)){
         $config = D("Common/Config")->config_cache($role);
@@ -949,7 +953,7 @@ function get_site_config($cache=true) {
 }
 
 function update_site_config($config){
-    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    $role = get_site_role();
     cache("Config$role", $config);
 }
 

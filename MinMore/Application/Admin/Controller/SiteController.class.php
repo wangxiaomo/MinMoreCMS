@@ -46,7 +46,7 @@ class SiteController extends AdminBase {
         }else{
             $table_prefix = C("DB_PREFIX");
             if($this->isSiteUser()) {
-                $role_id = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+                $role_id = get_site_role();
                 $condition = " and ${table_prefix}role.id=$role_id";
             }else{
                 $condition = "";

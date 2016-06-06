@@ -32,7 +32,7 @@ class NodeController extends AdminBase {
             $where['name'] = array("like", "%{$keyword}%");
             $this->assign("keyword", $keyword);
         }
-        $where["role"] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $where["role"] = get_site_role();
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);
         $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("nodeid" => "desc"))->select();
@@ -64,7 +64,7 @@ class NodeController extends AdminBase {
                     );
                 }
             }
-            $data["role"] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $data["role"] = get_site_role();
             //对自定义规则进行序列化
             $data['customize_config'] = serialize($data['customize_config']);
             //采集地址
@@ -112,7 +112,7 @@ class NodeController extends AdminBase {
                     );
                 }
             }
-            $data["role"] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $data["role"] = get_site_role();
             //对自定义规则进行序列化
             $data['customize_config'] = serialize($data['customize_config']);
             //采集地址
@@ -180,7 +180,7 @@ class NodeController extends AdminBase {
                 $name = I("post.name", '', "trim");
                 $info['name'] = $name;
                 $info = array_merge($info, array(C("TOKEN_NAME") => I("post." . C("TOKEN_NAME"))));
-                $info["role"] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+                $info["role"] = get_site_role();
                 $data = $this->db->create($info);
                 if ($data) {
                     if ($this->db->add($data)) {
@@ -217,7 +217,7 @@ class NodeController extends AdminBase {
             $data['name'] = $name;
             unset($data['lastdate']);
             $info = array_merge($data, array(C("TOKEN_NAME") => I("post." . C("TOKEN_NAME"))));
-            $info["role"] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $info["role"] = get_site_role();
             $data = $this->db->create($info);
             if ($data) {
                 if ($this->db->add($data)) {
@@ -512,7 +512,7 @@ class NodeController extends AdminBase {
             $sql = array(
                 'catid' => $program['catid'],
                 'status' => $program['config']['content_status'],
-                'role'  =>  \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"],
+                'role'  =>  get_site_role(),
             );
             $v['data'] = unserialize($v['data']);
             //如果值不存在或者为空。则填充默认数据

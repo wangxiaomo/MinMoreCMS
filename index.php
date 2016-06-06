@@ -14,6 +14,8 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
 }
 //当前目录路径
 define('SITE_PATH', getcwd() . '/');
+//静态生成目录
+define('ASSET_PATH', SITE_PATH . 'assets/');
 //项目路径
 define('PROJECT_PATH', SITE_PATH . 'MinMore/');
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false

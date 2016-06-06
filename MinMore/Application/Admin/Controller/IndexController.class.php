@@ -18,7 +18,7 @@ class IndexController extends AdminBase {
     public function _initialize() {
         parent::_initialize();
         if($this->isSiteUser()){
-            $this->role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $this->role = get_site_role();
         }else{
             $this->role = 0;
         }

@@ -117,8 +117,7 @@ class ContentController extends AdminBase {
         $where = array();
         $where['catid'] = array('EQ', $this->catid);
         $where['status'] = array('EQ', 99);
-        $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
-        $where['role'] = $role;
+        $where['role'] = get_site_role();
         //栏目所属模型
         $modelid = $catInfo['modelid'];
         //栏目扩展配置
@@ -226,7 +225,7 @@ class ContentController extends AdminBase {
                 if ($this->model[$modelid]['disabled'] == 1) {
                     $this->error("模型被禁用！");
                 }
-                $_POST['info']['role'] = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+                $_POST['info']['role'] = get_site_role();
                 $status = $this->Content->data($_POST['info'])->add();
                 if ($status) {
                     $this->success("添加成功！");

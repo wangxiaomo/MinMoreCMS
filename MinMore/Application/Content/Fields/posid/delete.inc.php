@@ -8,6 +8,6 @@
  */
 function posid($field, $value) {
     //删除推荐位
-    $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+    $role = get_site_role();
     return M('PositionData')->where(array('id' => $this->id, 'catid' => $this->catid, 'module' => 'content', 'role' => $role))->delete();
 }

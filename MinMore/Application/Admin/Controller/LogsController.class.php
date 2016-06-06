@@ -28,7 +28,7 @@ class LogsController extends AdminBase {
         if (!empty($username)) {
             $where['username'] = array('like', '%' . $username . '%');
         }elseif($this->isSiteUser()){
-            $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $role = get_site_role();
             $r = D("User")->where("role_id=$role")->field("username")->select();
             foreach($r as $v){
                 $usernames[] = $v["username"];
@@ -60,7 +60,7 @@ class LogsController extends AdminBase {
 
     //删除一个月前的登陆日志
     public function deleteloginlog() {
-        $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $role = get_site_role();
         if (D("Admin/Loginlog")->deleteAMonthago($role)) {
             $this->success("删除登陆日志成功！");
         } else {
@@ -82,7 +82,7 @@ class LogsController extends AdminBase {
         if (!empty($uid)) {
             $where['uid'] = array('eq', $uid);
         }elseif($this->isSiteUser()){
-            $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+            $role = get_site_role();
             $r = D("User")->where("role_id=$role")->field("id")->select();
             foreach($r as $v){
                 $uids[] = $v["id"];
@@ -111,7 +111,7 @@ class LogsController extends AdminBase {
 
     //删除一个月前的操作日志
     public function deletelog() {
-        $role = \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"];
+        $role = get_site_role();
         if (D("Admin/Operationlog")->deleteAMonthago($role)) {
             $this->success("删除操作日志成功！");
         } else {
