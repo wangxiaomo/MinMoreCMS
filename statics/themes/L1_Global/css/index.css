@@ -164,9 +164,7 @@ img{
     float: left;
     text-align: center;
 }
-.banner-nav li:first-child{
-    background: #e5840d;
-}
+.banner-nav li.on,
 .banner-nav li:hover{
     background: #e5840d;
 }

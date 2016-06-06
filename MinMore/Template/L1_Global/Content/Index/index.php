@@ -20,7 +20,7 @@
         <template file="Content/Mods/top_header.php" />
         <!--导航条-->
         <ul class="banner-nav">
-            <a href="#"><li>首页</li></a>
+            <a href="#"><li class="on">首页</li></a>
             <a href="{:U('Content/Site/police_news')}"><li>警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
