@@ -1,0 +1,545 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+}
+ul,p{
+    margin: 0;
+    padding: 0;
+}
+a,li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+img{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.main{
+    width: 100%;
+    height: 1514px;
+    margin: 0 auto;
+    position: relative;
+    background-image: url("../images/mainbackground.png");
+    overflow: hidden;
+}
+.move-top{
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/top.png");
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    margin-left: 540px;
+}
+
+/*---head----*/
+.head{
+    width: 1300px;
+    height: 36px;
+    background: #2e2e2f;
+
+}
+.head p{
+    width: 1000px;
+    height: 36px;
+    margin: 0 auto;
+    line-height: 36px;
+    color: #ffffff;
+}
+.head a{
+    color: #ffffff;
+    margin: 0 4px;
+}
+.head a:hover{
+    color: red;
+}
+.head span{
+    margin-left: 20px;
+}
+/*----content----*/
+.content{
+    width: 1000px;
+    height: 1478px;
+    margin: 0 auto;
+    font-size: 16px;
+    background-image: url("../images/content-bg.png");
+    background-position: 0 36px;
+    background-repeat: no-repeat;
+}
+
+
+
+/*---banner-logo----*/
+.banner-logo{
+    width: 100%;
+    height: 122px;
+    background-image: url("../images/banner_logo.png");
+    background-position: 20px 20px;
+    background-repeat: no-repeat;
+}
+.banner-logo a{
+    float: right;
+    margin: 10px 20px 0 0 ;
+}
+.banner-logo img{
+    width: 85px;
+    height: 105px;
+}
+
+/*----top-nav-----*/
+.top-nav{
+    width: 1000px;
+    height: 185px;
+}
+.top-nav img{
+    margin: 20px 27px;
+}
+
+/*--办事大厅--*/
+.work-build{
+    width: 1000px;
+    height: 333px;
+    background: #ffffff;
+}
+.work-build-con{
+    width: 1000px;
+    height: 325px;
+    background-image: url("../images/work-build_bg.png");
+    background-position:0 -220px;
+    padding-top: 1px;
+    position: relative;
+}
+.work-view{
+    width: 694px;
+    height: 95px;
+    margin: 59px 0 0 152px;
+    overflow: hidden;
+    z-index: 1;
+}
+.work-view ul{
+    width: 694px;
+    height: 100%;
+}
+.work-view li{
+    width: 694px;
+    height: 100%;
+    background-size: auto;
+    background-position:0 -70px;
+    display: none;
+}
+.view-list{
+    width:694px;
+    height:95px;
+}
+.view-list .imgOn{
+    display: block;
+}
+.work-area{
+    width: 1000px;
+    height: 110px;
+    overflow: hidden;
+    position: absolute;
+    top: 128px;
+    left: 0;
+}
+.work-area ul{
+    width: 1098px;
+    height: 100px;
+    overflow: hidden;
+    padding-left: 10px;
+}
+.work-area li{
+    width: 96px;
+    height: 100px;
+    float: left;
+    margin-left:26px;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+.work-area a{
+    width: 96px;
+    height: 100px;
+    display: block;
+}
+.work-area .churujing{
+    background-image: url("../images/down-churujing.png");
+    background-position:0 19px;
+}
+.work-area .churujing:hover{
+    background-image: url("../images/stand-churujing.png");
+    background-position:-3px 0;
+}
+.work-area .jindu{
+    background-image: url("../images/down-jindu.png");
+    background-position:1px 18px;
+}
+.work-area .jindu:hover{
+    background-image: url("../images/stand-jindu.png");
+    background-position:-3px -1px;
+}
+.work-area .fazhi{
+    background-image: url("../images/down-fazhi.png");
+    background-position:0 22px;
+}
+.work-area .fazhi:hover{
+    background-image: url("../images/stand-fazhi.png");
+    background-position:-5px 9px;
+}
+.work-area .huzheng{
+    background-image: url("../images/down-huzhen.png");
+    background-position:0 21px;
+}
+.work-area .huzheng:hover{
+    background-image: url("../images/stand-huzheng.png");
+    background-position:-3px 10px;
+}
+.work-area .jianguan{
+    background-image: url("../images/down-jianguan.png");
+    background-position:0 18px;
+}
+.work-area .jianguan:hover{
+    background-image: url("../images/stand-jianguan.png");
+    background-position:-4px 1px;
+}
+.work-area .jiaojing{
+    background-image: url("../images/down-jiaojing.png");
+    background-position:0 17px;
+}
+.work-area .jiaojing:hover{
+    background-image: url("../images/stand-jiaojing.png");
+    background-position:0 -2px;
+}
+.work-area .wangjian{
+    background-image: url("../images/down-wangjian.png");
+    background-position:0 22px;
+}
+.work-area .wangjian:hover{
+    background-image: url("../images/stand-wangjian.png");
+    background-position:0 9px;
+}
+.work-area .zhian{
+    background-image: url("../images/down-zhian.png");
+    background-position:0 19px;
+}
+.work-area .zhian:hover{
+    background-image: url("../images/stand-zhian.png");
+    background-position:-1px 0;
+}
+.work-area .xiaofang{
+    background-image: url("../images/down-xiaofang.png");
+    background-position:0 19px;
+}
+.work-area .xiaofang:hover{
+    background-image: url("../images/stand-xiaofang.png");
+    background-position:-4px 0;
+}
+.work-prev{
+    width: 20px;
+    height: 80px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    background: #838383;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    position: absolute;
+    top: 110px;
+    left: 5px;
+}
+.work-next{
+    width: 20px;
+    height: 80px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    background: #838383;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    position: absolute;
+    top: 110px;
+    right: 5px;
+}
+.work-prev:hover,.work-next:hover{
+    background: #393939;
+    cursor: pointer;
+}
+.build-bottom-logo{
+    width: 1000px;
+    height: 91px;
+    margin-bottom: 10px;
+    background-image: url("../images/build-logo.png");
+}
+
+/*----便民服务----*/
+.fast-service{
+    width: 1000px;
+    height: 277px;
+    background-image: url("../images/service-bg.png");
+    background-repeat: no-repeat;
+    background-position: 1px 0;
+    padding-top: 35px;
+}
+.fast-service a{
+    width: 108px;
+    height: 120px;
+    text-align: center;
+    float: left;
+    position: relative;
+    color: #4690c6;
+    font-weight: bold;
+}
+.fast-service a:hover{
+    color: red;
+}
+.fast-service span{
+    width: 110px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+/*----公告公示---*/
+.bottom-notice{
+    width: 1000px;
+    height: 260px;
+    margin-top: 10px;
+}
+.handle-notice{
+    width: 465px;
+    height: 260px;
+    float: left;
+    background: #eeeeee;
+    margin-right: 3px;
+    overflow: hidden;
+}
+.handle-notice p{
+    width: 90px;
+    margin: 10px;
+    font-weight: bold;
+    border-bottom: 2px #2c8bc7 solid;
+    text-align: center;
+}
+.handle-notice table{
+    width: 100%;
+    font-size: 12px;
+}
+.handle-notice thead{
+    color: #5c9ac5;
+    background: #d6dde0;
+}
+.handle-notice th{
+    padding: 5px 0;
+}
+.handle-notice td{
+    text-align: center;
+    padding: 4px 0;
+}
+.lost-notice{
+    width: 329px;
+    height: 260px;
+    float: left;
+    background: #eeeeee;
+    margin-right: 3px;
+    overflow: hidden;
+}
+.lost-nav{
+    width: 329px;
+    height: 40px;
+}
+.lost-nav p{
+    width: 80px;
+    margin: 10px 5px;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+.lost-nav p:hover{
+    cursor: auto;
+}
+.lost-nav-on{
+    border-bottom: 2px #2c8bc7 solid;
+}
+.lost-nav a{
+    float: right;
+    margin: 10px;
+    color: #2c8bc7;
+    font-weight: bold;
+}
+.lost-nav a:hover{
+    color: red;
+}
+.pickup-content{
+    width: 320px;
+    height: 210px;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.lost-content{
+    width: 320px;
+    height: 210px;
+    font-size: 12px;
+    margin-left: 6px;
+    display: none;
+}
+.pickup-detail{
+    display: inline-block;
+    width: 250px;
+    height: 24px;
+    line-height: 24px;
+}
+.count-notice{
+    width: 200px;
+    height: 260px;
+    float: left;
+    background: #eeeeee;
+}
+.search-box{
+    width: 180px;
+    height: 31px;
+    background: #657eb4;
+    padding: 2px;
+    margin: 6px;
+    position: relative;
+}
+.search-box input{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+.search-key{
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.search-btn{
+    width: 40px;
+    height:30px;
+    background: #657eb4;
+    font-weight: bolder;
+    line-height: 30px;
+    float: right;
+    color: #ffffff;
+}
+.search-btn:hover{
+    cursor: pointer;
+}
+.data-total{
+    width: 200px;
+    height: 185px;
+    margin-top: 9px;
+    border-top: 2px solid #ffffff;
+}
+.data-total span{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+.total-left{
+    width: 107px;
+    height: 185px;
+    float: left;
+    color: #ffffff;
+}
+.total-title{
+    width: 107px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #657eb4;
+}
+.total-num{
+    width: 107px;
+    height: 80px;
+    background: #7ba9bf;
+}
+.regist-num{
+    width: 107px;
+    height: 75px;
+    background: #8ebbce;
+}
+.total-right{
+    width: 93px;
+    height: 185px;
+    float: left;
+    color: #ffffff;
+}
+.handle-num{
+    width: 93px;
+    height: 92px;
+    background: #b4becf;
+}
+.online-num{
+    width: 93px;
+    height: 93px;
+    background: #cee4dc;
+}
+/*--底部信息--*/
+
+.introduce-info{
+    width: 1000px;
+    height: 80px;
+    margin-top: 30px;
+}
+.introduce-info p{
+    width: 1000px;
+    text-align: center;
+    margin: 10px;
+}
+.introduce-info a{
+    text-decoration: none;
+    color: #000000;
+}
+.introduce-info a:hover{
+    color: red;
+}
+/*------------快速导航栏---------------*/
+.fast-nav{
+    width: 119px;
+    height: 166px;
+    background-image: url("../images/fast-nav.png");
+    position: absolute;
+    top: 400px;
+    left: -90px;
+}
+.fast-nav p{
+    width: 20px;
+    float: right;
+    text-align: center;
+    margin: 40px 7px 0 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+.work-build-nav{
+    width: 91px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/work-build-nav.png");
+}
+.work-build-nav p{
+    margin-top: 60px;
+}
+.work-build-nav p:hover{
+    color: black;
+}
+.police-news-nav{
+    width: 63px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/police-news-nav.png");
+}
+.sunshine-nav{
+    width: 35px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/sunshine-nav.png");
+}
