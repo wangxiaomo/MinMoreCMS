@@ -363,7 +363,7 @@
                     <iframe src="http://player.youku.com/embed/XMTU0MDE5NjU5Ng==" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="219" width="242"></iframe>
                 </div>
             </div>
-            <div class="news-mid"><img src="police-news/images/mid-logo-bg.png" alt=""/></div>
+            <div class="news-mid"><img src="{$config_siteurl}statics/themes/L1_Global/images/mid-logo-bg.png" alt=""/></div>
             <div class="news-bottom">
                 <div class="visit-online">
                     <h3>在线访谈</h3>
@@ -386,9 +386,9 @@
                     </div>
                 </div>
                 <div class="fast-link">
-                    <a href="#"><p style="background-image: url('police-news/images/link1.png')">机构职能</p></a>
-                    <a href="#"><p style="background-image: url('police-news/images/link2.png')">领导简介</p></a>
-                    <a href="#"><p style="background-image: url('police-news/images/link3.png')">电子地图</p></a>
+                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link1.png')">机构职能</p></a>
+                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link2.png')">领导简介</p></a>
+                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link3.png')">电子地图</p></a>
                 </div>
             </div>
         </div>
@@ -447,37 +447,37 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style1.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style1.png" alt=""/>
                             <p>2015广安市公安特巡警比武竞赛掠影</p>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style2.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style2.png" alt=""/>
                             <p>110守护平安</p>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style3.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style3.png" alt=""/>
                             <p>秉公执法，为民解困</p>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style4.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style4.png" alt=""/>
                             <p>省市领导关心重视公安工作</p>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style5.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style5.png" alt=""/>
                             <p>反恐防暴实战演练</p>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="police-news/images/police-style6.png" alt=""/>
+                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style6.png" alt=""/>
                             <p>升旗仪式</p>
                         </a>
                     </li>
