@@ -261,7 +261,7 @@ swfobject.addDomLoadEvent(function () {
      */
     public function getUserAvatar($uid, $format = 90, $dbs = false)
     {
-        $config = cache('Config');
+        $config = get_site_config();
         //该参数为true时，表示使用查询数据库的方式，取得完整的头像地址。
         //比如QQ登陆，使用QQ头像，此时可以使用该种方式
         if ($dbs) {

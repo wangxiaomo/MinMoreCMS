@@ -135,7 +135,8 @@ class IndexController extends Base {
                 //信息量+1
                 M("Model")->where(array("modelid" => $this->formid))->setInc("items");
                 //跳转地址
-                $forward = $this->setting['forward']?:cache('Config.siteurl');
+                $config = get_site_config();
+                $forward = $this->setting['forward']?:$config["siteurl"];
                 //发送邮件
                 if ($this->setting['sendmail'] && $this->setting['mails']) {
                     $mails = explode(",", $this->setting['mails']);

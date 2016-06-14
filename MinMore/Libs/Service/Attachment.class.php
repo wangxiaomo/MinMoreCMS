@@ -57,7 +57,8 @@ class Attachment extends \Libs\System\Service {
     public static function connect($name = '', $options = array()) {
         if (empty($options['type'])) {
             //驱动类型
-            $attachment_driver = cache("Config.attachment_driver");
+            $config = get_site_config();
+            $attachment_driver = $config["attachment_driver"];
             if (empty($attachment_driver)) {
                 $attachment_driver = 'Local';
             } else {
@@ -68,6 +69,7 @@ class Attachment extends \Libs\System\Service {
         }
         //附件存储方案
         $class = strpos($type, '\\') ? $type : 'Libs\\Driver\\Attachment\\' . ucwords(strtolower($type));
+        $config = get_site_config();
         if (class_exists($class)) {
             $connect = new $class($options);
         } else {
