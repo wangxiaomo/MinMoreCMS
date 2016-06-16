@@ -96,6 +96,22 @@ class IndexController extends Base {
             $this->assign($category['setting']['extend']);
             $this->assign($info);
         }
+        //wangxiaomo: inject parent info
+        $parentID = $category["parentid"];
+        $parent = $parentID?getCategory($parentID):NULL;
+        $subids = explode(",", $parent["arrchildid"]);
+        array_shift($subids);
+        foreach($subids as $v){
+            $cat = getCategory($v);
+            $children[] = array(
+                "name"  =>  $cat["catname"],
+                "url"   =>  $cat["url"],
+                "id"    =>  $cat["catid"],
+            );
+        }
+        $this->assign("parent", $parent);
+        $this->assign("children", $children);
+
         //把分页分配到模板
         $this->assign(C("VAR_PAGE"), $page);
         //分配变量到模板 
@@ -171,6 +187,23 @@ class IndexController extends Base {
         $this->assign("SEO", $seo);
         //栏目ID
         $this->assign("catid", $catid);
+
+        //wangxiaomo: inject parent info
+        $parentID = $category["parentid"];
+        $parent = $parentID?getCategory($parentID):NULL;
+        $subids = explode(",", $parent["arrchildid"]);
+        array_shift($subids);
+        foreach($subids as $v){
+            $cat = getCategory($v);
+            $children[] = array(
+                "name"  =>  $cat["catname"],
+                "url"   =>  $cat["url"],
+                "id"    =>  $cat["catid"],
+            );
+        }
+        $this->assign("parent", $parent);
+        $this->assign("children", $children);
+
         //分页生成处理
         //分页方式 0不分页 1自动分页 2手动分页
         if ($data['paginationtype'] > 0) {

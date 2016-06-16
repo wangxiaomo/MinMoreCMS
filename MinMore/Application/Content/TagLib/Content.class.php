@@ -49,7 +49,7 @@ class Content {
         $where['status'] = array("EQ", 99);
         $this->where = $where;
         //wangxiaomo: inject role info
-        $where['role'] = get_site_role();
+        $this->where['role'] = get_site_role();
         return $this->where;
     }
 
