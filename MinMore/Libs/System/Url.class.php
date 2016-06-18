@@ -109,7 +109,6 @@ class Url {
 
         //把生成路径中的分页标签替换
         $url['path'] = str_replace('{$page}', $page, $url['path']);
-
         return $url;
     }
 

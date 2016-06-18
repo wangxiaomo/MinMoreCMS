@@ -15,19 +15,20 @@
 <body>
 <!-- main-->
 <div class="main">
-    <!-- content-->
-    <div class="content">
+    <div class="head">
         <template file="Content/Mods/top_header.php" />
         <!--导航条-->
         <ul class="banner-nav">
-            <a href="#"><li class="on">首页</li></a>
+            <a href="/"><li class="on">首页</li></a>
             <a href="{:U('Content/Site/police_news')}"><li>警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="#"><li>警民互动</li></a>
             <a href="#"><li>服务民生</li></a>
         </ul>
-
+    </div>
+    <!-- content-->
+    <div class="content">
         <!-- 警界资讯-->
         <div class="police-news">
             <!-- 公告公示-->
@@ -36,56 +37,62 @@
                 <span class="title-child">公示公告：</span>
                 <marquee behavior="scroll" direction="left" width="600" hight="20" vspace="12" hspace="20" onmouseover=this.stop()
                          scrollamount="4" scrolldelay="5"  onmouseout=this.start() class="title-child">
-                    <a href="#">交通技术监控设备点位清单</a>
-                    <a href="#">部分交通违法行为</a>
-                    <a href="#">交通技术监控设备点位清单</a>
-                    <a href="#">部分交通违法行为</a>
-                    <a href="#">交通技术监控设备点位清单</a>
-                    <a href="#">部分交通违法行为</a>
+                    <content action="lists" catid="2" order="id DESC" num="6">
+                        <volist name="data" id="vo">
+                            <a href="{$vo.url}">{$vo.title}</a>
+                        </volist>
+                    </content>
                 </marquee>
-                <a href="#" class="title-child" style="margin-top: 13px">更多>></a>
+                <a href="{:getCategory(2, 'url')}" class="title-child" style="margin-top: 13px">更多>></a>
             </div>
             <script></script>
             <!-- 资讯内容-->
             <div class="news-content">
+                <position action="position" posid="1" num="6">
                 <div id="myjQuery" class="news-carousel">
                     <div id="myjQueryContent">
-                        <div><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel1.png" title=""></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel2.png" title=""></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel3.png" title=""></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel4.png" title="2016全市公安工作会议"></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel5.png" title="公安机关深化‘一村（格）一警’工作"></a></div>
+                        <volist name="data" id="vo">
+                            <if condition="$i eq 1">
+                                <div><a href="{$vo.data.url}" target="_blank"><img src="{$vo.data.thumb}" title="{$vo.data.title}"></a></div>
+                            <else />
+                                <div class="smask"><a href="{$vo.data.url}" target="_blank"><img src="{$vo.data.thumb}" title="{$vo.data.title}"></a></div>
+                            </if>
+                        </volist>
                     </div>
                     <ul id="myjQueryNav">
-                        <li class="current" style="margin-left: 70px"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel1.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel2.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel3.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel4.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel5.png" alt=""/></li>
+                        <volist name="data" id="vo">
+                            <if condition="$i eq 1">
+                                <li class="current"><img src="{$vo.data.thumb}" alt="{$vo.data.title}"/></li>
+                            <else />
+                                <li><img src="{$vo.data.thumb}" alt="{$vo.data.title}"/></li>
+                            </if>
+                        </volist>
                     </ul>
                 </div>
+                </position>
+                <position action="position" posid="2" num="6">
                 <div class="news-active">
-                    <h3>市公安局开展重温入党誓词主题活动</h3>
-                    <p>
-                        <span>&nbsp;&nbsp;为扎实推进公安机关“两学一做”学习教育，5月6日上午，市公安局组织机关党员民警到邓小平故居开展重温入党誓词活动....</span>
-                        <a href="#">[详细内容]</a>
-                    </p>
+                    <volist name="data" id="vo" offset="0" length="1">
+                        <h3>{$vo.data.title|str_cut=###,16}</h3>
+                        <p style="text-indent:2em;position:relative;height:70px;">
+                            <span>{$vo.data.description|str_cut=###,54}</span>
+                            <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
+                        </p>
+                    </volist>
                     <div class="news-divline"></div>
                     <ul>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
+                        <volist name="data" id="vo" offset="1" length="5">
+                            <li><a href="{$vo.data.url}">·{$vo.data.title|str_cut=###,20}</a></li>
+                        </volist>
                     </ul>
-                    <a href="#" class="news-more">更多>></a>
                 </div>
+                </position>
             </div>
         </div>
         <script>
             jQuery(function($){
                 var index = 0;
-                var maximg = 5;
+                var maximg = 6;
                 //滑动导航改变内容
                 $("#myjQueryNav li").hover(function(){
                     if(MyTime){
@@ -403,42 +410,7 @@
             </div>
         </div>
         <!-- 底部链接-->
-        <div class="bottom-content">
-            <div class="bottom-branch">
-                <p>县分局子站 >>></p>
-                <a href="#">广安区</a
-                        ><a href="#">前锋区</a
-                    ><a href="#">华蓥市</a
-                    ><a href="#">邻水县</a
-                    ><a href="#">岳池县</a
-                    ><a href="#">武胜县</a>
-            </div>
-            <div class="friendly-link">
-                <p>友情链接：</p>
-                <ul>
-                    <li>全国公安网</li>
-                    <li>四川省公安网</li>
-                    <li>省部门网站</li>
-                    <li style="background: #f0f0f0">相关单位</li>
-                    <li>广安旅游网</li>
-                </ul>
-            </div>
-            <div class="link-content">
-                <a href="#">人民公安报</a>
-                <a href="#">中国普法网</a>
-                <a href="#">365安全防范网</a>
-                <a href="#">广安市保安协会</a>
-                <a href="#">广安视窗</a>
-                <a href="#">广安社区服务网</a>
-            </div>
-            <div class="introduce-info">
-                <p>
-                    丨 <a href="#">首页</a> 丨<a href="#">关于我们</a> 丨<a href="#">网站声明</a> 丨<a href="#">联系我们</a> 丨
-                </p>
-                <p>Copyright 2014 Guangan Police Security Bureau, All rights Reserve</p>
-                <p>版权所有：广安市公安局  &nbsp;蜀ICP备12001441号-1 &nbsp;技术支持：四川速集实业集团有限公司 &nbsp;028-6643654</p>
-            </div>
-        </div>
+        <template file="Content/Mods/footer.php" />
     </div>
     <template file="Content/Mods/QR.php"/>
     <template file="Content/Mods/quick_nav.php"/>

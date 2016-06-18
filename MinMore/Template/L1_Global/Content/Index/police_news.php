@@ -21,7 +21,7 @@
         <!--导航条-->
         <ul class="banner-nav">
             <a href="/"><li>首页</li></a>
-            <a href="#"><li style="background: #e5840d;padding: 0 2px">警务资讯</li></a>
+            <a href="{:U('Content/Site/police_news')}"><li class="on">警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="#"><li>警民互动</li></a>
@@ -34,44 +34,51 @@
         <!-- 资讯概况-->
         <div class="survey-news">
             <div class="survey-content">
+                <position action="position" posid="1" num="6">
                 <div id="myjQuery" class="news-carousel">
                     <div id="myjQueryContent">
-                        <div><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel1.png" title="公安大会"></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel2.png" title="赃物发还"></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel3.png" title="'两学一做'工作回忆"></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel4.png" title="2016全市公安工作会议"></a></div>
-                        <div class="smask"><a href="#" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel5.png" title="公安机关深化‘一村（格）一警’工作"></a></div>
+                        <volist name="data" id="vo">
+                            <if condition="$i eq 1">
+                                <div><a href="{$vo.data.url}" target="_blank"><img src="{$vo.data.thumb}" title="{$vo.data.title}"></a></div>
+                            <else />
+                                <div class="smask"><a href="{$vo.data.url}" target="_blank"><img src="{$vo.data.thumb}" title="{$vo.data.title}"></a></div>
+                            </if>
+                        </volist>
                     </div>
                     <ul id="myjQueryNav">
-                        <li class="current" style="margin-left: 70px"><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel1.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel2.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel3.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel4.png" alt=""/></li>
-                        <li><img src="{$config_siteurl}statics/themes/L1_Global/images/news-caurousel5.png" alt=""/></li>
+                        <volist name="data" id="vo">
+                            <if condition="$i eq 1">
+                                <li class="current"><img src="{$vo.data.thumb}" alt="{$vo.data.title}"/></li>
+                            <else />
+                                <li><img src="{$vo.data.thumb}" alt="{$vo.data.title}"/></li>
+                            </if>
+                        </volist>
                     </ul>
                 </div>
+                </position>
+                <position action="position" posid="2" num="6">
                 <div class="news-active">
-                    <h3>市公安局开展重温入党誓词主题活动</h3>
-                    <p>
-                        <span>&nbsp;&nbsp;为扎实推进公安机关“两学一做”学习教育，5月6日上午，市公安局组织机关党员民警到邓小平故居开展重温入党誓词活动....</span>
-                        <a href="#">[详细内容]</a>
-                    </p>
+                    <volist name="data" id="vo" offset="0" length="1">
+                        <h3>{$vo.data.title|str_cut=###,16}</h3>
+                        <p style="text-indent:2em;position:relative;height:70px;">
+                            <span>{$vo.data.description|str_cut=###,54}</span>
+                            <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
+                        </p>
+                    </volist>
                     <div class="news-divline"></div>
                     <ul>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
-                        <li><a href="#">·市公安局在车管中心举行升国旗仪式</a></li>
+                        <volist name="data" id="vo" offset="1" length="5">
+                            <li><a href="{$vo.data.url}">·{$vo.data.title|str_cut=###,20}</a></li>
+                        </volist>
                     </ul>
-                    <a href="#" class="news-more">更多>></a>
                 </div>
+                </position>
             </div>
         </div>
         <script>
             jQuery(function($){
                 var index = 0;
-                var maximg = 5;
+                var maximg = 6;
                 //滑动导航改变内容
                 $("#myjQueryNav li").hover(function(){
                     if(MyTime){
@@ -128,262 +135,114 @@
         <div class="police-news">
             <div class="news-top">
                 <div class="notice-news">
-                    <h3>公示公告</h3>
-                    <a href="#" class="more-news">更多>></a>
+                    <h3>{:getCategory(2, 'catname')}</h3>
+                    <a href="{:getCategory(2, 'url')}" class="more-news">更多>></a>
                     <ul type="square">
-                        <li>
-                            <a href="#" class="notice-news-con"><span>广安交警夜查“酒驾”</span></a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="notice-news-con">广安交警夜查“酒驾”</a>
-                            <span class="notice-news-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="2" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="notice-news-con"><span>{$vo.title|str_cut=###,30}</span></a>
+                                    <span class="notice-news-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="police-active">
-                    <h3>警务动态</h3>
-                    <a href="#" class="more-news">更多>></a>
+                    <h3>{:getCategory(5, 'catname')}</h3>
+                    <a href="{:getCategory(5, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-active-con">前锋区公安局分局圆满完成2016年辅警“轮换”</a>
-                            <span class="police-active-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="5" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="police-active-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="police-active-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="police-case">
-                    <h3>案侦快讯</h3>
-                    <a href="#" class="more-news">更多>></a>
+                    <h3>{:getCategory(9, 'catname')}</h3>
+                    <a href="{:getCategory(9, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-case-con">广安交警夜查“酒驾”</a>
-                            <span class="police-case-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="9" order="id DESC" num="10">
+                            <volist>
+                                <li>
+                                    <a href="{$vo.url}" class="police-case-con">{$vo.title|str_cut=###,18}</a>
+                                    <span class="police-case-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="public-collect">
-                    <h3>民意征集</h3>
-                    <a href="#" class="more-news">更多>></a>
+                    <h3>{:getCategory(3, 'catname')}</h3>
+                    <a href="{:getCategory(3, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="public-collect-con">副市长、公安局局长邓文国到广安区白马进行视察</a>
-                            <span class="public-collect-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="10" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="public-collect-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="public-collect-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="police-report">
-                    <h3>警方报道</h3>
-                    <a href="#" class="more-news">更多>></a>
+                    <h3>{:getCategory(4, 'catname')}</h3>
+                    <a href="{:getCategory(4, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="police-report-con">岳池县局破获一起妨害公务案</a>
-                            <span class="police-report-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="4" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="police-video">
-                    <h3>警方视频</h3>
-                    <a href="#" class="more-news">更多>></a>
-                    <iframe src="http://player.youku.com/embed/XMTU0MDE5NjU5Ng==" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="219" width="242"></iframe>
+                    <h3>{:getCategory(7, 'catname')}</h3>
+                    <a href="{:getCategory(7, 'url')}" class="more-news">更多>></a>
+                    <content action="lists" catid="7" order="id DESC" num="1">
+                        <volist name="data" id="vo">
+                            <iframe src="{$vo.description}" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="219" width="242"></iframe>
+                        </volist>
+                    </content>
                 </div>
             </div>
             <div class="news-mid"><img src="{$config_siteurl}statics/themes/L1_Global/images/mid-logo-bg.png" alt=""/></div>
             <div class="news-bottom">
-                <div class="visit-online">
-                    <h3>在线访谈</h3>
-                    <a href="#" class="more-news">更多>></a>
-                    <div class="visit-content">
-                        <p><b>主题：</b><span>出入有境，服务无境——推广网上便民服务出入境民警在线访谈</span></p>
-                        <p><b>日期：</b><span>2016-6-2 12:00:00</span></p>
-                        <p><b>访谈嘉宾：</b><span>广安市公安局出入境管理处</span></p>
-                        <p><b>访谈内容：</b><span>本栏目将于七月中旬组织开展一期出入境业务在线访谈，目前正在紧张筹备中，届时请网友踊跃参与。</span></p>
-                    </div>
+                <div class="police-report police-report-small">
+                    <h3>{:getCategory(23, 'catname')}</h3>
+                    <a href="{:getCategory(23, 'url')}" class="more-news">更多>></a>
+                    <ul  type="square">
+                        <content action="lists" catid="23" order="id DESC" num="8">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
+                    </ul>
                 </div>
-                <div class="investigate-online">
-                    <h3>在线调查</h3>
-                    <a href="#" class="more-news">更多>></a>
-                    <div class="investigate-content">
-                        <p><b>主题：</b><span>养老服务规范服务工作征集意见民警在线调查</span></p>
-                        <p><b>日期：</b><span>2016-6-2 12:00:00</span></p>
-                        <p><b>访谈嘉宾：</b><span>广安市公安局出入境管理处</span></p>
-                        <p><b>访谈内容：</b><span>本栏目将于七月中旬组织开展一期出入境业务在线访谈，目前正在紧张筹备中，届时请网友踊跃参与。</span></p>
-                    </div>
+                <div class="police-report police-report-small">
+                    <h3>{:getCategory(24, 'catname')}</h3>
+                    <a href="{:getCategory(24, 'url')}" class="more-news">更多>></a>
+                    <ul  type="square">
+                        <content action="lists" catid="24" order="id DESC" num="8">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
+                    </ul>
                 </div>
                 <div class="fast-link">
                     <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link1.png')">机构职能</p></a>
@@ -442,45 +301,19 @@
        <!-- 警营风采-->
         <div class="style-bg">
             <div class="police-style">
-                <h3>警营风采</h3>
-                <a href="#" class="more-news">更多>></a>
+                <h3>{:getCategory(6, 'catname')}</h3>
+                <a href="{:getCategory(6, 'url')}" class="more-news">更多>></a>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style1.png" alt=""/>
-                            <p>2015广安市公安特巡警比武竞赛掠影</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style2.png" alt=""/>
-                            <p>110守护平安</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style3.png" alt=""/>
-                            <p>秉公执法，为民解困</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style4.png" alt=""/>
-                            <p>省市领导关心重视公安工作</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style5.png" alt=""/>
-                            <p>反恐防暴实战演练</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="{$config_siteurl}statics/themes/L1_Global/images/police-style6.png" alt=""/>
-                            <p>升旗仪式</p>
-                        </a>
-                    </li>
+                    <content action="lists" catid="6" order="id DESC" num="10">
+                        <volist name="data" id="vo">
+                            <li>
+                                <a href="{$vo.url}">
+                                    <img src="{$vo.thumb}" alt="{$vo.title}"/>
+                                    <p>{$vo.title}</p>
+                                </a>
+                            </li>
+                        </volist>
+                    </content>
                 </ul>
             </div>
         </div>
@@ -515,42 +348,7 @@
             });
         </script>
         <!-- footer-->
-        <div class="bottom-content">
-            <div class="bottom-branch">
-                <p>县分局子站 >>></p>
-                <a href="#">广安区</a
-                    ><a href="#">前锋区</a
-                    ><a href="#">华蓥市</a
-                    ><a href="#">邻水县</a
-                    ><a href="#">岳池县</a
-                    ><a href="#">武胜县</a>
-            </div>
-            <div class="friendly-link">
-                <p>友情链接：</p>
-                <ul>
-                    <li>全国公安网</li>
-                    <li>四川省公安网</li>
-                    <li>省部门网站</li>
-                    <li style="background: #f0f0f0">相关单位</li>
-                    <li>广安旅游网</li>
-                </ul>
-            </div>
-            <div class="link-content">
-                <a href="#">人民公安报</a>
-                <a href="#">中国普法网</a>
-                <a href="#">365安全防范网</a>
-                <a href="#">广安市保安协会</a>
-                <a href="#">广安视窗</a>
-                <a href="#">广安社区服务网</a>
-            </div>
-            <div class="introduce-info">
-                <p>
-                    丨 <a href="#">首页</a> 丨<a href="#">关于我们</a> 丨<a href="#">网站声明</a> 丨<a href="#">联系我们</a> 丨
-                </p>
-                <p>Copyright 2014 Guangan Police Security Bureau, All rights Reserve</p>
-                <p>版权所有：广安市公安局  &nbsp;蜀ICP备12001441号-1 &nbsp;技术支持：四川速集实业集团有限公司 &nbsp;028-6643654</p>
-            </div>
-        </div>
+        <template file="Content/Mods/footer.php" />
     </div>
     <template file="Content/Mods/QR.php" />
     <template file="Content/Mods/quick_nav.php" />

@@ -27,8 +27,15 @@ img{
     background-image: url("../images/mainbackground.png");
     overflow: hidden;
 }
+.head{
+    width: 1000px;
+    height: 240px;
+    margin: 0 auto;
+    background-image: url("../images/top-logobg.png");
+    background-position: 0 26px;
+}
 .content{
-    width: 1002px;
+    width: 1000px;
     height: 1773px;
     margin: 0 auto;
     font-size: 16px;
@@ -243,6 +250,7 @@ img{
 }
 #myjQueryNav {
     display: block;
+    text-align:center;
     overflow: hidden;
     width: 560px;
     height: 40px;
@@ -253,8 +261,7 @@ img{
     background: rgba(0,0,0,0.5);
 }
 #myjQueryNav li {
-    display: block;
-    float: left;
+    display: inline;
     width: 80px;
     height: 40px;
     cursor: pointer;
@@ -319,8 +326,8 @@ img{
 }
 .news-active li{
     width: 393px;
-    margin: 10px 0 0 0;
     list-style: none;
+    padding:6px;
 }
 .news-active li:hover{
     background: #b3f8ff;
@@ -534,6 +541,7 @@ img{
 .feature-service{
     width: 1002px;
     height: 380px;
+    margin-bottom: 10px;
     background: #fefdfd;
     background-image: url("../images/tesefuwu-bg.png");
 }
