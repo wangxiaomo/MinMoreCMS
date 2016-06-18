@@ -110,103 +110,31 @@
             </script>
             <div class="news-content">
                 <div class="case-view">
-                    <h4>以案说法</h4>
-                    <a href="#" class="more-news">更多>></a>
+                    <h4>{:getCategory(23,'catname')}</h4>
+                    <a href="{:getCategory(23,'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="23" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="case-view-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="case-view-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="police-explain">
-                    <h4>民警说事</h4>
-                    <a href="#" class="more-news">更多>></a>
+                    <h4>{:getCategory(24,'catname')}</h4>
+                    <a href="{:getCategory(24,'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
-                        <li>
-                            <a href="#" class="case-view-con">岳池县局破获一起妨害公务案</a>
-                            <span class="case-view-time">05-10</span>
-                        </li>
+                        <content action="lists" catid="24" order="id DESC" num="10">
+                            <volist name="data" id="vo">
+                                <li>
+                                    <a href="{$vo.url}" class="case-view-con">{$vo.title|str_cut=###,30}</a>
+                                    <span class="case-view-time">{$vo.updatetime|date='m-d',###}</span>
+                                </li>
+                            </volist>
+                        </content>
                     </ul>
                 </div>
                 <div class="fast-link">
