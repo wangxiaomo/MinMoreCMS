@@ -8,5 +8,6 @@ composer.phar
 *.swp
 \#runtime
 phpmyadmin
+assets
 d
 statics/vendor
