@@ -8,6 +8,7 @@ composer.phar
 *.swp
 \#runtime
 phpmyadmin
+d
 statics/vendor
 statics/themes
 MinMore/Template
