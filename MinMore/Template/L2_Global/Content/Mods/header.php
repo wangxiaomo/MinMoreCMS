@@ -1,19 +1,24 @@
-<div class="top-nav">
-    <img src="{$config_siteurl}statics/themes/L1_Global/images/user-login.png" alt="登录" class="top-nav-img"/>
-    <div class="user-action">
-        <a href="#" class="disabled-link">用户登录</a>
-        <a href="#" class="disabled-link">注册</a>
-        <a href="#" id="addBookmark">收藏</a>
-        <a href="{$config_siteurl}">返回首页</a>
+<div class="header_box">
+	<div class="header">
+    	<div class="top">
+        	<span class="top_left"><a class="disabled-link" href="#">登陆</a><a class="disabled-link" href="#">注册</a><a id="addBookmarkaddBookmark" href="#">收藏</a><a href="{$config_siteurl}">设为首页</a></span>
+            <span class="top_center"><span id="topWeather"></span><span id="topDateTime" style="margin-left:60px;"></span></span>
+            <span class="top_search"><input type="text" class="search-box" placeholder="请输入内容" /><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/search.png" class="search-btn" /></span>
+        </div>
     </div>
-    <div class="nav-weather">
-        <span id="topWeather"></span>
-        <span id="topDateTime"></span>
-    </div>
-    <div class="nav-search">
-        <input type="text" value="请输入关键字" class="search-box" onfocus="if(value=='请输入关键字'){value=''}" onblur="if(value==''){value='请输入关键字'}"/>
-        <input type="button" value="搜 索" class="search-btn"/>
-        <img src="{$config_siteurl}statics/themes/L1_Global/images/search_logo.png" alt="搜索" class="search-logo"/>
+</div>
+<div class="nav_box">
+    <div class="nav">
+        <a href="#" class="nav_select">网站首页</a>
+        <a href="#">公安简介</a>
+        <a href="#">公安动态</a>
+        <a href="#">宾城警讯</a>
+        <a href="#">办事大厅</a>
+        <a href="#">专题栏目</a>
+        <a href="#">阳光警务</a>
+        <a href="#">媒体报道</a>
+        <a href="#">政策法规</a>
+        <a href="#">警营风采</a>
     </div>
 </div>
 <script src="http://weather.gtimg.cn/city/01012707.js?ref=qqnews"></script>
