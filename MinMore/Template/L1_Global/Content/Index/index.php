@@ -143,9 +143,9 @@
         <ul class="mail-connect">
             <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
             <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_3.png" alt="警营风采"/></a></li>
-            <li style="margin-right: 7px"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_4.png" alt="专题聚焦"/></a></li>
-            <li style="margin:10px 0"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_5.png" alt="警方视频"/></a></li>
+            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="我要咨询"/></a></li>
+            <li style="margin-right: 7px"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="我要投诉"/></a></li>
+            <li style="margin:10px 0"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
         </ul>
         <!-- 办事大厅-->
         <div class="work-build">
