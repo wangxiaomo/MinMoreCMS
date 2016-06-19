@@ -25,15 +25,15 @@ img{
     height: 2041px;
     margin: 0 auto;
     position: relative;
-    background-image: url("../images/mainbackground.png");
+    background: url("../images/mainbackground.png") fixed;
     overflow: hidden;
 }
 .head{
     width: 1000px;
     height: 240px;
     margin: 0 auto;
-    background-image: url("../images/top-logobg.png");
-    background-position: 0 26px;
+    background: url("../images/top-logobg.png") no-repeat;
+    background-position: 0 32px;
 }
 .content{
     width: 1000px;
@@ -72,8 +72,7 @@ img{
 }
 .nav-weather{
     width: 375px;
-    height: 29px;
-    padding-top: 9px;
+    height: 38px;line-height:38px;vertical-align:middle;
     color: #fff;
 }
 .nav-search{
@@ -271,7 +270,7 @@ img{
     position: relative;
 }
 .news-active h3{
-    width: 370px;
+    width: 100%;
     text-align: center;
     color: red;
     margin: 15px 0;
@@ -282,11 +281,15 @@ img{
     margin: 0;
     padding: 0 10px;
 }
+.news-active span {
+    line-height:20px;
+}
 .news-active .news-divline{
     width: 400px;
     height: 1px;
     border-top: 1px dashed black;
     margin: 0 auto;
+    margin-bottom:10px;
 }
 .news-active a{
     text-decoration: none;
@@ -298,8 +301,9 @@ img{
 }
 .news-active li{
     width: 393px;
-    margin: 10px 0 0 0;
     list-style: none;
+    padding:5px;
+    height:20px;
 }
 .news-active li:hover{
     background: #b3f8ff;
