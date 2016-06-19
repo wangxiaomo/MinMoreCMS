@@ -143,32 +143,26 @@ window.onload = function (){
         </div>
         <div class="dt_cont">
                 <div class="cont_part float_left">
-                    <div class="part_title"><p>政策法规 </p><a href="#">更多</a></div>
+                    <div class="part_title"><p>{:getCategory(23,'catname')} </p><a href="{:getCategory(23,'url')}">更多</a></div>
                     <div class="part_list">
                         <ul>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
+                            <content action="lists" catid="23" order="id DESC" num="8">
+                                <volist name="data" id="vo">
+                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title}</a></li>
+                                </volist>
+                            </content>
                         </ul>
                     </div>
                 </div>
                 <div class="cont_part float_right">
-                    <div class="part_title"><p>警营风采 </p><a href="#">更多</a></div>
+                    <div class="part_title"><p>{:getCategory(6,'catname')} </p><a href="{:getCategory(6,'url')}">更多</a></div>
                     <div class="part_list">
                         <ul>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="#">省内煤市要闻回顾省内煤市要闻回顾</a></li>
+                            <content action="lists" catid="6" order="id DESC" num="8">
+                                <volist name="data" id="vo">
+                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title}</a></li>
+                                </volist>
+                            </content>
                         </ul>
                     </div>
                 </div>   

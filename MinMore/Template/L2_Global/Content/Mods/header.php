@@ -9,16 +9,16 @@
 </div>
 <div class="nav_box">
     <div class="nav">
-        <a href="#" class="nav_select">网站首页</a>
+        <a href="{$config_siteurl}" class="nav_select">网站首页</a>
         <a href="#">公安简介</a>
-        <a href="#">公安动态</a>
-        <a href="#">宾城警讯</a>
-        <a href="#">办事大厅</a>
+        <a href="{:getCategory(2,'url')}">{:getCategory(2,'catname')}</a>
+        <a href="{:getCategory(4,'url')}">{:getCategory(4,'catname')}</a>
+        <a href="{:U('Content/Site/work_building@' . C("GLOBAL_SITE_DOMAIN"))}">办事大厅</a>
         <a href="#">专题栏目</a>
-        <a href="#">阳光警务</a>
-        <a href="#">媒体报道</a>
-        <a href="#">政策法规</a>
-        <a href="#">警营风采</a>
+        <a href="{:U('Content/Site/sunshine_police@' . C("GLOBAL_SITE_DOMAIN"))}">阳光警务</a>
+        <a href="{:getCategory(4,'url')}">{:getCategory(4,'catname')}</a>
+        <a href="{:getCategory(23,'url')}">{:getCategory(23,'catname')}</a>
+        <a href="{:getCategory(6,'url')}">{:getCategory(6,'catname')}</a>
     </div>
 </div>
 <script src="http://weather.gtimg.cn/city/01012707.js?ref=qqnews"></script>

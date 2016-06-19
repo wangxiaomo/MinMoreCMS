@@ -9,6 +9,7 @@
 // +----------------------------------------------------------------------
 
 return array(
+    "GLOBAL_SITE_DOMAIN" => "l1.minmore.com",
     "SITE_ROLE_PARENT" => 2,
     "MINMORE_CACHE_PREFIX"  =>  "cache:minmore:",
 );
