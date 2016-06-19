@@ -7,6 +7,11 @@
 // +----------------------------------------------------------------------
 // | Author: 太原小众软件科技有限公司 <dev@minmore.com>
 // +----------------------------------------------------------------------
+
+if($_SERVER["HTTP_HOST"] == "ga.minmore.com"){
+    die(header("Location:http://l1.minmore.com"));
+}
+
 // 检测PHP环境
 if (version_compare(PHP_VERSION, '5.3.0', '<')) {
     header("Content-type: text/html; charset=utf-8");
