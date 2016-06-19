@@ -51,7 +51,7 @@ return array(
     /* 分页配置 */
     "PAGE_LISTROWS" => 20, //分页数
     //默认分页模板
-    "PAGE_TEMPLATE" => '<span class="all">共有{recordcount}条信息</span><span class="pageindex">{pageindex}/{pagecount}</span>{first}{prev}{liststart}{list}{listend}{next}{last}',
+"PAGE_TEMPLATE" => '{first}{prev}{liststart}{list}{listend}{next}{last}<span class="all">共有<b>{recordcount}</b>条信息</span>&nbsp;&nbsp;<span class="pageindex">第<b>{pageindex}</b>页/共<b>{pagecount}</b>页</span>',
     "VAR_PAGE" => 'page', //当前分页变量 page=2 page=3
     'DEFAULT_MODULE' => 'Content', // 默认模块
     //函数加载

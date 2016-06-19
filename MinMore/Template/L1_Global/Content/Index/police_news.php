@@ -20,12 +20,12 @@
         <template file="Content/Mods/top_header.php" />
         <!--导航条-->
         <ul class="banner-nav">
-            <a href="/"><li>首页</li></a>
+            <a href="{$config_siteurl}"><li>首页</li></a>
             <a href="{:U('Content/Site/police_news')}"><li class="on">警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="#"><li>警民互动</li></a>
-            <a href="#"><li>服务民生</li></a>
+            <a href="{:getCategory(16,'url')}"><li>服务民生</li></a>
         </ul>
     </div>
 
@@ -36,6 +36,7 @@
             <div class="survey-content">
                 <position action="position" posid="1" num="6">
                 <div id="myjQuery" class="news-carousel">
+                    <position action="position" posid="1" num="6">
                     <div id="myjQueryContent">
                         <volist name="data" id="vo">
                             <if condition="$i eq 1">
@@ -54,6 +55,7 @@
                             </if>
                         </volist>
                     </ul>
+                    </position>
                 </div>
                 </position>
                 <position action="position" posid="2" num="6">
@@ -180,7 +182,7 @@
                     <h3>{:getCategory(3, 'catname')}</h3>
                     <a href="{:getCategory(3, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="10" order="id DESC" num="10">
+                        <content action="lists" catid="3" order="id DESC" num="10">
                             <volist name="data" id="vo">
                                 <li>
                                     <a href="{$vo.url}" class="public-collect-con">{$vo.title|str_cut=###,30}</a>
@@ -347,7 +349,6 @@
                 styleCaurousel()
             });
         </script>
-        <!-- footer-->
         <template file="Content/Mods/footer.php" />
     </div>
     <template file="Content/Mods/QR.php" />

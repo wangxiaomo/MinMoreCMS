@@ -24,7 +24,7 @@
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="#"><li>警民互动</li></a>
-            <a href="#"><li>服务民生</li></a>
+            <a href="{:getCategory(16,'url')}"><li>服务民生</li></a>
         </ul>
     </div>
     <!-- content-->
@@ -50,6 +50,7 @@
             <div class="news-content">
                 <position action="position" posid="1" num="6">
                 <div id="myjQuery" class="news-carousel">
+                    <position action="position" posid="1" num="6">
                     <div id="myjQueryContent">
                         <volist name="data" id="vo">
                             <if condition="$i eq 1">
@@ -68,6 +69,7 @@
                             </if>
                         </volist>
                     </ul>
+                    </position>
                 </div>
                 </position>
                 <position action="position" posid="2" num="6">
@@ -409,7 +411,6 @@
                 <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
             </div>
         </div>
-        <!-- 底部链接-->
         <template file="Content/Mods/footer.php" />
     </div>
     <template file="Content/Mods/QR.php"/>

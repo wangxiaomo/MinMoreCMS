@@ -15,7 +15,7 @@
   <div class="home_info" id="home_devteam">
     <ul>
       <li> <em>版权所有</em> <span><a href="#" target="_blank">四川广安公安局与四川速集实业集团有限公司联合开发</a></span> </li>
-      <li> <em>技术负责人</em> <span>林之栋</span> </li>
+      <li> <em>开发负责人</em> <span>林之栋</span> </li>
       <li> <em>联系方式</em> <span>13981918328 971596713@qq.com</span> </li>
     </ul>
   </div>

@@ -967,8 +967,6 @@ function get_theme_prefix_by_role_level($level){
 }
 
 function get_theme_list_by_role_level($level) {
-    $theme_list_cache = cache(C("MINMORE_CACHE_PREFIX") . "theme_list_${level}");
-    if($theme_list_cache) return $theme_list_cache;
     $prefix = get_theme_prefix_by_role_level($level);
     $files = glob(TEMPLATE_PATH . '*');
     foreach($files as $v) {
@@ -977,6 +975,5 @@ function get_theme_list_by_role_level($level) {
         if($prefix and strpos($basename, $prefix) !== 0) continue;
         $themes[] = $basename;
     }
-    cache(C("MINMORE_CACHE_PREFIX") . "theme_list_${level}", $themes);
     return $themes;
 }
