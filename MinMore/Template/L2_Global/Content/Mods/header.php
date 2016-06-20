@@ -9,16 +9,16 @@
 </div>
 <div class="nav_box">
     <div class="nav">
-        <a href="{$config_siteurl}" class="nav_select">网站首页</a>
+        <a href="{$config_siteurl}" class="{$current_index_page?'nav_select':''}">网站首页</a>
         <a href="#">公安简介</a>
-        <a href="{:getCategory(2,'url')}">{:getCategory(2,'catname')}</a>
-        <a href="{:getCategory(4,'url')}">{:getCategory(4,'catname')}</a>
+        <a href="{:getCategory(2,'url')}" class="{$catid==2?'nav_select':''}">{:getCategory(2,'catname')}</a>
+        <a href="{:getCategory(5,'url')}" class="{$catid==5?'nav_select':''}">{:getCategory(5,'catname')}</a>
         <a href="{:U('Content/Site/work_building@' . C("GLOBAL_SITE_DOMAIN"))}">办事大厅</a>
         <a href="#">专题栏目</a>
         <a href="{:U('Content/Site/sunshine_police@' . C("GLOBAL_SITE_DOMAIN"))}">阳光警务</a>
-        <a href="{:getCategory(4,'url')}">{:getCategory(4,'catname')}</a>
-        <a href="{:getCategory(23,'url')}">{:getCategory(23,'catname')}</a>
-        <a href="{:getCategory(6,'url')}">{:getCategory(6,'catname')}</a>
+        <a href="{:getCategory(4,'url')}" class="{$catid==4?'nav_select':''}">{:getCategory(4,'catname')}</a>
+        <a href="{:getCategory(23,'url')}" class="{$catid==23?'nav_select':''}">{:getCategory(23,'catname')}</a>
+        <a href="{:getCategory(6,'url')}" class="{$catid==6?'nav_select':''}">{:getCategory(6,'catname')}</a>
     </div>
 </div>
 <script src="http://weather.gtimg.cn/city/01012707.js?ref=qqnews"></script>

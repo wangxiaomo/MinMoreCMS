@@ -26,6 +26,7 @@ class IndexController extends Base {
         //生成路径
         $urls = $this->Url->index($page);
         $GLOBALS['URLRULE'] = $urls['page'];
+        $this->assign("current_index_page", true);
         //seo分配到模板
         $this->assign("SEO", $SEO);
         //把分页分配到模板
