@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>{$title|default='广安公安局'}</title>
     <link rel="stylesheet" href="{$config_siteurl}statics/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{$model_extresdir}css/mailbox.css"/>
     <script src="{$model_extresdir}js/jquery.min.js"></script>
@@ -12,91 +12,20 @@
 <div class="main">
     <!-- content-->
     <div class="content">
-        <!-- 头部导航-->
-        <div class="top-nav">
-            <img src="{$model_extresdir}images/user-login.png" alt="登录" class="top-nav-img"/>
-            <div class="user-action">
-                <a href="#">用户登录</a>
-                <a href="#">注册</a>
-                <a href="#">收藏</a>
-                <a href="#">返回首页</a>
-            </div>
-            <div class="nav-weather">
-                <span>天气: <img src="{$model_extresdir}images/nav-weather.png" alt="天气"/>19℃~24℃</span>
-                <span>日期: 2016年 5月 18日 星期三</span>
-            </div>
-            <div class="nav-search">
-                <input type="text" value="请输入关键字" class="search-box" onfocus="if(value=='请输入关键字'){value=''}" onblur="if(value==''){value='请输入关键字'}"/>
-                <input type="button" value="搜 索" class="search-btn"/>
-                <img src="{$model_extresdir}images/search_logo.png" alt="搜索" class="search-logo"/>
-            </div>
-        </div>
-
-        <!-- logo-->
-        <div class="top-logo">
-            <div class="public-logo">
-                <img src="{$model_extresdir}images/banner-logo_2.png" alt=""/>
-            </div>
-            <div class="view-window">
-                <div class="banner">
-                    <ul class="imgList">
-                        <li class="imgOn"><img src="{$model_extresdir}images/view-window1.png" width="350px" height="165px" alt=""></li>
-                        <li><img src="{$model_extresdir}images/view-window2.png" width="350px" height="165px" alt=""></li>
-                        <li><img src="{$model_extresdir}images/view-window3.png" width="350px" height="165px" alt=""></li>
-                        <li><img src="{$model_extresdir}images/view-window4.png" width="350px" height="165px" alt=""></li>
-                        <li><img src="{$model_extresdir}images/view-window5.png" width="350px" height="165px" alt=""></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="banner-sign">
-                <img src="{$model_extresdir}images/banner-sign1.png" alt="" style="margin: 40px 0 0 60px;display: block"/>
-                <img src="{$model_extresdir}images/banner-sign2.png" alt="" style="margin: 15px 0 0 110px;display: none;position: absolute;top: 65px"/>
-            </div>
-        </div>
-        <script>
-            $(".public-logo img").animate({
-                "opacity":"1"
-            },3000);
-            var curIndex = 0;
-            var signIndex = 0;
-            var autoChange = setInterval(function(){
-                if(curIndex < $(".imgList li").length-1){
-                    curIndex ++;
-                }else{
-                    curIndex = 0;
-                }
-                changeTo(curIndex);
-            },5000);
-
-            function changeTo(num){
-                $(".imgList").find("li").removeClass("imgOn").hide().eq(num).fadeIn(3000).addClass("imgOn");
-            }
-            setInterval(function(){
-                if(signIndex == 0){
-                    $(".banner-sign img:first").fadeOut(2500);
-                    $(".banner-sign img:last").fadeIn(2500);
-                    signIndex = 1
-                }else{
-                    $(".banner-sign img:last").fadeOut(2500);
-                    $(".banner-sign img:first").fadeIn(2500);
-                    signIndex = 0
-                }
-            },5000);
-        </script>
-
+        <template file="Content/Mods/top_header.php" />
         <!--导航条-->
         <ul class="banner-nav">
-            <li>首页</li>
-            <li>警务资讯</li>
-            <li>办事大厅</li>
-            <li>阳光警务</li>
-            <li class="on">警民互动</li>
-            <li>服务民生</li>
+            <a href="/"><li>首页</li></a>
+            <a href="{:U('Content/Site/police_news')}"><li>警务资讯</li></a>
+            <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
+            <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
+            <a href="{:U('DirectorMail/Index/index')}"><li class="on">警民互动</li></a>
+            <a href="{:getCategory(16,'url')}"><li>服务民生</li></a>
             <i class="square-icon"></i>
         </ul>
         <div class="sub-menu">
           <ul>
-            <li>局长信箱</li>
+            <a href="{:U('DirectorMail/Index/index')}"><li>局长信箱</li></a>
             <li>我要投诉</li>
             <li>举报台</li>
             <li>在线咨询</li>
@@ -106,7 +35,7 @@
             <li>在线调查</li>
             <li>专门监督</li>
             <li>警方微博</li>
-            <li><a href="{:U('Membermail/info')}" style="text-decoration:none;">代表委员直通车</a></li>
+            <a href="{:U('DirectorMail/Membermail/info')}"><li>代表委员直通车</li></a>
           </ul>
         </div>
         <div class="crumb">
@@ -119,7 +48,7 @@
               <img src="{$model_extresdir}images/sidebar-top.png" />
               <div>
                 <ul>
-                  <li class="on"><img src="{$model_extresdir}images/sidebar-li.png" />局长信箱</li>
+                  <a href="{:U('DirectorMail/Index/index')}"><li class="{$director_mail_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />局长信箱</li></a>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />我要投诉</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />举报台</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线咨询</li>
@@ -129,7 +58,7 @@
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线调查</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />专门监督</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />警方微博</li>
-                  <li><a href="{:U('Membermail/info')}" style="text-decoration:none;"><img src="{$model_extresdir}images/sidebar-li.png" />代表委员直通车</a></li>
+                  <a href="{:U('DirectorMail/Membermail/info')}"><li class="{$npc_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />代表委员直通车</li></a>
                 </ul>
               </div>
             </div>

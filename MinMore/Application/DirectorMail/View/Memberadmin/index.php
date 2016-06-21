@@ -9,8 +9,8 @@
           <tr>
             <td width="20" align="center"><input type="checkbox" class="J_check_all" data-direction="x" data-checklist="J_check_x"></td>
             <td width="50" align="center">ID</td>
-            <td width="100" align="center">姓名</td>
-            <td ></td>
+            <td width="180" align="center">代表委员</td>
+            <td width="180" align="center">信件内容</td>
             <td width="180" align="center">
             类别：<select name="searchtype" onChange="window.location.href=this.value">
             <option value="{:U('index', array('type'=>'全部'))}" >全部</option>

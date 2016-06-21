@@ -10,9 +10,11 @@ class MembermailController extends Base {
 
     protected function _initialize() {
         parent::_initialize();
+        $this->assign("npc_page", true);
         $this->db = D('DirectorMail/Membermail');
     }
     public function info() {
+        $this->assign("title", "代表委员会直通车");
         $this->display();
     }
     public function add() {

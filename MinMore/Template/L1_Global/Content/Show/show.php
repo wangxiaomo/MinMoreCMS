@@ -23,7 +23,7 @@
             <a href="{:U('Content/Site/police_news')}"><li class="on">警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
-            <a href="#"><li>警民互动</li></a>
+            <a href="{:U('DirectorMail/Index/index')}"><li>警民互动</li></a>
             <a href="{:getCategory(16, 'url')}"><li>服务民生</li></a>
         </ul>
     </div>

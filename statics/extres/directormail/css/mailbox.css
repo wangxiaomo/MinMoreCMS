@@ -30,10 +30,17 @@ button {
     background-image: url("../images/mainbackground.png");
     overflow: hidden;
 }
-.content{
-    width: 1002px;
-    height: 1773px;
+.head{
+    width: 1000px;
+    height: 248px;
     margin: 0 auto;
+    background: url("../images/top-logobg.png") no-repeat;
+    background-position: 0 32px;
+}
+.content{
+    width: 1000px;
+    height: 1773px;
+    margin: 0px auto;
     font-size: 16px;
 }
 /*---头部导航----*/
@@ -811,6 +818,9 @@ button {
 .sidebar-menu li img {
   margin-right:10px;
 }
+.sidebar-menu a {
+  text-decoration:none;
+}
 .sidebar-menu li.on {
   font-weight:bold;
 } .sidebar-extra {
@@ -967,7 +977,7 @@ tr.large-table-row {
   background:url('../images/NPCMember-login-box-bg.png') no-repeat;height:600px;
 }
 .NPCMember-login-form {
-  background:#24c2f5;width:505px;height:260px;margin:80px auto;position:relative;
+  background:#24c2f5;width:505px;height:260px;margin:25px auto;position:relative;
 }
 .NPCMember-login-form img {
   position:absolute;top:14%;left:-20%;z-index:1;

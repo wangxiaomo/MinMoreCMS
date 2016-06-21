@@ -20,6 +20,7 @@ class IndexController extends Base {
             $this->error('信件类型错误！');
         }
         $this->assign('typeid', $this->typeId);*/
+        $this->assign("director_mail_page", true);
         $this->db = D('DirectorMail/Directormail');
     }
 
@@ -41,6 +42,7 @@ class IndexController extends Base {
             }
         }
         //$this->assign('data', $data);
+        $this->assign("title", "局长信箱");
 		$this->assign('dataList', $data);
         $this->assign("Page", $page->show('Admin'));
         $this->display();
