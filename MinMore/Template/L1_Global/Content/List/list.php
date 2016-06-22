@@ -51,34 +51,6 @@
                     </volist>
                 </ul>
             </div>
-            <div class="convenient-service">
-                <div class="service-title">
-                    <span>便民服务</span>
-                    <a href="service-peoples.html">更多+</a>
-                </div>
-                <ul class="service-menu-items">
-                    <li>
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/load-control.png" alt=""/>
-                        <a href="#">路口监控视频</a>
-                        <span>运用先进的3G技术进行监控</span>
-                    </li>
-                    <li>
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/parking.png" alt=""/>
-                        <a href="#">高新停车场</a>
-                        <span>运用先进的3G技术进行监控</span>
-                    </li>
-                    <li>
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/control-point.png" alt=""/>
-                        <a href="#">监控点分布</a>
-                        <span>运用先进的3G技术进行监控</span>
-                    </li>
-                    <li>
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/school-car.png" alt=""/>
-                        <a href="#">校车定位</a>
-                        <span>运用先进的3G技术进行监控</span>
-                    </li>
-                </ul>
-            </div>
         </div>
         <!-- content-right-->
         <div class="content-right">

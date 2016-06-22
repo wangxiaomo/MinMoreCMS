@@ -852,7 +852,8 @@ img{
 }
 .notice-detail li{
     width: 700px;
-    height: 21px;
+    height: 35px;
+    line-height:35px;
 }
 .notice-detail a{
     width: 500px;

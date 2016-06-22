@@ -34,7 +34,7 @@
     <div class="content">
         <div class="interact-table1">
             <div class="interact-mail">
-               <div class="interact-mail-title"><span>更多>></span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact1.png">局长信息</div>
+               <div class="interact-mail-title"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact1.png">局长信息</div>
                <div class="interact-mail-img"><p><img src="{$config_siteurl}statics/themes/L1_Global/images/interact7.png"></p><p>广安市人民政府副市长<br>局长邓文国</p></div>
                <div class="interact-mail-text">
                   <ul>

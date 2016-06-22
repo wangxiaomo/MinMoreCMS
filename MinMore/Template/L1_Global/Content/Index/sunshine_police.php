@@ -50,19 +50,18 @@
                 <div class="nav-bottom">
                     <div class="traffic-query">
                         <ul>
-                            <li><a href="{:getCategory(29,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(29,'catname')}</a></li>
-                            <li><a href="{:getCategory(30,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(30,'catname')}</a></li>
-                        </ul>
-                    </div>
-                    <div class="Alarm-query">
-                        <ul>
                             <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询机动车电子违法情况</a></li>
                             <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询驾驶证违法积分情况</a></li>
                         </ul>
                     </div>
-                    <div class="order-query">
+                    <div class="Alarm-query">
                         <ul>
                             <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询警情受理情况</a></li>
+                        </ul>
+                    </div>
+                    <div class="order-query">
+                        <ul>
+                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询治安案件受理情况</a></li>
                         </ul>
                     </div>
                     <div class="case-query">
@@ -141,8 +140,7 @@
                     <div class="data-total"><a href="#"><p>数据统计</p></a></div>
                 </div>
             </div>
-            <!-- footer-->
-        <template file="Content/Mods/base_footer.php" />
+        <template file="Content/Mods/footer.php" />
         <template file="Content/Mods/quick_nav.php" />
         <template file="Content/utils.php" />
     </div>

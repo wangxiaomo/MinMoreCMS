@@ -25,11 +25,12 @@
                     <h3><img src="{$config_siteurl}statics/themes/L1_Global/images/book.png" />{$title}</h3><a href="{:U('Content/Site/sunshine_police')}"><span class="go-back-home">返回首页</span></a>
                 </div>
                 <div class="body-content-detail">
+                    <h3 style="text-align:center;">{$title}</h3>
                     {$content}
                 </div>
             </div>
         </div>
-        <template file="Content/Mods/base_footer.php" />
+        <template file="Content/Mods/footer.php" />
         <template file="Content/Mods/quick_nav.php" />
         <template file="Content/utils.php" />
     </div>

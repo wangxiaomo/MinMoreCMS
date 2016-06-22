@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <template file="Content/Mods/base_footer.php" />
+        <template file="Content/Mods/footer.php" />
         <template file="Content/Mods/quick_nav.php" />
         <template file="Content/utils.php" />
     </div>

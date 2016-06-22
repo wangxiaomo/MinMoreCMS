@@ -66,7 +66,7 @@ img{
     padding:10px;
 }
 .body-content-hd {
-    background:#026AA7;color:#fff;height:55px;
+    background:#026AA7;color:#fff;height:55px;padding-left:55px;
 }
 .body-content-hd h3{
     width:80%;float:left;padding-left:5%;position:relative;
@@ -330,10 +330,9 @@ img{
 }
 /*case-view*/
 .case-view{
-    width: 370px;
+    width: 400px;
     height: 250px;
     background: #ffffff;
-    margin-left: 40px;
     float: left;
     overflow: hidden;
 }
@@ -349,7 +348,8 @@ img{
 }
 .news-content .more-news{
     float: right;
-    margin: -30px 10px 0 0;
+    margin: -23px 50px 0 0;
+    font-size:13px;color:#777;
 }
 .news-content ul{
     width:349px;
@@ -386,10 +386,10 @@ img{
 }
 /*police-explain*/
 .police-explain{
-    width: 370px;
+    width: 400px;
     height: 250px;
     background: #ffffff;
-    margin-left: 10px;
+    margin-left: 15px;
     float: left;
     overflow: hidden;
 }
@@ -397,8 +397,7 @@ img{
 .fast-link{
     width: 243px;
     height: 250px;
-    float: left;
-    margin-left: 10px;
+    float: right;
 }
 .fast-link p{
     width: 200px;
@@ -492,4 +491,96 @@ img{
 }
 .clear {
   clear:both;margin-bottom:20px;
+}
+/*-------------foot-----------------*/
+.bottom-content{
+    width: 1072px;
+    height: 315px;
+    margin: 10px auto;
+}
+.bottom-branch{
+    width: 100%;
+    height: 40px;
+    background: #ffffff;
+    background-image: url("../images/bottom-branch-bg.png");
+}
+.bottom-branch p{
+    width: 290px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+.bottom-branch a{
+    display: inline-block;
+    width: 84px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+.friendly-link{
+    width: 100%;
+    height: 41px;
+    background: #d9d9d9;
+    border-top: 4px solid #0a62be;
+    margin-top: 2px;
+}
+.friendly-link p{
+    width: 265px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin: 0;
+    float: left;
+}
+.friendly-link ul{
+    float: left;
+}
+.friendly-link li{
+    width: 130px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    float: left;
+}
+.friendly-link li:hover{
+    background: #f0f0f0;
+}
+.link-content{
+    width: 100%;
+    height: 70px;
+    background: #f0f0f0;
+}
+.link-content a{
+    text-decoration: none;
+    color: #000000;
+    line-height: 70px;
+    padding: 0 30px;
+}
+.link-content a:hover{
+    color: #0a62be;
+}
+.introduce-info{
+    width: 100%;
+    height: 110px;
+    margin-top:0px;
+    padding-top: 30px;
+    background: #ffffff;
+}
+.introduce-info p{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.introduce-info a{
+    text-decoration: none;
+    color: #000000;
+}
+.introduce-info a:hover{
+    color: red;
 }
