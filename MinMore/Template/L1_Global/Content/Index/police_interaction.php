@@ -44,10 +44,10 @@
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">昨日天信：0</li>
                     <li class="mail-button"><a href="#">信件查询</a></li>
                     <li class="mail-button"><a href="#">热点咨询</a></li>
-                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">今日来信：1</li>
-                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">昨日天信：0</li>
+                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">办结数量：1</li>
+                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">热点咨询：0</li>
                   </ul>
-                  <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;">您好：<br>    欢迎您在局长信箱留言！您的诉求，我们在倾听，您的期待就是我们工作努力的方向，有事您说话。</p></div>
+                  <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;">您好：<br>{:nbsp(8)}欢迎您在局长信箱留言！您的诉求，我们在倾听，您的期待就是我们工作努力的方向，有事您说话。</p></div>
                   
                </div>
             </div>

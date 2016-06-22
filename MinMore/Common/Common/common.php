@@ -977,3 +977,7 @@ function get_theme_list_by_role_level($level) {
     }
     return $themes;
 }
+
+function nbsp($n) {
+    return str_repeat("&nbsp;", $n);
+}
