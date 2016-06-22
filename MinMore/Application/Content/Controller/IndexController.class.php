@@ -38,6 +38,11 @@ class IndexController extends Base {
     public function lists() {
         //栏目ID
         $catid = I('get.catid', 0, 'intval');
+        //wangxiaomo:hack service people.[HOTFIX]
+        if($catid == 15){
+            $url = U('Content/Site/service_people');
+            die(header("Location:$url"));
+        }
         //分页
         $page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
         //获取栏目数据

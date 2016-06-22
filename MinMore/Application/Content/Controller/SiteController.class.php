@@ -29,6 +29,30 @@ class SiteController extends Base {
         $this->display("Index/sunshine_police");
     }
 
+    public function police_interaction() {
+        //link => 警民互动
+        $this->display("Index/police_interaction");
+    }
+
+    public function service_people() {
+        //link => 服务民生
+        $catid = "15";
+        $parent = getCategory($catid);
+        $subids = explode(",", $parent["arrchildid"]);
+        array_shift($subids);
+        foreach($subids as $v){
+            $cat = getCategory($v);
+            $children[] = array(
+                "name"  =>  $cat["catname"],
+                "url"   =>  $cat["url"],
+                "id"    =>  $cat["catid"],
+            );
+        }
+        $this->assign("parent", $parent);
+        $this->assign("children", $children);
+        $this->display("Index/service_people");
+    }
+
     public function l4_info() {
         //link => Level 4 社区简介
         $this->assign("show_info_page", true);
