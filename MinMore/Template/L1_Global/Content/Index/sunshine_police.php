@@ -56,19 +56,18 @@
                     </div>
                     <div class="Alarm-query">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/><p>查询刑事案件、治安(行政)案件办理状态</p></a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>刑事案件办理流程</a></li>
+                            <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询机动车电子违法情况</a></li>
+                            <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询驾驶证违法积分情况</a></li>
                         </ul>
                     </div>
                     <div class="order-query">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>报案受理及处置情况查询</a></li>
+                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询警情受理情况</a></li>
                         </ul>
                     </div>
                     <div class="case-query">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/><p>查询刑事案件、治安(行政)案件办理状态</p></a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>刑事案件办理流程</a></li>
+                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询刑事案件办理情况</a></li>
                         </ul>
                     </div>
                 </div>
