@@ -32,7 +32,7 @@
         <div class="child-menu">
             <ul>
                 <volist name="children" id="vo">
-                    <li><a href="{$vo.url}" class="{$catid==$vo.id?'menu-on':''}">{$vo.name}</a></li>
+                    <li><a href="{$vo.url}" class="{$catid==$vo['id']?'menu-on':''}">{$vo.name}</a></li>
                 </volist>
             </ul>
         </div>
@@ -46,7 +46,7 @@
                 <p>{$parent.catname}</p>
                 <ul>
                     <volist name="children" id="vo">
-                        <li><a href="{$vo.url}" class="{$catid==$vo.id?'menu-on':''}">{$vo.name}</a></li>
+                        <li><a href="{$vo.url}" class="{$catid==$vo['id']?'menu-on':''}">{$vo.name}</a></li>
                     </volist>
                 </ul>
             </div>
