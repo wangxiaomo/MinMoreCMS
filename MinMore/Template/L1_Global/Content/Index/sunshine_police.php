@@ -24,35 +24,34 @@
                 <div class="nav-top">
                     <div class="law-open">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/><span>行政法律</span></a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>治安管理</a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>刑事法律</a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>交通管理</a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>更多....</a></li>
+                            <li><a href="{:getCategory(25,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(25,'catname')}</a></li>
+                            <li><a href="{:getCategory(26,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(26,'catname')}</a></li>
+                            <li><a href="{:getCategory(27,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(27,'catname')}</a></li>
+                            <li><a href="{:getCategory(28,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(28,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="enforce-open">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>行政案件办理流程</a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>刑事案件办理流程</a></li>
+                            <li><a href="{:getCategory(29,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(29,'catname')}</a></li>
+                            <li><a href="{:getCategory(30,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(30,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="right-open">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>执法内容及权限查询</a></li>
+                            <li><a href="{:getCategory(33,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(33,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="punish-open">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>行政处罚决定文书</a></li>
+                            <li><a href="{:getCategory(31,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(31,'catname')}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="nav-bottom">
                     <div class="traffic-query">
                         <ul>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>行政案件办理流程</a></li>
-                            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>刑事案件办理流程</a></li>
+                            <li><a href="{:getCategory(29,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(29,'catname')}</a></li>
+                            <li><a href="{:getCategory(30,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(30,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="Alarm-query">
