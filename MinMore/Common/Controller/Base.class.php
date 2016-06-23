@@ -15,6 +15,7 @@ class Base extends MinMoreCMS {
     //初始化
     protected function _initialize() {
         parent::_initialize();
+        $this->setupSite();
         //静态资源路径
         $this->assign('model_extresdir', self::$Cache['Config']['siteurl'] . MODULE_EXTRESDIR);
     }

@@ -64,11 +64,15 @@ class MinMoreCMS extends \Think\Controller {
         }
     }
 
-    //初始化
-    protected function _initialize() {
+    protected function setupSite() {
         $this->syncRole();
         $this->initSite();
         $this->setThemeBasedOnRole();
+    }
+
+    //初始化
+    protected function _initialize() {
+        $this->setupSite();
         //默认跳转时间
         $this->assign("waitSecond", 3000);
     }
