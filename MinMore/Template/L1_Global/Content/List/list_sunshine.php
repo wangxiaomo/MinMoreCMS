@@ -43,7 +43,7 @@
                             <volist name="data" id="vo">
                                 <a href="{$vo.url}">
                                     <div class="item">
-                                        <span class="item-title">{$vo.title}</span>
+                                        <span class="item-title">{$vo.title|str_cut=###,25}</span>
                                         <span class="item-updatetime">{$vo.updatetime|date='Y-m-d',###}</span>
                                     </div>
                                 </a>

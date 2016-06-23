@@ -62,40 +62,5 @@
                 </ul>
               </div>
             </div>
-            <div class="sidebar-extra">
-              <div class="hd">
-                便民服务
-              </div>
-              <div class="item-wrapper">
-                <div class="item">
-                  <img src="{$model_extresdir}images/sidebar-extra1.png">
-                  <div class="item-content">
-                    <span>路口监控视频</span>
-                    <p>运用先进的3G技术..</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="{$model_extresdir}images/sidebar-extra2.png">
-                  <div class="item-content">
-                    <span>路口监控视频</span>
-                    <p>运用先进的3G技术..</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="{$model_extresdir}images/sidebar-extra3.png">
-                  <div class="item-content">
-                    <span>路口监控视频</span>
-                    <p>运用先进的3G技术..</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="{$model_extresdir}images/sidebar-extra4.png">
-                  <div class="item-content">
-                    <span>路口监控视频</span>
-                    <p>运用先进的3G技术..</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="content-box">
