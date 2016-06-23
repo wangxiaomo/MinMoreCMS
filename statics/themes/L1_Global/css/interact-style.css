@@ -49,8 +49,8 @@
 	
 }
 
-.interact-mail-text ul{width:495px; height:155px;}
-.interact-mail-text ul li{float:left; margin:20px 5px; line-height:32px}
+.interact-mail-text ul{width:495px; height:155px;margin-top:20px;}
+.interact-mail-text ul li{float:left; margin:10px 5px; line-height:32px}
 .interact-mail-text ul li img{float:left}
 .mail-button, .mail-button a{background:url(../images/interact2.png) no-repeat; width:118px; height:35px; text-align:center; color:#FFF; font-weight:bold}
 

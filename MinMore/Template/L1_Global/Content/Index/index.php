@@ -141,8 +141,8 @@
 
         <!-- 局长信箱-->
         <ul class="mail-connect">
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
+            <li><a href="{:U('Content/Site/police_interaction')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
+            <li><a href="{:U('DirectorMail/Membermail/info')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
             <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="我要咨询"/></a></li>
             <li style="margin-right: 7px"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="我要投诉"/></a></li>
             <li style="margin:10px 0"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
@@ -395,14 +395,14 @@
             </script>
             <!-- 阳光警务-->
             <div class="sunshine-police">
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu1.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu2.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu3.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu4.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu5.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu6.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu7.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
+                <a href="{:getCategory(25,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu1.png" alt=""/></a>
+                <a href="{:getCategory(29,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu2.png" alt=""/></a>
+                <a href="{:getCategory(31,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu3.png" alt=""/></a>
+                <a href="{:getCategory(33,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu4.png" alt=""/></a>
+                <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu5.png" alt=""/></a>
+                <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu6.png" alt=""/></a>
+                <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu7.png" alt=""/></a>
+                <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
             </div>
             <div class="interaction">
                 <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
