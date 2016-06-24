@@ -1,0 +1,349 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    color: #4b4344;
+}
+ul,p{
+    margin: 0;
+    padding: 0;
+}
+li,a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #4b4344;
+}
+img{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.main{
+    width: 1300px;
+    height: 1264px;
+    margin: 0 auto;
+    position: relative;
+    background-image: url("../images/main-bg.png");
+    background-position: -50px 0;
+    overflow: hidden;
+}
+.content{
+    width: 1072px;
+    height: 1264px;
+    margin: 0 auto;
+}
+.move-top{
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/move-top.png");
+    position: fixed;
+    bottom: 4%;
+    left: 50%;
+    margin-left: 560px;
+}
+/*-----------head-----------------*/
+.head{
+    width: 1072px;
+    height: 193px;
+    background-image: url("../images/head-logo-bg.png");
+    background-position: 75px 70px;
+    background-repeat: no-repeat;
+    padding: 1px;
+}
+/*------------body-con---------------*/
+.body-con{
+    width: 1072px;
+    height: 780px;
+    background: #fff;
+    margin-top: 100px;
+}
+.body-top{
+    width: 1072px;
+    height: 30px;
+    line-height: 22px;
+    background: #46b3f5;
+}
+.body-top img{
+    margin-top: 4px;
+    float: left;
+    margin-left: 10px;
+}
+.body-top p{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    color: #fff;
+}
+.body-top a{
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    color: #fff;
+    margin-right: 10px;
+}
+.body-top a:hover{
+    color: #e9a733;
+}
+.query-area{
+    width: 701px;
+    height: 280px;
+    background-image: url("../images/query-condition.png");
+    margin: 20px auto;
+}
+.query-condition{
+    width: 350px;
+    height: 280px;
+    margin-left: 330px;
+}
+.query-condition h3{
+    width: 350px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0;
+    text-align: center;
+    color: #0048b1;
+}
+.query-condition p{
+    width: 350px;
+    height: 35px;
+    line-height: 35px;
+}
+.case-num input,.phone-num input{
+    width: 250px;
+}
+.phone-num,.phone-code{
+    text-indent: 15px;
+}
+.phone-code input{
+     width: 120px;
+ }
+.query-btn{
+    text-align: center;
+    margin-top: 15px;
+}
+.query-btn input{
+    width: 100px;
+    height: 35px;
+    background: #0048b1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.query-detail{
+    width: 701px;
+    height: 350px;
+    margin: 50px auto;
+}
+.query-detail table{
+    width: 700px;
+    table-layout:fixed;
+    border-collapse:collapse;
+    border:none;
+    background: #f3ffff;
+}
+.query-detail td{
+    border:solid #000 1px;
+    padding: 10px;
+}
+.first-td{
+    text-align: right;
+}
+.submit-btn{
+    width: 100px;
+    height: 35px;
+    background: #46b3f5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 30px 45%;
+    font-size: 18px;
+}
+/*-------------foot-----------------*/
+.introduce-info{
+    width: 1072px;
+    height: 130px;
+    padding-top: 10px;
+    margin: 50px auto;
+    font-weight: bold;
+}
+.introduce-info p{
+    width: 1002px;
+    text-align: center;
+}
+.introduce-info a{
+    text-decoration: none;
+    color: #4b4344;
+}
+.introduce-info a:hover{
+    color: #8c0000;
+}
+/*--aside--*/
+.fast-nav{
+    width: 119px;
+    height: 166px;
+    background-image: url("../images/fast-nav.png");
+    position: absolute;
+    top: 400px;
+    left: -90px;
+}
+.fast-nav p{
+    width: 20px;
+    float: right;
+    text-align: center;
+    margin: 40px 7px 0 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+.work-build-nav{
+    width: 91px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/work-build-nav.png");
+}
+.work-build-nav p{
+    margin-top: 60px;
+}
+.work-build-nav p:hover{
+    color: black;
+}
+.police-news-nav{
+    width: 63px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/police-news-nav.png");
+}
+.sunshine-nav{
+    width: 35px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/sunshine-nav.png");
+}
+/*loading*/
+.body-con{
+    position: relative;
+}
+.loading-page{
+    width: 1050px;
+    height: 780px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    z-index: 99;
+    display: none;
+}
+.loading-con{
+    width: 500px;
+    height: 160px;
+    background: #fff;
+    border: 5px solid #848484;
+    margin: 200px 0 0 300px;
+    padding-top: 70px;
+}
+.loading-con img{
+    display: block;
+    margin: 10px auto;
+}
+.loading-con p{
+    width: 500px;
+    height: 20px;
+    text-align: center;
+}
+.clear {
+  clear:both;margin-bottom:20px;
+}
+/*-------------foot-----------------*/
+.bottom-content{
+    width: 1072px;
+    height: 315px;
+    margin: 10px auto;
+}
+.bottom-branch{
+    width: 100%;
+    height: 40px;
+    background: #ffffff;
+    background-image: url("../images/bottom-branch-bg.png");
+}
+.bottom-branch p{
+    width: 290px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+.bottom-branch a{
+    display: inline-block;
+    width: 84px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+.friendly-link{
+    width: 100%;
+    height: 41px;
+    background: #d9d9d9;
+    border-top: 4px solid #0a62be;
+    margin-top: 2px;
+}
+.friendly-link p{
+    width: 265px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin: 0;
+    float: left;
+}
+.friendly-link ul{
+    float: left;
+}
+.friendly-link li{
+    width: 130px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    float: left;
+}
+.friendly-link li:hover{
+    background: #f0f0f0;
+}
+.link-content{
+    width: 100%;
+    height: 70px;
+    background: #f0f0f0;
+}
+.link-content a{
+    text-decoration: none;
+    color: #000000;
+    line-height: 70px;
+    padding: 0 30px;
+}
+.link-content a:hover{
+    color: #0a62be;
+}
+.introduce-info{
+    width: 100%;
+    height: 110px;
+    margin-top:0px;
+    padding-top: 30px;
+    background: #ffffff;
+}
+.introduce-info p{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.introduce-info a{
+    text-decoration: none;
+    color: #000000;
+}
+.introduce-info a:hover{
+    color: red;
+}

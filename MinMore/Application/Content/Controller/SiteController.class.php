@@ -21,7 +21,7 @@ class SiteController extends Base {
 
     public function work_building() {
         //link => 办事大厅
-        $this->display("Index/work_building");
+        header("Location:" . C("WORK_BUILDING_URL"));
     }
 
     public function sunshine_police() {
@@ -31,6 +31,24 @@ class SiteController extends Base {
 
     public function police_interaction() {
         //link => 警民互动
+        $todaymin = strtotime(date('Ymd'));                                     
+        $todaymax = $todaymin + 86399;                                          
+                                                                                
+        $db = M('Directormail');
+        $yestodaymin = $todaymin - 86400;                                                                                                                                                
+        $ysetodaymax = $todaymin - 1;                                           
+        $todaywhere['roleid'] = get_site_role();                                
+        $todaywhere['createtime'] = array('between', array($todaymin, $todaymax));
+        $today = $db->where($todaywhere)->count();                        
+        $yestodaywhere['roleid'] = get_site_role();                             
+        $yestodaywhere['createtime'] = array('between', array($yestodaymin, $yestodaymax));
+        $yestoday = $db->where($yestodaywhere)->count();                  
+        //$where['roleid'] = get_site_role();
+        //$where['reply'] = array();
+        //$over = $db->where($where)->count();
+
+        $this->assign('today', $today);                                         
+        $this->assign('yestoday', $yestoday);
         $this->display("Index/police_interaction");
     }
 
@@ -69,5 +87,20 @@ class SiteController extends Base {
         //link => Level 4 线索举报
         $this->assign("show_request_page", true);
         $this->display("Index/request");
+    }
+
+    public function alarm_query() {
+        //link => 警情受理查询
+        $this->display("Pages/alarm_query");
+    }
+
+    public function case_query() {
+        //link => 案件受理查询
+        $this->display("Pages/case_query");
+    }
+
+    public function order_query() {
+        //link => 刑事案件查询
+        $this->display("Pages/order_query");
     }
 }

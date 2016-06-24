@@ -56,17 +56,17 @@
                     </div>
                     <div class="Alarm-query">
                         <ul>
-                            <li><a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询警情受理情况</a></li>
+                            <li><a href="{:U('Content/Site/alarm_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询警情受理情况</a></li>
                         </ul>
                     </div>
                     <div class="order-query">
                         <ul>
-                            <li><a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询治安案件受理情况</a></li>
+                            <li><a href="{:U('Content/Site/case_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询治安案件受理情况</a></li>
                         </ul>
                     </div>
                     <div class="case-query">
                         <ul>
-                            <li><a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询刑事案件办理情况</a></li>
+                            <li><a href="{:U('Content/Site/order_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询刑事案件办理情况</a></li>
                         </ul>
                     </div>
                 </div>
