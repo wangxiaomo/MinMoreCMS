@@ -11,6 +11,7 @@ class MembermailController extends Base {
     protected function _initialize() {
         parent::_initialize();
         $this->assign("npc_page", true);
+        $this->assign('headicon', '代表委员直通车');
         $this->db = D('DirectorMail/Membermail');
     }
     public function info() {

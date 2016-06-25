@@ -1,7 +1,7 @@
 <template file="DirectorMail/Public/header.php"/>                               
 <div class="content-bd">
   <div class="request-form">
-    <div class="request-form-title">我要建议</div>
+    <div class="request-form-title">建言献策</div>
     <div class="request-form-box">
       <form method="POST">
         <div class="data-line">

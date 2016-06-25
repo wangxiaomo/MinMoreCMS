@@ -3,19 +3,15 @@
 <template file="DirectorMail/Public/button.php"/>
   </div>
   <div class="content-fd">
-    <div class="FAQ">
-      <h3>常见问题</h3>
-      <ul>
-        <li>关于交警处罚篇</li>
-        <li>关于治安执法篇</li>
-        <li>关于监狱探视篇</li>
-        <li>关于消防备案篇</li>
-        <li>关于户口迁移篇</li>
-        <li>关于上户篇</li>
-      </ul>
+  <div class="mailbox-list" style="margin-top:-95px;">
+    <div class="content-hd">
+      局长信箱－信件填写
+    </div>
+  </div>
+    <div class="director-mail-description">
+        欢迎您进入我的信箱，感谢您长期以来对公安工作的关心和支持，我们热诚欢迎您对公安工作提出意见和建议，您的诉求我们将认真办理。
     </div>
     <div class="mailbox-form">
-      <h3>请填写信件</h3>
       <form method="POST" enctype="multipart/form-data">
         <div class="data-line">
           <span class="prompt">信件类型：</span>
@@ -36,6 +32,13 @@
           <div>
             <label><input type="radio" name="sex" value="男" checked="true"/>男</label>
             <label><input type="radio" name="sex" value="女" />女</label>
+          </div>
+        </div>
+        <div class="data-line">
+          <span class="prompt">身份证号：</span>
+          <div>
+            <input type="text" name="cardid" />
+            <!--<input type="checkbox" name="receiveCallback" />是否接受短信通知-->
           </div>
         </div>
         <div class="data-line">

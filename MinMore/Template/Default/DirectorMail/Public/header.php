@@ -40,7 +40,7 @@
         </div>
         <div class="crumb">
           <span>欢迎访问广安市公安局</span>
-          <div class="crumb-detail">当前位置：首页&gt;警民互动&gt;局长信箱</div>
+          <div class="crumb-detail">当前位置：首页&gt;警民互动&gt;{$headicon}</div>
         </div>
         <div class="content-wrapper">
           <div class="sidebar">

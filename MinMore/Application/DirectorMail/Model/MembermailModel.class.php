@@ -101,10 +101,13 @@ class MembermailModel extends Model {
         if ($data['roleid']) {
             $role = M('Role')->where(array('id' => $data['roleid']))->find();
             $data['roleid'] = $role['name'].$role['level'];
-            $data['zt'] = '已受理';
         } else {
             $data['roleid'] = '暂无';
-            $data['zt'] = '暂未受理';
+        }
+        if ($data['reply']) {
+            $data['zt'] = '已办结';
+        } else {
+            $data['zt'] = '未办结';
         }
         return $data;
     }

@@ -4,7 +4,7 @@ namespace DirectorMail\Controller;
 
 use Common\Controller\Base;
 
-class IndexController extends Base {
+class ConsultController extends Base {
 
     //信件类型
     private $typeId = 0;
@@ -20,7 +20,6 @@ class IndexController extends Base {
             $this->error('信件类型错误！');
         }
         $this->assign('typeid', $this->typeId);*/
-        $this->assign('headicon', '局长信箱');
         $this->assign("director_mail_page", true);
         $this->db = D('DirectorMail/Directormail');
     }
@@ -114,15 +113,15 @@ class IndexController extends Base {
             $tel = I('post.tel');
             if (!empty($tel)) {
                 $where['shouji'] = $tel;
-            } else {
-                $this->error('请输入手机号码！');
             }
-            $cardid = I('post.cardid');
-            if (!empty($cardid)) {
-                $where['cardid'] = $cardid;
-            } else {
-                $this->error('请输入身份证号！');
+            $code = I('post.code');
+            if (!empty($code) && strlen($code) > 9) {
+                $where['id'] = substr($code, 9);
             }
+            if (!isset($where)) {
+                $this->error('请正确输入查询条件');
+            }
+                        
             $where['secrecy'] = 1;
             $count = $this->db->where($where)->count();
             $page = page($count, 10);
@@ -139,5 +138,4 @@ class IndexController extends Base {
         }
         $this->display(); 
     }
-
 }

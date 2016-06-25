@@ -43,10 +43,10 @@ class SiteController extends Base {
         $yestodaywhere['roleid'] = get_site_role();                             
         $yestodaywhere['createtime'] = array('between', array($yestodaymin, $yestodaymax));
         $yestoday = $db->where($yestodaywhere)->count();                  
-        //$where['roleid'] = get_site_role();
-        //$where['reply'] = array();
-        //$over = $db->where($where)->count();
-
+        $where['roleid'] = get_site_role();
+        $where['reply'] = array('NEQ', '');
+        $over = $db->where($where)->count();
+        $this->assign('over', $over);
         $this->assign('today', $today);                                         
         $this->assign('yestoday', $yestoday);
         $this->display("Index/police_interaction");

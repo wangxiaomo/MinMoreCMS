@@ -3,19 +3,23 @@
 <template file="DirectorMail/Public/button.php"/>
   </div>
   <div clkss="content-fd">
+  <div class="mailbox-list" style="margin-top:-80px;">
+    <div class="content-hd">
+      局长信箱－信件查询
+    </div>
+  </div>
     <div class="querybox">
-      <div class="left"><span>信件查询:</span></div>
       <div class="right">
         <form method="post" action="{:U('DirectorMail/Index/search')}">
         <p>请输入手机号码<input type="tel" name="tel" /><i class="red">*</i></p>
-        <p>请输入信件编号<input type="text" name="code" /><i class="red">*</i><input type="submit" style="border:none; background:#fff; cursor:pointer;outline:none;" value="[提交搜索]"></p>
+        <p>请输入身份证号<input type="text" name="cardid" /><i class="red">*</i></p>
+        <div class="form-button-groups">
+        <p><button>查询</button></p>
+        </div>
         </form>
       </div>
     </div>
     <div class="mailbox-list">
-      <div class="content-hd">
-        我的信件
-      </div>
       <div class="mailbox-data-list">
         <table>
           <thead>
@@ -23,7 +27,8 @@
               <th>来信主题</th>
               <th>状态</th>
               <th>时间</th>
-              <th>受理单位</th>
+              <th>办理单位</th>
+              <th>联系电话</th>
             </tr>
           </thead>
           <tbody>
@@ -36,6 +41,7 @@
               </if>
               <td>{$vo.createtime|date="Y-m-d H:i:s",###}</td>
               <td>{$vo.roleid}</td>
+              <td>{$vo.shouji}</td>
             </tr>
             </volist>
           </tbody>

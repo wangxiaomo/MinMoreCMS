@@ -1023,3 +1023,6 @@ tr.large-table-row {
 .request-form-box .form-button-groups button {
   color:#fff;background:#3698dc;
 }
+.director-mail-description {
+  background:#cadeff;border-radius:5px;padding:10px 20px;line-height:25px;text-indent:2em;margin-top:15px;
+}

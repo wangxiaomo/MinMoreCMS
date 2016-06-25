@@ -4,7 +4,7 @@ namespace DirectorMail\Model;
 
 use Common\Model\Model;
 
-class DirectormailModel extends Model {
+class ConsultModel extends Model {
 
     //自动验证
     protected $_validate = array(
@@ -15,7 +15,6 @@ class DirectormailModel extends Model {
         array('email', 'require', '联系邮箱不能为空！', 1, 'regex', 3),
         array('email', 'email', '联系邮箱填写错误！', 1, 'regex', 3),
         array('addr', 'require', '联系地址不能为空', 1, 'regex', 3),
-        array('cardid', 'require', '身份证号不能为空', 1, 'regex', 3),
         array('introduce', 'require', '信件内容不能为空！', 1, 'regex', 3),
     );
     //自动完成
@@ -161,13 +160,10 @@ class DirectormailModel extends Model {
         if ($data['roleid']) {
             $role = M('Role')->where(array('id' => $data['roleid']))->find();
             $data['roleid'] = $role['name'].$role['level'];
+            $data['zt'] = '已受理';
         } else {
             $data['roleid'] = '暂无';
-        }
-        if ($data['reply']) {
-            $data['zt'] = '已办结';
-        } else {
-            $data['zt'] = '未办结';
+            $data['zt'] = '暂未受理';
         }
         return $data;
     }
