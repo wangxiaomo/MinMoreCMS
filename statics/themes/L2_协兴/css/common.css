@@ -50,8 +50,8 @@ ul,ul li{ margin:0;padding:0;list-style:none;}
   	background: linear-gradient(#ffffff, #e4e4e4); /* 标准的语法 */
 }
 .fenzhen span{display:block;width:160px;height:40px;margin-right:120px;}
-.fenzhen p{display:block;width:600px;height:40px;line-height:40px;overflow:hidden;}
-.fenzhen p a{float:left;display:block;width:100px;font-size:14px;color:#333}
+.fenzhen p{display:block;width:720px;height:40px;line-height:40px;overflow:hidden;}
+.fenzhen p a{float:left;display:block;width:80px;font-size:14px;color:#333}
 .link{width:960px;height:34px;background:#fff;margin:12px auto 0 auto;padding:10px 20px;overflow:hidden;}
 .link span{float:left;display:block;width:100px;height:34px;line-height:34px;border-left:3px solid #0062bf;padding-left:10px;color:#0062bf;font-size:15px;}
 .link_select{float:left;padding:0 5px;font-size:14px;color:#000;}
