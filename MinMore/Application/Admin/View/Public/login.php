@@ -181,11 +181,13 @@ if (window.parent !== window.self) {
 <div class="wrap">
   <div class="inner">
     <div class="header">
+      <!--
       <h1>{$Config.sitename}</h1>
+      -->
     </div>
     <div class="qzone_login clearfix">
       <div class="qzone_cont" id="_pt">
-        <li><img src="{$config_siteurl}statics/images/login_bg.jpg" alt="生活以快乐为基准，爱情以互惠为原则！"></li>
+        <li><img src="{$config_siteurl}statics/images/logo_bg.png" alt=""></li>
       </div>
       <!-- end qzone_cont -->
       <div class="login_main">
