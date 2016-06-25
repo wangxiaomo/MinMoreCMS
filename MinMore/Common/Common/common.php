@@ -981,3 +981,85 @@ function get_theme_list_by_role_level($level) {
 function nbsp($n) {
     return str_repeat("&nbsp;", $n);
 }
+
+function generate_vcode($length=6){
+    return substr(number_format(time()*rand(), 0, '', ''), 0, $length);
+}
+
+function can_user_request_vcode_sms($mobile) {
+    $sms_type = session("sms_type");
+    $vcode = session("sms_vcode");
+    if($sms_type == "vcode" && $vcode) {
+        return false;
+    }
+
+    if(empty($mobile)) return true;
+    C("DB_PREFIX", "mobile_");
+    $r = D("Send")->where("Tousermobile='$mobile' and status=0")->order("id desc")->find();
+    if($r){
+        //sync session
+        session("sms_type", "vcode");
+        session("sms_mobile", $r["Tousermobile"]);
+        session("sms_vcode", $r["checkval"]);
+        return false;
+    }
+    return true;
+}
+
+function clear_user_sms_status() {
+    //clear sms session status
+    session("sms_type", NULL);
+    session("sms_mobile", NULL);
+    session("sms_vcode", NULL);
+}
+
+function get_user_vcode($mobile) {
+    $sms_type = session("sms_type");
+    $vcode = session("sms_vcode");
+    if($sms_type == "vcode" && $vcode) {
+        return $vcode;
+    }
+
+    if(empty($mobile)) return NULL;
+    C("DB_PREFIX", "mobile_");
+    $r = D("Send")->where("Tousermobile='$mobile'")->order("id desc")->find();
+    if($r){
+        //sync session
+        session("sms_type", "vcode");
+        session("sms_mobile", $r["Tousermobile"]);
+        session("sms_vcode", $r["checkval"]);
+        return $r["checkval"];
+    }
+}
+
+function check_user_vcode($code, $mobile) {
+    //wangxiaomo:为了发布会，设置一个万能验证码
+    $vcode = get_user_vcode($mobile);
+    if($code == C("HACK_SMS_VCODE") || $code == $vcode){
+        clear_user_sms_status();
+        return true;
+    }
+    return false;
+}
+
+function send_vcode_sms($mobile) {
+    if(can_user_request_vcode_sms($mobile)){
+        $vcode = generate_vcode(C("VCODE_LENGTH"));
+        $content = str_replace("{vcode}", $vcode, C("VCODE_SMS_TEMPLATE"));
+        //db table: mobile_send
+        C("DB_PREFIX", "mobile_");
+        D("Send")->data(array(
+            "Tousermobile"  =>  $mobile,
+            "status"    => 0,
+            "checkval"  =>  $vcode,
+            "content"   =>  $content,
+            "fromusername"  =>  "[广安公安局]",
+        ))->add();
+        //save session
+        session("sms_type", "vcode");
+        session("sms_mobile", $mobile);
+        session("sms_vcode", $vcode);
+
+        return $vcode;
+    }
+}
