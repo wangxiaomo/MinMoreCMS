@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="complaint">
-                    <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>我要投诉</p></a>
+                    <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>群众投诉</p></a>
 
                 </div>
             </div>

@@ -19,16 +19,16 @@
             <a href="{:U('Content/Site/police_news')}"><li>警务资讯</li></a>
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
-            <a href="{:U('DirectorMail/Index/index')}"><li class="on">警民互动</li></a>
-            <a href="{:getCategory(16,'url')}"><li>服务民生</li></a>
+            <a href="{:U('Content/Site/police_interaction')}"><li class="on">警民互动</li></a>
+            <a href="{:U('Content/Site/service_people')}"><li>服务民生</li></a>
             <i class="square-icon"></i>
         </ul>
         <div class="sub-menu">
           <ul>
             <a href="{:U('DirectorMail/Index/index')}"><li>局长信箱</li></a>
-            <li>我要投诉</li>
-            <li>举报台</li>
-            <li>在线咨询</li>
+            <li>群众投诉</li>
+            <li>网上举报</li>
+            <li>网上咨询</li>
             <li>在线访谈</li>
             <li>网上接访</li>
             <li>民意征集</li>
@@ -49,9 +49,9 @@
               <div>
                 <ul>
                   <a href="{:U('DirectorMail/Index/index')}"><li class="{$director_mail_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />局长信箱</li></a>
-                  <li><img src="{$model_extresdir}images/sidebar-li.png" />我要投诉</li>
-                  <li><img src="{$model_extresdir}images/sidebar-li.png" />举报台</li>
-                  <li><img src="{$model_extresdir}images/sidebar-li.png" />在线咨询</li>
+                  <li><img src="{$model_extresdir}images/sidebar-li.png" />群众投诉</li>
+                  <li><img src="{$model_extresdir}images/sidebar-li.png" />网上举报</li>
+                  <li><img src="{$model_extresdir}images/sidebar-li.png" />网上咨询</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />网上接访</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线访谈</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />民意征集</li>

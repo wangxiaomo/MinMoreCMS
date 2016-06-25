@@ -39,13 +39,13 @@
                <div class="interact-mail-text">
                   <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;">您好：<br>{:nbsp(8)}欢迎您在局长信箱留言！您的诉求，意见和建议，我们在倾听，您的期待就是我们工作努力的方向，我们将热诚为您服务。</p></div>
                   <ul>
-                    <li class="mail-button"><a href="#">信箱说明</a></li>
-                    <li class="mail-button"><a href="#">我要写信</a></li>
+                    <li class="mail-button"><a href="{:U('DirectorMail/Index/info')}">信箱说明</a></li>
+                    <li class="mail-button"><a href="{:U('DirectorMail/Index/add')}">我要写信</a></li>
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">今日来信：{$today}</li>
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">昨日天信：{$yestoday}</li>
-                    <li class="mail-button"><a href="#">信件查询</a></li>
-                    <li class="mail-button"><a href="#">热点咨询</a></li>
-                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">办结数量：1</li>
+                    <li class="mail-button"><a href="{:U('DirectorMail/Index/search')}">信件查询</a></li>
+                    <li class="mail-button"><a href="{:U('DirectorMail/Index/index')}">热点咨询</a></li>
+                    <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">办结数量：{$over}</li>
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">热点咨询：0</li>
                   </ul>
                </div>
@@ -55,7 +55,7 @@
                    <li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact3.png"></li>
                    <li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact4.png"></li>
                    <a href="http://weibo.com/u/2918589882?nick=%E9%87%91%E7%9B%BE%E5%B9%BF%E5%AE%89&is_hot=1"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact5.png"></li></a>
-                   <a href="{:U('DirectorMail/Membermail/info')}"<li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact6.png"></li>
+                   <a href="{:U('DirectorMail/Membermail/info')}"<li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact6.png"></li></a>
                 </ul>
             </div>   
         </div>
@@ -79,7 +79,7 @@
            </div>
            
            <div class="interact-table2-tab2">
-              <div class="interact-table2-titele"><samp>更多>></samp><span>我要咨询</span></div>
+              <div class="interact-table2-titele"><samp>更多>></samp><span>网上咨询</span></div>
               <div class="interact-table2-text">
                  <ul>
                    <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
