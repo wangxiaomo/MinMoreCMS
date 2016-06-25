@@ -63,7 +63,7 @@
         <div class="interact-table1"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact10.png"></div>
         <div class="interact-table2">
            <div class="interact-table2-tab1">
-              <div class="interact-table2-titele"><samp>更多>></samp><span>名意征集</span></div>
+              <div class="interact-table2-titele"><samp>更多>></samp><span>民意征集</span></div>
               <div class="interact-table2-text">
                  <ul>
                    <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>

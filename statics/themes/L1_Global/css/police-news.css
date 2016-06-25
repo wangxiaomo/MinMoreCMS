@@ -548,7 +548,7 @@ img{
     width: 1002px;
     height: 40px;
     background: #ffffff;
-    background-image: url("../../index/images/bottom-branch-bg.png");
+    background-image: url("../images/bottom-branch-bg.png");
 }
 .bottom-branch p{
     width: 290px;

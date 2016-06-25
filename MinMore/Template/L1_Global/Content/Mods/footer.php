@@ -8,6 +8,9 @@
             <a href="http://lsx.minmore.com:28081/">邻水县</a>
             <a href="http://s7.minmore.com:28081/">岳池县</a>
             <a href="http://s5.minmore.com:28081/">武胜县</a>
+            <a href="http://s6.minmore.com:28081/">经开区</a>
+            <a href="http://s4.minmore.com:28081/">枣山园区</a>
+            <a href="http://s10.minmore.com:28081/">协兴园区</a>
     </div>
     <div class="friendly-link">
         <p>友情链接：</p>
