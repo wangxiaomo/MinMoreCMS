@@ -14,6 +14,7 @@
         <ul>
             <li>全国公安网</li>
             <li>四川省公安网</li>
+            <li>市级公安</li>
             <li style="background: #f0f0f0">相关单位</li>
             <li>广安旅游网</li>
         </ul>
@@ -21,7 +22,6 @@
     <div class="link-content">
         <a href="#">人民公安报</a>
         <a href="#">中国普法网</a>
-        <a href="#">广安市保安协会</a>
         <a href="#">广安视窗</a>
         <a href="#">广安社区服务网</a>
     </div>

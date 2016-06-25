@@ -169,7 +169,7 @@
                     <a href="{:getCategory(9, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
                         <content action="lists" catid="9" order="id DESC" num="10">
-                            <volist>
+                            <volist name="data" id="vo">
                                 <li>
                                     <a href="{$vo.url}" class="police-case-con">{$vo.title|str_cut=###,18}</a>
                                     <span class="police-case-time">{$vo.updatetime|date='m-d',###}</span>
