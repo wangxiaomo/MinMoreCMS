@@ -11,6 +11,7 @@
     <meta name="keywords" content="{$SEO['keyword']}" />
     <link rel="stylesheet" href="{$config_siteurl}statics/themes/L1_Global/css/case-query.css"/>
     <script src="{$config_siteurl}statics/js/jquery.js" type="text/javascript"></script>
+    <script src="{$config_siteurl}statics/js/utils.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- main-->
@@ -29,9 +30,9 @@
             <div class="query-area">
                 <div class="query-condition">
                     <h3>警情受理查询</h3>
-                    <p class="case-num">案件编号：<input type="text"/></p>
-                    <p class="phone-num">手机号：<input type="text"/></p>
-                    <p class="phone-code">验证码：<input type="text"/>&nbsp;<input type="button" value="获取手机验证码"/></p>
+                    <p class="case-num">案件编号：<input type="text" name="caseID"/></p>
+                    <p class="phone-num">手机号：<input type="text" name="mobile"/></p>
+                    <p class="phone-code">验证码：<input type="text" name="code"/>&nbsp;<input type="button" class="send-sms-vcode" value="获取手机验证码"/></p>
                     <p class="query-btn"><input type="button" value="查询"/></p>
                 </div>
             </div>
@@ -39,24 +40,25 @@
                 <table>
                     <tr>
                         <td style="width: 20%;" class="first-td">案件名称：</td>
-                        <td style="width: 80%;"></td>
+                        <td style="width: 80%;" class="data-zyaq"></td>
                     </tr>
                     <tr>
                         <td class="first-td">办事单位：</td>
-                        <td></td>
+                        <td class="data-sljjdw"></td>
                     </tr>
                     <tr>
                         <td class="first-td">办案民警：</td>
-                        <td></td>
+                        <td class="data-mjxm"></td>
                     </tr>
                     <tr>
                         <td class="first-td">联系电话：</td>
-                        <td></td>
+                        <td class="data-mjdh"></td>
                     </tr>
                     <tr>
                         <td class="first-td">进展状态：</td>
-                        <td></td>
+                        <td class="data-sl_ajclqk"></td>
                     </tr>
+                    <!--
                     <tr>
                         <td class="first-td">评价信息：</td>
                         <td>
@@ -65,8 +67,8 @@
                             <input type="radio" name="evaluate"/>不满意
                         </td>
                     </tr>
+                    -->
                 </table>
-                <input type="button" value="提 交" class="submit-btn"/>
             </div>
             <div class="loading-page">
                 <div class="loading-con">
@@ -77,12 +79,38 @@
         </div>
         <script>
             $(function(){
+                var loading = function() {
+                        $(".loading-page").css("display","block");
+                    }, loadingDismissed = function() {
+                        setTimeout(function(){
+                            $(".loading-page").css("display","none");
+                            $(".query-result").css("visibility","visible");
+                        },1000);
+                    };
+
                 $(".query-btn input").click(function(){
-                    $(".loading-page").css("display","block");
-                    setTimeout(function(){
-                        $(".loading-page").css("display","none");
-                        $(".query-result").css("visibility","visible");
-                    },3000)
+                    var caseID = $.trim($("input[name=caseID]").val()),
+                        mobile = $.trim($("input[name=mobile]").val()),
+                        code = $.trim($("input[name=code]").val());
+                    if(caseID && mobile && code){
+                        loading();
+                        $.post("/index.php?g=api&m=site&a=query_alarm", {
+                            caseID:caseID,mobile:mobile,code:code
+                        },function(d){
+                            loadingDismissed();
+                            if(d.r == 1){
+                                $(".data-zyaq").text(d.data.zyaq);
+                                $(".data-sljjdw").text(d.data.sljjdw);
+                                $(".data-mjxm").text(d.data.mjxm);
+                                $(".data-mjdh").text(d.data.mjdh);
+                                $(".data-sl_ajclqk").text(d.data.sl_ajclqk);
+                            }else{
+                                alert(d.msg);
+                            }
+                        });   
+                    }else{
+                        alert("请正确输入信息!");
+                    }
                 })
             })
         </script>
