@@ -987,13 +987,7 @@ function generate_vcode($length=6){
 }
 
 function can_user_request_vcode_sms($mobile) {
-    $sms_type = session("sms_type");
-    $vcode = session("sms_vcode");
-    if($sms_type == "vcode" && $vcode) {
-        return false;
-    }
-
-    if(empty($mobile)) return true;
+    if(empty($mobile)) return false;
     C("DB_PREFIX", "mobile_");
     $r = D("Send")->where("Tousermobile='$mobile' and status=0")->order("id desc")->find();
     if($r){

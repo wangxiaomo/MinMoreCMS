@@ -5,24 +5,15 @@
     <div class="request-form-box">
       <form method="POST">
         <div class="data-line">
-          <span class="prompt">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;质：</span>
+          <span class="prompt" style="height:25px;line-height:25px;">信件主题：</span>
           <div>
-            <label><input type="radio" name="type" value="咨询" />咨询</label>
-            <label><input type="radio" name="type" value="投诉" />投诉</label>
-            <label><input type="radio" name="type" value="举报" />举报</label>
-            <label><input type="radio" name="type" value="建议" />建议</label>
+            <input type="text" name="zhuti" style="height:25px;width:400px;"/>
           </div>
         </div>
-        <div class="data-line">
-          <span class="prompt">信件主题：</span>
+        <div class="data-line data-textarea" style="margin-top:20px;">
+          <span class="prompt" style="height:25px;line-height:25px;">详细内容：</span>
           <div>
-            <input type="text" name="zhuti" />
-          </div>
-        </div>
-        <div class="data-line data-textarea">
-          <span class="prompt">详细内容：</span>
-          <div>
-            <textarea name="introduce"></textarea>
+            <textarea name="introduce" style="width:400px;height:250px;"></textarea>
           </div>
         </div>
         <div class="form-button-groups">

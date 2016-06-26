@@ -34,7 +34,6 @@
             <li>网上接访</li>
             <li>民意征集</li>
             <li>在线调查</li>
-            <li>专门监督</li>
             <li>警方微博</li>
             <a href="{:U('DirectorMail/Membermail/info')}"><li>代表委员直通车</li></a>
           </ul>
@@ -57,7 +56,6 @@
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线访谈</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />民意征集</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线调查</li>
-                  <li><img src="{$model_extresdir}images/sidebar-li.png" />专门监督</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />警方微博</li>
                   <a href="{:U('DirectorMail/Membermail/info')}"><li class="{$npc_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />代表委员直通车</li></a>
                 </ul>

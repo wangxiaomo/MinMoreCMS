@@ -24,6 +24,7 @@ class MembermailController extends Base {
             $post = I('post.');
             $post['roleid'] = get_site_role();
             $post['uid'] = $uid;
+            $post['type'] = "投诉";
             $id = $this->db->addMembermail($post); 
             if ($id) {
                 $this->success('提交建议成功');
