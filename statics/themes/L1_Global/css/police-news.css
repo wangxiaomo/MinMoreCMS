@@ -544,14 +544,19 @@ img{
     white-space:nowrap;
 }
 /*-------------foot-----------------*/
+.bottom-content{
+    width: 1000px;
+    height: 315px;
+    margin: 10px auto;
+}
 .bottom-branch{
-    width: 1002px;
+    width: 1000px;
     height: 40px;
     background: #ffffff;
     background-image: url("../images/bottom-branch-bg.png");
 }
 .bottom-branch p{
-    width: 290px;
+    width: 190px;
     height: 40px;
     margin: 0;
     color: #ffffff;
@@ -570,7 +575,7 @@ img{
     text-decoration: none;
 }
 .friendly-link{
-    width: 1002px;
+    width: 1000px;
     height: 41px;
     background: #d9d9d9;
     border-top: 4px solid #0a62be;
@@ -598,7 +603,7 @@ img{
     background: #f0f0f0;
 }
 .link-content{
-    width: 1002px;
+    width: 1000px;
     height: 70px;
     background: #f0f0f0;
 }
@@ -612,14 +617,15 @@ img{
     color: #0a62be;
 }
 .introduce-info{
-    width: 1002px;
-    height: 130px;
-    padding-top: 10px;
+    width: 1000px;
+    height: 110px;
+    padding-top: 30px;
     background: #ffffff;
 }
 .introduce-info p{
-    width: 1002px;
+    width: 1000px;
     text-align: center;
+    margin-bottom: 10px;
 }
 .introduce-info a{
     text-decoration: none;

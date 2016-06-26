@@ -35,7 +35,7 @@
         <div class="child-menu">
             <ul>
                 <volist name="children" id="vo">
-                    <li><a href="{$vo.url}" class="{$catid==$vo.id?'menu-on':''}">{$vo.name}</a></li>
+                    <li><a href="{$vo.url}" class="{$catid==$vo['id']?'menu-on':''}">{$vo.name}</a></li>
                 </volist>
             </ul>
         </div>
@@ -49,7 +49,7 @@
                 <p>服务民生</p>
                 <ul>
                     <volist name="children" id="vo">
-                        <li><a href="{$vo.url}" class="{$catid==$vo.id?'menu-on':''}">{$vo.name}</a></li>
+                        <li><a href="{$vo.url}" class="{$catid==$vo['id']?'menu-on':''}">{$vo.name}</a></li>
                     </volist>
                 </ul>
             </div>
@@ -59,118 +59,57 @@
             <div class="fast-service">
                 <div class="service-head">
                     <p style="color: #0048b1;">便民服务</p>
-                    <p style="color: #ffe503;">让数据多跑腿，让群众少跑路</p>
+                    <p style="color: #ffe503;">让数据多跑步，让群众少跑路</p>
                 </div>
                 <ul class="service-list">
                   <li>
-                    <a href="#" style="margin-left: 10px">
+                    <a href="#">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service1.png" alt="" style="margin-top: 10px"/><br/>
                         <span>开锁信息查询</span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service2.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service3.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
+                        <span>便民举措</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service4.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service5.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service6.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service7.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service8.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service9.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service10.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service11.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="http://www.ip138.com/">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service12.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
+                        <span>IP查询</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service13.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="http://www.ctrip.com/">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service14.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
+                        <span>航班信息</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service15.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service16.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="http://www.12306.cn/mormhweb/">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service17.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
+                        <span>列车时刻</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service18.png" alt="" style="margin-top: 5px"/><br/>
-                        <span>公开电话</span>
+                    <a href="http://tianqi.2345.com/guangan/57415.htm">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service11.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>天气查询</span>
                     </a>
                   </li>
-                     
+                  <li>
+                    <a href="http://tools.2345.com/rili.htm">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service18.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>万年历</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.ickd.cn/outlets/ems-398.html">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service15.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>EMS查询</span>
+                    </a>
+                  </li>
                 </ul>                               
             </div>
         </div>

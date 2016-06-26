@@ -117,23 +117,16 @@ class MembermailModel extends Model {
      * @return boolean
      */
     public function addMember($data) {
-        if (empty($data['tel']) || empty($data['pwd']) || empty($data['remarks'])) {
-            $this->error = '请填写全部信息！';
+        if (empty($data['mobile']) || empty($data['username'])) {
+            $this->error = '请填写手机号、姓名！';
             return false;
         }
-        $data['pwd'] = md5($data['pwd']);
         $db = M('MembermailUser');
-        $data = $db->create($data, 1);
-        if ($data) {
-            $uid = $db->add($data);
-            if ($uid) {
-                return $uid;
-            } else {
-                $this->error = '代表委员信息添加失败！';
-                return false;
-            }
+        if ($db->add($data)) {
+            return true;
         }
         return false;
+        
     }
 
     /**

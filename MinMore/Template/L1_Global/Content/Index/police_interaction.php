@@ -34,10 +34,11 @@
     <div class="content">
         <div class="interact-table1">
             <div class="interact-mail">
-               <div class="interact-mail-title"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact1.png">局长信息</div>
+               <div class="interact-mail-title"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact1.png">局长信箱</div>
                <div class="interact-mail-img"><p><img src="{$config_siteurl}statics/themes/L1_Global/images/interact7.png"></p><p style="line-height:25px;">广安市人民政府副市长邓文国</p></div>
                <div class="interact-mail-text">
-                  <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;">您好：<br>{:nbsp(8)}欢迎您在局长信箱留言！您的诉求，意见和建议，我们在倾听，您的期待就是我们工作努力的方向，我们将热诚为您服务。</p></div>
+                  <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;font-weight:normal;letter-spacing:2px;">您好：<br>{:nbsp(6)}欢迎您在局长信箱留言！您的诉求，意见和建议，我们在倾听，您的期待就是我们工作努力的方向，我们将热诚为您服务。</p></div>
+                  <!--
                   <ul>
                     <li class="mail-button"><a href="{:U('DirectorMail/Index/info')}">信箱说明</a></li>
                     <li class="mail-button"><a href="{:U('DirectorMail/Index/add')}">我要写信</a></li>
@@ -48,12 +49,17 @@
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">办结数量：{$over}</li>
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">热点咨询：0</li>
                   </ul>
+                  -->
+                 <div style="width:100%;text-align:center;margin-top:50px;">
+                    <li class="mail-button" style="display:inline-block;margin:20px;"><a href="{:U('DirectorMail/Index/add')}" style="line-height:30px;">我要写信</a></li>
+                    <li class="mail-button" style="display:inline-block;margin:20px;"><a href="{:U('DirectorMail/Index/search')}" style="line-height:30px;">信件查询</a></li>
+                 </div>
                </div>
             </div>
             <div class="interact-table1-right">
                 <ul>
-                   <li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact3.png"></li>
-                   <li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact4.png"></li>
+                   <a href="#" class="disabled-link"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact3.png"></li></a>
+                   <a href="#" class="disabled-link"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact4.png"></li></a>
                    <a href="http://weibo.com/u/2918589882?nick=%E9%87%91%E7%9B%BE%E5%B9%BF%E5%AE%89&is_hot=1"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact5.png"></li></a>
                    <a href="{:U('DirectorMail/Membermail/info')}"<li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact6.png"></li></a>
                 </ul>
@@ -97,12 +103,12 @@
            <div class="interact-table2-tab3">
               <div class="interact-table2-titele"><span>服务之星</span></div>
               <dl>
-                  <dt><img src="{$config_siteurl}statics/themes/L1_Global/images/interact14.png"></dt>
+                  <dt><img src="{$config_siteurl}statics/themes/L1_Global/images/interact14.jpg" style="width:100%;margin-top:12px;"></dt>
                   <dd>
-                    <p><span>姓名：</span>张峰</p>
-                    <p><span>警号：</span>806795</p>
-                    <p><span>职务：</span>副科长</p>
-                    <p><span>单位：</span>出入境管理局</p>
+                    <p><span>姓名：</span>王晓洲</p>
+                    <p><span>警号：</span>049840</p>
+                    <p><span>职务：</span>主任科员</p>
+                    <p><span>单位：</span>出入境管理支队</p>
                   </dd>
               </dl>
            </div>

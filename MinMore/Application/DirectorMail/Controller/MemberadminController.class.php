@@ -99,21 +99,17 @@ class MemberadminController extends AdminBase {
         $db = M('MembermailUser');
         if (IS_POST) {
             $uid = I('post.uid');
-            $tel = I('post.tel');
-            $pwd = I('post.pwd');
-            $remarks = I('post.remarks');
+            $mobile = I('post.mobile');
+            $username = I('post.username');
             if (empty($uid) || !is_array($uid)) {
                 $this->error('请选择需要更新的内容！');
             }
             foreach ($uid as $id) {
-                if ($tel[$id]) {
-                    $db->where(array('uid' => $id))->save(array('tel' => $tel[$id]));
+                if ($mobile[$id]) {
+                    $db->where(array('uid' => $id))->save(array('mobile' => $mobile[$id]));
                 }
-                if ($pwd[$id]) {
-                    $db->where(array('uid' => $id))->save(array('pwd' => md5($pwd[$id])));
-                }
-                if ($remarks[$id]) {
-                    $db->where(array('uid' => $id))->save(array('remarks' => $remarks[$id]));
+                if ($username[$id]) {
+                    $db->where(array('uid' => $id))->save(array('username' => $username[$id]));
                 }
                 
             }
@@ -132,8 +128,7 @@ class MemberadminController extends AdminBase {
             if ($this->db->addMember($post)) {
                 $this->success('代表委员添加成功！', U('member', 'isadmin=1'));
             } else {
-                $error = $this->db->getError();
-                $this->error($error ? $error : '代表委员添加失败！');
+                $this->error('代表委员添加失败！');
             }
         } else {
             $this->display();

@@ -58,17 +58,16 @@
                         <td class="first-td">进展状态：</td>
                         <td class="data-sl_ajclqk"></td>
                     </tr>
-                    <!--
                     <tr>
                         <td class="first-td">评价信息：</td>
                         <td>
-                            <input type="radio" name="evaluate" checked="checked"/>满意
-                            <input type="radio" name="evaluate"/>基本满意
-                            <input type="radio" name="evaluate"/>不满意
+                            <label><input type="radio" name="evaluate" checked="checked"/>满意</label>
+                            <label><input type="radio" name="evaluate"/>基本满意</label>
+                            <label><input type="radio" name="evaluate"/>不满意</label>
                         </td>
                     </tr>
-                    -->
                 </table>
+                <input type="button" value="提 交" class="submit-btn"/>
             </div>
             <div class="loading-page">
                 <div class="loading-con">
@@ -79,6 +78,12 @@
         </div>
         <script>
             $(function(){
+                $(".submit-btn").on("click", function(e){
+                    if($.trim($(".data-zyaq").text())){
+                        alert("评价成功,重复评价无效!");
+                    }
+                });
+
                 var loading = function() {
                         $(".loading-page").css("display","block");
                     }, loadingDismissed = function() {

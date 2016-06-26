@@ -43,6 +43,10 @@ class IndexController extends Base {
             $url = U('Content/Site/service_people');
             die(header("Location:$url"));
         }
+        if($catid == 17){
+            $url = U('Content/Index/shows', array("catid"=>17,"id"=>75));
+            die(header("Location:$url"));
+        }
         //分页
         $page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
         //获取栏目数据

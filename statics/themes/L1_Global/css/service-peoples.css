@@ -34,15 +34,17 @@
 .service-list{
 	width:100%;
 	height:auto;
+  padding-left:50px;
 }
 
 .service-list li{
-	width:125px;
+	width:175px;
 	height:auto;
 	overflow:hidden;
 	float:left;
 	text-align:center;
-	margin-top:10px
+	margin-top:10px;
+  margin-bottom:20px;
 }
 .page-flip{
     width: 640px;

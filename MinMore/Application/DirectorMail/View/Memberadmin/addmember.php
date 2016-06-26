@@ -8,15 +8,11 @@
       <table width="100%" >
            <tr>
               <th width="200">手机号码：</th>
-              <th><input type="text" name="tel" value="" class="input length_6"></th>
+              <th><input type="text" name="mobile" value="" class="input length_6"></th>
             </tr>
            <tr>
-              <th width="200">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
-              <th><input type="password" name="pwd" value="" class="input length_6"></th>
-            </tr>
-           <tr>
-              <th width="200">代表备注：</th>
-              <th><input type="text" name="remarks" value="" class="input length_6"></th>
+              <th width="200">姓名：</th>
+              <th><input type="text" name="username" value="" class="input length_6"></th>
             </tr>
       </table>
     </div>

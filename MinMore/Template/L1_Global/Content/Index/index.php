@@ -76,7 +76,7 @@
                 <div class="news-active">
                     <volist name="data" id="vo" offset="0" length="1">
                         <h3>{$vo.data.title|str_cut=###,16}</h3>
-                        <p style="text-indent:2em;position:relative;height:70px;">
+                        <p style="position:relative;height:70px;">
                             <span>{$vo.data.description|str_cut=###,54}</span>
                             <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
                         </p>
@@ -143,9 +143,9 @@
         <ul class="mail-connect">
             <li><a href="{:U('Content/Site/police_interaction')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
             <li><a href="{:U('DirectorMail/Membermail/info')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
-            <li style="margin-right: 7px"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
-            <li style="margin:10px 0"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
+            <li><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
+            <li style="margin-right: 7px"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
+            <li style="margin:10px 0"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
         </ul>
         <!-- 办事大厅-->
         <div class="work-build">
@@ -273,39 +273,31 @@
                 <ul>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_1.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/banshichaxun.png" alt="办事查询" style="margin-top: 13px"/><br/>
-                        <a href="#">办事查询</a>
+                        <a href="#" class="disabled-link">办事查询</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_2.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/bianminfuwu.png" alt="便民服务"/><br/>
-                        <a href="#">便民服务</a>
+                        <a href="{:U('Content/Site/service_people')}">便民服务</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_3.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/shiwuzhaoling.png" alt="失物招领" style="margin-left: 25px"/><br/>
-                        <a href="#">失物招领</a>
+                        <a href="{:getCategory(18,'url')}">{:getCategory(18,'catname')}</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_4.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/xunrenqishi.png" alt="寻人启事"/><br/>
-                        <a href="#">寻人启事</a>
+                        <a href="{:getCategory(19,'url')}">{:getCategory(19,'catname')}</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_5.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/dianziditu.png" alt="电子地图"/><br/>
-                        <a href="#">电子地图</a>
+                        <a href="#" class="disabled-link">电子地图</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_6.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示" style="margin-top: 13px"/><br/>
-                        <a href="#">警方提示</a>
+                        <a href="{:getCategory(3,'url')}">{:getCategory(3,'catname')}</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_7.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/wangshangxinfang.png" alt="网上信访"/><br/>
-                        <a href="#">网上信访</a>
-                    </li>
-                    <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_1.png')">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示" style="margin-top: 13px"/><br/>
-                        <a href="#">警方提示</a>
-                    </li>
-                    <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_2.png')">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/wangshangxinfang.png" alt="网上信访"/><br/>
-                        <a href="#">网上信访</a>
+                        <a href="#" class="disabled-link">网上信访</a>
                     </li>
                 </ul>
             </div>
@@ -405,10 +397,10 @@
                 <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
             </div>
             <div class="interaction">
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction2.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction3.png" alt=""/></a>
-                <a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
+                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
+                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction2.png" alt=""/></a>
+                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction3.png" alt=""/></a>
+                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
             </div>
         </div>
         <template file="Content/Mods/footer.php" />

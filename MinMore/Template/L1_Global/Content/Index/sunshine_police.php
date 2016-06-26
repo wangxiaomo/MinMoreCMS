@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="complaint">
-                    <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>群众投诉</p></a>
+                    <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>群众投诉</p></a>
 
                 </div>
             </div>
@@ -131,11 +131,19 @@
                     </ul>
                 </div>
                 <div class="fast-link">
-                    <div class="supervise-phone"><a href="#"><p>监督电话</p></a></div>
-                    <div class="AI-police"><a href="#"><p>电子警察</p></a></div>
-                    <div class="data-total"><a href="#"><p>数据统计</p></a></div>
+                    <div class="supervise-phone"><a href="{:getCategory(17,'url')}"><p>监督电话</p></a></div>
+                    <div class="AI-police"><a href="{:getCategory(22,'url')}"><p>电子警察</p></a></div>
+                    <div class="data-total"><a href="#" class="disabled-link"><p>数据统计</p></a></div>
                 </div>
             </div>
+        <script>
+$(function(){
+    $(".disabled-link").on("click", function(e){
+        e.preventDefault();
+        alert("正在紧急开发中,敬请期待...");
+    });
+});
+        </script>
         <template file="Content/Mods/footer.php" />
         <template file="Content/Mods/quick_nav.php" />
         <template file="Content/utils.php" />

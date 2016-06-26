@@ -66,6 +66,7 @@ class SiteController extends Base {
                 "id"    =>  $cat["catid"],
             );
         }
+        $this->assign("catid", "21");
         $this->assign("parent", $parent);
         $this->assign("children", $children);
         $this->display("Index/service_people");

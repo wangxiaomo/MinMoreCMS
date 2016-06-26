@@ -62,7 +62,7 @@
                 <div class="news-active">
                     <volist name="data" id="vo" offset="0" length="1">
                         <h3>{$vo.data.title|str_cut=###,16}</h3>
-                        <p style="text-indent:2em;position:relative;height:70px;">
+                        <p style="position:relative;height:70px;">
                             <span>{$vo.data.description|str_cut=###,54}</span>
                             <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
                         </p>
@@ -127,11 +127,11 @@
 
         <!-- 局长信箱-->
         <ul class="mail-connect">
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
-            <li><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
-            <li style="margin-right: 7px"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
-            <li style="margin:5px 0 0 0;"><a href="#"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
+            <li><a href="{:U('Content/Site/police_interaction')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
+            <li><a href="{:U('DirectorMail/Membermail/info')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
+            <li><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
+            <li style="margin-right: 7px"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
+            <li style="margin:10px 0"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
         </ul>
         <!-- 资讯内容-->
         <div class="police-news">
@@ -247,9 +247,9 @@
                     </ul>
                 </div>
                 <div class="fast-link">
-                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link1.png')">机构职能</p></a>
-                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link2.png')">领导简介</p></a>
-                    <a href="#"><p style="background-image: url('/statics/themes/L1_Global/images/link3.png')">电子地图</p></a>
+                    <a href="{:getCategory(36,'url')}"><p style="background-image: url('/statics/themes/L1_Global/images/link1.png')">机构职能</p></a>
+                    <a href="{:getCategory(37,'url')}"><p style="background-image: url('/statics/themes/L1_Global/images/link2.png')">领导简介</p></a>
+                    <a href="#" class="disabled-link"><p style="background-image: url('/statics/themes/L1_Global/images/link3.png')">电子地图</p></a>
                 </div>
             </div>
         </div>

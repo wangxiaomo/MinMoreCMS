@@ -10,8 +10,7 @@
         <tr>
           <td width="80" align="left">选择</td>
           <td  align="left">手机号码</td>
-          <td  align="left">新密码</td>
-          <td  align="left">备注</td>
+          <td  align="left">姓名</td>
           
         </tr>
       </thead>
@@ -19,9 +18,8 @@
         <volist name="data" id="vo">
           <tr>
             <td><input class="input-text" type="checkbox" name="uid[]" value="{$vo.uid}" ></td>
-            <td><input type="text" class="input" size="30" name="tel[{$vo.uid}]" value="{$vo.tel}" ></td>
-            <td><input type="password" class="input" size="30" name="pwd[{$vo.uid}]" value="" ></td>
-            <td><input type="text" class="input" size="30" name="remarks[{$vo.uid}]" value="{$vo.remarks}" > <a href="{:U('deletemember','isadmin=1:&uid='.$vo['uid'])}" class="J_ajax_del">删除代表委员</a></td>
+            <td><input type="text" class="input" size="30" name="mobile[{$vo.uid}]" value="{$vo.mobile}" ></td>
+            <td><input type="text" class="input" size="30" name="username[{$vo.uid}]" value="{$vo.username}" > <a href="{:U('deletemember','isadmin=1:&uid='.$vo['uid'])}" class="J_ajax_del">删除代表委员</a></td>
           </tr>
         </volist>
       </tbody>

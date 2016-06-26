@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{$config_siteurl}statics/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{$model_extresdir}css/mailbox.css"/>
     <script src="{$model_extresdir}js/jquery.min.js"></script>
+    <script src="{$config_siteurl}statics/js/utils.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- main-->

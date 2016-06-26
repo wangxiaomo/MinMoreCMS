@@ -53,17 +53,23 @@ class MembermailController extends Base {
     }
     public function login() {
         if (IS_POST) {
-            $tel = I('post.tel');
-            $pwd = I('post.pwd');
-            if (empty($tel) || empty($pwd)) {
-                $this->error('手机号、密码不能为空');
+            $mobile = I('post.mobile');
+            $username = I('post.username');
+            $vcode = I('post.vcode');
+            if (empty($mobile) || empty($username) || empty($vcode)) {
+                $this->error('姓名、手机号、验证码不能为空');
             }
-            $userMsg = M('MembermailUser')->where(array('tel'=>$tel))->find();
-            if (md5($pwd) == $userMsg['pwd']) {
-                session('membermailuid', $userMsg['uid']);
-                $this->redirect('DirectorMail/Membermail/add');
+            $userMsg = M('MembermailUser')->where(array('mobile'=>$mobile,'username'=>$username))->find();
+            if ($userMsg) {
+                if (check_user_vcode($vcode, $mobile)) {
+                    session('membermailuid', $userMsg['uid']);
+                    $this->redirect('DirectorMail/Membermail/add');
+                } else {
+                    $this->error('验证码错误！');
+                }
+            } else {
+                $this->error('姓名、手机号错误！');
             }
-            $this->error('手机号、密码错误！');
         }
         $this->display();
     }
