@@ -37,7 +37,7 @@
             </div>
             <div class="query-detail">
                 <table>
-                    <tr>
+                    <tr style="height:200px;">
                         <td style="width: 20%;" class="first-td">案件名称：</td>
                         <td style="width: 80%;" class="data-zyaq"></td>
                     </tr>
@@ -53,7 +53,7 @@
                         <td class="first-td">联系电话：</td>
                         <td class="data-mjdh"></td>
                     </tr>
-                    <tr>
+                    <tr style="height:200px;">
                         <td class="first-td">进展状态：</td>
                         <td class="data-sl_ajclqk"></td>
                     </tr>

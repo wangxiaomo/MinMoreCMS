@@ -39,12 +39,15 @@ class IndexController extends Base {
         //栏目ID
         $catid = I('get.catid', 0, 'intval');
         //wangxiaomo:hack service people.[HOTFIX]
-        if($catid == 15){
-            $url = U('Content/Site/service_people');
-            die(header("Location:$url"));
+        switch($catid){
+            case 15:
+                $url = U('Content/Site/service_people');break;
+            case 17:
+                $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>75));break;
+            case 22:
+                $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>139));break;
         }
-        if($catid == 17){
-            $url = U('Content/Index/shows', array("catid"=>17,"id"=>75));
+        if($url){
             die(header("Location:$url"));
         }
         //分页
