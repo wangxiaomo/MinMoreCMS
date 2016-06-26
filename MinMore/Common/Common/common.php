@@ -1035,7 +1035,7 @@ function get_user_vcode($mobile) {
 function check_user_vcode($code, $mobile) {
     //wangxiaomo:为了发布会，设置一个万能验证码
     $vcode = get_user_vcode($mobile);
-    if($code == C("HACK_SMS_VCODE") || $code == $vcode){
+    if($code == C("HACK_SMS_VCODE") || ($code == $vcode && $mobile == session("sms_mobile"))){
         clear_user_sms_status();
         return true;
     }
