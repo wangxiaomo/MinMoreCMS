@@ -1094,3 +1094,7 @@ img{
 .service-menu-items a:hover{
     color: #e5840d;
 }
+.content-single-page {
+    padding:20px 40px;
+    min-height:400px;
+}

@@ -25,9 +25,8 @@
                     <div class="law-open">
                         <ul>
                             <li><a href="{:getCategory(25,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(25,'catname')}</a></li>
-                            <li><a href="{:getCategory(26,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(26,'catname')}</a></li>
                             <li><a href="{:getCategory(27,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(27,'catname')}</a></li>
-                            <li><a href="{:getCategory(28,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(28,'catname')}</a></li>
+                            <li><a href="{:getCategory(35,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(35,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="enforce-open">
