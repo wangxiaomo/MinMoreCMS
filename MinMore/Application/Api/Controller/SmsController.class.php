@@ -18,9 +18,6 @@ class SmsController extends MinMoreCMS {
             $mobile = I("mobile");
             if(is_numeric($mobile) && strlen($mobile) == 11){
                 $vcode = send_vcode_sms($mobile);
-                $this->jsonReturn(array(
-                    'code'  =>  $vcode,
-                ));
             }
         }
     }
