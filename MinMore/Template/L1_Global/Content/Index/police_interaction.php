@@ -61,7 +61,7 @@
                    <a href="#" class="disabled-link"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact3.png"></li></a>
                    <a href="#" class="disabled-link"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact4.png"></li></a>
                    <a href="http://weibo.com/u/2918589882?nick=%E9%87%91%E7%9B%BE%E5%B9%BF%E5%AE%89&is_hot=1"><li style="margin-bottom:20px"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact5.png"></li></a>
-                   <a href="{:U('DirectorMail/Membermail/info')}"<li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact6.png"></li></a>
+                   <a href="{:U('DirectorMail/Membermail/add')}"<li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact6.png"></li></a>
                 </ul>
             </div>   
         </div>

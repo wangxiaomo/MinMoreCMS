@@ -2,13 +2,13 @@
   <div class="content-fd">
     <table class="result-table">
       <tr>
-        <td class="row-prompt">编号:</td><td class="row-content">C{$data.createtime|date="Ymd",###}{$data.id}</td><td class="row-prompt">来信人:</td><td class="row-content">{$data.tel}</td>
+        <td class="row-prompt">编号:</td><td class="row-content">C{$data.createtime|date="Ymd",###}{$data.id}</td><td class="row-prompt">来信人:</td><td class="row-content">{$data.username}</td>
       </tr>
       <tr>
         <td class="row-prompt">来信时间:</td><td class="row-content">{$data.createtime|date="Y-m-d h:i:s",###}</td><td class="row-prompt">受理单位:</td><td class="row-content">{$data.roleid}</td>
       </tr>
       <tr>
-        <td class="row-prompt">信件类型:</td><td class="row-content">{$data.type}</td><td class="row-prompt">办事状态:</td><td class="row-content">{$data.zt}</td>
+        <td class="row-prompt">办事状态:</td><td class="row-content">{$data.zt}</td><td class="row-prompt"></td><td class="row-content"></td>
       </tr>
       <tr class="large-table-row">
         <td class="row-prompt">来信主题:</td><td colspan="3">{$data.zhuti}</td>
