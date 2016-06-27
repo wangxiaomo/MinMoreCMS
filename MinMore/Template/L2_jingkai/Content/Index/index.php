@@ -116,7 +116,6 @@ window.onload = function (){
                 <li><img src="{$config_siteurl}statics/themes/L2_经开/images/enter_4.png" /></li>
                 <li><img src="{$config_siteurl}statics/themes/L2_经开/images/enter_5.png" /></li>
                 <li><img src="{$config_siteurl}statics/themes/L2_经开/images/enter_6.png" /></li>
-                <li style="margin:0;"><img src="{$config_siteurl}statics/themes/L2_经开/images/enter_7.png" /></li>
             </ul>
         </div>
     </div>
