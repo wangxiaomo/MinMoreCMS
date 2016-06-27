@@ -362,7 +362,7 @@ img{
 }
 .public-collect li,.notice-news li,.police-report li,.police-active li,.police-case li{
     width: 100%;
-    height: 20px;
+    height: 19px;
     list-style: inherit;
     font-size: 14px;
     color: #2782e0;

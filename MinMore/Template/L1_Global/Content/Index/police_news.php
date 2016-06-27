@@ -222,7 +222,7 @@
                     <h3>{:getCategory(23, 'catname')}</h3>
                     <a href="{:getCategory(23, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="23" order="id DESC" num="8">
+                        <content action="lists" catid="23" order="id DESC" num="7">
                             <volist name="data" id="vo">
                                 <li>
                                     <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,26}</a>
@@ -236,7 +236,7 @@
                     <h3>{:getCategory(24, 'catname')}</h3>
                     <a href="{:getCategory(24, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="24" order="id DESC" num="8">
+                        <content action="lists" catid="24" order="id DESC" num="7">
                             <volist name="data" id="vo">
                                 <li>
                                     <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,26}</a>
