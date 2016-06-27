@@ -11,14 +11,13 @@
     outline: none;
 }
 .interact-menu{
-    height: 315px;
     background-image: url("../images/interact-menu-bg.png");
     background-repeat: no-repeat;
 }
 .interact-menu ul{
     margin-left: 0;
     width: 175px;
-    height: 260px;
+    height: auto;
     border: 5px solid #288cc8;
 }
 

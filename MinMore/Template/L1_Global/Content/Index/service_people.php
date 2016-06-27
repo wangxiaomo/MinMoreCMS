@@ -63,7 +63,7 @@
                 </div>
                 <ul class="service-list">
                   <li>
-                    <a href="#">
+                    <a href="{:getCategory(38,'url')}">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/service1.png" alt="" style="margin-top: 10px"/><br/>
                         <span>开锁信息查询</span>
                     </a>
