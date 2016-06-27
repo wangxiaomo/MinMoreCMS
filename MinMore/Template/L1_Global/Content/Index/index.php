@@ -75,11 +75,13 @@
                 <position action="position" posid="2" num="6">
                 <div class="news-active">
                     <volist name="data" id="vo" offset="0" length="1">
-                        <h3>{$vo.data.title|str_cut=###,16}</h3>
-                        <p style="position:relative;height:70px;">
-                            <span>{$vo.data.description|str_cut=###,54}</span>
-                            <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
-                        </p>
+                        <a href="{$vo.data.url}">
+                            <h3>{$vo.data.title|str_cut=###,16}</h3>
+                            <p style="position:relative;height:70px;">
+                                <span>{$vo.data.description|str_cut=###,54}</span>
+                                <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
+                            </p>
+                        </a>
                     </volist>
                     <div class="news-divline"></div>
                     <ul>
