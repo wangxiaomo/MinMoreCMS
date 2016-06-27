@@ -140,10 +140,10 @@
                     <h3>{:getCategory(2, 'catname')}</h3>
                     <a href="{:getCategory(2, 'url')}" class="more-news">更多>></a>
                     <ul type="square">
-                        <content action="lists" catid="2" order="id DESC" num="10">
+                        <content action="lists" catid="2" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="notice-news-con"><span>{$vo.title|str_cut=###,30}</span></a>
+                                    <a href="{$vo.url}" class="notice-news-con"><span>{$vo.title|str_cut=###,26}</span></a>
                                     <span class="notice-news-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -154,10 +154,10 @@
                     <h3>{:getCategory(5, 'catname')}</h3>
                     <a href="{:getCategory(5, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="5" order="id DESC" num="10">
+                        <content action="lists" catid="5" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="police-active-con">{$vo.title|str_cut=###,30}</a>
+                                    <a href="{$vo.url}" class="police-active-con">{$vo.title|str_cut=###,26}</a>
                                     <span class="police-active-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -168,7 +168,7 @@
                     <h3>{:getCategory(9, 'catname')}</h3>
                     <a href="{:getCategory(9, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="9" order="id DESC" num="10">
+                        <content action="lists" catid="9" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
                                     <a href="{$vo.url}" class="police-case-con">{$vo.title|str_cut=###,18}</a>
@@ -182,10 +182,10 @@
                     <h3>{:getCategory(3, 'catname')}</h3>
                     <a href="{:getCategory(3, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="3" order="id DESC" num="10">
+                        <content action="lists" catid="3" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="public-collect-con">{$vo.title|str_cut=###,30}</a>
+                                    <a href="{$vo.url}" class="public-collect-con">{$vo.title|str_cut=###,26}</a>
                                     <span class="public-collect-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -196,10 +196,10 @@
                     <h3>{:getCategory(4, 'catname')}</h3>
                     <a href="{:getCategory(4, 'url')}" class="more-news">更多>></a>
                     <ul  type="square">
-                        <content action="lists" catid="4" order="id DESC" num="10">
+                        <content action="lists" catid="4" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,26}</a>
                                     <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -225,7 +225,7 @@
                         <content action="lists" catid="23" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,26}</a>
                                     <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -239,7 +239,7 @@
                         <content action="lists" catid="24" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li>
-                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,30}</a>
+                                    <a href="{$vo.url}" class="police-report-con">{$vo.title|str_cut=###,26}</a>
                                     <span class="police-report-time">{$vo.updatetime|date='m-d',###}</span>
                                 </li>
                             </volist>
@@ -306,7 +306,7 @@
                 <h3>{:getCategory(6, 'catname')}</h3>
                 <a href="{:getCategory(6, 'url')}" class="more-news">更多>></a>
                 <ul>
-                    <content action="lists" catid="6" order="id DESC" num="10">
+                    <content action="lists" catid="6" order="id DESC" num="8">
                         <volist name="data" id="vo">
                             <li>
                                 <a href="{$vo.url}">
