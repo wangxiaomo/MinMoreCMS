@@ -158,6 +158,19 @@
                         <li style="background-image: url('{$config_siteurl}statics/themes/L1_Global/images/other_0003.png')"></li>
                     </ul>
                 </div>
+                <div class="welcome">
+                    <ul>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                        <li>您好, 很高兴<br/>&nbsp;&nbsp;&nbsp;为您服务!&nbsp;</li>
+                    </ul>
+                </div>
                 <div class="work-area">
                     <ul>
                         <li class="churujing"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=出入境"></a></li>
@@ -178,58 +191,93 @@
         <script>
             //  ----------背景轮播-------------
             var viewIndex = 0;
-            setInterval(function(){
-                if(viewIndex < $(".view-list li").length-1){
-                    viewIndex ++;
-                }else{
+            setInterval(function () {
+                if (viewIndex < $(".view-list li").length - 1) {
+                    viewIndex++;
+                } else {
                     viewIndex = 0;
                 }
                 viewChangeTo(viewIndex);
-            },7000);
-            function viewChangeTo(num){
+            }, 7000);
+            function viewChangeTo(num) {
                 $(".view-list").find("li").removeClass("imgOn").hide().eq(num).fadeIn(2000).addClass("imgOn");
             }
-            //-------------大厅轮播------------
-            var workTimer;
-            function workCaurousel(){
-                var $ul = $(".work-area").find("ul");
+            //----------欢迎显示---------
+            var welTimer;
+            function welCaurousel(){
+                var $ul = $(".welcome").find("ul");
                 var $lis = $ul.children("li");
                 var width = $lis.eq(0).width() + 26;
-                workTimer = setInterval(function(){
+                welTimer = setInterval(function () {
                             $ul.animate({
-                                        'margin-left':'-'+ width +'px'
+                                        'margin-left': '-' + width + 'px'
                                     },
                                     2000,
-                                    function(){
-                                        $ul.css({'margin-left':0}).
+                                    function () {
+                                        $ul.css({'margin-left': 0}).
                                                 children('li').
                                                 last().
                                                 after(
                                                 $ul.children('li').first()
                                         );
                                     });
-                        },4000
+                        }, 4000
+                );
+            }
+            welCaurousel();
+            $(".work-area li").hover(function () {
+                        var welIndex = $(this).index();
+                        $(".welcome li").eq(welIndex).css("visibility", "visible")
+                    }, function () {
+                        var welIndex = $(this).index();
+                        $(".welcome li").eq(welIndex).css("visibility", "hidden")
+                    }
+            );
+            //-------------大厅轮播------------
+            var workTimer;
+            function workCaurousel() {
+                var $ul = $(".work-area").find("ul");
+                var $lis = $ul.children("li");
+                var width = $lis.eq(0).width() + 26;
+                workTimer = setInterval(function () {
+                            $ul.animate({
+                                        'margin-left': '-' + width + 'px'
+                                    },
+                                    2000,
+                                    function () {
+                                        $ul.css({'margin-left': 0}).
+                                                children('li').
+                                                last().
+                                                after(
+                                                $ul.children('li').first()
+                                        );
+                                    });
+                        }, 4000
                 );
             }
             workCaurousel();
-            $(".work-area").hover(function(){
+            $(".work-area").hover(function () {
                 clearInterval(workTimer);
-            },function(){
-                workCaurousel()
+                clearInterval(welTimer);
+            }, function () {
+                workCaurousel();
+                welCaurousel();
             });
             //---------前进-----------
-            $(".work-next").hover(function(){
+            $(".work-next").hover(function () {
                 var $ul = $(".work-area").find("ul");
                 var $lis = $ul.children("li");
                 var width = $lis.eq(0).width() + 26;
                 clearInterval(workTimer);
-                $(this).unbind('click').click(function(){
+                clearInterval(welTimer);
+                $(this).unbind('click').click(function () {
+                    $ul.stop(false, true).animate();
                     $ul.animate({
-                                'margin-left':'-'+ width +'px'
+                                'margin-left': '-' + width + 'px'
                             },
                             2000,
-                            function(){
-                                $ul.css({'margin-left':0}).
+                            function () {
+                                $ul.css({'margin-left': 0}).
                                         children('li').
                                         last().
                                         after(
@@ -238,30 +286,34 @@
                             }
                     );
                 })
-            },function(){
-                workCaurousel()
+            }, function () {
+                workCaurousel();
+                welCaurousel();
             });
-            //                //-------------后退-------------
-            $(".work-prev").hover(function(){
+            //-------------后退-------------
+            $(".work-prev").hover(function () {
                 var $ul = $(".work-area").find("ul");
                 var $lis = $ul.children("li");
                 var width = $lis.eq(0).width() + 26;
                 clearInterval(workTimer);
-                $(this).unbind('click').click(function(){
-                    $ul.css({'margin-left':'-'+ width +'px'}).
+                clearInterval(welTimer);
+                $(this).unbind("click").click(function () {
+                    $ul.stop(false, true).animate();
+                    $ul.css({'margin-left': '-' + width + 'px'}).
                             children('li').
                             first().
                             before(
                             $ul.children('li').last()
                     );
                     $ul.animate({
-                                'margin-left':0
+                                'margin-left': 0
                             },
                             2000
                     );
                 })
-            },function(){
-                workCaurousel()
+            }, function () {
+                workCaurousel();
+                welCaurousel();
             });
         </script>
         <!-- 特色服务-->

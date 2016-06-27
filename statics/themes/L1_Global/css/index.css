@@ -441,6 +441,34 @@ img{
 .view-list .imgOn{
     display: block;
 }
+.welcome {
+    width: 1002px;
+    height: 110px;
+    overflow: hidden;
+    position: absolute;
+    top: 68px;
+    left: 30px;
+}
+
+.welcome ul {
+    width: 1098px;
+    height: 66px;
+    padding-left: 10px;
+}
+
+.welcome li {
+    width: 90px;
+    height: 56px;
+    line-height: 15px;
+    float: left;
+    margin-left: 26px;
+    background-image: url("../images/welcome.png");
+    background-repeat: no-repeat;
+    font-size: 12px;
+    padding: 20px 0 0 5px;
+    font-family: Arial;
+    visibility: hidden;
+}
 .work-area{
     width: 1002px;
     height: 110px;
