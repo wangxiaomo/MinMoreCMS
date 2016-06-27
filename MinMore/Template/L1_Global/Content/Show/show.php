@@ -83,7 +83,7 @@
                 <h2>{$title}</h2>
                 <div class="edit-info">
                     <span>编辑日期：{$updatetime|strtotime=###|date='Y-m-d',###}</span>
-                    <span>来源：{$copyfrom|default='本站原创'}</span>
+                    <span>来源：{$copyfrom|default='本站提供'}</span>
                     <span id="hitCount"></span>
                 </div>
                 <div class="article-content">
