@@ -32,7 +32,7 @@
                     <h3>治安案件查询</h3>
                     <p class="case-num">案件编号：<input type="text" name="caseID"/></p>
                     <p class="phone-num">手机号：<input type="text" name="mobile"/></p>
-                    <p class="phone-code">验证码：<input type="text" name="code"/>&nbsp;<input type="button" class="send-sms-vcode" value="获取手机验证码"/></p>
+                    <p class="phone-code">验证码：<input type="text" name="code"/>&nbsp;<input type="button" class="send-sms-vcode" value="手机获取验证码"/></p>
                     <p class="query-btn"><input type="button" value="查询"/></p>
                 </div>
             </div>

@@ -3,7 +3,7 @@ $(function(){
       tic = function() {
         if(wait == 1) {
           $(".send-sms-vcode")
-            .val("获取手机验证码")
+            .val("手机获取验证码")
             .prop("disabled", false);
           wait = 90;
         }else{

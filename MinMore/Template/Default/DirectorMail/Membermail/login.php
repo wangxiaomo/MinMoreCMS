@@ -13,7 +13,7 @@
       <form method="POST" action="{:U('Membermail/login')}">
         <p>姓&nbsp;&nbsp;&nbsp;&nbsp;名:<input type="text" name="username" style="width:198px;"/></p>
         <p>手机号:<input type="text" name="mobile" style="width:200px;"/></p>
-        <p>验证码:<input type="text" name="vcode" style="width:100px;" /><input type="button" class="send-sms-vcode" value="获取验证码"/></p>
+        <p>验证码:<input type="text" name="vcode" style="width:100px;" /><input type="button" class="send-sms-vcode" value="手机获取验证码"/></p>
         <div class="login-button-groups">
           <button>登录</button>
           <button type="reset">重置</button>
