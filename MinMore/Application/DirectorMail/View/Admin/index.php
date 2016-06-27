@@ -28,7 +28,7 @@
               <td align="center"><input class="checkbox J_check "  data-yid="J_check_y" data-xid="J_check_x"  name="ids[]" value="{$vo.id}" type="checkbox"></td>
               <td align="center">{$vo.id}</td>
               <td align="center">{$vo.name}</td>
-              <td >性别：{$vo.sex} ，主题：{$vo.zhuti} ，Email：{$vo.email}， 手机：{$vo.shouji}
+              <td >主题：{$vo.zhuti} ，Email：{$vo.email}， 手机：{$vo.shouji}
               <br/>信件内容：<br/>
               {$vo.introduce}
               <br/>来信时间：{$vo.createtime|date="Y-m-d H:i:s",###}

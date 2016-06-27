@@ -20,13 +20,6 @@
           </div>
         </div>               
         <div class="data-line">
-          <span class="prompt">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
-          <div>
-            <label><input type="radio" name="sex" value="男" checked="true"/>男</label>
-            <label><input type="radio" name="sex" value="女" />女</label>
-          </div>
-        </div>
-        <div class="data-line">
           <span class="prompt">身份证号：</span>
           <div>
             <input type="text" name="cardid" />
@@ -56,13 +49,6 @@
           <span class="prompt">主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</span>
           <div>
             <input type="text" name="zhuti" />
-          </div>
-        </div>
-        <div class="data-line">
-          <span class="prompt">信件公开：</span>
-          <div>
-            <label><input type="radio" name="secrecy" value="1" checked="true"/>公开</label>
-            <label><input type="radio" name="secrecy" value="0" />保密</label>
           </div>
         </div>
         <div class="data-line data-textarea">

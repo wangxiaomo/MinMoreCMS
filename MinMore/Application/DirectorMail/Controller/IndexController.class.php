@@ -28,7 +28,6 @@ class IndexController extends Base {
     //局长信箱首页
     public function index() {
         $where = array(
-            'secrecy' => 1,
             'roleid' => get_site_role(),
         );
         $count = $this->db->where($where)->count();
@@ -124,7 +123,6 @@ class IndexController extends Base {
             } else {
                 $this->error('请输入身份证号！');
             }
-            $where['secrecy'] = 1;
             $count = $this->db->where($where)->count();
             $page = page($count, 10);
             $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();

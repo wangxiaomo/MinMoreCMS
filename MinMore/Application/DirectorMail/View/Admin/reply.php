@@ -20,12 +20,8 @@
           <td>{$info.name}</td>
         </tr>
         <tr>
-          <th>性别</th>
-          <td>{$info.sex}</td>
-        </tr>
-        <tr>
           <th>基本联系方式</th>
-          <td>性别：{$info.sex} ，主题：{$info.zhuti} ，Email：{$info.email}， 手机：{$info.shouji}</td>
+          <td>主题：{$info.zhuti} ，Email：{$info.email}， 手机：{$info.shouji}</td>
         </tr>
         <tr>
           <th>信件内容</th>

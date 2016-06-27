@@ -150,7 +150,6 @@ class DirectormailModel extends Model {
         }
         $where = array(
                 'id' => $mailid,                                            
-                'secrecy' => 1
             );
         $data = $this->where($where)->find();
         if (!$data) {
