@@ -31,7 +31,7 @@
     <div class="content">
         <div class="child-menu">
             <ul>
-                <if condition="$parent['catid'] eq 15">
+                <if condition="$parent['catid'] eq 40">
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
                     <li><a href="#" class="disabled-link">群众投诉</a></li>
                     <li><a href="#" class="disabled-link">网上举报</a></li>
@@ -58,7 +58,7 @@
             <div class="interact-menu">
                 <p>{$parent.catname}</p>
                 <ul>
-                <if condition="$parent['catid'] eq 15">
+                <if condition="$parent['catid'] eq 40">
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
                     <li><a href="#" class="disabled-link">群众投诉</a></li>
                     <li><a href="#" class="disabled-link">网上举报</a></li>
