@@ -1,7 +1,18 @@
 <div class="fenzhen">
 	<span class="float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/title_3.png" /></span>
-    <p class="float_left"><a href="#">广安区</a><a href="#">前锋区</a><a href="#">华蓥市</a><a href="#">邻水县</a><a href="#">岳池县</a><a href="#">武胜县</a></p>
+    <p class="float_left">
+        <a href="http://s2.minmore.com:28081/">广安区</a>
+        <a href="http://s8.minmore.com:28081/">前锋区</a>
+        <a href="http://s9.minmore.com:28081/">华蓥市</a>
+        <a href="http://lsx.minmore.com:28081/">邻水县</a>
+        <a href="http://s7.minmore.com:28081/">岳池县</a>
+        <a href="http://s5.minmore.com:28081/">武胜县</a>
+        <a href="http://s6.minmore.com:28081/">经开区</a>
+        <a href="http://s4.minmore.com:28081/">枣山园区</a>
+        <a href="http://s10.minmore.com:28081/">协兴园区</a>
+    </p>
 </div>
+<!--
 <div class="link">
 	<span>友情链接</span>
     <div class="link_select">
@@ -28,12 +39,14 @@
     </form>
     </div>
 </div>
+-->
 <div class="link_img">
-	<a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_1.jpg" /></a>
-    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_2.jpg" /></a>
-    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_3.jpg" /></a>
-    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_4.jpg" /></a>
+	<a href="http://www.mps.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_1.jpg" /></a>
+    <a href="http://www.scga.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_2.jpg" /></a>
+    <a href="http://www.sichuanpeace.org.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_3.jpg" /></a>
+    <a href="http://xjzd.gaqgaj.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_4.jpg" /></a>
 </div>
+<!--
 <div class="foot_search_box">
 	<div class="foot_search">
     <form>
@@ -58,4 +71,5 @@
     </form>
     </div>
 </div>
+-->
 <div class="footer">广安市公安局广安区分局 版权所有</div>
