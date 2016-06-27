@@ -160,15 +160,15 @@
                 </div>
                 <div class="work-area">
                     <ul>
-                        <li class="churujing"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=出入境"></a></li>
-                        <li class="jindu"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=禁毒"></a></li>
-                        <li class="fazhi"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=法制"></a></li>
-                        <li class="huzheng"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=户政"></a></li>
-                        <li class="jianguan"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=监管"></a></li>
-                        <li class="jiaojing"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=交警"></a></li>
-                        <li class="wangjian"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=网监"></a></li>
-                        <li class="zhian"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=治安"></a></li>
-                        <li class="xiaofang"><a href="http://123.56.45.15:8080/wsga/businessItem/business.html?businessType=消防"></a></li>
+                        <li class="churujing"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=出入境"></a></li>
+                        <li class="jindu"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=禁毒"></a></li>
+                        <li class="fazhi"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=法制"></a></li>
+                        <li class="huzheng"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=户政"></a></li>
+                        <li class="jianguan"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=监管"></a></li>
+                        <li class="jiaojing"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=交警"></a></li>
+                        <li class="wangjian"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=网监"></a></li>
+                        <li class="zhian"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=治安"></a></li>
+                        <li class="xiaofang"><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=消防"></a></li>
                     </ul>
                 </div>
                 <div class="work-prev"> < </div>
