@@ -3,7 +3,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="canonical" href="{$config_siteurl}" />
     <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>{$SEO['site_title']}</title>
@@ -36,7 +36,7 @@
                 <img src="{$config_siteurl}statics/themes/L1_Global/images/news-logo.png" alt="新闻" class="title-child"/>
                 <span class="title-child">公示公告：</span>
                 <marquee behavior="scroll" direction="left" width="600" hight="20" vspace="12" hspace="20" onmouseover=this.stop()
-                         scrollamount="4" scrolldelay="5"  onmouseout=this.start() class="title-child">
+                         scrollamount="4" scrolldelay="5"  onmouseout=this.start() class="title-child slider">
                     <content action="lists" catid="2" order="id DESC" num="6">
                         <volist name="data" id="vo">
                             <a href="{$vo.url}">{$vo.title}</a>
@@ -75,13 +75,11 @@
                 <position action="position" posid="2" num="6">
                 <div class="news-active">
                     <volist name="data" id="vo" offset="0" length="1">
-                        <a href="{$vo.data.url}">
-                            <h3>{$vo.data.title|str_cut=###,16}</h3>
-                            <p style="position:relative;height:70px;">
-                                <span>{$vo.data.description|str_cut=###,54}</span>
-                                <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
-                            </p>
-                        </a>
+                        <h3>{$vo.data.title|str_cut=###,16}</h3>
+                        <p style="position:relative;height:70px;overflow:hidden;">
+                            <span>{$vo.data.description|str_cut=###,54}</span>
+                            <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
+                        </p>
                     </volist>
                     <div class="news-divline"></div>
                     <ul>

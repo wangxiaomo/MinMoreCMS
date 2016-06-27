@@ -230,6 +230,9 @@ img{
 .news-title .title-child{
     float: left;
 }
+.slider {
+    width:600px;margin:12px 20px;
+}
 .news-title img{
     margin:15px 10px 0 165px;
 }
@@ -959,7 +962,7 @@ img{
 }
 .bottom-branch a{
     display: inline-block;
-    width: 84px;
+    width: 83px;
     height: 40px;
     margin: 0;
     color: #ffffff;
