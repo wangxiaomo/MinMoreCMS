@@ -1,5 +1,11 @@
 <template file="DirectorMail/Public/header.php"/>
-<h3 class="content-box-title red">温馨提示：请输入您的手机号码和姓名登录，进行建议、投诉、举报、咨询。</h3>
+<div class="meta-description">
+    <h3>人大代表、政协委员、警风警纪监督员直通车</h3>
+    <div class="description">
+        <p>尊敬的人大代表、政协委员、警风警纪监督员，您好！</p>
+        <p>我们在“广安公安网”网站开通了“代表委员会直通车”。各位人大代表、政协委员、警风警纪监督员均可通过“人大代表政协委员直通车”向我局提出建议、意见和批评，以及需要帮助协调解决的事项，我们承诺对人大代表、政协委员、警风警纪监督员网上建议和意见，做到认真办理、件件答复。</p>
+    </div>
+</div>
 <div class="content-fd NPCMember-login-box">
   <div class="NPCMember-login-form">
     <img src="{$model_extresdir}images/NPCMember-login-bg.png" />

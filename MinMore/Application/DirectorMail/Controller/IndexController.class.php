@@ -63,6 +63,7 @@ class IndexController extends Base {
             }
             //提交
             $post = I('post.');
+            $post['typeid'] = 9;
             $post['roleid'] = get_site_role();
             if (!empty($_FILES['upload']['tmp_name'])) {
                 $info = $this->upload();

@@ -95,12 +95,12 @@ a {
 	background:#235179 url(../images/admin/layout/bg.jpg);
 }
 .head th {
-	width: 140px;
+	width: 170px;
 	height:46px;
 }
 .logo {
 	display: block;
-	width: 140px;
+	width: 100%;
 	height: 46px;
 	overflow: hidden;
 	text-indent: -2000em;

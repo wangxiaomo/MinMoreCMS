@@ -38,6 +38,7 @@
                     <div class="right-open">
                         <ul>
                             <li><a href="{:getCategory(33,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(33,'catname')}</a></li>
+                            <li><a href="{:getCategory(39,'url')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>{:getCategory(39,'catname')}</a></li>
                         </ul>
                     </div>
                     <div class="punish-open">

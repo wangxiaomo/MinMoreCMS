@@ -14,14 +14,6 @@
     <div class="mailbox-form">
       <form method="POST" enctype="multipart/form-data">
         <div class="data-line">
-          <span class="prompt">信件类型：</span>
-          <div>
-            <volist name="typeList" id="vo">
-            <label><input type="radio" name="typeid" value="{$vo.typeid}" />{$vo.name}</label>
-            </volist>
-          </div>
-        </div>               
-        <div class="data-line">
           <span class="prompt">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
           <div>
             <input type="text" name="name" />

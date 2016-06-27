@@ -69,33 +69,27 @@
         <div class="interact-table1"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact10.png"></div>
         <div class="interact-table2">
            <div class="interact-table2-tab1">
-              <div class="interact-table2-titele"><samp>更多>></samp><span>民意征集</span></div>
+              <div class="interact-table2-titele"><samp><a href="{:getCategory(10,'url')}">更多>></a></samp><span>{:getCategory(10,'catname')}</span></div>
               <div class="interact-table2-text">
                  <ul>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-
+                   <content action="lists" catid="10" order="id DESC" num="7">
+                     <volist name="data" id="vo">
+                       <a href="{$vo.url}"><li><span>{$vo.updatetime|date='m-d',###}</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">{$vo.title|str_cut=###,20}</li></a>
+                     </volist>
+                   </content>
                  </ul>
               </div>
            </div>
            
            <div class="interact-table2-tab2">
-              <div class="interact-table2-titele"><samp>更多>></samp><span>网上咨询</span></div>
+              <div class="interact-table2-titele"><samp><a href="{:getCategory(43,'url')}">更多>></a></samp><span>{:getCategory(43,'catname')}</span></div>
               <div class="interact-table2-text">
                  <ul>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-                   <li><span>05-18</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">养老机构规范服务工作征集意见</li>
-
+                   <content action="lists" catid="43" order="id DESC" num="7">
+                     <volist name="data" id="vo">
+                       <a href="{$vo.url}"><li><span>{$vo.updatetime|date='m-d',###}</span><img src="{$config_siteurl}statics/themes/L1_Global/images/interact13.png">{$vo.title|str_cut=###,20}</li></a>
+                     </volist>
+                   </content>
                  </ul>
               </div>
            </div>
@@ -120,8 +114,8 @@
               <div class="interact-table2-titele"><samp>更多>></samp><span>在线访谈</span></div>
               <div class="interact-table2-text">
                  <p>主题：出入有境，服务无境——推广网上便民服务出入境民警在线访谈</p>
-                 <p>日期：2015-11-30 15:30:00</p>
-                 <p>访谈嘉宾：郑州市公安局出入境管理处</p>
+                 <p>日期：2016-10-12 15:30:00</p>
+                 <p>访谈嘉宾：广安市公安局出入境管理处</p>
                  <p>访谈内容：本栏目将于十月中旬组织开展一期出入境业务在线访谈，目前正在紧张筹备中，届时请网友踊跃参与。</p>
                  <p>&nbsp;</p>
               </div>
@@ -130,10 +124,10 @@
            <div class="interact-table2-tab2">
               <div class="interact-table2-titele"><samp>更多>></samp><span>在线调查</span></div>
               <div class="interact-table2-text">
-                 <p>主题：出入有境，服务无境——推广网上便民服务出入境民警在线访谈</p>
-                 <p>日期：2015-11-30 15:30:00</p>
-                 <p>访谈嘉宾：郑州市公安局出入境管理处</p>
-                 <p>访谈内容：本栏目将于十月中旬组织开展一期出入境业务在线访谈，目前正在紧张筹备中，届时请网友踊跃参与。</p>
+                 <p>主题：广安“网上公安”功能设计问卷调查</p>
+                 <p>截止日期：2016-12-30 15:30:00</p>
+                 <p>发起单位：广安市公安局</p>
+                 <p>问卷主旨：通过本问卷广征网民意见，实现对现有网上办事功能的完善和补充，改进我们的服务质量。</p>
                  <p>&nbsp;</p>
               </div>
            </div>

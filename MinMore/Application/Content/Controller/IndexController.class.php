@@ -43,7 +43,11 @@ class IndexController extends Base {
             case 15:
                 $url = U('Content/Site/service_people');break;
             case 17:
-                $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>75));break;
+                $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>137));break;
+            case 20:
+                $url = "http://125.66.2.25:28082/wsga/myappo.html";break;
+            case 21:
+                $url = U('Content/Site/service_people');break;
             case 22:
                 $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>139));break;
         }

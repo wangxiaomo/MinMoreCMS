@@ -22,11 +22,10 @@
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="{:U('Content/Site/police_interaction')}"><li class="on">警民互动</li></a>
             <a href="{:U('Content/Site/service_people')}"><li>服务民生</li></a>
-            <i class="square-icon"></i>
         </ul>
         <div class="sub-menu">
           <ul>
-            <a href="{:U('DirectorMail/Index/index')}"><li>局长信箱</li></a>
+            <a href="{:U('DirectorMail/Index/add')}"><li>局长信箱</li></a>
             <li>群众投诉</li>
             <li>网上举报</li>
             <li>网上咨询</li>
@@ -35,7 +34,7 @@
             <li>民意征集</li>
             <li>在线调查</li>
             <li>警方微博</li>
-            <a href="{:U('DirectorMail/Membermail/info')}"><li>代表委员直通车</li></a>
+            <a href="{:U('DirectorMail/Membermail/add')}"><li>代表委员直通车</li></a>
           </ul>
         </div>
         <div class="crumb">
@@ -48,7 +47,7 @@
               <img src="{$model_extresdir}images/sidebar-top.png" />
               <div>
                 <ul>
-                  <a href="{:U('DirectorMail/Index/index')}"><li class="{$director_mail_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />局长信箱</li></a>
+                  <a href="{:U('DirectorMail/Index/add')}"><li class="{$director_mail_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />局长信箱</li></a>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />群众投诉</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />网上举报</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />网上咨询</li>
@@ -57,7 +56,7 @@
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />民意征集</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />在线调查</li>
                   <li><img src="{$model_extresdir}images/sidebar-li.png" />警方微博</li>
-                  <a href="{:U('DirectorMail/Membermail/info')}"><li class="{$npc_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />代表委员直通车</li></a>
+                  <a href="{:U('DirectorMail/Membermail/add')}"><li class="{$npc_page?'on':''}"><img src="{$model_extresdir}images/sidebar-li.png" />代表委员直通车</li></a>
                 </ul>
               </div>
             </div>
