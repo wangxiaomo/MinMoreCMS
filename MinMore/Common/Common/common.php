@@ -989,11 +989,11 @@ function generate_vcode($length=6){
 function can_user_request_vcode_sms($mobile) {
     if(empty($mobile)) return false;
     C("DB_PREFIX", "mobile_");
-    $r = D("Send")->where("Tousermobile='$mobile' and status=0")->order("id desc")->find();
+    $r = D("Send")->where("tousermobile='$mobile' and status=0")->order("id desc")->find();
     if($r){
         //sync session
         session("sms_type", "vcode");
-        session("sms_mobile", $r["Tousermobile"]);
+        session("sms_mobile", $r["tousermobile"]);
         session("sms_vcode", $r["checkval"]);
         return false;
     }
@@ -1016,11 +1016,11 @@ function get_user_vcode($mobile) {
 
     if(empty($mobile)) return NULL;
     C("DB_PREFIX", "mobile_");
-    $r = D("Send")->where("Tousermobile='$mobile'")->order("id desc")->find();
+    $r = D("Send")->where("tousermobile='$mobile'")->order("id desc")->find();
     if($r){
         //sync session
         session("sms_type", "vcode");
-        session("sms_mobile", $r["Tousermobile"]);
+        session("sms_mobile", $r["tousermobile"]);
         session("sms_vcode", $r["checkval"]);
         return $r["checkval"];
     }
@@ -1043,7 +1043,7 @@ function send_vcode_sms($mobile) {
         //db table: mobile_send
         C("DB_PREFIX", "mobile_");
         D("Send")->data(array(
-            "Tousermobile"  =>  $mobile,
+            "tousermobile"  =>  $mobile,
             "status"    => 0,
             "checkval"  =>  $vcode,
             "content"   =>  $content,
