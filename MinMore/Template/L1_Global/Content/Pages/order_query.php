@@ -97,7 +97,7 @@
                         code = $.trim($("input[name=code]").val());
                     if(caseID && mobile && code){
                         loading();
-                        $.post("/index.php?g=api&m=site&a=query_case", {
+                        $.post("/index.php?g=api&m=site&a=query_order", {
                             caseID:caseID,mobile:mobile,code:code
                         },function(d){
                             loadingDismissed();
