@@ -97,7 +97,7 @@ class MembermailModel extends Model {
             $this->error = '非法操作！';
             return false;
         }
-        $data['tel'] = M('MembermailUser')->where(array('uid' => $data['uid']))->getField('tel');
+        $data['username'] = M('MembermailUser')->where(array('uid' => $data['uid']))->getField('username');
         if ($data['roleid']) {
             $role = M('Role')->where(array('id' => $data['roleid']))->find();
             $data['roleid'] = $role['name'].$role['level'];
