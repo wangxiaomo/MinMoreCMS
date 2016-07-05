@@ -138,7 +138,7 @@ $(function () {
             var str = 0;
             var id = tag = '';
             $("input[name='ids[]']").each(function () {
-                if ($(this).attr('checked')) {
+                if ($(this).prop('checked')) {
                     str = 1;
                     id += tag + $(this).val();
                     tag = '|';
@@ -164,11 +164,11 @@ $(function () {
 
 function view_comment(obj) {
 	Wind.use('artDialog','iframeTools', function () {
-         art.dialog.open($(obj).attr("data-url"), {
+         art.dialog.open($(obj).prop("data-url"), {
 			close:function(){
 				$(obj).focus();
 			},
-            title: $(obj).attr("data-title"),
+            title: $(obj).prop("data-title"),
 			width:"800px",
             height: '520px',
 			id:"view_comment",
@@ -183,7 +183,7 @@ function pushs() {
     var str = 0;
     var id = tag = '';
     $("input[name='ids[]']").each(function () {
-        if ($(this).attr('checked')) {
+        if ($(this).prop('checked')) {
             str = 1;
             id += tag + $(this).val();
             tag = '|';
