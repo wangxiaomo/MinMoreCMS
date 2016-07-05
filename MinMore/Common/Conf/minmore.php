@@ -16,4 +16,6 @@ return array(
     "VCODE_SMS_TEMPLATE" => "请输入{vcode}进行本次验证。",
     "VCODE_LENGTH"  =>  6,
     "HACK_SMS_VCODE"    =>  "345211",
+    "MINMORE_REGISTER_URL"  =>  "http://125.66.2.25:28082/wsga/user/register.html",
+    "MINMORE_LOGIN_URL"     =>  "http://125.66.2.25:28082/wsga/user/login.html",
 );

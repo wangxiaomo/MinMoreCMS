@@ -1,8 +1,8 @@
 <div class="top-nav">
     <img src="{$config_siteurl}statics/themes/L1_Global/images/user-login.png" alt="登录" class="top-nav-img"/>
     <div class="user-action">
-        <a href="#" class="disabled-link">用户登录</a>
-        <a href="#" class="disabled-link">注册</a>
+        <a href="{:C('MINMORE_LOGIN_URL')}">用户登录</a>
+        <a href="{:C('MINMORE_REGISTER_URL')}">注册</a>
         <a href="#" id="addBookmark">收藏</a>
         <a href="{$config_siteurl}">返回首页</a>
     </div>
