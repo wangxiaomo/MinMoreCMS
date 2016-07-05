@@ -20,7 +20,7 @@ ul,ul li{ margin:0;padding:0;list-style:none;}
 .float_left{float:left;}
 .float_right{float:right;}
 .header_box{width:100%;height:200px;background:url(../images/header_bg.png) repeat-x;}
-.header{width:1366px;height:200px;margin:0 auto;background:url(../images/header.png);}
+.header{width:1366px;height:200px;margin:0 auto;}
 .top{width:1000px;height:40px;line-height:40px;background:url(../images/top_bg.png);margin:0 auto;font-size:12px;color:#fff;}
 .top a:hover{color:#fff !important;}
 .top_left{display:block;float:left;margin:0 50px;}

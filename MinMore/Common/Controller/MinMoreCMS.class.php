@@ -50,6 +50,7 @@ class MinMoreCMS extends \Think\Controller {
 
         if($r){
             \Common\Controller\MinMoreCMS::$Cache["GLOBAL_ROLE"] = $r["id"];
+            $this->assign("global_role", $r["id"]);
         }else{
             $url = sprintf("%s://%s/%s", $_SERVER["REQUEST_SCHEME"], $domain, 'admin.php');
             die(header("Location:$url"));

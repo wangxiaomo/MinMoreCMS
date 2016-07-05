@@ -1,7 +1,12 @@
+<style>
+.header {
+    background:url(statics/themes/L2_Global/images/role/{$global_role}/header.png);
+}
+</style>
 <div class="header_box">
 	<div class="header">
     	<div class="top">
-        	<span class="top_left"><a class="disabled-link" href="#">登陆</a><a class="disabled-link" href="#">注册</a><a id="addBookmarkaddBookmark" href="#">收藏</a><a href="{$config_siteurl}">设为首页</a></span>
+        	<span class="top_left"><a href="{:C('MINMORE_LOGIN_URL')}">登陆</a><a href="{:C('MINMORE_REGISTER_URL')}">注册</a><a id="addBookmarkaddBookmark" href="#">收藏</a><a href="{$config_siteurl}">设为首页</a></span>
             <span class="top_center"><span id="topWeather"></span><span id="topDateTime" style="margin-left:60px;"></span></span>
             <span class="top_search"><input type="text" class="search-box" placeholder="请输入内容" /><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/search.png" class="search-btn" /></span>
         </div>
