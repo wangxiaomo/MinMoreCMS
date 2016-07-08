@@ -11,7 +11,6 @@
 namespace Content\Controller;
 
 use Common\Controller\Base;
-
 class SiteController extends Base {
     //这里放一些 CMS 不好处理的链接关系
     public function police_news() {
@@ -103,5 +102,11 @@ class SiteController extends Base {
     public function order_query() {
         //link => 刑事案件查询
         $this->display("Pages/order_query");
+    }
+
+    public function police_cards() {
+        //link => 警民联系卡
+        $this->assign("show_police_cards", true);
+        $this->display("Pages/police_cards");
     }
 }
