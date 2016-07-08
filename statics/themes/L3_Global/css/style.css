@@ -1,0 +1,49 @@
+/* CSS Document */
+#index-mian{width:1000px; height:auto; background-color:#FFF; overflow:hidden; padding:10px 0px}
+.one-floor{width:1000px; height:240px; overflow:hidden; background-color:#FFF}
+.slide{width::356px; height:240px; overflow:hidden; float:left; margin-right:10px}
+.brief{background:url(../images/brief.png); width:388px; height:240px; overflow:hidden; float:left}
+.card{background:url(../images/card.png) no-repeat; width:230px; height:240px; overflow:hidden; float:right; margin-right:8px}
+.title{width:100%; height:33px; line-height:34px; color:#FFF; font-size:14px; font-weight:bold;}
+.title samp{margin-left:25px}
+.title span{float:right; margin-right:10px; font-size:12px; font-weight:normal; color:#0c468c}
+.bridfer{width:95%; height:auto; overflow:hidden; margin:10px auto; font-size:12px; line-height:20px}
+.bridfimg{width:122px; height:84px; overflow:hidden; float:right; margin-left:5px}
+.card dl{width:95%; height:auto; overflow:hidden; margin:10px auto; font-size:12px}
+.card dl dt{float:left; width:104px; overflow:hidden}
+.card dl dd{float:right; width:100px; overflow:hidden; font-size:14px}
+.card dl dd p{margin-bottom:10px}
+
+
+.second-floor{width:1000px; height:auto; overflow:hidden;}
+.second-floor ul{width:990px; height:auto; overflow:hidden; margin:10px auto}
+.second-floor ul li{float:left}
+
+.thrid-floor{width:1000px; height:auto; overflow:hidden;}
+.news-flash{width:370px; height:295px; overflow:hidden; float:left; margin-right:8px; border:solid 1px #dbdbdb}
+.second-title{background:url(../images/titleground.png) repeat-x; width:100%; height:35px; line-height:35px}
+.tt{background:url(../images/police28.png) no-repeat; float:left; width:86px; height:30px; overflow:hidden; font-size:14px; font-weight:bold; color:#FFF; text-align:center; line-height:30px}
+.more, .more a {width:47px; height:auto; overflow:hidden; float:right; font-size:12px; color:#FFF; background:url(../images/police27.png) no-repeat; text-align:center}
+.news-flash ul{width:95%; height:auto; overflow:hidden; margin:5px auto}
+.news-flash ul li{border-bottom:dashed 1px #dbdbdb; width:100%; height:30px; line-height:30px; font-size:12px}
+.news-flash ul li img{float:left; margin-right:10px}
+.news-flash ul li span{float:right; font-size:12px; color:#a1a1a1}
+.news-over{width:230px; height:auto; overflow:hidden; float:right; margin-right:8px}
+.news-over p{margin:0px 0px 16px 0px}
+
+
+.four-floor{width:1000px; height:auto; overflow:hidden}
+.four-floor ul li{float:left; margin:0px 5px}
+
+
+.five-floor{width:998px; height:175px; overflow:hidden; border:solid 1px #dbdbdb; margin:5px auto; padding:5px 0px}
+.five-floor ul li{float:left; margin:5px 2px; border:solid 1px #dbdbdb; padding:3px}
+.five-floor ul li img{width:186px; height:129px; overflow:hidden}
+
+
+.six-floor{width:1000px; height:auto; overflow:hidden; margin:25px 0px}
+.six-floor span{color:#af6b00; font-weight:bold; font-size:14px}
+.lable{widht:113px; height:26px; padding:0px 20px; text-align:left; overflow:hidden; margin-right:5px; line-height:26px}
+.button{background:url(../images/police14.png); width:44px; height:26px; overflow:hidden; line-height:26px; border:none; color:#FFF}
+.lable01{width:300px; height:22px; overflow:hidden}
+.button01{background:url(../images/police13.png) no-repeat; width:37px; height:24px; overflow:hidden; margin:0px 10px; border:none; margin-top:2px; float:right}
