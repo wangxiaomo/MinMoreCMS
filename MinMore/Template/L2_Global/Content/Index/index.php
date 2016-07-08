@@ -102,7 +102,7 @@ window.onload = function (){
             	<ul>
                     <content action="lists" catid="2" order="id DESC" num="3">
                         <volist name="data" id="vo">
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_1.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></li>
+                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_{$i}.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></li>
                         </volist>
                     </content>
                 </ul>
@@ -147,7 +147,7 @@ window.onload = function (){
                         <ul>
                             <content action="lists" catid="23" order="id DESC" num="8">
                                 <volist name="data" id="vo">
-                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title}</a></li>
+                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                                 </volist>
                             </content>
                         </ul>
@@ -159,7 +159,7 @@ window.onload = function (){
                         <ul>
                             <content action="lists" catid="6" order="id DESC" num="8">
                                 <volist name="data" id="vo">
-                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title}</a></li>
+                                    <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                                 </volist>
                             </content>
                         </ul>
@@ -172,14 +172,14 @@ window.onload = function (){
 				阳光警务
         </div>
         <div class="sun_cont">
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_1.png" /></span> <span class="sun_text float_left">法律法规依据公开</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_2.png" /></span> <span class="sun_text float_left">执法办案流程公开</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_3.png" /></span> <span class="sun_text float_left">执法办案流程公开</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_4.png" /></span> <span class="sun_text float_left">执法权利清单公开</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_5.png" /></span> <span class="sun_text float_left">警情受理查询</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_6.png" /></span> <span class="sun_text float_left">治安案件查询</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_7.png" /></span> <span class="sun_text float_left">刑事案件查询</span></a>
-            <a href="#"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_8.png" /></span> <span class="sun_text float_left">交通违法查询</span></a>
+            <a href="{:U('Content/Index/lists@' . C('GLOBAL_SITE_DOMAIN'), array('catid'=>25))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_1.png" /></span> <span class="sun_text float_left">法律法规依据公开</span></a>
+            <a href="{:U('Content/Index/lists@' . C('GLOBAL_SITE_DOMAIN'), array('catid'=>29))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_2.png" /></span> <span class="sun_text float_left">执法办案流程公开</span></a>
+            <a href="{:U('Content/Index/lists@' . C('GLOBAL_SITE_DOMAIN'), array('catid'=>33))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_3.png" /></span> <span class="sun_text float_left">执法权力清单公开</span></a>
+            <a href="{:U('Content/Index/lists@' . C('GLOBAL_SITE_DOMAIN'), array('catid'=>31))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_4.png" /></span> <span class="sun_text float_left">行政处罚决定公开</span></a>
+            <a href="{:U('Content/Site/alarm_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_5.png" /></span> <span class="sun_text float_left">警情受理查询</span></a>
+            <a href="{:U('Content/Site/case_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_6.png" /></span> <span class="sun_text float_left">治安案件查询</span></a>
+            <a href="{:U('Content/Site/order_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_7.png" /></span> <span class="sun_text float_left">刑事案件查询</span></a>
+            <a href="http://sc.122.gov.cn/" target="_blank"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_8.png" /></span> <span class="sun_text float_left">交通违法查询</span></a>
         </div>
     </div>
 </div>
