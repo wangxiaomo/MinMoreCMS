@@ -1,3 +1,8 @@
+<style>
+.head {
+    background:url(statics/themes/L4_Global/images/role/{$global_role}/head.png) no-repeat scroll center #186fbc;
+}
+</style>
 <div id="header">
     <div class="head">
         <div class="wrap">
