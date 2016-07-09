@@ -29,7 +29,7 @@ class MemberadminController extends AdminBase {
         $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
         $userdb = M('MembermailUser');
         foreach ($data as &$vo) {
-            $vo['uid'] = $userdb->where(array('uid'=>$vo['uid']))->getField('tel');
+            $vo['uid'] = $userdb->where(array('uid'=>$vo['uid']))->getField('username');
         }
         $this->assign('data', $data);
         $this->assign("Page", $page->show('Admin'));
