@@ -24,7 +24,7 @@
             <content action="lists" catid="$catid" order="id DESC" num="20" page="$page">
                 <volist name="data" id="vo">
                     <div class="left_cont_list">
-                        <a href="{$vo.url}">{$vo.title}</a><span>{$vo.updatetime|date='Y-m-d',###}</span>
+                        <a href="{$vo.url}">{$vo.title|str_cut=###,25}</a><span>{$vo.updatetime|date='Y-m-d',###}</span>
                         <p>{$vo.description|str_cut=###,50}</p>
                     </div>
                 </volist>
