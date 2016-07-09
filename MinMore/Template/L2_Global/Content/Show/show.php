@@ -44,6 +44,7 @@
             	<ul>
                     <content action="lists" catid="2" order="id DESC" num="3">
                         <volist name="data" id="vo">
+                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_{$i}.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></li>
                         </volist>
                     </content>
                 </ul>
