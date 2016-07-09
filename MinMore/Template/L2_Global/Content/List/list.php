@@ -41,7 +41,7 @@
             	<ul>
                     <content action="lists" catid="2" order="id DESC" num="3">
                         <volist name="data" id="vo">
-                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_1.png" /><a href="#">省内煤市要闻回顾</a></li>
+                            <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_{$i}.png" /><a href="#">省内煤市要闻回顾</a></li>
                         </volist>
                     </content>
                 </ul>
