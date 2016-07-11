@@ -72,11 +72,20 @@
           </div>
         </div>
         <div class="form-button-groups">
-          <button>提交</button>
+          <button type="submit">提交</button>
           <button type="reset">重置</button>
+          <button class="query-button">查询</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+<script>
+$(function(){
+    $(".query-button").on("click", function(e){
+        e.preventDefault();
+        window.location = "{:U('DirectorMail/Index/search')}";
+    });
+});
+</script>
 <template file="DirectorMail/Public/footer.php"/>

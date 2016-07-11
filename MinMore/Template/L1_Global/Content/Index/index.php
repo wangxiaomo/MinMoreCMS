@@ -141,8 +141,8 @@
 
         <!-- 局长信箱-->
         <ul class="mail-connect">
-            <li><a href="{:U('Content/Site/police_interaction')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
-            <li><a href="{:U('DirectorMail/Membermail/info')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
+            <li><a href="{:U('DirectorMail/Index/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
+            <li><a href="{:U('DirectorMail/Membermail/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
             <li><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
             <li style="margin-right: 7px"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
             <li style="margin:10px 0"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
