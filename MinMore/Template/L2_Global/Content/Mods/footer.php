@@ -20,4 +20,4 @@
         <a href="http://xjzd.gaqgaj.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_4.jpg" /></a>
     </if>
 </div>
-<div class="footer">广安市公安局广安区分局 版权所有</div>
+<div class="footer">{$global_role_name} 版权所有</div>
