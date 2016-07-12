@@ -54,6 +54,12 @@ class IndexController extends Base {
         if($url){
             die(header("Location:$url"));
         }
+        //wangxiaomo:template hack
+        $config = get_site_config();
+        if($config["theme"] != "L2_Global" && $catid==45){
+            die("L1_Global Theme 不需要此页面");
+        }
+
         //分页
         $page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
         //获取栏目数据
