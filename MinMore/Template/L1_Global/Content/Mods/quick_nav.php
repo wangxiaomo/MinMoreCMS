@@ -3,6 +3,9 @@
     <div class="work-build-nav">
         <div class="police-news-nav">
             <div class="sunshine-nav">
+                <div class="home-nav">
+                    <a href="{:U('Content/Index/index')}"><p>首页</p></a>
+                </div>
                 <a href="{:U('Content/Site/sunshine_police')}"><p>阳光警务</p></a>
             </div>
             <a href="{:U('Content/Site/police_news')}"><p>警界资讯</p></a>
@@ -17,7 +20,7 @@
             $(this).css("left","0")
 
         },function(){
-            $(this).css("left","-90px")
+            $(this).css("left","-119px")
         });
     })
 </script>

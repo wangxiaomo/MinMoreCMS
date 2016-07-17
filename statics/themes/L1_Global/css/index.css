@@ -745,14 +745,15 @@ img{
 .introduce-info a:hover{
     color: red;
 }
-/*------------快速导航栏---------------*/
+/*--快速导航栏--*/
 .fast-nav{
-    width: 119px;
+    width: 150px;
     height: 166px;
     background-image: url("../images/fast-nav.png");
+    background-position:5px;
     position: absolute;
     top: 400px;
-    left: -90px;
+    left: -119px;
 }
 .fast-nav p{
     width: 20px;
@@ -763,10 +764,12 @@ img{
     font-size: 14px;
 }
 .work-build-nav{
-    width: 91px;
+    width: 119px;
     height: 166px;
     float: left;
     background-image: url("../images/work-build-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
 }
 .work-build-nav p{
     margin-top: 60px;
@@ -775,16 +778,28 @@ img{
     color: black;
 }
 .police-news-nav{
-    width: 63px;
+    width: 91px;
     height: 166px;
     float: left;
     background-image: url("../images/police-news-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
 }
 .sunshine-nav{
-    width: 35px;
+    width: 63px;
     height: 166px;
     float: left;
     background-image: url("../images/sunshine-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
+}
+.home-nav{
+    width: 30px;
+    height: 166px;
+    float: left;
+    background:#1869A2;
+    border-radius:0px 8px 8px 0px;
+    box-shadow:1px 1px 2px #555;
 }
 /*--二维码--*/
 .erweima{
