@@ -927,7 +927,7 @@ button {
   width:70%;float:left;
 }
 .form-button-groups {
-  width:100%;clear:both;padding:5px 40px;
+  width:100%;clear:both;padding:5px 40px;margin-top:15px;
 }
 .form-button-groups button{
   background:#eb8f13;padding:5px 30px;color:#fff;border-radius:8px;font-size:16px;
@@ -978,6 +978,16 @@ button {
 }
 .multi_data-textarea .small-prompt {
   margin:0px;padding:0px;font-size:10px;color:red;margin-left:15%;
+}
+.submit-button{
+background: #eb8f13;
+padding: 5px 30px;
+color: #fff;
+border-radius: 8px;
+font-size: 16px;
+border: none;
+margin: 0px 10px;
+cursor: pointer;
 }
 /****************billow*******************/
 .red {
@@ -1191,4 +1201,7 @@ tr.large-table-row {
 }
 .meta-description p {
   text-indent:2em;line-height:22px;margin:0px;color:#777;
+}
+p.download-files.row-title {
+  font-size:18px;font-weight:bold;background: #e6f0fc;padding:10px;margin-left:0px;width:662px;text-indent:0em;
 }

@@ -143,8 +143,8 @@
         <ul class="mail-connect">
             <li><a href="{:U('DirectorMail/Index/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
             <li><a href="{:U('DirectorMail/Membermail/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
-            <li><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
-            <li style="margin-right: 7px"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
+            <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
+            <li style="margin-right: 7px"><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
             <li style="margin:10px 0"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
         </ul>
         <!-- 办事大厅-->
@@ -349,7 +349,7 @@
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_7.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/wangshangxinfang.png" alt="网上信访"/><br/>
-                        <a href="#" class="disabled-link">网上信访</a>
+                        <a href="{:U('DirectorMail/Onlinepetition/add')}">网上信访</a>
                     </li>
                 </ul>
             </div>
@@ -449,10 +449,10 @@
                 <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
             </div>
             <div class="interaction">
-                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
-                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction2.png" alt=""/></a>
-                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction3.png" alt=""/></a>
-                <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
+                <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
+                <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction2.png" alt=""/></a>
+                <a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction3.png" alt=""/></a>
+                <a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
             </div>
         </div>
         <template file="Content/Mods/footer.php" />

@@ -15,20 +15,29 @@ class ConsultController extends Base {
         parent::_initialize();
         C('TMPL_ACTION_ERROR', APP_PATH . 'DirectorMail/View/error.php');
         C('TMPL_ACTION_SUCCESS', APP_PATH . 'DirectorMail/View/success.php');
-        /*$this->typeId = I('typeid', 0, 'intval');
-        if (empty($this->typeId)) {
-            $this->error('信件类型错误！');
+        $headicon = I('get.type');
+        switch ($headicon) {
+            case 'wszx':
+                $flag = '网上咨询';break;
+            case 'wsjb':
+                $flag = '网上举报';break;
+            case 'qzts':
+                $flag = '群众投诉';break;
         }
-        $this->assign('typeid', $this->typeId);*/
-        $this->assign("director_mail_page", true);
-        $this->db = D('DirectorMail/Directormail');
+        if ($flag) {
+            $this->assign('headicon', $flag);
+            $this->assign('flag', $headicon);
+        } else {
+            $this->error('非法操作！');
+        }
+        $this->db = D('DirectorMail/Consult');
     }
 
-    //局长信箱首页
+    //网上咨询首页（最新回复列表）
     public function index() {
         $where = array(
-            'secrecy' => 1,
             'roleid' => get_site_role(),
+            'type' => I('get.type'),
         );
         $count = $this->db->where($where)->count();
         $page = page($count, 10);
@@ -41,14 +50,13 @@ class ConsultController extends Base {
                 $value['roleid'] = '暂无';
             }
         }
-        //$this->assign('data', $data);
-        $this->assign("title", "局长信箱");
+        $this->assign("title", "网上咨询");
 		$this->assign('dataList', $data);
         $this->assign("Page", $page->show('Admin'));
         $this->display();
     }
 
-    //增加信件
+    //填写网上咨询
     public function add() {
         if (IS_POST) {
             //验证码
@@ -63,41 +71,23 @@ class ConsultController extends Base {
             //提交
             $post = I('post.');
             $post['roleid'] = get_site_role();
-            if (!empty($_FILES['upload']['tmp_name'])) {
-                $info = $this->upload();
-                if (!empty($info[0]['url'])) {
-                    $post['upload'] = $info[0]['url'];
-                }
-            }
-            $id = $this->db->addDirectorMail($post);
+            $post['type'] = I('get.type');
+            $id = $this->db->addConsult($post);
             if ($id) {
-                $message = 'C'.date('Ymd', time()).$id;                
-                $this->success($message, U('Index/index', array('typeid' => $post['typeid'])));
+                $message = 'WSZX'.date('Ymd', time()).$id;                
+                $this->success($message, U('Consult/index'));
             } else {
                 $error = $this->db->getError();
-                $this->error($error ? $error : '写信失败！');
+                $this->error($error ? $error : '提交网上咨询！');
             }
         } else {
-            $typeList = M('DirectormailType')->order(array('typeid' => 'DESC'))->select();
-            $this->assign('typeList', $typeList); 
+            $dataList = M()->query('select id, name from sys_office');
+            $this->assign('data', $dataList);
             $this->display();
         }
     }
 
-    public function info() {
-        $this->display();
-    }
-    
-    public function upload() {
-        $upload = new \Libs\Driver\Attachment\Local();
-        $info = $upload->upload();
-        if (!$info) {
-            $this->error($upload->getErrorMsg());
-        } else {
-            return $info;
-        }
-    }
-
+    //我的咨询信息详情
     public function mail() {
         $mailid = I('get.mailid', 0, 'intval');
         $data = $this->db->mail($mailid);
@@ -107,31 +97,32 @@ class ConsultController extends Base {
         $this->assign('data', $data);
         $this->display();
     }
-
+    
+    //我的咨询搜索列表
     public function search() {
         if (IS_POST) {
-            $tel = I('post.tel');
-            if (!empty($tel)) {
-                $where['shouji'] = $tel;
+            $sjhm = I('post.sjhm');
+            if (!empty($sjhm)) {
+                $where['sjhm'] = $sjhm;
+            } else {
+                $this->error('请输入手机号码！');
             }
-            $code = I('post.code');
-            if (!empty($code) && strlen($code) > 9) {
-                $where['id'] = substr($code, 9);
+            $cxmm = I('post.cxmm');
+            if (!empty($cxmm)) {
+                $where['cxmm'] = $cxmm;
+            } else {
+                $this->error('请输入查询密码！');
             }
-            if (!isset($where)) {
-                $this->error('请正确输入查询条件');
-            }
-                        
-            $where['secrecy'] = 1;
+            $where['type'] = I('get.type');
             $count = $this->db->where($where)->count();
             $page = page($count, 10);
             $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
             foreach ($data as &$value) {
-                if ($value['roleid']) {
-                    $role = M('Role')->where(array('id' => $value['roleid']))->find();
-                    $value['roleid'] = $role['name'].$role['level'];
+                if ($value['hfdw']) {
+                    $role = M('Role')->where(array('id' => $value['hfdw']))->find();
+                    $value['hfdw'] = $role['name'].$role['level'];
                 } else {
-                    $value['roleid'] = '暂无';
+                    $value['hfdw'] = '暂无';
                 }
             }
 		    $this->assign('dataList', $data);

@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="complaint">
-                    <a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>群众投诉</p></a>
+                    <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/complaint-phone.png" alt=""/><p>群众投诉</p></a>
 
                 </div>
             </div>
