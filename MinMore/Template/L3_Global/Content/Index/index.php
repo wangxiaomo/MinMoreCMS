@@ -74,12 +74,12 @@
         
         <div class="four-floor">
            <ul>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=网监"><img src="{$config_siteurl}statics/themes/L3_Global/images/police21.png"></a></li>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=出入境"><img src="{$config_siteurl}statics/themes/L3_Global/images/police20.png"></a></li>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=治安"><img src="{$config_siteurl}statics/themes/L3_Global/images/police19.png"></a></li>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=交警"><img src="{$config_siteurl}statics/themes/L3_Global/images/police18.png"></a></li>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html?businessType=消防"><img src="{$config_siteurl}statics/themes/L3_Global/images/police17.png"></a></li>
-             <li><a href="http://125.66.2.25:28082/wsga/businessItem/business.html"><img src="{$config_siteurl}statics/themes/L3_Global/images/police16.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=13"><img src="{$config_siteurl}statics/themes/L3_Global/images/police21.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=11"><img src="{$config_siteurl}statics/themes/L3_Global/images/police20.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=10"><img src="{$config_siteurl}statics/themes/L3_Global/images/police19.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=12"><img src="{$config_siteurl}statics/themes/L3_Global/images/police18.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=17"><img src="{$config_siteurl}statics/themes/L3_Global/images/police17.png"></a></li>
+             <li><a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm"><img src="{$config_siteurl}statics/themes/L3_Global/images/police16.png"></a></li>
            </ul>
         </div>
         
