@@ -713,14 +713,15 @@ button {
 .introduce-info a:hover{
     color: red;
 }
-/*------------快速导航栏---------------*/
+/*--快速导航栏--*/
 .fast-nav{
-    width: 119px;
+    width: 150px;
     height: 166px;
     background-image: url("../images/fast-nav.png");
+    background-position:5px;
     position: absolute;
     top: 400px;
-    left: -90px;
+    left: -119px;
 }
 .fast-nav p{
     width: 20px;
@@ -731,10 +732,12 @@ button {
     font-size: 14px;
 }
 .work-build-nav{
-    width: 91px;
+    width: 119px;
     height: 166px;
     float: left;
     background-image: url("../images/work-build-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
 }
 .work-build-nav p{
     margin-top: 60px;
@@ -743,16 +746,28 @@ button {
     color: black;
 }
 .police-news-nav{
-    width: 63px;
+    width: 91px;
     height: 166px;
     float: left;
     background-image: url("../images/police-news-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
 }
 .sunshine-nav{
-    width: 35px;
+    width: 63px;
     height: 166px;
     float: left;
     background-image: url("../images/sunshine-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
+}
+.home-nav{
+    width: 30px;
+    height: 166px;
+    float: left;
+    background:#1869A2;
+    border-radius:0px 8px 8px 0px;
+    box-shadow:1px 1px 2px #555;
 }
 /*--二维码--*/
 .erweima{
@@ -924,6 +939,47 @@ button {
 .data-line textarea {
   width:280px;height:115px;
 }
+/*****************billow******************/
+.multi_mailbox-form {
+  clear:both;margin-top:20px;background:#f6faff;padding:20px;font-size:14px;
+}
+.multi_mailbox-form h3 {
+  color:#000;text-align:center;font-size:20px;
+}
+.multi_form-button-groups {
+  width:100%;clear:both;padding:5px 40px;
+}
+.multi_data-line {
+  height:25px;margin-top:5px;
+}
+.multi_data-line .prompt {
+  width:15%;float:left;text-align:right;
+}
+.multi_data-line .left {
+  width:35%;float:left;
+}
+.multi_data-line .right{
+  width:35%;float:left;
+}
+.multi_data-line .total{
+  width:85%;float:left;
+}
+.multi_data-line .total input{
+  width:85%;float:left;
+}
+.multi_data-textarea {
+  height:150px;margin-top:5px;
+}
+.multi_data-textarea .prompt{
+  width:15%;float:left;text-align:right;
+}
+.multi_data-textarea textarea {
+  width:72%;height:115px;
+}
+.multi_data-textarea .small-prompt {
+  margin:0px;padding:0px;font-size:10px;color:red;margin-left:15%;
+}
+/****************billow*******************/
 .red {
   color:red;
 }
