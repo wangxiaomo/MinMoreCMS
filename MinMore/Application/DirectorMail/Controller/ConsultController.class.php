@@ -81,7 +81,7 @@ class ConsultController extends Base {
                 $this->error($error ? $error : '提交网上咨询！');
             }
         } else {
-            $dataList = M()->query('select id, name from sys_office');
+            $dataList = M()->query('select oid id, oname name from huoyi_office');
             $this->assign('data', $dataList);
             $this->display();
         }
