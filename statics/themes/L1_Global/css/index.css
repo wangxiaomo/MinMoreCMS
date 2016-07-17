@@ -804,7 +804,6 @@ img{
 /*--二维码--*/
 .erweima{
     width: 120px;
-    height: 470px;
     position: fixed;
     bottom: 1%;
     left: 50%;
