@@ -35,7 +35,8 @@ class PageModel extends Model {
         if (empty($catid)) {
             return false;
         }
-        return $this->where(array('catid' => $catid))->find();
+        $role = get_site_role();
+        return $this->where(array('catid' => $catid, 'role'=>$role))->find();
     }
 
     /**
@@ -49,11 +50,13 @@ class PageModel extends Model {
             return false;
         }
         $data = $post['info'];
+        $role = get_site_role();
+        $data["role"] = $role;
         //表单令牌
         $data[C("TOKEN_NAME")] = $post[C("TOKEN_NAME")];
         $catid = $data['catid'];
         //单页内容
-        $info = $this->where(array('catid' => $catid))->find();
+        $info = $this->where(array('catid' => $catid, 'role'=>$role))->find();
         if ($info) {
             unset($data['catid']);
         }
@@ -69,7 +72,7 @@ class PageModel extends Model {
                 }
             }
             if ($info) {
-                if ($this->where(array('catid' => $catid))->save($data) !== false) {
+                if ($this->where(array('catid' => $catid, 'role'=>$role))->save($data) !== false) {
                     //更新附件状态，把相关附件和文章进行管理
                     service("Attachment")->api_update('', 'catid-' . $catid, 1);
                     return true;
