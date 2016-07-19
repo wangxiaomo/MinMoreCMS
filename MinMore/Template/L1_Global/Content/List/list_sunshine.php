@@ -27,7 +27,7 @@
                         <a href="{:U('Content/Site/sunshine_police')}"><span class="go-back-home">回到首页</span></a>
                     </div>
                     <div class="query-box">
-                        <p>{$parent.catname}标题：<input type="text" name="q" /><button>查询</button></p>
+                        <p>{$parent.catname}标题：<input type="text" name="q" /><button id="query">查询</button></p>
                     </div>
                     <div class="body-content-details">
                         <div class="sidebar">
@@ -63,4 +63,9 @@
         <template file="Content/utils.php" />
     </div>
 </body>
+<script>
+$("#query").click(function(){
+var query=$("input[name='description']").val()
+});
+</script>
 </html>

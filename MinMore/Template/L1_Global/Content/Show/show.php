@@ -33,11 +33,11 @@
             <ul>
                 <if condition="$parent['catid'] eq 40">
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
-                    <li><a href="#" class="disabled-link">群众投诉</a></li>
-                    <li><a href="#" class="disabled-link">网上举报</a></li>
-                    <li><a href="{:getCategory(43,'url')}" class="{$catid==43?'menu-on':''}">{:getCategory(43,'catname')}</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众投诉</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}" class="{$headicon=='网上举报'?'menu-on':''}">网上举报</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}" class="{$headicon=='网上咨询'?'menu-on':''}">网上咨询</a></li>
                     <li><a href="{:getCategory(42,'url')}" class="{$catid==42?'menu-on':''}">{:getCategory(42,'catname')}</a></li>
-                    <li><a href="#" class="disabled-link">网上接访</a></li>
+                    <li><a href="{:U('DirectorMail/Onlinepetition/add')}" class="{$headicon=='网上接访'?'menu-on':''}">网上接访</a></li>
                     <li><a href="{:getCategory(10,'url')}" class="{$catid==10?'menu-on':''}">{:getCategory(10,'catname')}</a></li>
                     <li><a href="{:getCategory(41,'url')}" class="{$catid==41?'menu-on':''}">{:getCategory(41,'catname')}</a></li>
                     <li><a href="http://weibo.com/u/2918589882?nick=%E9%87%91%E7%9B%BE%E5%B9%BF%E5%AE%89&is_hot=1">警方微博</a></li>
@@ -60,11 +60,11 @@
                 <ul>
                 <if condition="$parent['catid'] eq 40">
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
-                    <li><a href="#" class="disabled-link">群众投诉</a></li>
-                    <li><a href="#" class="disabled-link">网上举报</a></li>
-                    <li><a href="{:getCategory(43,'url')}" class="{$catid==43?'menu-on':''}">{:getCategory(43,'catname')}</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众投诉</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}" class="{$headicon=='网上举报'?'menu-on':''}">网上举报</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}" class="{$headicon=='网上咨询'?'menu-on':''}">网上咨询</a></li>
                     <li><a href="{:getCategory(42,'url')}" class="{$catid==42?'menu-on':''}">{:getCategory(42,'catname')}</a></li>
-                    <li><a href="#" class="disabled-link">网上接访</a></li>
+                    <li><a href="{:U('DirectorMail/Onlinepetition/add')}" class="{$headicon=='网上接访'?'menu-on':''}">网上接访</a></li>
                     <li><a href="{:getCategory(10,'url')}" class="{$catid==10?'menu-on':''}">{:getCategory(10,'catname')}</a></li>
                     <li><a href="{:getCategory(41,'url')}" class="{$catid==41?'menu-on':''}">{:getCategory(41,'catname')}</a></li>
                     <li><a href="http://weibo.com/u/2918589882?nick=%E9%87%91%E7%9B%BE%E5%B9%BF%E5%AE%89&is_hot=1">警方微博</a></li>
