@@ -446,7 +446,7 @@
                 <a href="{:U('Content/Site/alarm_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu5.png" alt=""/></a>
                 <a href="{:U('Content/Site/case_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu6.png" alt=""/></a>
                 <a href="{:U('Content/Site/order_query')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu7.png" alt=""/></a>
-                <a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
+                <a href="http://sc.122.gov.cn/views/inquiry.html"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
             </div>
             <div class="interaction">
                 <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>

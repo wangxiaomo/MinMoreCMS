@@ -39,7 +39,7 @@
                <li><a href="{:U('Content/Site/alarm_query@' . C('GLOBAL_SITE_DOMAIN'))}"><img src="{$config_siteurl}statics/themes/L3_Global/images/police29.png"></a></li>
                <li><a href="{:U('Content/Site/case_query@' . C('GLOBAL_SITE_DOMAIN'))}"><img src="{$config_siteurl}statics/themes/L3_Global/images/police30.png"></a></li>
                <li><a href="{:U('Content/Site/order_query@' . C('GLOBAL_SITE_DOMAIN'))}"><img src="{$config_siteurl}statics/themes/L3_Global/images/police31.png"></a></li>
-               <li><a href="http://sc.122.gov.cn/"><img src="{$config_siteurl}statics/themes/L3_Global/images/police32.png"></a></li>
+               <li><a href="http://sc.122.gov.cn/views/inquiry.html"><img src="{$config_siteurl}statics/themes/L3_Global/images/police32.png"></a></li>
              </ul>
            </div>
            

@@ -874,7 +874,11 @@ function U($url = '', $vars = '', $suffix = true, $domain = true) {
     //网站配置
     $config = get_site_config();
     // 解析URL
+    // when there is port num in $url, bugs will come!
+    list($url, $port) = explode(":", $url);
     $info = parse_url($url);
+    $info["port"] = $port;
+
     $url = !empty($info['path']) ? $info['path'] : ACTION_NAME;
     if (isset($info['fragment'])) { // 解析锚点
         $anchor = $info['fragment'];

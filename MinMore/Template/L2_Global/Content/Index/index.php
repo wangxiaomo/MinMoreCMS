@@ -128,16 +128,16 @@ window.onload = function (){
                 <img src="{$config_siteurl}statics/themes/L2_Global/images/title_2.png" />
             </div>
             <div class="hall_cont">
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_1.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_2.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_3.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_4.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_5.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_6.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_7.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_8.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_9.png" /></a>
-                    <a href="#"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_10.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=11"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_1.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=14"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_2.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=15"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_3.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=9"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_4.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=16"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_5.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=12"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_6.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=13"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_7.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=10"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_8.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm?sid=17"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_9.png" /></a>
+                    <a href="http://125.66.2.25:28081/wsga/wsga/web/working-center/working-center.htm"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/hall_10.png" /></a>
             </div>
         </div>
         <div class="dt_cont">
@@ -179,7 +179,7 @@ window.onload = function (){
             <a href="{:U('Content/Site/alarm_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_5.png" /></span> <span class="sun_text float_left">警情受理查询</span></a>
             <a href="{:U('Content/Site/case_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_6.png" /></span> <span class="sun_text float_left">治安案件查询</span></a>
             <a href="{:U('Content/Site/order_query@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_7.png" /></span> <span class="sun_text float_left">刑事案件查询</span></a>
-            <a href="http://sc.122.gov.cn/" target="_blank"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_8.png" /></span> <span class="sun_text float_left">交通违法查询</span></a>
+            <a href="http://sc.122.gov.cn/views/inquiry.html" target="_blank"><span class="sun_img float_left"><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/sun_8.png" /></span> <span class="sun_text float_left">交通违法查询</span></a>
         </div>
     </div>
 </div>

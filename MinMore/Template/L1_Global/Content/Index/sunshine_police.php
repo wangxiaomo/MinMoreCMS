@@ -50,8 +50,8 @@
                 <div class="nav-bottom">
                     <div class="traffic-query">
                         <ul>
-                            <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询机动车电子违法情况</a></li>
-                            <li><a href="http://sc.122.gov.cn/" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询驾驶证违法积分情况</a></li>
+                            <li><a href="http://sc.122.gov.cn/views/inquiry.html" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询机动车电子违法情况</a></li>
+                            <li><a href="http://sc.122.gov.cn/views/inquiry.html" target="_blank"><img src="{$config_siteurl}statics/themes/L1_Global/images/triangle.png" alt=""/>查询驾驶证违法积分情况</a></li>
                         </ul>
                     </div>
                     <div class="Alarm-query">
