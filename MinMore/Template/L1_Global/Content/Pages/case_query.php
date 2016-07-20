@@ -38,16 +38,12 @@
             </div>
             <div class="query-detail">
                 <table>
-                    <tr style="height:200px;">
-                        <td style="width: 20%;" class="first-td">案件名称：</td>
-                        <td style="width: 80%;" class="data-zyaq"></td>
-                    </tr>
                     <tr>
-                        <td class="first-td">办事单位：</td>
+                        <td class="first-td">处理单位：</td>
                         <td class="data-sljjdw"></td>
                     </tr>
                     <tr>
-                        <td class="first-td">办案民警：</td>
+                        <td class="first-td">处理民警：</td>
                         <td class="data-mjxm"></td>
                     </tr>
                     <tr>
@@ -103,7 +99,6 @@
                         },function(d){
                             loadingDismissed();
                             if(d.r == 1){
-                                $(".data-zyaq").text(d.data.zyaq);
                                 $(".data-sljjdw").text(d.data.sljjdw);
                                 $(".data-mjxm").text(d.data.mjxm);
                                 $(".data-mjdh").text(d.data.mjdh);
