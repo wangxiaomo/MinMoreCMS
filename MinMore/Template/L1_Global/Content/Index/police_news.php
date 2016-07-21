@@ -249,7 +249,7 @@
                 <div class="fast-link">
                     <a href="{:getCategory(36,'url')}"><p style="background-image: url('/statics/themes/L1_Global/images/link1.png')">机构职能</p></a>
                     <a href="{:getCategory(37,'url')}"><p style="background-image: url('/statics/themes/L1_Global/images/link2.png')">领导简介</p></a>
-                    <a href="#" class="disabled-link"><p style="background-image: url('/statics/themes/L1_Global/images/link3.png')">电子地图</p></a>
+                    <a href="{:U('Content/Site/map')}"><p style="background-image: url('/statics/themes/L1_Global/images/link3.png')">电子地图</p></a>
                 </div>
             </div>
         </div>

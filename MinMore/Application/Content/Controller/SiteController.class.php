@@ -109,4 +109,9 @@ class SiteController extends Base {
         $this->assign("show_police_cards", true);
         $this->display("Pages/police_cards");
     }
+
+    public function map() {
+        //link => site map
+        $this->display("Pages/map");
+    }
 }

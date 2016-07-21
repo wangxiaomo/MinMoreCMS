@@ -134,7 +134,7 @@
            
            <div class="interact-table2-tab3">
               <div class="interact-table2-titele"><span>电子地图</span></div>
-              <img src="{$config_siteurl}statics/themes/L1_Global/images/interact15.png">
+              <a href="{:U('Content/Site/map')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact15.png"></a>
            </div>
         </div>
         <template file="Content/Mods/footer.php" />

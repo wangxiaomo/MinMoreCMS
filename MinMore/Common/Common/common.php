@@ -1057,3 +1057,10 @@ function send_vcode_sms($mobile) {
         return $vcode;
     }
 }
+function get_site_url($name) {
+    //wangxiaomo:get site url based on name
+    empty($name) && die("need param name to get site url");
+
+    $r = D("Role")->where("name like '%$name%'")->find();
+    return $r?"http://" . $r["domain"]:"#";
+}

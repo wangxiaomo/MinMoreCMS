@@ -94,7 +94,7 @@ window.onload = function (){
     	<div class="wap">
     		<img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/icon/map.png" />
             <img class="float_right" src="{$config_siteurl}statics/themes/L2_Global/images/icon/arr.png" />
-            <span class="float_right">电子地图</span>
+            <a href="{:U('Content/Site/map@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="float_right">电子地图</span></a>
         </div>
         <div class="gonggao">
         	<div class="gg_title"><img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/title_4.png" /><a class="float_right" href="{:getCategory(2, 'url')}">更多</a></div>
@@ -115,7 +115,7 @@ window.onload = function (){
                 <li><a href="{:U('DirectorMail/Consult/add@' . C('GLOBAL_SITE_DOMAIN'), array('type'=>'wsjb'))}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_3.png" /></a></li>
                 <li><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_4.png" /></li>
                 <li><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_5.png" /></li>
-                <li><a href="{:U('DirectorMail/Index/add@' . C('GLOBAL_SITE_DOMAIN'))}"<img src="{$config_siteurl}statics/themes/L2_Global/images/enter_6.png" /></a></li>
+                <li><a href="{:U('DirectorMail/Index/add@' . C('GLOBAL_SITE_DOMAIN'))}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_6.png" /></a></li>
             </ul>
         </div>
     </div>

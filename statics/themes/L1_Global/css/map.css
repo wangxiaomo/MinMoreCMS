@@ -27,7 +27,8 @@ img {
 .map-top{width:100%; height:auto; overflow:hidden; margin:10px auto}
 .map-top dt{float:left; font-size:14px; margin:0px 10px; line-height:23px}
 .map-top dd{background:url(../images/map11.png) no-repeat; width:78px; height:23px; line-height:23px; float:left; text-align:center; margin-right:10px}
-.map-MaxPic{width:1000px; height:860px; overflow:hidden; background:url(../images/mapBG.png) no-repeat; padding:10px 0px; margin-bottom:20px;}
+.map-MaxPic{width:1000px; height:860px; overflow:hidden; background:url(../images/mapBG.png) no-repeat; padding:10px 0px 0px;}
+.bottom-content {margin:0px;}
 .map-MaxPic p{text-align:center}
 .map-Img{width:1000px; height:860px; overflow:hidden; z-index:1; position:relative; background:url(../images/map01.png) no-repeat center top}
 .map-Img li{z-index:2}
@@ -46,6 +47,7 @@ img {
 .cty-hj{width:194px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:50px; z-index:99; left:-100px;}
 .cty-ls{width:362px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:100px; z-index:99; left:-100px;}
 .cty-title{width:100%; height:auto; overflow:hidden; text-align:left; margin:10px auto; padding-left:10px; font-size:18px; color:#19559e; font-weight:bold}
+.cty-title a,.cty-title a:visited,.cty-title a:active { color:#19559e;}
 .cty-List{width:100%; height:auto; overflow:hidden; margin:0 auto}
 .cty-List li{background:url(../images/map13.png) no-repeat; width:80px; height:21px; line-height:21px; font-size:12px; float:left;  margin:0px 0px 10px 8px; text-align:center; cursor:hand}
 .cty-List li, .cty-List li a{color:#323232; text-decoration: none;}
