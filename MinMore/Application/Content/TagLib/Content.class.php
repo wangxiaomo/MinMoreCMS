@@ -49,7 +49,9 @@ class Content {
         $where['status'] = array("EQ", 99);
         $this->where = $where;
         //wangxiaomo: inject role info
-        $this->where['role'] = get_site_role();
+        if($attr["catid"] != 31){ //wangxiaomo hack
+            $this->where['role'] = get_site_role();
+        }
         return $this->where;
     }
 
