@@ -1060,7 +1060,16 @@ function send_vcode_sms($mobile) {
 function get_site_url($name) {
     //wangxiaomo:get site url based on name
     empty($name) && die("need param name to get site url");
+    $cache = cache("ALL_SITE_DOMAINS");
+    if(isset($cache[$name])) return $cache[$name];
 
     $r = D("Role")->where("name like '%$name%'")->find();
-    return $r?"http://" . $r["domain"]:"#";
+    $url = $r?"http://" . $r["domain"]:"#";
+    $cache[$name] = $url;
+    cache("ALL_SITE_DOMAINS", $cache);
+    return $url;
+}
+
+function clear_site_cache() {
+    cache("ALL_SITE_DOMAINS", null);
 }

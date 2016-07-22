@@ -39,6 +39,8 @@ class SiteController extends AdminBase {
                     "domain"=>$domain,
                     "theme"=>$theme,
                 ));
+                //clear cache
+                clear_site_cache();
                 $this->jsonReturn(array("r"=>1));
             }else{
                 $this->jsonReturn(array("r"=>0));

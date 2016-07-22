@@ -893,6 +893,7 @@ function U($url = '', $vars = '', $suffix = true, $domain = true) {
     }
     // 解析子域名
     if (isset($host)) {
+        if($port) $host = $host . ":" . $port;
         $domain = $host . (strpos($host, '.') ? '' : strstr($_SERVER['HTTP_HOST'], '.'));
     } elseif ($domain === true) {
         $siteurl = parse_url($config['siteurl']);
