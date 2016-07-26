@@ -1,10 +1,10 @@
 <?php
 
-namespace Search\ORG;
+namespace Special\Controller;
 
 use Common\Controller\Base;
 
-class SpecialHtml extends Base {
+class SpecialHtmlController extends Base {
 
     protected $special = NULL;
     protected $url = NULL;

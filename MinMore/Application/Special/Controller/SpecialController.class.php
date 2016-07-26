@@ -28,7 +28,7 @@ class SpecialController extends AdminBase {
         $this->show_template = str_replace($this->filepath . "Show" . DIRECTORY_SEPARATOR, "", glob($this->filepath . "Show" . DIRECTORY_SEPARATOR . 'show*'));
         //专题分类模板
         $this->list_template = str_replace($this->filepath . "List" . DIRECTORY_SEPARATOR, "", glob($this->filepath . "List" . DIRECTORY_SEPARATOR . 'list*'));
-        load("@.ORG.SpecialHtml");
+        import("SpecialHtmlController", APP_PATH . C("APP_GROUP_PATH") . "/Special/Controller/");
     }
 
     //专题首页
@@ -213,7 +213,7 @@ class SpecialController extends AdminBase {
             $this->success('开始生成！', U('Special/html', array('act' => 'index')));
             exit;
         }
-        $SpecialHtml = new SpecialHtml();
+        $SpecialHtml = new SpecialHtmlController();
         $act = I('get.act');
         if ($act) {
             $spid = I('get.spid', 0);

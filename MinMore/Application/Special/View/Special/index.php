@@ -63,9 +63,7 @@
         <label class="mr20"><input type="checkbox" class="J_check_all" data-direction="y" data-checklist="J_check_y">全选</label> 
         <button class="btn J_ajax_submit_btn" type="submit" data-action="{:U('Special/listorder')}">排序</button>
         <button class="btn J_ajax_submit_btn" type="submit" data-action="{:U('Special/delete')}">删除</button>
-        <!--
         <button class="btn J_ajax_submit_btn" type="submit" data-action="{:U('Special/html')}">更新HTML</button>
-        -->
       </div>
     </div>
   </form>
