@@ -38,6 +38,9 @@ class IndexController extends Base {
     public function lists() {
         //栏目ID
         $catid = I('get.catid', 0, 'intval');
+	//billow:get search keyword
+        $query= I('post.query');
+	$queryCondition="title like '%$query%'";
         //wangxiaomo:hack service people.[HOTFIX]
         switch($catid){
             case 15:
@@ -134,7 +137,8 @@ class IndexController extends Base {
         }
         $this->assign("parent", $parent);
         $this->assign("children", $children);
-
+	//把查询关键词传递给模板
+	$this->assign("condition",$queryCondition);
         //把分页分配到模板
         $this->assign(C("VAR_PAGE"), $page);
         //分配变量到模板 

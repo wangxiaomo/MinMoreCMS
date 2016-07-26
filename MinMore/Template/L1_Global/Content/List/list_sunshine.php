@@ -26,9 +26,11 @@
                     <div class="wrapper-hd">
                         <a href="{:U('Content/Site/sunshine_police')}"><span class="go-back-home">回到首页</span></a>
                     </div>
+			<form action="#" method="post">
                     <div class="query-box">
-                        <p>{$parent.catname}标题：<input type="text" name="q" /><button id="query">查询</button></p>
+                        <p>{$parent.catname}标题：<input type="text" name="query"/><button id="query" type="submit">查询</button></p>
                     </div>
+				</form>
                     <div class="body-content-details">
                         <div class="sidebar">
                             <h4><img src="{$config_siteurl}statics/themes/L1_Global/images/book.png" />{$parent.catname}</h4>
@@ -39,7 +41,7 @@
                             </ul>
                         </div>
                         <div class="details">
-                            <content action="lists" catid="$catid" order="id DESC" num="20" page="$page">
+                            <content action="lists" catid="$catid" order="id DESC" num="20" page="$page" where="$condition">
                             <volist name="data" id="vo">
                                 <a href="{$vo.url}">
                                     <div class="item">
@@ -63,9 +65,4 @@
         <template file="Content/utils.php" />
     </div>
 </body>
-<script>
-$("#query").click(function(){
-var query=$("input[name='description']").val()
-});
-</script>
 </html>
