@@ -217,6 +217,8 @@ class IndexController extends Base {
                     if (is_array($pinyin)) {
                         $pinyin = implode('', $pinyin);
                     }
+                    //wangxiaomo: fix sql failed when segment_q is empty
+                    $segment_q = $segment_q?$segment_q:'';
                     M('SearchKeyword')->add(array('keyword' => $q, 'searchnums' => 1, 'data' => $segment_q, 'pinyin' => $pinyin));
                 }
             }
