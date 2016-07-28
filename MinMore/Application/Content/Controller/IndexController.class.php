@@ -38,9 +38,9 @@ class IndexController extends Base {
     public function lists() {
         //栏目ID
         $catid = I('get.catid', 0, 'intval');
-	//billow:get search keyword
+        //billow:get search keyword
         $query= I('post.query');
-	$queryCondition="title like '%$query%'";
+        $queryCondition="title like '%$query%'";
         //wangxiaomo:hack service people.[HOTFIX]
         switch($catid){
             case 15:
@@ -48,7 +48,7 @@ class IndexController extends Base {
             case 17:
                 $url = U('Content/Index/shows', array("catid"=>$catid,"id"=>137));break;
             case 20:
-                $url = "http://125.66.2.25:28082/wsga/myappo.html";break;
+                $url = "http://125.66.2.25:28081/wsga/wsga/web/query-center/query-center.htm";break;
             case 21:
                 $url = U('Content/Site/service_people');break;
             case 22:
