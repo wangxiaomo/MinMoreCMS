@@ -26,7 +26,8 @@
         <div class="sub-menu">
           <ul>
             <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
-            <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众咨询</a></li>
+            <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'jyxc'))}" class="{$headicon=='建言献策'?'menu-on':''}">建言献策</a></li>
+            <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众投诉</a></li>
             <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}" class="{$headicon=='网上举报'?'menu-on':''}">网上举报</a></li>
             <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}" class="{$headicon=='网上咨询'?'menu-on':''}">网上咨询</a></li>
             <li><a href="{:getCategory(42,'url')}" class="{$catid==42?'menu-on':''}">{:getCategory(42,'catname')}</a></li>
@@ -48,7 +49,8 @@
               <div>
                 <ul>
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
-                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众咨询</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'jyxc'))}" class="{$headicon=='建言献策'?'menu-on':''}">建言献策</a></li>
+                    <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}" class="{$headicon=='群众投诉'?'menu-on':''}">群众投诉</a></li>
                     <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}" class="{$headicon=='网上举报'?'menu-on':''}">网上举报</a></li>
                     <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}" class="{$headicon=='网上咨询'?'menu-on':''}">网上咨询</a></li>
                     <li><a href="{:getCategory(42,'url')}" class="{$catid==42?'menu-on':''}">{:getCategory(42,'catname')}</a></li>

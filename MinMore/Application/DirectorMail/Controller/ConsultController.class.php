@@ -8,6 +8,7 @@ class ConsultController extends Base {
 
     //信件类型
     private $typeId = 0;
+    private $flag = '';
     //信件模型
     private $db = NULL;
 
@@ -23,10 +24,14 @@ class ConsultController extends Base {
                 $flag = '网上举报';break;
             case 'qzts':
                 $flag = '群众投诉';break;
+            case 'jyxc':
+                $flag = '建言献策';break;
         }
         if ($flag) {
+            $this->flag = $flag;
             $this->assign('headicon', $flag);
             $this->assign('flag', $headicon);
+            $this->assign("title", $this->flag);
         } else {
             $this->error('非法操作！');
         }
@@ -50,7 +55,6 @@ class ConsultController extends Base {
                 $value['roleid'] = '暂无';
             }
         }
-        $this->assign("title", "网上咨询");
 		$this->assign('dataList', $data);
         $this->assign("Page", $page->show('Admin'));
         $this->display();
@@ -78,7 +82,7 @@ class ConsultController extends Base {
                 $this->success($message, U('Consult/index'));
             } else {
                 $error = $this->db->getError();
-                $this->error($error ? $error : '提交网上咨询！');
+                $this->error($error ? $error : '提交' . $this->flag);
             }
         } else {
             $dataList = M()->query('select oid id, oname name from huoyi_office');
