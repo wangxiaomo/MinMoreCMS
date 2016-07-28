@@ -15,18 +15,17 @@
     <div class="friendly-link">
         <p>友情链接：</p>
         <ul>
-            <li>全国公安网</li>
-            <li>四川省公安网</li>
-            <li>市级公安</li>
+            <li><a href="http://www.mps.gov.cn/">全国公安网</a></li>
+            <li><a href="http://www.scga.gov.cn/">四川省公安网</a></li>
             <li style="background: #f0f0f0">相关单位</li>
-            <li>广安旅游网</li>
+            <li><a href="http://www.cpd.com.cn/">广安旅游网</a></li>
         </ul>
     </div>
     <div class="link-content">
-        <a href="#">人民公安报</a>
-        <a href="#">中国普法网</a>
-        <a href="#">广安视窗</a>
-        <a href="#">广安社区服务网</a>
+        <a href="http://www.cpd.com.cn/">人民公安报</a>
+        <a href="http://www.legalinfo.gov.cn/">中国普法网</a>
+        <a href="http://special.scol.com.cn/13dxpjn/">广安视窗</a>
+        <a href="http://www.cpd.com.cn/">广安社区服务网</a>
     </div>
     <template file="Content/Mods/base_footer.php" />
 </div>
