@@ -13,6 +13,7 @@ class OnlinepetitionController extends Base {
 		C('TMPL_ACTION_ERROR', APP_PATH . 'DirectorMail/View/error.php');
 		C('TMPL_ACTION_SUCCESS', APP_PATH . 'DirectorMail/View/success.php');
 		$this->assign('headicon', '网上接访');
+		$this->assign('title', '网上接访');
 		$this->db = D('Petition');
 	}
 	/*
