@@ -9,7 +9,7 @@
         <a href="{:get_site_url('武胜县公安')}">武胜县</a>
         <a href="{:get_site_url('经开区公安')}">经开区</a>
         <a href="{:get_site_url('枣山园区公安')}">枣山园区</a>
-        <a href="{:get_site_url('协兴园区公开')}">协兴园区</a>
+        <a href="{:get_site_url('协兴园区')}">协兴园区</a>
     </p>
 </div>
 <div class="link_img">
