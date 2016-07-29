@@ -97,12 +97,12 @@
            <div class="interact-table2-tab3">
               <div class="interact-table2-titele"><span>服务之星</span></div>
               <dl>
-                  <dt><img src="{$config_siteurl}statics/themes/L1_Global/images/interact14.jpg" style="width:100%;margin-top:12px;"></dt>
+                  <dt><img src="{$star.thumb}" style="width:100%;margin-top:12px;"></dt>
                   <dd>
-                    <p><span>姓名：</span>王晓洲</p>
-                    <p><span>警号：</span>049840</p>
-                    <p><span>职务：</span>主任科员</p>
-                    <p><span>单位：</span>出入境管理支队</p>
+                    <p><span>姓名：</span>{$star.name}</p>
+                    <p><span>警号：</span>{$star.policeid}</p>
+                    <p><span>职务：</span>{$star.position}</p>
+                    <p><span>单位：</span>{$star.department}</p>
                   </dd>
               </dl>
            </div>

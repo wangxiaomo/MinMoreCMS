@@ -32,6 +32,10 @@ class SiteController extends Base {
         //link => 警民互动
         $todaymin = strtotime(date('Ymd'));                                     
         $todaymax = $todaymin + 86399;                                          
+
+        //wangxiaomo: get service start information
+        $star = D('ServiceStar')->field("title as name,thumb,policeid,position,department")->find();
+        $this->assign("star", $star);
                                                                                 
         $db = M('Directormail');
         $yestodaymin = $todaymin - 86400;                                                                                                                                                
