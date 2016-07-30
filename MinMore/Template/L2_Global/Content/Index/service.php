@@ -10,6 +10,7 @@
 <meta name="keywords" content="{$SEO['keyword']}" />
 <link href="{$config_siteurl}statics/themes/L2_Global/css/common.css" rel="stylesheet" type="text/css" />
 <link href="{$config_siteurl}statics/themes/L2_Global/css/list.css" rel="stylesheet" type="text/css" />
+<link href="{$config_siteurl}statics/themes/L2_Global/css/service.css" rel="stylesheet" type="text/css" />
 <script src="{$config_siteurl}statics/js/jquery.js"></script>
 </head>
 
@@ -18,20 +19,65 @@
 <div class="content_box"> <div class="content_up">
 	<div class="up_left float_left">
     	<div class="left_title">
-    		<span>{:getCategory($catid, 'catname')}</span>
+    		<span>便民专栏</span>
         </div>
         <div class="up_left_cont">
-            <content action="lists" catid="$catid" order="id DESC" num="20" page="$page">
-                <volist name="data" id="vo">
-                    <div class="left_cont_list">
-                        <a href="{$vo.url}">{$vo.title|str_cut=###,25}</a><span>{$vo.updatetime|date='Y-m-d',###}</span>
-                        <p>{$vo.description|str_cut=###,50}</p>
-                    </div>
-                </volist>
-                <div class="left_cont_page">
-                    {$pages}
+            <div class="fast-service">
+                <div class="service-head">
+                    <p style="color: #0048b1;">便民服务</p>
+                    <p style="color: #ffe503;">让数据多跑步，让群众少跑路</p>
                 </div>
-            </content>
+                <ul class="service-list">
+                  <li>
+                    <a href="{:getCategory(38,'url')}">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service1.png" alt="" style="margin-top: 10px"/><br/>
+                        <span>开锁信息查询</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service3.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>便民举措</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.ip138.com/">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service12.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>IP查询</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.ctrip.com/">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service14.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>航班信息</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.12306.cn/mormhweb/">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service17.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>列车时刻</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://tianqi.2345.com/guangan/57415.htm">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service11.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>天气查询</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://tools.2345.com/rili.htm">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service18.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>万年历</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.ickd.cn/outlets/ems-398.html">
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/service15.png" alt="" style="margin-top: 5px"/><br/>
+                        <span>EMS查询</span>
+                    </a>
+                  </li>
+                </ul>                               
+            </div>
         </div>
     </div>
     <div class="up_right float_right">

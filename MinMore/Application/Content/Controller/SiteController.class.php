@@ -80,6 +80,11 @@ class SiteController extends Base {
         $this->display("Index/service_people");
     }
 
+    public function l2_service() {
+        //link => Level 2 便民服务
+        $this->display("Index/service");
+    }
+
     public function l4_info() {
         //link => Level 4 社区简介
         $this->assign("show_info_page", true);
