@@ -256,6 +256,7 @@ class MinMore extends TagLib {
             }
             //获取当前栏目的 父栏目列表
             $arrparentid = array_filter(explode(',', getCategory($catid, 'arrparentid') . ',' . $catid));
+            array_shift($arrparentid);
             foreach ($arrparentid as $cid) {
                 $parsestr[] = '<a href="' . getCategory($cid, 'url') . '" ' . $target . '>' . getCategory($cid, 'catname') . '</a>';
             }
@@ -264,6 +265,7 @@ class MinMore extends TagLib {
             $parsestr = '';
             $parsestr .= '<?php';
             $parsestr .= '  $arrparentid = array_filter(explode(\',\', getCategory(' . $catid . ',"arrparentid") . \',\' . ' . $catid . ')); ';
+            $parsestr .= '  array_shift($arrparentid);';
             $parsestr .= '  foreach ($arrparentid as $cid) {';
             $parsestr .= '      $parsestr[] = \'<a href="\' . getCategory($cid,\'url\')  . \'" ' . $target . '>\' . getCategory($cid,\'catname\') . \'</a>\';';
             $parsestr .= '  }';

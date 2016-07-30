@@ -34,7 +34,8 @@ class SiteController extends Base {
         $todaymax = $todaymin + 86399;                                          
 
         //wangxiaomo: get service start information
-        $star = D('ServiceStar')->field("title as name,thumb,policeid,position,department")->find();
+        $star = D('ServiceStar')->join('minmore_service_star_data on minmore_service_star.id=minmore_service_star_data.id')
+                    ->field("title as name,thumb,policeid,position,department")->find();
         $this->assign("star", $star);
                                                                                 
         $db = M('Directormail');
