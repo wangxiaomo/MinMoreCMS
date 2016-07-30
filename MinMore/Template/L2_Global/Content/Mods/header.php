@@ -17,9 +17,9 @@
         <a href="{$config_siteurl}" class="{$current_index_page?'nav_select':''}">网站首页</a>
         <a href="{:U('Content/Index/lists', array('catid'=>45))}" class="{$catid==45?'nav_select':''}">公安简介</a>
         <a href="{:getCategory(2,'url')}" class="{$catid==2?'nav_select':''}">{:getCategory(2,'catname')}</a>
+        <a href="{:getCategory(3,'url')}" class="{$catid==3?'nav_select':''}">{:getCategory(3,'catname')}</a>
         <a href="{:getCategory(5,'url')}" class="{$catid==5?'nav_select':''}">{:getCategory(5,'catname')}</a>
         <a href="{:U('Content/Site/work_building@' . C('GLOBAL_SITE_DOMAIN'))}">办事大厅</a>
-        <a href="#">专题栏目</a>
         <a href="{:U('Content/Site/sunshine_police@' . C('GLOBAL_SITE_DOMAIN'))}">阳光警务</a>
         <a href="{:getCategory(4,'url')}" class="{$catid==4?'nav_select':''}">{:getCategory(4,'catname')}</a>
         <a href="{:getCategory(23,'url')}" class="{$catid==23?'nav_select':''}">{:getCategory(23,'catname')}</a>
