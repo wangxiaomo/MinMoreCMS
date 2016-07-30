@@ -16,14 +16,14 @@
     <div class="nav">
         <a href="{$config_siteurl}" class="{$current_index_page?'nav_select':''}">网站首页</a>
         <a href="{:U('Content/Index/lists', array('catid'=>45))}" class="{$catid==45?'nav_select':''}">公安简介</a>
-        <a href="{:getCategory(2,'url')}" class="{$catid==2?'nav_select':''}">{:getCategory(2,'catname')}</a>
-        <a href="{:getCategory(3,'url')}" class="{$catid==3?'nav_select':''}">{:getCategory(3,'catname')}</a>
-        <a href="{:getCategory(5,'url')}" class="{$catid==5?'nav_select':''}">{:getCategory(5,'catname')}</a>
+        <a href="{:getCategory(54,'url')}" class="{$catid==54?'nav_select':''}">{:getCategory(54,'catname')}</a>
+        <a href="{:getCategory(55,'url')}" class="{$catid==55?'nav_select':''}">{:getCategory(55,'catname')}</a>
+        <a href="{:getCategory(57,'url')}" class="{$catid==57?'nav_select':''}">{:getCategory(57,'catname')}</a>
         <a href="{:U('Content/Site/work_building@' . C('GLOBAL_SITE_DOMAIN'))}">办事大厅</a>
         <a href="{:U('Content/Site/sunshine_police@' . C('GLOBAL_SITE_DOMAIN'))}">阳光警务</a>
-        <a href="{:getCategory(4,'url')}" class="{$catid==4?'nav_select':''}">{:getCategory(4,'catname')}</a>
-        <a href="{:getCategory(23,'url')}" class="{$catid==23?'nav_select':''}">{:getCategory(23,'catname')}</a>
-        <a href="{:getCategory(6,'url')}" class="{$catid==6?'nav_select':''}">{:getCategory(6,'catname')}</a>
+        <a href="{:getCategory(56,'url')}" class="{$catid==56?'nav_select':''}">{:getCategory(56,'catname')}</a>
+        <a href="{:getCategory(58,'url')}" class="{$catid==58?'nav_select':''}">{:getCategory(58,'catname')}</a>
+        <a href="{:getCategory(59,'url')}" class="{$catid==59?'nav_select':''}">{:getCategory(59,'catname')}</a>
     </div>
 </div>
 <script src="http://weather.gtimg.cn/city/01012707.js?ref=qqnews"></script>

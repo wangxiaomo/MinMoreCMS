@@ -53,10 +53,10 @@ window.onload = function (){
             </div>
              
             <div class="cont_part float_right">
-            	<div class="part_title"><p>{:getCategory(5, 'catname')} </p><a href="{:getCategory(5, 'url')}">更多</a></div>
+            	<div class="part_title"><p>{:getCategory(54, 'catname')} </p><a href="{:getCategory(54, 'url')}">更多</a></div>
                 <div class="part_list">
                 	<ul>
-                        <content action="lists" catid="5" order="id DESC" num="8">
+                        <content action="lists" catid="54" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                             </volist>
@@ -65,10 +65,10 @@ window.onload = function (){
                 </div>
             </div>
             <div class="cont_part float_left">
-            	<div class="part_title"><p>{:getCategory(4, 'catname')} </p><a href="{:getCategory(4, 'url')}">更多</a></div>
+            	<div class="part_title"><p>{:getCategory(55, 'catname')} </p><a href="{:getCategory(55, 'url')}">更多</a></div>
                 <div class="part_list">
                 	<ul>
-                        <content action="lists" catid="4" order="id DESC" num="8">
+                        <content action="lists" catid="55" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                             </volist>
@@ -77,10 +77,10 @@ window.onload = function (){
                 </div>
             </div>
             <div class="cont_part float_right">
-            	<div class="part_title"><p>{:getCategory(3, 'catname')} </p><a href="{:getCategory(3, 'url')}">更多</a></div>
+            	<div class="part_title"><p>{:getCategory(56, 'catname')} </p><a href="{:getCategory(56, 'url')}">更多</a></div>
                 <div class="part_list">
                 	<ul>
-                        <content action="lists" catid="3" order="id DESC" num="8">
+                        <content action="lists" catid="56" order="id DESC" num="8">
                             <volist name="data" id="vo">
                                 <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                             </volist>
@@ -97,10 +97,10 @@ window.onload = function (){
             <a href="{:U('Content/Site/map@' . C('GLOBAL_SITE_DOMAIN'))}"><span class="float_right">电子地图</span></a>
         </div>
         <div class="gonggao">
-        	<div class="gg_title"><img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/title_4.png" /><a class="float_right" href="{:getCategory(2, 'url')}">更多</a></div>
+        	<div class="gg_title"><img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/title_4.png" /><a class="float_right" href="{:getCategory(60, 'url')}">更多</a></div>
             <div class="gg_cont">
             	<ul>
-                    <content action="lists" catid="2" order="id DESC" num="3">
+                    <content action="lists" catid="60" order="id DESC" num="3">
                         <volist name="data" id="vo">
                             <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_{$i}.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></li>
                         </volist>
@@ -142,10 +142,10 @@ window.onload = function (){
         </div>
         <div class="dt_cont">
                 <div class="cont_part float_left">
-                    <div class="part_title"><p>{:getCategory(23,'catname')} </p><a href="{:getCategory(23,'url')}">更多</a></div>
+                    <div class="part_title"><p>{:getCategory(57,'catname')} </p><a href="{:getCategory(57,'url')}">更多</a></div>
                     <div class="part_list">
                         <ul>
-                            <content action="lists" catid="23" order="id DESC" num="8">
+                            <content action="lists" catid="57" order="id DESC" num="8">
                                 <volist name="data" id="vo">
                                     <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                                 </volist>
@@ -154,10 +154,10 @@ window.onload = function (){
                     </div>
                 </div>
                 <div class="cont_part float_right">
-                    <div class="part_title"><p>{:getCategory(6,'catname')} </p><a href="{:getCategory(6,'url')}">更多</a></div>
+                    <div class="part_title"><p>{:getCategory(58,'catname')} </p><a href="{:getCategory(58,'url')}">更多</a></div>
                     <div class="part_list">
                         <ul>
-                            <content action="lists" catid="6" order="id DESC" num="8">
+                            <content action="lists" catid="58" order="id DESC" num="8">
                                 <volist name="data" id="vo">
                                     <li><img src="{$config_siteurl}statics/themes/L2_Global/images/point.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
                                 </volist>

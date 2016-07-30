@@ -38,10 +38,10 @@
     </div>
     <div class="up_right float_right">
         <div class="gonggao">
-        	<div class="gg_title"><img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/title_4.png" /><a class="float_right" href="#">更多</a></div>
+        	<div class="gg_title"><img class="float_left" src="{$config_siteurl}statics/themes/L2_Global/images/title_4.png" /><a class="float_right" href="{:getCategory(60, 'url')}">更多</a></div>
             <div class="gg_cont">
             	<ul>
-                    <content action="lists" catid="2" order="id DESC" num="3">
+                    <content action="lists" catid="60" order="id DESC" num="3">
                         <volist name="data" id="vo">
                             <li><img src="{$config_siteurl}statics/themes/L2_Global/images/icon/num_{$i}.png" /><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></li>
                         </volist>
