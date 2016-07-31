@@ -31,12 +31,16 @@
 			</ul>
 		</div>
 		<div class="int-Textlist">
-			<div class="int-Texttitle"><span>更多>></span><div class="int-Texter">更多访谈</div></div>
-			<ul class="int-list">
-			<volist name="interlist" id="vo" offset="3" length="5" >
-				<li><span>{$vo.start_time}</span><a href="{:U("detail",array("id"=>$vo['id']))}" >{$vo.title}</a></li>
-			</volist>
-			</ul>
+            <if condition="$interlist">
+                <div class="int-Texttitle"><span>更多>></span><div class="int-Texter">更多访谈</div></div>
+                <ul class="int-list">
+                    <volist name="interlist" id="vo" offset="3" length="5" >
+                        <li><span>{$vo.start_time}</span><a href="{:U("detail",array("id"=>$vo['id']))}" >{$vo.title}</a></li>
+                    </volist>
+                </ul>
+            <else />
+                <p>暂无访谈，敬请期待</p>
+            </if>
 		</div>
 	</div>
 </div>
