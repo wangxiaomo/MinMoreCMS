@@ -468,7 +468,7 @@ select {
 	background:#fff url(../images/admin/content/input_hd.png) 0 bottom repeat-x;
 }
 .input{
-	height:18px;
+	height:25px;
 }
 input.radio,
 input[type="radio"],

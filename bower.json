@@ -19,6 +19,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery.browser": "^0.1.0",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "fex-webuploader": "fex-team/webuploader#^0.1.5"
   }
 }

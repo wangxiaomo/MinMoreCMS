@@ -53,6 +53,11 @@ class SiteController extends Base {
         $this->assign('over', $over);
         $this->assign('today', $today);                                         
         $this->assign('yestoday', $yestoday);
+		
+		$interviewMsg_m 		 =  M("interview");
+        $wherereply["is_open"]   =  "on";
+        $interview          		 =  $interviewMsg_m->where($wherereply)->order("create_time desc")->find();
+        $this->assign('interview',$interview);
         $this->display("Index/police_interaction");
     }
 

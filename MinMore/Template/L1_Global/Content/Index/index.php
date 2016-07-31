@@ -449,7 +449,7 @@
                 <a href="http://sc.122.gov.cn/views/inquiry.html"><img src="{$config_siteurl}statics/themes/L1_Global/images/sunshine-menu8.png" alt=""/></a>
             </div>
             <div class="interaction">
-                <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
+                <a href="{:U('DirectorMail/Consult/add', array('type'=>'jyxc'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction1.png" alt=""/></a>
                 <a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction2.png" alt=""/></a>
                 <a href="{:U('DirectorMail/Consult/add', array('type'=>'wsjb'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction3.png" alt=""/></a>
                 <a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>

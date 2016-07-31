@@ -113,10 +113,10 @@
            <div class="interact-table2-tab1">
               <div class="interact-table2-titele"><samp>更多>></samp><span>在线访谈</span></div>
               <div class="interact-table2-text">
-                 <p>主题：出入有境，服务无境——推广网上便民服务出入境民警在线访谈</p>
-                 <p>日期：2016-10-12 15:30:00</p>
-                 <p>访谈嘉宾：广安市公安局出入境管理处</p>
-                 <p>访谈内容：本栏目将于十月中旬组织开展一期出入境业务在线访谈，目前正在紧张筹备中，届时请网友踊跃参与。</p>
+                 <p>主题：{$interview.title}</p>
+                 <p>日期：{$interview.create_time}</p>
+                 <p>访谈嘉宾：{$interview.guest}  </p>
+                 <p>访谈内容：{$interview.summary} </p>
                  <p>&nbsp;</p>
               </div>
            </div>
