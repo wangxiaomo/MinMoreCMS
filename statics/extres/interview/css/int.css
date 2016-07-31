@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Î¢ÈíÑÅºÚ;
+    font-family: å¾®è½¯é›…é»‘;
     color: #4b4344;
 }
 
@@ -31,7 +31,7 @@ img {
     margin: 25px 0 0 20px;
     float: left;
 }
-/*--ÔÚÏß·ÃÌ¸01--*/
+/*--åœ¨çº¿è®¿è°ˆ01--*/
 .intTitle{width:730px; height:36px; line-height:36px; font-size:16px; font-weight:bold; margin:0px 0px 10px 10px}
 .intTitle img{float:left; margin-right:10px}
 .int-imglist,.int-imglist ul{width:100%; width:auto; overflow:hidden; margin:0 px}
@@ -56,11 +56,11 @@ img {
 
 
 
-/*--ÔÚÏß·ÃÌ¸02--*/
+/*--åœ¨çº¿è®¿è°ˆ02--*/
 .int-contTitle{width:730px; height:auto; margin:0 auto; line-height:50px; font-size:18px; font-weight:bold; color:#639cdc; text-align:center}
 .int-contMain{width:730px; height:auto; margin:0 auto; overflow:hidden}
 .intImg{height:auto; overflow:hidden; float:left}
-.intSmall{ height:auto; overflow:hidden; float:right; line-height:24px; font-size:13px}
+.intSmall{ height:auto; overflow:hidden; float:left; line-height:24px; font-size:13px}
 .intSmall span{color:#909090}
 .int-contLeft{float:left; width:436px; height:auto; overflow:hidden}
 .int-contText{widht:428px; height:320px; overflow:auto; margin:0 auto; line-height:26px; padding:5px 5px; font-size:14px; border-bottom:solid 20px #e3e3e3}

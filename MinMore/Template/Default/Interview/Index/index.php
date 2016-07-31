@@ -8,7 +8,7 @@
 			<ul>
 			<volist name="interlist" id="vo" offset="0" length="3" >
 				<li>
-					<dl><img src="__ROOT__{$vo.banner}"></dl>
+					<dl><img src="__ROOT__{$vo.banner}" style="width:227px;height:175px;"></dl>
 					<dl class="dlbg01">
 						<dt>主题</dt>
 						<dd>{$vo.title}</dd>
@@ -31,7 +31,7 @@
 			</ul>
 		</div>
 		<div class="int-Textlist">
-            <if condition="$interlist">
+            <if condition="count($interlist) > 3">
                 <div class="int-Texttitle"><span>更多>></span><div class="int-Texter">更多访谈</div></div>
                 <ul class="int-list">
                     <volist name="interlist" id="vo" offset="3" length="5" >

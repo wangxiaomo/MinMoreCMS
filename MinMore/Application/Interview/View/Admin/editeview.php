@@ -24,19 +24,18 @@
               <th><input type="text" name="master" value="{$view.master}" class="input length_6"  ></th>
             </tr>
             <tr>
-              <th width="200">文字实录(简介)：</th>
+              <th width="200">实录简介：</th>
               <th>
               <textarea name="summary" style="width:40%;; height:150px;">{$view.summary}</textarea> 
               </th>
             </tr>
             
             <tr>
-              <th width="200">文字实录(简介)：</th>
+              <th width="200">实录内容：</th>
               <th>
               <textarea id="content" name="info" style="width:70%;">{$view.info}</textarea> 
               </th>
             </tr>
-            
       </table>
     </div>
     <div class="">
