@@ -79,22 +79,32 @@
         <div class="multi_data-line">
           <span class="prompt">所在区域：</span>
 	   <div>
-	    <select  name="city">
+	    <select  name="city" style="width:150px">
 		<option value="0">--请选择--</option>
-		<option value="1">广安市<option>                    
-		<foreach name='city' item='v' >
-		    <option value="{$v.id}">{$v.name}</option>
+		<foreach name='citys' item='v' >
+		    <option value="{$v.oid}">{$v.osimplename}</option>
 		</foreach>
 	    </select>&nbsp;&nbsp;&nbsp;
-	    <select  name="barue">
+	    <select  name="barue" style="width:150px">
 		<option value="0">--请选择--</option>                    
-		<option value="1">岳池县公安局<option>                    
 	    </select >&nbsp;&nbsp;&nbsp;
-	    <select  name="station">
+	    <select  name="station" style="width:150px">
 		<option value="0">--请选择--</option>
-		<option value="1">金牛派出所<option>                    
 	    </select>
 	  </div>
+        </div>
+        <div class="multi_data-line">
+          <span class="prompt">接访领导：</span>
+          <div class="left">
+            <input type="text" name="chief_name" />
+		<i class="red">*</i>
+          </div>
+          <span class="prompt">可约访的领导：</span>
+          <div class="right">
+            <input type="button" name="sel-leader" value="点击自选" onclick="showSelectChief()"/></a>
+	    	<select  name="chief" style="width:150px;display:none">
+		</select>
+          </div>
         </div>
         <div class="multi_data-line">
           <span class="prompt">验&nbsp;&nbsp;证&nbsp;&nbsp;码：</span>
@@ -118,6 +128,105 @@ $(function(){
         e.preventDefault();
         window.location = "{:U('DirectorMail/Onlinepetition/search')}";
     });
+	$("select[name='city']").on("change",function(){
+	var url="{:U('get_sub_org')}";
+	var pid=$("select[name='city']").val();
+	var request={pid:pid,level:1};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		 $("select[name='barue']").empty();
+                $("select[name='barue']").append("<option value='0'>--请选择--</option>");
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='barue']").append(b);
+                }
+	});
 });
+	$("select[name='barue']").on("change",function(){
+	var url="{:U('get_sub_org')}";
+	var pid=$("select[name='barue']").val();
+	var level=2;
+	var request={pid:pid,level:level};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='station']").append(b);
+                }
+	});
+});
+	$("select[name='chief']").on("click",function(){
+	var chief_name=$("select[name='chief'] option:selected").text();
+	$("input[name='chief_name']").val(chief_name);
+	$("select[name='chief']").hide();
+	});
+});
+function showSelectChief(){
+	var oid=$("select[name='station']").val();
+	if(oid<1){
+	return;
+	}
+	var url="{:U('get_petition_chief')}";
+	var request={oid:oid};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		$("select[name='chief']").empty();
+		var data=resp.info;
+		if(data==null){
+                alert("所选部门未找到可约访领导，您可以自行填写接访领导的姓名");
+		return;
+		}
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].id + "'>" + data[i].name+ "</option>";
+                }
+                $("select[name='chief']").append(b);
+		$("select[name='chief']").show();
+                }
+	});
+}
 </script>
 <template file="DirectorMail/Public/footer.php"/>

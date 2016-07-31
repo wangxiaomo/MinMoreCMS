@@ -104,7 +104,21 @@ class PetitionModel extends Model {
         if (!$data) {
             $this->error = '非法操作！';
             return false;
-        }
+        }	
+	C('DB_PREFIX','');
+	if ($data['city']){
+		$city = M('huoyi_office')->where(array('oid'=>$data['city']))->find();
+		$data['city']=$city['osimplename'];
+	}
+	if ($data['barue']){
+		$barue= M('huoyi_office')->where(array('oid'=>$data['barue']))->find();
+		$data['barue']=$barue['osimplename'];
+	}
+	if ($data['station']){
+		$station= M('huoyi_office')->where(array('oid'=>$data['station']))->find();
+		$data['station']=$station['oname'];
+	}
+	C('DB_PREFIX','minmore_');
         if ($data['roleid']) {
             $role = M('Role')->where(array('id' => $data['roleid']))->find();
             $data['roleid'] = $role['name'].$role['level'];

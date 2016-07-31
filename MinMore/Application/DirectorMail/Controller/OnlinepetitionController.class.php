@@ -44,11 +44,6 @@ class OnlinepetitionController extends Base {
 				}
 			}
             $id = $this->db->addPetition($post);
-/*
-			$petition=M('petition');
-			$petition->create();
-			$id = $petition->add($post);
-*/
 			if ($id) {
 				$message = 'C'.date('Ymd', time()).$id;                
 				$this->success($message, U('Onlinepetition/search'));
@@ -57,10 +52,8 @@ class OnlinepetitionController extends Base {
 				$this->error($error ? $error : '写信失败！');
 			}
 		} 
-		/*
-		   $area = M('area')->select();
-		   $this->assign('area', $area); 
-		 */
+		   $citys= get_director_city();
+		   $this->assign('citys', $citys); 
 		$this->display();
 	}
 
@@ -151,6 +144,41 @@ class OnlinepetitionController extends Base {
 			}
 			session('mailids',$auth_ids);
 			return true;
+		}
+	}
+	public function get_sub_org(){
+		if(IS_AJAX){
+			$pid=I('pid');
+			$level=I('level');
+			if($level==0){
+				$citys=get_director_city();
+				return $citys;
+			}
+			if($level==1){
+				$barues=get_director_barue($pid);
+				$this->success($barues);
+			}
+			if($level==2){
+				$stations=get_director_station($pid);
+				$this->success($stations);
+			}
+			if(empty($level))
+			{
+				$msg="获取子部门参数错误";
+				$this->error($msg);
+			}
+		}
+	}
+	public function get_petition_chief(){
+		if(IS_POST){
+			$oid = I('oid');
+			if($oid>0){
+				$chief=get_director_petition($oid);
+				$this->success($chief);
+			}else{
+				$msg="选择部门后才能选择接访领导";
+				$this->error($msg);
+			}
 		}
 	}
 }
