@@ -183,6 +183,58 @@ window.onload = function (){
         </div>
     </div>
 </div>
+       <!-- 警营风采-->
+<div class="police_cont">
+		<div class="cont_part part_title">
+                <p>{:getCategory(6, 'catname')}</p>
+                <a href="{:getCategory(6, 'url')}" class="more-news">更多>></a>
+		</div>
+	<div class="style-bg">
+            <div class="police-style">
+                <ul>
+                    <content action="lists" catid="6" order="id DESC" num="6">
+                        <volist name="data" id="vo">
+                            <li>
+                                <a href="{$vo.url}">
+                                    <img src="{$vo.thumb}" alt="{$vo.title}"/>
+                                    <p>{$vo.title}</p>
+                                </a>
+                            </li>
+                        </volist>
+                    </content>
+                </ul>
+	    </div>
+	</div>
+</div>
+        <script>
+            var styleTimer;
+            function styleCaurousel(){
+                var $ul = $(".police-style").find("ul");
+                var $lis = $ul.children("li");
+                var width = $lis.eq(0).width() + 15;
+                styleTimer = setInterval(function(){
+                            $ul.animate({
+                                        'margin-left':'-'+ width +'px'
+                                    },
+                                    2000,
+                                    function(){
+                                        $ul.css({'margin-left':0}).
+                                                children('li').
+                                                last().
+                                                after(
+                                                $ul.children('li').first()
+                                        );
+                                    });
+                        },4000
+                );
+            }
+            styleCaurousel();
+            $(".police-style").hover(function(){
+                clearInterval(styleTimer);
+            },function(){
+                styleCaurousel()
+            });
+        </script>
 <template file="Content/Mods/footer.php" />
 </div>
 </body>
