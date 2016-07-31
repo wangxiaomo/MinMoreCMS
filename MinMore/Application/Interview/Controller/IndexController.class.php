@@ -3,7 +3,6 @@
 namespace Interview\Controller;
 
 use Common\Controller\Base;
-use Think\Verify;
 
 class IndexController extends Base {
 
@@ -63,16 +62,6 @@ class IndexController extends Base {
     		$this->display();
     	}
     }
-
-    
-    public function createCode(){
-    	$Verify   		  =     new \Think\Verify();
-    	$Verify->fontSize =     30;
-    	$Verify->length   =     3;
-    	$Verify->useNoise =     false;
-    	$Verify->entry();
-    }
-    
     
     public function info() {
     
@@ -145,12 +134,6 @@ class IndexController extends Base {
     		echo "暂时没有人留言";
     		
     	}
-    }
-    
-    
-    private function check_verify($code, $id = ''){
-    	$verify = new \Think\Verify();
-    	return $verify->check($code, $id);
     }
     
 }
