@@ -1,5 +1,5 @@
 <!-- 快速导航栏-->
-<div class="fast-nav">
+<div class="fast-nav" style="position:fixed;">
     <div class="work-build-nav">
         <div class="police-news-nav">
             <div class="sunshine-nav">
