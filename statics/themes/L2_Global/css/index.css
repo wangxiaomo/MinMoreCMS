@@ -66,4 +66,49 @@
 .sun_cont span.sun_img{margin:0 10px;}
 .sun_cont span.sun_text{line-height:46px;font-size:15px;margin-left:5px;color:#000;}
 .sun_cont span.sun_text:hover{color:#0062bf}
+/*--------------警营风采----------------*/
+.police_cont{
+	width:1000px;
+	height:250px;
+	margin:20px auto;
+}
+.style-bg{
+    width: 1000px;
+    height: 250px;
+    background: #ffffff;
+}
+.police-style{
+    width: 997px;
+    background-image: url("../images/police-style-bg.png");
+    margin:2 2px;
+    overflow: hidden;
+}
+.police-style ul{
+    width: 1350px;
+    height: 180px;
+    margin: 45px 2px;
+    overflow: hidden;
+}
+.police-style li{
+    float: left;
+    margin-right: 15px;
+}
+.police-style a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+.police-style img{
+    width: 200px;
+    height: 145px;
+}
+.police-style p{
+    width: 200px;
+    height: 20px;
+    margin: 0;
+    text-align: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
 

@@ -772,9 +772,9 @@ button {
 /*--二维码--*/
 .erweima{
     width: 120px;
-    height: 470px;
     position: fixed;
-    bottom: 1%;
+    top: 20%;
+    bottom: 20%;
     left: 50%;
     margin-left: 520px;
 }
