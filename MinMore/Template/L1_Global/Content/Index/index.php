@@ -341,7 +341,7 @@
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_5.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/dianziditu.png" alt="电子地图"/><br/>
-                        <a href="{:U('Content/Site/map')}">电子地图</a>
+                        <a href="http://j.map.baidu.com/yc88C">电子地图</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_6.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示" style="margin-top: 13px"/><br/>
