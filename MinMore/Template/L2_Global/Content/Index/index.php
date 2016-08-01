@@ -186,13 +186,13 @@ window.onload = function (){
        <!-- 警营风采-->
 <div class="police_cont">
 		<div class="cont_part part_title">
-                <p>{:getCategory(6, 'catname')}</p>
-                <a href="{:getCategory(6, 'url')}" class="more-news">更多>></a>
+                <p>{:getCategory(59, 'catname')}</p>
+                <a href="{:getCategory(59, 'url')}" class="more-news">更多>></a>
 		</div>
 	<div class="style-bg">
             <div class="police-style">
                 <ul>
-                    <content action="lists" catid="6" order="id DESC" num="6">
+                    <content action="lists" catid="59" order="id DESC" num="6">
                         <volist name="data" id="vo">
                             <li>
                                 <a href="{$vo.url}">
