@@ -1073,3 +1073,28 @@ function get_site_url($name) {
 function clear_site_cache() {
     cache("ALL_SITE_DOMAINS", null);
 }
+
+function get_director_city(){
+	C('DB_PREFIX','');
+	$citys=D("huoyi_office")->where(array('olevel'=>0))->select();
+	C('DB_PREFIX','minmore_');
+	return $citys;
+}
+function get_director_barue($city){
+	C('DB_PREFIX','');
+	$barues=D("huoyi_office")->where("olevel=1 and oheadid=$city and substr(osn,1,6)<>'000000' and substr(osn,7,6)='000000' ")->select();
+	C('DB_PREFIX','minmore_');
+	return $barues;
+}
+function get_director_station($barue){
+	C('DB_PREFIX','');
+	$stations=D("huoyi_office")->where("olevel=2 and oheadid=$barue and substr(osn,1,10)<>'000000' and substr(osn,11,2)='00' ")->select();
+	C('DB_PREFIX','minmore_');
+	return $stations;
+}
+function get_director_petition($oid){
+	C('DB_PREFIX','');
+	$chief=D("officer")->where("oid=$oid and is_delete=0")->select();
+	C('DB_PREFIX','minmore_');
+	return $chief;
+}

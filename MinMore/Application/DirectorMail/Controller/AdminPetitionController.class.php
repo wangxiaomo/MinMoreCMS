@@ -34,7 +34,65 @@ class AdminPetitionController extends AdminBase {
         $this->assign('typeid', $status);
         $this->display();
     }
+	//接访领导列表
+    public function chief() {
+        $where = array(
+                'roleid' => get_site_role(),
+            );
+	C('DB_PREFIX','');
+        $count = $this->db->where($where)->count();
+        $page = $this->page($count, 20);
+        $data = D('officer')->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
+	C('DB_PREFIX','minmore_');
+        $this->assign('data', $data);
+        $this->assign("Page", $page->show('chief'));
+        $this->assign('typeid', $status);
+        $this->display();
+    }
+    //添加接访领导
+    public function addchief() {
+	    if(IS_AJAX){
+		    C('DB_PREFIX','');
+		    $name=I('name');
+		    $oid=I('station');
+		    $oname=M('huoyi_office')->where(array('oid'=>$oid))->getField('oname');
+		    $chief=array('name'=>$name,'oid'=>$oid,'oname'=>$oname);
+		    $officer_M=D('officer');
+		    $ret=$officer_M->addOfficer($chief);
+		    $error = $officer_M->getError();
+	            C('DB_PREFIX','minmore_');
+		    if($ret){
+			    $this->success("添加成功");
+		    }else{
+			    $this->error($error ? $error : '添加失败！');
+		    }
+	    }
+	    $citys= get_director_city();
+	    $this->assign('citys', $citys); 
+	    $this->assign('data', $data);
+	    $this->display();
+    }
 
+    //删除接访领导
+    public function delchief() {
+        if (IS_POST) {
+            $ids = I('post.ids');
+        } else {
+            $ids = I('get.id', 0, 'intval');
+        }
+        if (empty($ids)) {
+            $this->error('请指定需要删除的领导！');
+        }
+	    C('DB_PREFIX','');
+	    $ret=D('officer')->deleteOfficer($ids);
+            $error = M('officer')->getError();
+	    C('DB_PREFIX','minmore_');
+        if ($ret) {
+            $this->success('接访领导删除成功！');
+        } else {
+            $this->error($error ? $error : '删除失败！');
+        }
+    }
     //信件回复
     public function reply() {
         if (IS_POST) {
