@@ -77,7 +77,7 @@
                     <dl>验证码：<input  id="code" type="text" class="TextBox">
                     <img class="yanzheng_img" style="margin-bottom: -5px;" id="code_img" alt="" src="{:U('Api/Checkcode/index','code_len=4&font_size=15&width=120&height=25&font_color=&background=')}" onClick="refreshs()" >
                     <br/>
-                     <div style="float:right;" >击验证码刷新</div>
+                     <div style="float:right;" >点击验证码刷新</div>
                      <br/>
                     </dl>
                     <dl><input name="" type="button" value="提交" class="Netbtn" onclick="sendmsg()"><input name="" type="button" value="清除" class="Netbtn"></dl>

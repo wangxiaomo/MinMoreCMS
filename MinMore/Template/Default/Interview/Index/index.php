@@ -31,7 +31,7 @@
 			</ul>
 		</div>
 		<div class="int-Textlist">
-            <if condition="count($interlist) > 3">
+            <if condition="$interlist">
                 <div class="int-Texttitle"><span>更多>></span><div class="int-Texter">更多访谈</div></div>
                 <ul class="int-list">
                     <volist name="interlist" id="vo" offset="3" length="5" >

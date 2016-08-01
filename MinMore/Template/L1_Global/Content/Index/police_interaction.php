@@ -111,7 +111,7 @@
         
         <div class="interact-table2">
            <div class="interact-table2-tab1">
-              <div class="interact-table2-titele"><samp>更多>></samp><span>在线访谈</span></div>
+              <div class="interact-table2-titele"><samp><a href="{:U('Interview/Index/index')}">更多>></a></samp><span>在线访谈</span></div>
               <div class="interact-table2-text">
                  <p>主题：{$interview.title}</p>
                  <p>日期：{$interview.create_time}</p>
