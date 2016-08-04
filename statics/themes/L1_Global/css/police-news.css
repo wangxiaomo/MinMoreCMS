@@ -366,7 +366,7 @@ img{
     list-style: inherit;
     font-size: 14px;
     color: #2782e0;
-    margin: 6px 0;
+    margin: 6px;
 }
 .public-collect-con,.notice-news-con,.police-report-con,.police-active-con,.police-case-con{
     width: 265px;
