@@ -86,7 +86,7 @@
                             <li><a href="{:U('DirectorMail/Consult/add@' . C('GLOBAL_SITE_DOMAIN'), array('type'=>'wsjb'))}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_3.png" /></a></li>
                             <li><a href="{:U('Content/Site/l2_service')}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_4.png" /></a></li>
                             <li><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_5.png" /></li>
-                            <li><a href="{:U('DirectorMail/Index/add@')}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_6.png" /></a></li>
+                            <li><a href="{:U('DirectorMail/Index/add')}"><img src="{$config_siteurl}statics/themes/L2_Global/images/enter_6.png" /></a></li>
                         </ul>
                     </div>
                 </div>
