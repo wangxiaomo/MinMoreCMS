@@ -110,7 +110,7 @@ class AdminController extends AdminBase {
         if (IS_POST) {
             $this->redirect('public_album_load', $_POST);
         }
-        $config = cache('Config');
+        $config = get_site_config();
         $where = array();
         $db = M("Attachment");
         $filename = I('get.filename', '', '');
@@ -201,7 +201,7 @@ class AdminController extends AdminBase {
 
     //显示附件下的缩图
     public function public_showthumbs() {
-        $config = cache('Config');
+        $config = get_site_config();
         $aid = I('get.aid');
         $info = M("Attachment")->where(array('aid' => $aid))->find();
         if ($info) {
