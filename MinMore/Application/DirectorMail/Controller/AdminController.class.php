@@ -20,9 +20,13 @@ class AdminController extends AdminBase {
                 'roleid' => get_site_role(),
             );
         $typeId = I('get.typeid');
+        $query= I('post.keyword');
         $typeList = M('DirectormailType')->order(array('typeid' => 'DESC'))->getField('typeid,name', true);
         if ($typeId) {
             $where['typeid'] = $typeId;
+        }
+        if (!empty($query)) {
+		$where['name|zhuti|shouji']=array('LIKE',"%".$query."%");
         }
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);

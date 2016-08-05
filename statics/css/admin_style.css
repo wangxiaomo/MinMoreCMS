@@ -1048,6 +1048,7 @@ tr.h_a td
 }
 .table_list td{
 	padding:7px 10px 9px;
+	border: 1px solid #ddd;
 }
 .table_list tr:hover td{
 	color:#000;
