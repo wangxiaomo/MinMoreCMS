@@ -54,7 +54,19 @@ class AdminPetitionController extends AdminBase {
 	    if(IS_AJAX){
 		    C('DB_PREFIX','');
 		    $name=I('name');
-		    $oid=I('station');
+		    $oid1=I('city');
+		    $oid2=I('barue');
+		    $oid3=I('station');
+		    if($oid1>0){
+			$oid=$oid1;
+			if($oid2>0){
+				$oid=$oid2;
+				if($oid3>0){
+					$oid=$oid3;
+				}
+			}
+			}
+
 		    $oname=M('huoyi_office')->where(array('oid'=>$oid))->getField('oname');
 		    $chief=array('name'=>$name,'oid'=>$oid,'oname'=>$oname);
 		    $officer_M=D('officer');

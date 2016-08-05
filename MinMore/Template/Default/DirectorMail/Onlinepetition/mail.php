@@ -19,7 +19,7 @@
         <td class="row-prompt">信件类型:</td><td class="row-content">{$data.typeid}</td><td class="row-prompt">办事状态:</td><td class="row-content">{$data.zt}</td>
       </tr>
       <tr>
-        <td class="row-prompt">领导单位:</td><td colspan="3">{$data.station}</td>
+        <td class="row-prompt">领导单位:</td><td colspan="3">{$data.oname}</td>
       </tr>
       <tr>
         <td class="row-prompt">领导姓名:</td><td colspan="3">{$data.chief_name}</td>
