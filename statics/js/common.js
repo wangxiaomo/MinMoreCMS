@@ -201,7 +201,8 @@
                             });
                         } else if (data.state === 'fail') {
                             $('<span class="tips_error">' + data.info + '</span>').appendTo(btn.parent()).fadeIn('fast');
-                            btn.removeProp('disabled').removeClass('disabled');
+                           // btn.removeProp('disabled').removeClass('disabled');
+                        	btn.prop('disabled',false).removeClass('disabled');
                         }
                     }
                 });
