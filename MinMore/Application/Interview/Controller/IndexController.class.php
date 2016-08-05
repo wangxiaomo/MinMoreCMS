@@ -35,8 +35,7 @@ class IndexController extends Base {
     		$interview_m    =  M("interview as a");
     		$where["id"]    =  $id;
     		$obj            =  $interview_m->where($where)->find();
-    		
-    		
+			
     		$interviewMsg_m 		 =  M("interview_message");
     		$wherereply["view_id"]   =  $id;
     		$dataList          		 =  $interviewMsg_m->where($wherereply)->limit(5)->order(array("id" => "DESC"))->select();
@@ -45,11 +44,9 @@ class IndexController extends Base {
     		$list          =  $interview_m->limit(10)->order(array("id" => "DESC"))->select();
     		
     		
-    		$interviewRely_m    =  M("interview_reply");
+    		$interviewRely_m    	=  M("interview_reply");
     		$whereRely["view_id"]   =  $id;
     		$objrely          		=  $interviewRely_m->where($whereRely)->find();
-    		
-    		
     		
     		//dump($dataList);
     		$this->assign('interlist', $list);
@@ -106,6 +103,7 @@ class IndexController extends Base {
 			if($res){
 				$jsonOp["success"] = true;
 				$jsonOp["msg"]     = "留言成功";
+				$jsonOp["data"]    = $data;
 			}
 			else {
 				$jsonOp["success"] = false;
@@ -116,23 +114,16 @@ class IndexController extends Base {
     }
     
     public function getmsglist(){
-    	
     	$id  = I("get.id","");
-    	
     	if($id!=""){
     		$interviewMsg_m 		 =  M("interview_message");
     		$wherereply["view_id"]   =  $id;
     		$dataList          		 =  $interviewMsg_m->where($wherereply)->limit(10)->order("create_time desc")->select();
-    		
-    	 
-    		
     		$this->assign('datalist',array_reverse($dataList));
     		$this->display("ajaxmsg");
     	}
     	else {
-    		
     		echo "暂时没有人留言";
-    		
     	}
     }
     

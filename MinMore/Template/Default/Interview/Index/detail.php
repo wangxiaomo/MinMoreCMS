@@ -1,9 +1,12 @@
-<link rel="stylesheet" href="{$model_extresdir}css/int.css" />
-<script src="statics/extres/interview/js/html5media.min.js"></script>
 <style>
 .demo{margin:10px auto}
 </style>
 <template file="DirectorMail/Public/header.php"/>
+<link rel="stylesheet" href="{$model_extresdir}css/int.css" />
+<link rel="stylesheet" type="text/css" href="statics/js/htmlplay5/css/willesPlay.css"/>
+<!--<script src="statics/htmlplay5/js/html5media.min.js"></script>-->
+<script src="statics/js/htmlplay5/js/willesPlay.js"></script>
+
 <script type="text/javascript">
 	function sendmsg(){
 		var msg 		= $("#msg").val();
@@ -15,12 +18,13 @@
 		if(username.length==0) {alert("用户名不能为空");return;}
 		$.post("{:U('Index/sendmsg')}",{msg:msg,tel:tel,username:username,view_id:view_id},function(data){
 			if(data.success){
-				alert(data.msg);
+				//alert(data.msg);
 				$("#msg").val("");
 				$("#tel").val("");
 				$("#username").val("");
-
-				
+				var info = "<dl><dt style=\"color: #ffa800;font-size:14px;\">["+data.data.create_time+"]"+data.data.username+"：</dt>"
+			              +"<dd style=\"font-size:13px;\">"+data.data.info+"</dd></dl>";
+				$("#guestmsginfo").append(info);
 			}
 			else  alert(data.msg);
 		},"json");
@@ -31,16 +35,43 @@
 	<div class="int-right"  style="margin:0px; ">
 			<div class="int-contTitle">{$obj.title}</div>
 			<div class="int-contMain">
-				<div class="intImg">
-					<!--<img src="__ROOT__{$obj.banner}"></div>
-					<div class="intImg" style="display:none;">-->
-					<div class="demo">
-						<video class="video" poster="__ROOT__{$obj.banner}"  controls preload>
-							<source src="{$obj.video}" media="only screen and (min-device-width:640px)"></source>
-						</video>
-				   </div>	
+				<div class="intImg" style="text-align:center;margin:0 auto;">
+					<div id="willesPlay" >
+						<div class="playHeader">
+							<div class="videoName"></div>
+						</div>
+						<div class="playContent">
+							<video width="800" height="400px" id="playVideo">
+								<!--<source src="http://220.167.105.121/170/2/11/acloud/151672/letv.v.yinyuetai.com/he.yinyuetai.com/uploads/videos/common/6609014F06AE1C8E99DE142502A2B157.flv" type="video/mp4"></source>-->
+								<source src="{$obj.video}" type="video/mp4"></source>
+								当前浏览器不支持 video直接播放，点击这里下载视频： <a href="/">下载视频</a>
+							</video>
+							<div class="playTip glyphicon glyphicon-play"></div>
+						</div>
+						<div class="playControll">
+							<div class="playPause playIcon"></div>
+							<div class="timebar">
+								<span class="currentTime">0:00:00</span>
+								<div class="progress">
+									<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+									</div>
+								<span class="duration">0:00:00</span>
+							</div>
+							<div class="otherControl">
+								<span class="volume glyphicon glyphicon-volume-down"></span>
+								<span class="fullScreen glyphicon glyphicon-fullscreen"></span>
+								<div class="volumeBar">
+									<div class="volumewrap">
+										<div class="progress">
+											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 8px;height: 40%;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
 				</div>
-				<div class="intSmall">
+				<div class="intSmall" style="margin-top:20px;">
 				   <dl>主 题:{$obj.title}</dl>
 				   <dl>时 间:{$obj.create_time}</dl>
 				   <dl>嘉 宾：{$obj.guest}</dl>

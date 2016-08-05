@@ -365,6 +365,32 @@ class AdminController extends AdminBase {
 		}
 	}
 	
+	//删除留言
+	public function deletemsg() {
+		$interview_m  	=  M("interview_message");
+		if (IS_POST) {
+			$ids = I('post.ids');
+		} else {
+			$ids = I('get.id', 0, 'intval');
+		}
+		if (empty($ids)) {
+			$this->error('请指定需要删除的留言信息！');
+		}
+	
+		$where = array();
+		if (is_array($ids)) {
+			$where['id'] = array('IN', $ids);
+		} else {
+			$where['id'] = $ids;
+		}
+		$res  = $interview_m->where($where)->delete();
+		if($res) {
+			$this->success('删除成功！');
+		} else {
+			$error = $this->db->getError();
+			$this->error($error ? $error : '删除失败！');
+		}
+	}
 	
 	public function changeop(){
 		
