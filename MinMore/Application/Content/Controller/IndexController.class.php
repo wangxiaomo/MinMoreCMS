@@ -101,6 +101,10 @@ class IndexController extends Base {
             $template_list = $setting['list_template'] ? $setting['list_template'] : 'list';
             //判断使用模板类型，如果有子栏目使用频道页模板，终极栏目使用的是列表模板
             $template = $category['child'] ? "Category/{$template}" : "List/{$template_list}";
+            //wangxiaomo:if current node has children, this node cannot be request
+            if($category['child']){
+                die(header("Location:/"));
+            }
             //去除后缀开始
             $tpar = explode(".", $template, 2);
             //去除完后缀的模板
