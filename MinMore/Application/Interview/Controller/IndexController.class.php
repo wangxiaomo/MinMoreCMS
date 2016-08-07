@@ -32,6 +32,8 @@ class IndexController extends Base {
     		$this->error("加载错误");
     	}
     	else {
+			
+			$tempdatalist   =  array();
     		$interview_m    =  M("interview as a");
     		$where["id"]    =  $id;
     		$obj            =  $interview_m->where($where)->find();
@@ -40,22 +42,31 @@ class IndexController extends Base {
     		$wherereply["view_id"]   =  $id;
     		$dataList          		 =  $interviewMsg_m->where($wherereply)->limit(5)->order(array("id" => "DESC"))->select();
  
+			foreach ($dataList as $row){
+				$row["rolename"]    = $this->getRoleName($row["role_id"]);
+				$tempdatalist[] = $row;
+			}
+ 
+ 
     		$interview_m   =  M("interview as a");
     		$list          =  $interview_m->limit(10)->order(array("id" => "DESC"))->select();
-    		
-    		
+			
     		$interviewRely_m    	=  M("interview_reply");
     		$whereRely["view_id"]   =  $id;
     		$objrely          		=  $interviewRely_m->where($whereRely)->find();
-    		
-    		//dump($dataList);
     		$this->assign('interlist', $list);
-    		$this->assign('datalist',array_reverse($dataList));
-    		
+    		$this->assign('datalist',array_reverse($tempdatalist));
+			
     		$this->assign('objrely', $objrely);
     		$this->assign('obj', $obj);
     		$this->assign('title', $obj["title"]);
-    		 
+    		
+			$interrole_m    =  M("interview_role");
+			$whererole["view_id"] =  $id;
+			$rolelist  			  =  $interrole_m->where($whererole)->select();
+			$this->assign("rolelist",$rolelist);
+			
+			
     		$this->display();
     	}
     }
@@ -88,6 +99,7 @@ class IndexController extends Base {
 			$data["tel"] 	 	 =  I('post.tel',"", "trim");
 			$data["username"] 	 =  I('post.username',"", "trim");
 			$data["view_id"] 	 =  I('post.view_id',"", "trim");
+			$data["role_id"] 	 =  I('post.role_id',"", "trim");
 			$data["create_time"] =  date("Y-m-d H:i:s");
 			
 			$code = I("post.code", "", "trim");
@@ -119,12 +131,23 @@ class IndexController extends Base {
     		$interviewMsg_m 		 =  M("interview_message");
     		$wherereply["view_id"]   =  $id;
     		$dataList          		 =  $interviewMsg_m->where($wherereply)->limit(10)->order("create_time desc")->select();
-    		$this->assign('datalist',array_reverse($dataList));
+			$tempdatalist = array();
+			foreach ($dataList as $row){
+				$row["rolename"]    = $this->getRoleName($row["role_id"]);
+				$tempdatalist[] = $row;
+			}
+			
+    		$this->assign('datalist',array_reverse($tempdatalist));
     		$this->display("ajaxmsg");
     	}
     	else {
     		echo "暂时没有人留言";
     	}
     }
-    
+	
+    private function getRoleName($id){
+		$where["id"] 	 =  $id;
+		$field 	=	M("interview_role")->where($where)->getField("name");
+		return $field;
+	}
 }

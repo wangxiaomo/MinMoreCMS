@@ -18,27 +18,24 @@ class AdminController extends AdminBase {
     protected function _initialize() {
     	parent::_initialize();
     }
-
-  
+	
+	/**
+	* 访谈列表
+	*/
     public function index() {
-        
     	$interview_m  		 =  M("interview");
     	$where 				 =  array();
-    	
     	if($keyword!=""){
 			$where['_string']='(title like "%'.$keyword.'%")  OR (guest like "'.$keyword.'")';
 		}
-		
-    	$count 	= 	$interview_m->where($where)->count();
-    	$page 	= 	page($count, 10);
-    	$data 	= 	$interview_m->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
-
-    	
-    	$tempData = array();
-    	
+    	$count 	  = 	$interview_m->where($where)->count();
+    	$page 	  = 	page($count, 10);
+    	$data 	  = 	$interview_m->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
+    	$tempData =     array();
     	foreach ($data as $row){
-    		$row["is_have"]  = $this->isHaveReply($row["id"]);
-    		$row["msgtotal"]  = $this->getmsgtotal($row["id"]);
+    		$row["is_have"]    = $this->isHaveReply($row["id"]);
+    		$row["msgtotal"]   = $this->getmsgtotal($row["id"]);
+			$row["roletotal"]  = $this->getRoleTotal($row["id"]);
     		$tempData[] = $row;
     	}
     	//dump($tempData);
@@ -48,7 +45,9 @@ class AdminController extends AdminBase {
     	$this->display();
     }
     
-    
+	/**
+	* 留言列表
+	*/
     public function msginfo() {
     	 
     	$interview_m  		 =  M("interview_message as a");
@@ -61,20 +60,106 @@ class AdminController extends AdminBase {
     	$count 	= 	$interview_m->join("minmore_interview as b on a.view_id=b.id")->where($where)->count();
     	$page 	= 	page($count, 10);
     	
-    	
     	$data 	= 	$interview_m->field("a.*,b.title as title")->join("minmore_interview as b on a.view_id=b.id")->where($where)
     					        ->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
-    
-    	 
     	$tempData = array();
-    	//dump($data);
+		
+		foreach ($data as $row){
+			//if($row["is_admin"]=="on"){
+				$row["rolename"]   = $this->getRoleName($row["role_id"]);
+		//	}
+    		$tempData[] = $row;
+    	}
+		
+    	//dump($tempData);
+		$this->assign("view_id",I("get.id"));
     	$this->assign("title", "访谈留言");
-    	$this->assign('dataList', $data);
+    	$this->assign('dataList', $tempData);
     	$this->assign("Page", $page->show('Admin'));
     	$this->display();
     }
     
-    
+	public function addreply(){
+		$intermsg_m  	=  M("interview_message");
+		$interrole_m    =  M("interview_role");
+		
+    	if(IS_GET){
+			$id 		 = 	I("get.id","");
+    		$where["id"] =  $id;
+    		$obj         = $intermsg_m->where($where)->find();
+    		$this->assign("obj",$obj);
+		//	dump($obj);
+			
+			$view_id     		  =  I("get.view_id","");
+			$whererole["view_id"] =  $view_id;
+			$rolelist  			  =  $interrole_m->where($whererole)->select();
+			$this->assign("rolelist",$rolelist);
+			//echo M()->getLastSql();
+			//dump($rolelist);
+    		$this->display("addreply");
+    	}
+    	else {
+			$view_id 			 = 	I("post.view_id","");
+    		$reuslt 			 =	false;
+    		$data["view_id"] 	 =  $view_id;
+    		$data["at_username"] =  I("post.at_username");
+			$data["info"] 	 	 =  I("post.info");
+			$data["role_id"] 	 =  I("post.role_id");
+			$data["is_admin"] 	 =  I("post.is_admin");
+			$data["create_time"] =  date("Y-m-d H:i:s");
+			
+			$reuslt  =	$intermsg_m->data($data)->add();
+			if($reuslt){
+				$this->success('回复成功！',U('msginfo',array('id'=>$view_id)));
+			}
+			else {
+				$this->error('回复失败！');
+			}
+    	}
+	}
+	
+	public function addallreply(){
+		$intermsg_m  	=  M("interview_message");
+		$interrole_m    =  M("interview_role");
+		
+    	if(IS_GET){
+			$view_id     		 =  I("get.view_id","");
+			$interview_m  		 =  M("interview");
+			$where["id"]		 =  $view_id;
+			$obj        		 =  $interview_m->where($where)->find();
+			//echo M()->getLastSql();
+		// dump($obj);
+    		$this->assign("obj",$obj);
+			
+			$whererole["view_id"] =  $view_id;
+			$rolelist  			  =  $interrole_m->where($whererole)->select();
+			$this->assign("rolelist",$rolelist);
+    		$this->display("addallreply");
+    	}
+    	else {
+			$view_id 			 = 	I("post.view_id","");
+    		$reuslt 			 =	false;
+    		$data["view_id"] 	 =  $view_id;
+    		$data["at_username"] =  I("post.at_username");
+			$data["info"] 	 	 =  I("post.info");
+			$data["role_id"] 	 =  I("post.role_id");
+			$data["is_admin"] 	 =  I("post.is_admin");
+			$data["create_time"] =  date("Y-m-d H:i:s");
+			
+			$reuslt  =	$intermsg_m->data($data)->add();
+			if($reuslt){
+				$this->success('回复成功！',U('msginfo',array('id'=>$view_id)));
+			}
+			else {
+				$this->error('回复失败！');
+			}
+    	}
+	}
+	
+	
+	/**
+	* 添加访谈
+	*/
     public function addinterview() {
     	$interview_m  		 =  M("interview");
     	if(IS_GET){
@@ -122,6 +207,9 @@ class AdminController extends AdminBase {
     	}
     }
     
+	/**
+	* 添加访谈实录
+	*/
     public function addinfo() {
     	$interview_m  		 =  M("interview");
     	if(IS_GET){
@@ -138,8 +226,7 @@ class AdminController extends AdminBase {
     		$data["summary"] 	 =  I("summary");
     		$data["title"] 	     =  I("title");
     		$data["create_time"] =  date("Y-m-d H:i:s");
-    		 
-    
+			
     		$reuslt  =	$interview_reply->data($data)->add();
     
     		if($reuslt){
@@ -151,6 +238,9 @@ class AdminController extends AdminBase {
     	}
     }
 	
+	/**
+	* 修改访谈实录
+	*/
     public function editeinfo() {
     	$interview_m  		 =  M("interview");
     	$interview_reply  	 =  M("interview_reply");
@@ -183,10 +273,7 @@ class AdminController extends AdminBase {
     		}
     	}
     }
-    
-    
-    
-    
+       
 	/**
 	 * 上传图片
 	 */
@@ -263,7 +350,6 @@ class AdminController extends AdminBase {
 		}
 		 $this->ajaxReturn($jsonOp);
 	}
-	
 	
 	/**
 	 * 上传图片
@@ -365,6 +451,135 @@ class AdminController extends AdminBase {
 		}
 	}
 	
+	//设置默认
+	public function creataDefaultRole(){
+		$id  = I('post.id','');
+		if(id!=""){
+			$interview_role_m  =  M("interview_role");
+			$dataList[] 	   = array('name'=>'主持人','view_id'=>$id);
+			$dataList[] 	   = array('name'=>'嘉宾','view_id'=>$id);
+			$dataList[] 	   = array('name'=>'顾问','view_id'=>$id);
+			
+			$res  = $interview_role_m->addAll($dataList);
+			if($res){
+				$jsonOp["success"] = true;
+				$jsonOp["msg"]     = "设置成功";
+			}
+			else {
+				$jsonOp["success"] = false;
+				$jsonOp["msg"]     = "设置失败";
+			}
+			$this->ajaxReturn($jsonOp);
+		}
+		else {
+			$jsonOp["success"] = false;
+			$jsonOp["msg"]     = "参数错误";
+			$this->ajaxReturn($jsonOp);
+		}
+	}
+	
+	/**
+	* 留言列表
+	*/
+    public function roleinfo() {
+    	 
+    	$interview_m  		 =  M("interview_role as a");
+    	$where 				 =  array();
+    	$where["view_id"] 	 = I("get.id");
+		
+    	$count 	= 	$interview_m->join("minmore_interview as b on a.view_id=b.id")->where($where)->count();
+    	$page 	= 	page($count, 10);
+    	
+    	$data 	= 	$interview_m->field("a.*,b.title as title")->join("minmore_interview as b on a.view_id=b.id")->where($where)
+    					        ->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
+    	$tempData = array();
+		$this->assign("view_id", $where["view_id"]);
+    	$this->assign("title", "访谈留言");
+    	$this->assign('dataList', $data);
+    	$this->assign("Page", $page->show('Admin'));
+    	$this->display();
+    }
+	
+	/**
+	 * 添加访谈角色
+	 */
+	public function addrole(){
+		$interview_m  		 =  M("interview");
+		$interview_role_m  	 =  M("interview_role");
+    	if(IS_GET){
+			$view_id 	       = 	I("get.view_id","");
+			$id 	           = 	I("get.id","");
+			
+    		$where["id"] = $view_id;
+    		$obj         = $interview_m->where($where)->find();
+    		$this->assign("obj",$obj);
+			
+			$where_view["id"]  =    $id;
+			$objrole           =    $interview_role_m->where($where_view)->find();
+			$this->assign("objrole",$objrole);
+    		$this->display("addrole");
+    	}
+    	else {
+			$id 		= 	I("post.id","");
+			$view_id 	= 	I("post.view_id","");
+			
+    		$reuslt =	false;
+    		$data["view_id"] 	 =  $view_id;
+    		$data["name"] 	 	 =  I("post.name");
+			
+			if($id==""){
+				$reuslt  =	$interview_role_m->data($data)->add();
+				if($reuslt){
+					$this->success('访谈角色添加成功！',U('roleinfo',array('id'=>$view_id)));
+				}
+				else {
+					
+					$this->error('访谈角色失败！');
+				}
+			}
+    		else {
+				$data["id"]  =  $id;
+				$reuslt      =	$interview_role_m->data($data)->save();
+				if($reuslt){
+					$this->success('访谈角色修改成功！', U('roleinfo',array('id'=>$view_id)));
+				}
+				else {
+					$this->error('修改访谈角色失败！');
+				}
+			}
+    	}
+	}
+	
+	
+	
+	
+	//删除角色
+	public function deleterole() {
+		$interview_m  	=  M("interview_role");
+		if (IS_POST) {
+			$ids = I('post.ids');
+		} else {
+			$ids = I('get.id', 0, 'intval');
+		}
+		if (empty($ids)) {
+			$this->error('请指定需要删除的留言信息！');
+		}
+	
+		$where = array();
+		if (is_array($ids)) {
+			$where['id'] = array('IN', $ids);
+		} else {
+			$where['id'] = $ids;
+		}
+		$res  = $interview_m->where($where)->delete();
+		if($res) {
+			$this->success('删除成功！');
+		} else {
+			$error = $this->db->getError();
+			$this->error($error ? $error : '删除失败！');
+		}
+	}
+	
 	//删除留言
 	public function deletemsg() {
 		$interview_m  	=  M("interview_message");
@@ -393,9 +608,7 @@ class AdminController extends AdminBase {
 	}
 	
 	public function changeop(){
-		
 		if(IS_POST){
-			
 			$id 	 = 	$ids = I('post.id');
 			$op  	 = 	$ids = I('post.op');
 			$interview_m   =  M("interview");
@@ -421,6 +634,19 @@ class AdminController extends AdminBase {
 		$where["view_id"] 	 =  $id;
 		$total 				 =  $interview_m->where($where)->count();
 		return $total>0?true:false;
+	}
+	
+	private function getRoleTotal($id){
+		$interview_m  		 =  M("interview_role");
+		$where["view_id"] 	 =  $id;
+		$total 				 =  $interview_m->where($where)->count();
+		return $total;
+	}
+	
+	private function getRoleName($id){
+		$where["id"] 	 =  $id;
+		$field 	=	M("interview_role")->where($where)->getField("name");
+		return $field;
 	}
 	
 	private function getmsgtotal($id){

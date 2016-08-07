@@ -5,11 +5,12 @@
 </script>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <div class="nav">
-    <ul class="cc">
-        <li class="current"><a href="http://alhelp.cn/index.php?g=Interview&m=Admin" >访谈列表信息</a></li>
-      </ul>
-</div>
+	<a class="btn btn_submit mr10 J_ajax_submit_btn"  href="{:U("addallreply",array("view_id"=>$view_id))}" >回复所有人	</a>
+	<div class="nav">
+		<ul class="cc">
+			<li class="current"><a href="http://alhelp.cn/index.php?g=Interview&m=Admin" >访谈列表信息</a></li>
+		</ul>
+	</div>
   <form name="myform"  class="J_ajaxForm" action="http://alhelp.cn/index.php?g=Interview&m=Admin&a=deletemsg&isadmin=1" method="post" >
     <div class="table_list">
       <table width="100%" cellspacing="0">
@@ -19,10 +20,12 @@
             <td width="50" align="center">ID</td>
 			<td width="200px">访谈</td>
             <td width="100px">用户</td>
+			<td width="100px">管理员角色</td>
             <td width="200px">手机号</td>
+			<td width="100px">@信息</td>
             <td width="140px">开始时间</td>
 			<td   >内容</td>
-            <td width="240" align="center">操作</td>
+            <td width="140" align="center">操作</td>
           </tr>
         </thead>
         <tbody>
@@ -32,10 +35,18 @@
               <td >{$vo.id}</td>
               <td >{$vo.title}</td>
 			  <td >{$vo.username}</td>
+			  <td >{$vo.rolename}</td>
               <td >{$vo.tel}</td>
+			  <td >{$vo.at_username}</td>
 			  <td >{$vo.create_time}</td>
 			  <td >{$vo.info}</td>
-              <td ><a class="J_ajax_del" href="{:U("deletemsg",array("id"=>$vo['id'],'isadmin'=>1))}">删除</a>
+              <td >
+			   <if condition="$vo.is_admin neq on">
+					 <a  href="{:U("addreply",array("id"=>$vo['id'],'isadmin'=>1,"view_id"=>$vo['view_id']))}">回复  |
+				 <else />
+				 	 
+				 </if>
+			  <a class="J_ajax_del" href="{:U("deletemsg",array("id"=>$vo['id'],'isadmin'=>1))}">删除</a>
               </td>
             </tr>
           </volist>

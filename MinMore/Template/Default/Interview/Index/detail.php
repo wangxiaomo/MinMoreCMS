@@ -6,29 +6,57 @@
 <link rel="stylesheet" type="text/css" href="statics/js/htmlplay5/css/willesPlay.css"/>
 <!--<script src="statics/htmlplay5/js/html5media.min.js"></script>-->
 <script src="statics/js/htmlplay5/js/willesPlay.js"></script>
-
 <script type="text/javascript">
+
 	function sendmsg(){
 		var msg 		= $("#msg").val();
 		var tel 		= $("#tel").val();
 		var username 	= $("#username").val();
 		var view_id 	= $("#view_id").val();
+		var guestsl 	= $("#guestsl").val();
+		
 		if(msg.length==0) {alert("留言不能为空");return;}
 		if(tel.length==0) {alert("手机号不能为空");return;}
 		if(username.length==0) {alert("用户名不能为空");return;}
-		$.post("{:U('Index/sendmsg')}",{msg:msg,tel:tel,username:username,view_id:view_id},function(data){
+		//if(guestsl.length==0) {alert("交流人不能为空");$("#guestsl").focus();return;}
+		$.post("{:U('Index/sendmsg')}",{msg:msg,tel:tel,username:username,view_id:view_id,role_id:guestsl},function(data){
 			if(data.success){
 				//alert(data.msg);
 				$("#msg").val("");
-				$("#tel").val("");
-				$("#username").val("");
+				$("#tel").val(tel);
+				$("#username").val(username);
+				
+				$('#tel').attr("readonly","readonly");
+				$('#username').attr("readonly","readonly");
+				$("#code").val("");
+				 refreshs();
 				var info = "<dl><dt style=\"color: #ffa800;font-size:14px;\">["+data.data.create_time+"]"+data.data.username+"：</dt>"
 			              +"<dd style=\"font-size:13px;\">"+data.data.info+"</dd></dl>";
 				$("#guestmsginfo").append(info);
+				$("#guestmsginfo").scrollTop($("#guestmsginfo")[0].scrollHeight);
 			}
 			else  alert(data.msg);
 		},"json");
 	}
+	
+	function cleanform(){
+		$("#msg").val("");
+		$("#tel").val("");
+		$("#username").val("");
+		$('#tel').removeAttr("readonly");
+		$('#username').removeAttr("readonly");
+	}
+	
+	function changeguest(){
+		if($("#guestsl").val()!=""){
+			$("#msg").val("@"+$("#guestsl").find("option:selected").text());
+		}
+		else {
+			$("#msg").val("");
+		}
+	}
+	
+	
 </script>
 
 <div clkss="content-fd">
@@ -79,24 +107,36 @@
 				</div> 
 			</div>
 			<div class="int-contMain" style="margin-top:5px">
-               <div class="int-contLeft">
-                  <div class="int-Texttitle"><span><samp onclick="startplay()"> 顺序</samp> ｜<samp onclick="showall()">全文</samp>｜<samp onclick="stopplay()">停止刷新</samp><a href="{:U("info",array("id"=>$obj['id']))}" > 更多</a>></span><div class="int-Texter">文字实录</div></div>
-                  <div class="int-contText" id="msginfo">
-                  	 
-                  </div>
-                  <div class="int-contText" id="msginfo1" style="display:none;">
-                  	 {$objrely.info}
-                  </div>
-               </div>
-               <div class="int-contRight">
-                  <div class="int-comTxt">在线交流<select name="" class="int-option"  style="margin-left:30px;">
-                    <option>主持人</option>
-                 </select></div>
+				<div class="int-contLeft">
+					<div class="int-Texttitle">
+						<span><samp onclick="startplay()"> 顺序</samp> ｜<samp onclick="showall()">全文</samp>｜<samp onclick="stopplay()">停止刷新</samp><a href="{:U("info",array("id"=>$obj['id']))}" > 更多</a>></span>
+						<div class="int-Texter">文字实录</div>
+					</div>
+					<div class="int-contText" id="msginfo">
+					</div>
+					<div class="int-contText" id="msginfo1" style="display:none;">
+						{$objrely.info}
+					</div>
+				</div>
+				<div class="int-contRight">
+					<div class="int-comTxt">在线交流
+						<select id="guestsl"  name="" class="int-option"  style="margin-left:30px;"  onchange= "changeguest()">
+							<option value="">请选择</option>
+							<volist name="rolelist"  id="vo">
+								<option  value="{$vo.id}">{$vo.name}</option>
+							</volist>  
+						</select>
+					</div>
                   <div class="guest" id="guestmsginfo">
                   	  <volist name="datalist"  id="vo">
                   		<dl>
-	                      <dt style="color: #ffa800;font-size:14px;">[{$vo.create_time}]{$vo.username}：</dt>
-	                      <dd style="font-size:13px;">{$vo.info}</dd>
+						 <if condition="$vo.is_admin neq on">
+							<dt style="color: #ffa800;font-size:14px;">[{$vo.create_time}]{$vo.username}：</dt>
+							<dd style="font-size:13px;">{$vo.info}</dd>
+						 <else />
+							<dt style="color: #D82F12;font-size:14px;">[{$vo.create_time}]{$vo.rolename}：</dt> 
+							<dd style="font-size:13px;">@{$vo.at_username} {$vo.info}</dd>
+						 </if>
 	                    </dl>
                   	</volist>  
                   </div>
@@ -111,7 +151,8 @@
                      <div style="float:right;" >点击验证码刷新</div>
                      <br/>
                     </dl>
-                    <dl><input name="" type="button" value="提交" class="Netbtn" onclick="sendmsg()"><input name="" type="button" value="清除" class="Netbtn"></dl>
+                    <dl><input name="" type="button" value="提交" class="Netbtn" onclick="sendmsg()">
+					<input name="" type="button" value="清除" class="Netbtn" onclick="cleanform()"></dl>
                   </div>
                </div>
            </div>

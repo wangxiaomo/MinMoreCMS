@@ -10,6 +10,15 @@
 			else  alert(data.msg);
 		},"json");
 	}
+	function setRole(id){
+		$.post("{:U('Admin/creataDefaultRole')}",{id:id},function(data){
+			if(data.success){
+				alert(data.msg);
+				location.reload(); 
+			}
+			else  alert(data.msg);
+		},"json");
+	}
 </script>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
@@ -25,13 +34,14 @@
           <tr>
             <td width="20" align="center"><input type="checkbox" class="J_check_all" data-direction="x" data-checklist="J_check_x"></td>
             <td width="50" align="center">ID</td>
-            <td >标题</td>
-            <td  width="200">封面</td>
+            <td  width="150">封面</td>
+			<td >标题</td>
             <td  width="140">开始时间</td>
-			<td  width="140">是否开启</td>
-			<td  width="140">留言条数</td>
-			<td  width="140">是否开启留言</td>
-            <td width="240" align="center">操作</td>
+			<td  width="100">是否开启</td>
+			<td  width="100">留言条数</td>
+			<td  width="100">是否开启留言</td>
+			<td  width="100">访谈角色</td>
+            <td width="200" align="center">操作</td>
           </tr>
         </thead>
         <tbody>
@@ -39,8 +49,8 @@
             <tr>
               <td align="center"><input class="checkbox J_check "  data-yid="J_check_y" data-xid="J_check_x"  name="ids[]" value="{$vo.id}" type="checkbox"></td>
               <td >{$vo.id}</td>
-              <td >{$vo.title}</td>
               <td ><img src="{$vo.banner}" style="height:100px;" /></td>
+			  <td >{$vo.title}</td>
 			  <td >{$vo.start_time}</td>
 			  <td >{$vo.is_open}</td>
 			  <td >{$vo.msgtotal}条/<a href="{:U("msginfo",array("id"=>$vo['id']))}">管理</a></td>
@@ -50,6 +60,14 @@
 				 <else />
 				 	<a href="javascript:openmsg('{$vo[id]}','off')">关闭</a>
 				 </if>
+			  </td>
+			  
+			  <td >
+				<if condition="$vo.roletotal gt 0 ">
+					{$vo.roletotal}个 | <a href="{:U("roleinfo",array("id"=>$vo['id']))}">管理</a>
+				 <else />
+				 	<a href="javascript:setRole('{$vo[id]}')">设置默认</a>
+				</if>
 			  </td>
               <td ><a class="J_ajax_del" href="{:U("delete",array("id"=>$vo['id'],'isadmin'=>1))}">删除</a>
               		|<a href="{:U("addinterview",array("id"=>$vo['id']))}">修改</a>
