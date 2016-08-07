@@ -8,7 +8,7 @@
     <p class="download-files row-title">信件内容</p>
     <table class="result-table">
       <tr>
-        <td class="row-content">信件编号：WSZX{$data.tjsj|date="Ymd",###}{$data.id}</td><td class="row-content">咨询标题：{$data.xjzt}</td><td class="row-content">业务类别：{$data.ywlb}</td>
+        <td class="row-content">信件编号：WSZX{$data.tjsj|date="Ymd",###}{$data.id}</td><td class="row-content">咨询标题：{$data.xjzt}</td>
       </tr>
       <tr class="large-table-row">
         <td class="row-prompt">咨询内容</td><td colspan="3">{$data.xxnr}</td>

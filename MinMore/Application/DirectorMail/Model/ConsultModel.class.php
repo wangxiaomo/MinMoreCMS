@@ -15,7 +15,6 @@ class ConsultModel extends Model {
         array('sfzh', 'require', '身份证号不能为空', 1, 'regex', 3),
         array('cxmm', 'require', '查询密码不能为空！', 1, 'regex', 3),
         array('sljg', 'require', '受理机构不能为空！', 1, 'regex', 3),
-        array('ywlb', 'require', '业务类别不能为空！', 1, 'regex', 3),
         array('xjzt', 'require', '新建主题不能为空！', 1, 'regex', 3),
         array('xxnr', 'require', '详细内容不能为空！', 1, 'regex', 3),
     );

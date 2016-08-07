@@ -76,18 +76,6 @@
 	  </div>
         </div>
         <div class="data-line">
-          <span class="prompt">业务类别：</span>
-          <div>
-            <select name="ywlb">
-                <option value="">请选择</option>
-                <option value="出入境">出入境</option>
-                <option value="交通">交通</option>
-                <option value="户籍">户籍</option>
-                <option value="其他">其他</option>
-            </select><i class="red">*</i>
-          </div>
-        </div>
-        <div class="data-line">
           <span class="prompt">主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</span>
           <div>
             <input type="text" name="xjzt" /><i class="red">*</i>
