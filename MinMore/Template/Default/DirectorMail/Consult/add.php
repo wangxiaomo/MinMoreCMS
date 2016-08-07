@@ -147,7 +147,7 @@ $(function(){
 	$("select[name='barue']").on("change",function(){
 		$("select[name='station']").empty();
                 $("select[name='station']").append("<option value='0'>--请选择--</option>");
-	var url="{:U('DirectorMail/OnlinePetition/get_sub_org')}";
+	var url="{:U('DirectorMail/Onlinepetition/get_sub_org')}";
 	var pid=$("select[name='barue']").val();
 	if(pid==0)return;
 	var level=2;
