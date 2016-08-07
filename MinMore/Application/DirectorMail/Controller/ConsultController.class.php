@@ -76,10 +76,20 @@ class ConsultController extends Base {
             $post = I('post.');
             $post['roleid'] = get_site_role();
             $post['type'] = I('get.type');
+		if($post['city']){
+			$post['sljg']=$post['city'];
+		if($post['barue']){
+			$post['sljg']=$post['baure'];
+		if($post['station']){
+			$post['sljg']=$post['station'];
+		}
+		}
+		}
             $id = $this->db->addConsult($post);
             if ($id) {
                 $message = 'WSZX'.date('Ymd', time()).$id;                
-                $this->success($message, U('Consult/index'));
+                //$this->success($message,U('Consult/index',array('type'=>$post['type'])));
+                $this->success($message,U('Consult/add',array('type'=>$post['type'])));
             } else {
                 $error = $this->db->getError();
                 $this->error($error ? $error : '提交' . $this->flag);
@@ -87,6 +97,8 @@ class ConsultController extends Base {
         } else {
             $dataList = M()->query('select oid id, oname name from huoyi_office');
             $this->assign('data', $dataList);
+		$citys=get_director_city();
+		$this->assign('citys', $citys);
             $this->display();
         }
     }
