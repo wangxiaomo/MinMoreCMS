@@ -129,8 +129,15 @@ $(function(){
         window.location = "{:U('DirectorMail/Onlinepetition/search')}";
     });
 	$("select[name='city']").on("change",function(){
+		 $("select[name='barue']").empty();
+		$("input[name='chief_name']").val("");
+                $("select[name='barue']").append("<option value='0'>--请选择--</option>");
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		$("select[name='chief']").hide();
 	var url="{:U('get_sub_org')}";
 	var pid=$("select[name='city']").val();
+	if(pid==0)return;
 	var request={pid:pid,level:1};
 	$.ajax({
             cache: false,
@@ -143,10 +150,6 @@ $(function(){
                 alert("网络错误，请稍候尝试！");
             },
 	    success: function (resp){
-		 $("select[name='barue']").empty();
-                $("select[name='barue']").append("<option value='0'>--请选择--</option>");
-		 $("select[name='station']").empty();
-                $("select[name='station']").append("<option value='0'>--请选择--</option>");
 		var data=resp.info;
                 var count = data.length;
                 var i = 0;
@@ -159,8 +162,13 @@ $(function(){
 	});
 });
 	$("select[name='barue']").on("change",function(){
+		$("select[name='station']").empty();
+		$("input[name='chief_name']").val("");
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		$("select[name='chief']").hide();
 	var url="{:U('get_sub_org')}";
 	var pid=$("select[name='barue']").val();
+	if(pid==0)return;
 	var level=2;
 	var request={pid:pid,level:level};
 	$.ajax({
@@ -174,8 +182,6 @@ $(function(){
                 alert("网络错误，请稍候尝试！");
             },
 	    success: function (resp){
-		 $("select[name='station']").empty();
-                $("select[name='station']").append("<option value='0'>--请选择--</option>");
 		var data=resp.info;
                 var count = data.length;
                 var i = 0;
@@ -186,20 +192,31 @@ $(function(){
                 $("select[name='station']").append(b);
                 }
 	});
+	$("select[name='station']").on("change",function(){
+		$("input[name='chief_name']").val("");
+		$("select[name='chief']").hide();
+	pid=$("select[name='station']").val();
+	if(pid==0)return;
+	});
 });
-	$("select[name='chief']").on("click",function(){
+	$("select[name='chief']").on("change",function(){
 	var chief_name=$("select[name='chief'] option:selected").text();
+	if($("select[name='chief']").val()==0){
+		chief_name="";
+	}
 	$("input[name='chief_name']").val(chief_name);
-	$("select[name='chief']").hide();
+//	$("select[name='chief']").hide();
 	});
 });
 function showSelectChief(){
-	var oid=$("select[name='station']").val();
-	if(oid<1){
+	var oid1=$("select[name='city']").val();
+	var oid2=$("select[name='barue']").val();
+	var oid3=$("select[name='station']").val();
+	if(oid3<1&&oid2<1&&oid1<1){
 	return;
 	}
 	var url="{:U('get_petition_chief')}";
-	var request={oid:oid};
+	var request={oid1:oid1,oid2:oid2,oid3:oid3};
 	$.ajax({
             cache: false,
             type: "POST",
@@ -212,6 +229,7 @@ function showSelectChief(){
             },
 	    success: function (resp){
 		$("select[name='chief']").empty();
+                $("select[name='chief']").append("<option value='0'>--请选择--</option>");
 		var data=resp.info;
 		if(data==null){
                 alert("所选部门未找到可约访领导，您可以自行填写接访领导的姓名");

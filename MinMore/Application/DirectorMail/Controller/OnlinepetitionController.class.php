@@ -171,14 +171,26 @@ class OnlinepetitionController extends Base {
 	}
 	public function get_petition_chief(){
 		if(IS_POST){
-			$oid = I('oid');
-			if($oid>0){
-				$chief=get_director_petition($oid);
-				$this->success($chief);
+			$oid1 = I('oid1');
+			$oid2 = I('oid2');
+			$oid3 = I('oid3');
+			if($oid1>0){
+				$oid=$oid1;
+				if($oid2>0){
+					$oid=$oid2;
+					if($oid3>0){
+						$oid=$oid3;
+					}
+				}
+				if($oid>0){
+					$chief=get_director_petition($oid);
+					$this->success($chief);
+				}
 			}else{
 				$msg="选择部门后才能选择接访领导";
 				$this->error($msg);
 			}
+
 		}
 	}
 }

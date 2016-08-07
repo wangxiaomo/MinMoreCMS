@@ -108,15 +108,15 @@ class PetitionModel extends Model {
 	C('DB_PREFIX','');
 	if ($data['city']){
 		$city = M('huoyi_office')->where(array('oid'=>$data['city']))->find();
-		$data['city']=$city['osimplename'];
-	}
-	if ($data['barue']){
-		$barue= M('huoyi_office')->where(array('oid'=>$data['barue']))->find();
-		$data['barue']=$barue['osimplename'];
-	}
-	if ($data['station']){
-		$station= M('huoyi_office')->where(array('oid'=>$data['station']))->find();
-		$data['station']=$station['oname'];
+		$data['oname']=$city['oname'];
+		if ($data['barue']){
+			$barue= M('huoyi_office')->where(array('oid'=>$data['barue']))->find();
+			$data['oname']=$barue['oname'];
+			if ($data['station']){
+				$station= M('huoyi_office')->where(array('oid'=>$data['station']))->find();
+				$data['oname']=$station['oname'];
+			}
+		}
 	}
 	C('DB_PREFIX','minmore_');
         if ($data['roleid']) {
