@@ -59,14 +59,21 @@
           </div>
         </div>
         <div class="data-line">
-          <span class="prompt">受理机构：</span>
-          <div>
-            <select name="sljg" style="width:400px">
-                <volist name="data" id="vo">
-                <option value="{$vo.id}">{$vo.name}</option>
-                </volist>
-            </select><i class="red">*</i>
-          </div>
+          <span class="prompt">所在区域：</span>
+	   <div>
+	    <select  name="city" style="width:140px">
+		<option value="0">--请选择--</option>
+		<foreach name='citys' item='v' >
+		    <option value="{$v.oid}">{$v.osimplename}</option>
+		</foreach>
+	    </select>&nbsp;&nbsp;&nbsp;
+	    <select  name="barue" style="width:140px">
+		<option value="0">--请选择--</option> 
+	    </select >&nbsp;&nbsp;&nbsp;
+	    <select  name="station" style="width:140px">
+		<option value="0">--请选择--</option>
+	    </select>
+	  </div>
         </div>
         <div class="data-line">
           <span class="prompt">业务类别：</span>
@@ -116,6 +123,69 @@ $(function(){
         url = "{:U('DirectorMail/Consult/index')}&type="+"{$flag}";
         window.location = url;
     });
+});
+$(function(){
+	$("select[name='city']").on("change",function(){
+		 $("select[name='barue']").empty();
+                $("select[name='barue']").append("<option value='0'>--请选择--</option>");
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+	var url="{:U('DirectorMail/Onlinepetition/get_sub_org')}";
+	var pid=$("select[name='city']").val();
+	if(pid==0)return;
+	var request={pid:pid,level:1};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='barue']").append(b);
+                }
+	});
+});
+	$("select[name='barue']").on("change",function(){
+		$("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+	var url="{:U('DirectorMail/OnlinePetition/get_sub_org')}";
+	var pid=$("select[name='barue']").val();
+	if(pid==0)return;
+	var level=2;
+	var request={pid:pid,level:level};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='station']").append(b);
+                }
+	});
+});
 });
 </script>
 <template file="DirectorMail/Public/footer.php"/>

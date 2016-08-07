@@ -46,7 +46,7 @@ class OnlinepetitionController extends Base {
             $id = $this->db->addPetition($post);
 			if ($id) {
 				$message = 'C'.date('Ymd', time()).$id;                
-				$this->success($message, U('Onlinepetition/search'));
+				$this->success($message, U('Onlinepetition/add'));
 			} else {
 				$error = $this->db->getError();
 				$this->error($error ? $error : '写信失败！');

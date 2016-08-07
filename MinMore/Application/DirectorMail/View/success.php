@@ -15,7 +15,7 @@
         </div>
         <div class="content-bd"></div>
         <div class="content-fd">
-          <a href="{:U('add')}">继续写信</a>
+          <a href="{$jumpUrl}">继续写信</a>
           <a href="/">返回首页</a>
         </div>
       </div>
