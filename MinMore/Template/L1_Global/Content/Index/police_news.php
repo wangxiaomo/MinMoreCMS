@@ -216,7 +216,7 @@
                     </content>
                 </div>
             </div>
-            <div class="news-mid"><img src="{$config_siteurl}statics/themes/L1_Global/images/mid-logo-bg.png" alt=""/></div>
+            <div class="news-mid"><img src="{$config_siteurl}statics/themes/L1_Global/images/mid-logo-bg.gif" alt=""/></div>
             <div class="news-bottom">
                 <div class="police-report police-report-small">
                     <h3>{:getCategory(23, 'catname')}</h3>

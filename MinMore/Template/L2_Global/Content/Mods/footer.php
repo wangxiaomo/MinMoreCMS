@@ -13,6 +13,7 @@
     </p>
 </div>
 <div class="link_img">
+	<a href="http://s1.minmore.com:28081/"><img src="{$config_siteurl}statics/themes/L2_Global/images/guangan.png" /></a>
 	<a href="http://www.mps.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_1.jpg" /></a>
     <a href="http://www.scga.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_2.jpg" /></a>
     <if condition="$global_role eq 4">
