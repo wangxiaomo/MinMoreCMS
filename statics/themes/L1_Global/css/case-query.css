@@ -147,6 +147,7 @@ img{
     padding: 10px;
 }
 .first-td{
+    width:100px;
     text-align: right;
 }
 .submit-btn{

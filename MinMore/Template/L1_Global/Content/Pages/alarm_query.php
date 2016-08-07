@@ -11,7 +11,7 @@
     <meta name="keywords" content="{$SEO['keyword']}" />
     <link rel="stylesheet" href="{$config_siteurl}statics/themes/L1_Global/css/case-query.css"/>
     <script src="{$config_siteurl}statics/js/jquery.js" type="text/javascript"></script>
-    <script src="{$config_siteurl}statics/js/utils.js" type="text/javascript"></script>
+    <script src="{$config_siteurl}statics/js/alarmUtils.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- main-->
@@ -30,7 +30,7 @@
             <div class="query-area">
                 <div class="query-condition">
                     <h3>警情受理查询</h3>
-                    <p class="case-num">案件编号：<input type="text" name="caseID"/></p>
+                    <p class="case-num">警情编号：<input type="text" name="caseID"/></p>
                     <p class="phone-num">手机号：<input type="text" name="mobile"/></p>
                     <p class="phone-code">验证码：<input type="text" name="code"/>&nbsp;<input type="button" class="send-sms-vcode" value="手机获取验证码"/></p>
                     <p class="query-btn"><input type="button" value="查询"/></p>

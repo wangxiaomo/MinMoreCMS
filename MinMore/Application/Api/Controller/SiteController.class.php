@@ -39,6 +39,25 @@ class SiteController extends MinMoreCMS {
         }
     }
 
+    public function query_alarm_phone() {
+	    if(IS_POST){
+		    $caseID = I("caseID");
+		    $mobile = I("mobile");
+
+		    C("DB_PREFIX", "ygjw_");
+		    $r = D("ajslxx")->where("ajbh='$caseID' and sjhm='$mobile'")->find();
+		    if($r){
+			    $this->jsonReturn(array(
+						    "r" => 1, "data" => $r,
+						   ));
+		    }else{
+			    $this->jsonReturn(array(
+						    "r" =>  0, "msg"    =>  "警情编号或者手机号码不正确，请核对后重新获取验证码"
+						   ));
+		    }
+	    }
+    }
+
     public function query_case() {
         if(IS_POST){
             $caseID = I("caseID");
