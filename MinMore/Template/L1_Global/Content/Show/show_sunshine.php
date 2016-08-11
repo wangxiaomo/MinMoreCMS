@@ -34,5 +34,15 @@
         <template file="Content/Mods/quick_nav.php" />
         <template file="Content/utils.php" />
     </div>
+<script>
+$(document).bind("contextmenu",function(){return false;});  
+$(document).bind("selectstart",function(){return false;});  
+//$(document).keydown(function(){return key(arguments[0])});  
+$(document).keydown(function(event){
+	if(event.ctrlKey && event.keyCode==83){
+		return false;
+	} 
+});
+</script>
 </body>
 </html>
