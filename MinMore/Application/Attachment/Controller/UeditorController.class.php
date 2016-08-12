@@ -20,7 +20,7 @@ class UeditorController extends AttachmentsController {
         'imageMaxSize' => 0, /* 上传大小限制，单位B */
         'imageAllowFiles' => array('.png', '.jpg', '.jpeg', '.gif', '.bmp'),
         'imageCompressEnable' => true,
-        'imageCompressBorder' => 1600,
+        'imageCompressBorder' => 900,
         'imageInsertAlign' => 'none',
         'imageUrlPrefix' => '',
         'imagePathFormat' => '',
