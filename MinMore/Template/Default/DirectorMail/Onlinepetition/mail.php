@@ -16,7 +16,7 @@
         <td class="row-prompt">来信时间:</td><td class="row-content">{$data.createtime|date="Y-m-d h:i:s",###}</td><td class="row-prompt">受理单位:</td><td class="row-content">{$data.roleid}</td>
       </tr>
       <tr>
-        <td class="row-prompt" colspan=2>办事状态:</td><td class="row-content" colspan=2>{$data.zt}</td>
+        <td class="row-prompt">信访方式:</td><td class="row-content">{$data.type}</td><td class="row-prompt">办事状态:</td><td class="row-content">{$data.zt}</td>
       </tr>
       <tr>
         <td class="row-prompt">领导单位:</td><td colspan="3">{$data.oname}</td>
