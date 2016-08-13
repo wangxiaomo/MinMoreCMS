@@ -20,9 +20,13 @@ class AdminPetitionController extends AdminBase {
                 'roleid' => get_site_role(),
             );
         $status= I('get.status');
+        $query= I('post.keyword');
         $statusList = M('petition')->distinct(true)->getField('status', true);
-        if ($status) {
+        if ($status!="") {
             $where['status'] = $status;
+        }
+        if (!empty($query)) {
+		$where['name|zhuti|shouji']=array('LIKE',"%".$query."%");
         }
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);
