@@ -2,6 +2,30 @@
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
   <Admintemplate file="Common/Nav"/>
+  <form name="query"  class="J_ajaxForm" action="{:U('chief','isadmin=1')}" method="post">
+	  <div style="margin:10px">
+		  <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</span>       
+		  <input name="name" placeholder="姓名" style="margin:10px;width:150px;"></input>&nbsp;&nbsp;&nbsp;
+	  </div>
+	  <div style="margin:10px">
+		  <span>一级部门：</span>
+		  <select  name="city" style="width:150px">
+			<option value="0">--请选择--</option>
+			  <foreach name='citys' item='v' >
+			  <option value="{$v.oid}">{$v.osimplename}</option>
+			  </foreach>
+		  </select>&nbsp;&nbsp;&nbsp;
+		  <span>二级部门：</span>
+		  <select  name="barue" style="width:150px">
+			  <option value="0">--请选择--</option>                    
+		  </select >&nbsp;&nbsp;&nbsp;
+		  <span>三级部门：</span>
+		  <select  name="station" style="width:150px">
+			  <option value="0">--请选择--</option>
+		  </select>
+		  <button type="submit" class="btn btn_submit" >查询</button> 
+	  </div>
+  </form>
   <form name="myform"  class="J_ajaxForm" action="{:U('delchief','isadmin=1')}" method="post" >
     <div class="table_list">
       <table width="100%" cellspacing="0">
@@ -39,6 +63,68 @@
     </div>
   </form>
 </div>
+<script>
+$(function(){
+	var sub_org_url="{:U('DirectorMail/Onlinepetition/get_sub_org')}";
+	$("select[name='city']").on("change",function(){
+	var pid=$("select[name='city']").val();
+	var request={pid:pid,level:1};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: sub_org_url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		 $("select[name='barue']").empty();
+                $("select[name='barue']").append("<option value='0'>--请选择--</option>");
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='barue']").append(b);
+                }
+	});
+});
+	$("select[name='barue']").on("change",function(){
+	var pid=$("select[name='barue']").val();
+	var level=2;
+	var request={pid:pid,level:level};
+	$.ajax({
+            cache: false,
+            type: "POST",
+            url: sub_org_url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+	    success: function (resp){
+		 $("select[name='station']").empty();
+                $("select[name='station']").append("<option value='0'>--请选择--</option>");
+		var data=resp.info;
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].osimplename+ "</option>";
+                }
+                $("select[name='station']").append(b);
+                }
+	});
+});
+});
+</script>
 <script src="{$config_siteurl}statics/js/common.js?v"></script>
 </body>
 </html>

@@ -36,14 +36,26 @@ class AdminPetitionController extends AdminBase {
     }
 	//接访领导列表
     public function chief() {
+        $query= I('post.name');
         $where = array(
                 'roleid' => get_site_role(),
             );
+	$oid=I('post.city')?I('post.city'):0;
+	$oid=I('post.barue')?I('post.barue'):$oid;
+	$oid=I('post.station')?I('post.station'):$oid;
+	if($oid>0){
+		$where['oid']=$oid;
+	}
 	C('DB_PREFIX','');
-        $count = $this->db->where($where)->count();
+        if (!empty($query)) {
+		$where['name']=array('LIKE',"%".$query."%");
+        }
+        $count = D('officer')->where($where)->count();
         $page = $this->page($count, 20);
-        $data = D('officer')->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
+        $data = D('officer')->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
 	C('DB_PREFIX','minmore_');
+    $citys= get_director_city();
+    $this->assign('citys', $citys); 
         $this->assign('data', $data);
         $this->assign("Page", $page->show('chief'));
         $this->assign('typeid', $status);
