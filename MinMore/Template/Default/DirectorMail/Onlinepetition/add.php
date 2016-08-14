@@ -62,6 +62,15 @@
 		<i class="red">*</i>
           </div>
         </div>
+        <div class="multi_data-line">
+          <span class="prompt">信访形式：</span>
+          <div>
+            <input type="radio" name="type" value="mail"/>书信来访&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="type" value="present"/>现场接访&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="type" value="video"/>视频接访&nbsp;&nbsp;&nbsp;
+		<i class="red">*</i>
+          </div>
+        </div>
         <div class="multi_data-textarea">
           <span class="prompt">上访事由：</span>
           <div>

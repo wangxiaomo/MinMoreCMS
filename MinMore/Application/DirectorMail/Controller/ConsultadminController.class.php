@@ -16,15 +16,26 @@ class ConsultadminController extends AdminBase {
 
     //后台首页
     public function index() {
+	$status=I('get.status');
+        $type = I('get.type');
+        $query= I('post.keyword');
         $where = array(
                 'roleid' => get_site_role(),
                 'type' => I('get.type'),
             );
+	if($status!=""){
+		$where['hfnr']=$status?array('NEQ',''):array('EQ','');
+	}
+        if (!empty($query)) {
+		$where['xm|xjzt|sjhm']=array('LIKE',"%".$query."%");
+        }
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);
         $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
         $this->assign('data', $data);
         $this->assign("Page", $page->show('Admin'));
+        $this->assign("typeid", $status);
+        $this->assign("type", $type);
         $this->display();
     }
 
@@ -53,7 +64,7 @@ class ConsultadminController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-            $quickreply = M('DirectormailQuickreply')->getField('quickreply', true);
+            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>get_admin_role()))->getField('quickreply', true);
             if (empty($info)) {
                 $this->error('该信件不存在！');
             }

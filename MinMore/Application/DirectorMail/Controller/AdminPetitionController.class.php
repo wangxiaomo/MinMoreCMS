@@ -20,9 +20,13 @@ class AdminPetitionController extends AdminBase {
                 'roleid' => get_site_role(),
             );
         $status= I('get.status');
+        $query= I('post.keyword');
         $statusList = M('petition')->distinct(true)->getField('status', true);
-        if ($status) {
+        if ($status!="") {
             $where['status'] = $status;
+        }
+        if (!empty($query)) {
+		$where['name|zhuti|shouji']=array('LIKE',"%".$query."%");
         }
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);
@@ -36,14 +40,26 @@ class AdminPetitionController extends AdminBase {
     }
 	//接访领导列表
     public function chief() {
+        $query= I('post.name');
         $where = array(
                 'roleid' => get_site_role(),
             );
+	$oid=I('post.city')?I('post.city'):0;
+	$oid=I('post.barue')?I('post.barue'):$oid;
+	$oid=I('post.station')?I('post.station'):$oid;
+	if($oid>0){
+		$where['oid']=$oid;
+	}
 	C('DB_PREFIX','');
-        $count = $this->db->where($where)->count();
+        if (!empty($query)) {
+		$where['name']=array('LIKE',"%".$query."%");
+        }
+        $count = D('officer')->where($where)->count();
         $page = $this->page($count, 20);
-        $data = D('officer')->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
+        $data = D('officer')->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
 	C('DB_PREFIX','minmore_');
+    $citys= get_director_city();
+    $this->assign('citys', $citys); 
         $this->assign('data', $data);
         $this->assign("Page", $page->show('chief'));
         $this->assign('typeid', $status);
@@ -107,6 +123,7 @@ class AdminPetitionController extends AdminBase {
     }
     //信件回复
     public function reply() {
+	$roleid=get_admin_role();
         if (IS_POST) {
             $id = I('post.id', 0, 'intval');
             if (empty($id)) {
@@ -130,7 +147,20 @@ class AdminPetitionController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-            $quickreply = M('DirectormailQuickreply')->getField('quickreply', true);
+		switch($info['type']){
+		case 'mail':
+			$info['type']='信件来访';
+			break;
+		case 'present':
+			$info['type']='现场接访';
+			break;
+		case 'video':
+			$info['type']='视频接访';
+			break;
+		default:
+			$info['type']='未指定';
+		}
+            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>$roleid))->getField('quickreply', true);
             if (empty($info)) {
                 $this->error('该信件不存在！');
             }

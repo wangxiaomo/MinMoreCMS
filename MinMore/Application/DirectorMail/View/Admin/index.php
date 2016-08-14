@@ -20,15 +20,13 @@
             <td width="100" align="center">Email</td>
             <td width="100" align="center">手机</td>
             <td width="100" align="center">来信时间</td>
-            <td width="80" align="center">
-            类别：<select name="searchtype" onChange="window.location.href=this.value">
+            <td width="130" align="center">
+            状态：<select name="searchtype" onChange="window.location.href=this.value">
             <option value="{:U('index' ,array('isadmin'=>1)  )}">全部</option>
-            <volist name="typeList" id="vo">
-          <option value="{:U('index' ,array('typeid'=>$key,'isadmin'=>1)  )}" <if condition=" $typeid eq $key">selected</if>>{$vo}</option>
-          </volist>
+            <option value="{:U('index' ,array('isadmin'=>1,'status'=>0) )}"<if condition="$status eq '0'">selected</if>>未回复</option>
+            <option value="{:U('index' ,array('isadmin'=>1,'status'=>1) )}"<if condition="$status eq '1'">selected</if>>已回复</option>
            </select>
-            </td>
-            <td width="100" align="center">操作</td>
+            <td width="130" align="center">操作</td>
           </tr>
         </thead>
         <tbody>
@@ -41,7 +39,13 @@
               <td align="center">{$vo.email}</td>
               <td align="center">{$vo.shouji}</td>
               <td align="center">{$vo.createtime|date="Y-m-d H:i:s",###}</td>
-              <td align="center">{$typeList[$vo['typeid']]}</td>
+              <td align="center">
+		<if condition="$vo.reply eq ''">
+			<p style="color:grey">未回复</p>
+		<else/>
+			<p style="color:blue">已回复({$vo.replytime|date="Y-m-d",###})</p>
+		</if>
+	      </td>
               <td align="center">
 		<a class="J_ajax_del"  href="{:U("delete",array("id"=>$vo['id'],'isadmin'=>1))}" style="color:red;">删除</a> 
 		| <a href="{:U("reply",array("id"=>$vo['id'],'isadmin'=>1))}">回复</a>

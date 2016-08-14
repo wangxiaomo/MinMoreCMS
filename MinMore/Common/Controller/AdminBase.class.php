@@ -98,8 +98,10 @@ class AdminBase extends MinMoreCMS {
         }
         //获取当前登录用户信息
         $userInfo = User::getInstance()->getInfo();
+        \Common\Controller\MinMoreCMS::$Cache["ADMIN_ROLE_ID"] = $userInfo['role_id'];
         if (empty($userInfo)) {
             User::getInstance()->logout();
+	
             return false;
         }
         //是否锁定

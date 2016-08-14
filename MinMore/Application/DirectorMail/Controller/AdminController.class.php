@@ -16,12 +16,17 @@ class AdminController extends AdminBase {
 
     //后台首页
     public function index() {
+        $status= I('get.status');
         $where = array(
                 'roleid' => get_site_role(),
             );
+	
         $typeId = I('get.typeid');
         $query= I('post.keyword');
         $typeList = M('DirectormailType')->order(array('typeid' => 'DESC'))->getField('typeid,name', true);
+        if ($status!="") {
+		$where['reply']=$status?array('NEQ',''):array('EQ','');
+        }
         if ($typeId) {
             $where['typeid'] = $typeId;
         }
@@ -36,6 +41,7 @@ class AdminController extends AdminBase {
         $this->assign("Page", $page->show('Admin'));
         $this->assign('typeList', $typeList);
         $this->assign('typeid', $typeId);
+        $this->assign('status', $status);
         $this->display();
     }
 
@@ -64,7 +70,7 @@ class AdminController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-            $quickreply = M('DirectormailQuickreply')->getField('quickreply', true);
+            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>get_admin_role()))->getField('quickreply', true);
             if (empty($info)) {
                 $this->error('该信件不存在！');
             }
@@ -148,6 +154,7 @@ class AdminController extends AdminBase {
     //快捷回复管理
     public function quickreply() {
         $db = M('DirectormailQuickreply');
+	$roleid=get_admin_role();
         if (IS_POST) {
             $quickreplyid = I('post.id');
             $quickreply = I('post.quickreply');
@@ -156,12 +163,12 @@ class AdminController extends AdminBase {
             }
             foreach ($quickreplyid as $id) {
                 if ($quickreply[$id]) {
-                    $db->where(array('id' => $id))->save(array('quickreply' => $quickreply[$id]));
+                    $db->where(array('id' => $id,'roleid'=>$roleid))->save(array('quickreply' => $quickreply[$id]));
                 }
             }
             $this->success('更新成功！');
         } else {
-            $data = $db->order(array('id' => 'DESC'))->select();
+            $data = $db->where(array('roleid'=>$roleid))->order(array('id' => 'DESC'))->select();
             $this->assign('data', $data);
             $this->display();
         }
@@ -170,6 +177,7 @@ class AdminController extends AdminBase {
     public function addquickreply() {
         if (IS_POST) {
             $post = I('post.');
+            $post['roleid'] = get_admin_role();
             if ($this->db->addQuickreply($post)) {
                 $this->success('快捷回复成功！', U('quickreply', 'isadmin=1'));
             } else {

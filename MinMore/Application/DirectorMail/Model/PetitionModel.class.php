@@ -13,6 +13,7 @@ class PetitionModel extends Model {
         array('cardid', 'require', '身份证号不能为空', 1, 'regex', 3),
         array('passwd', 'require', '查询密码不能为空！', 1, 'regex', 3),
         array('shouji', 'require', '手机号不能为空', 1, 'regex', 3),
+        array('type', 'require', '需选择信访形式', 1, 'regex', 3),
         array('zhuti', 'require', '信访标题不能为空！', 1, 'regex', 3),
         array('addr', 'require', '联系地址不能为空', 1, 'regex', 3),
         array('introduce', 'require', '上访事由不能为空！', 1, 'regex', 3),
@@ -130,6 +131,19 @@ class PetitionModel extends Model {
         } else {
             $data['zt'] = '未办结';
         }
+	switch($data['type']){
+	case 'mail':
+		$data['type']='信件来访';
+		break;
+	case 'present':
+		$data['type']='现场接访';
+		break;
+	case 'video':
+		$data['type']='视频接访';
+		break;
+	default:
+		$data['type']='未指定';
+	}
         return $data;
     }
 }
