@@ -38,9 +38,16 @@
             <li><a href="{:U('DirectorMail/Membermail/login')}" class="{$npc_page?'menu-on':''}">代表委员直通车</a></li>
           </ul>
         </div>
-        <div class="crumb">
-          <span>欢迎访问广安市公安局</span>
-          <div class="crumb-detail">当前位置：首页&gt;警民互动&gt;{$headicon}</div>
+        <div class="page-point">
+            <p>欢迎访问广安市公安局</p>
+            <div>
+                当前位置:
+                <a href="/">首页</a>
+                &gt;
+                <a href="#">警民互动</a>
+                &gt;
+                <a href="#">{$headicon}</a>
+            </div>
         </div>
         <div class="content-wrapper">
           <div class="sidebar">
