@@ -25,6 +25,8 @@ class AdminController extends AdminBase {
     public function index() {
     	$interview_m  		 =  M("interview");
     	$where 				 =  array();
+	$keyword=I('post.keyword');
+    	
     	if($keyword!=""){
 			$where['_string']='(title like "%'.$keyword.'%")  OR (guest like "'.$keyword.'")';
 		}
