@@ -16,12 +16,17 @@ class AdminController extends AdminBase {
 
     //后台首页
     public function index() {
+        $status= I('get.status');
         $where = array(
                 'roleid' => get_site_role(),
             );
+	
         $typeId = I('get.typeid');
         $query= I('post.keyword');
         $typeList = M('DirectormailType')->order(array('typeid' => 'DESC'))->getField('typeid,name', true);
+        if ($status!="") {
+		$where['reply']=$status?array('NEQ',''):array('EQ','');
+        }
         if ($typeId) {
             $where['typeid'] = $typeId;
         }
@@ -36,6 +41,7 @@ class AdminController extends AdminBase {
         $this->assign("Page", $page->show('Admin'));
         $this->assign('typeList', $typeList);
         $this->assign('typeid', $typeId);
+        $this->assign('status', $status);
         $this->display();
     }
 
