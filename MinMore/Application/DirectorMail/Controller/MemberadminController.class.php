@@ -16,6 +16,8 @@ class MemberadminController extends AdminBase {
 
     //后台首页
     public function index() {
+        $status= I('get.status');
+        $query= I('post.keyword');
         $where = array(
                 'roleid' => get_site_role(),
             );
@@ -23,17 +25,20 @@ class MemberadminController extends AdminBase {
         if ($type != '全部' && !empty($type)) {
             $where['type'] = $type;
         }
-        
-        $count = $this->db->where($where)->count();
-        $page = $this->page($count, 20);
-        $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
-        $userdb = M('MembermailUser');
-        foreach ($data as &$vo) {
-            $vo['uid'] = $userdb->where(array('uid'=>$vo['uid']))->getField('username');
+        if ($status!="") {
+		$where['reply']=$status?array('NEQ',''):array('EQ','');
         }
+        if (!empty($query)) {
+		$where['username|zhuti']=array('LIKE',"%".$query."%");
+        }
+        
+        $count = $this->db->join('minmore_membermail_user ON minmore_membermail.uid=minmore_membermail_user.uid','LEFT')->where($where)->count();
+        $page = $this->page($count, 20);
+        $data = $this->db->join('minmore_membermail_user ON minmore_membermail.uid=minmore_membermail_user.uid','LEFT')->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
         $this->assign('data', $data);
         $this->assign("Page", $page->show('Admin'));
         $this->assign('type', $type);
+        $this->assign('status', $status);
         $this->display();
     }
 
@@ -96,29 +101,34 @@ class MemberadminController extends AdminBase {
 
     //代表委员管理
     public function member() {
-        $db = M('MembermailUser');
-        if (IS_POST) {
-            $uid = I('post.uid');
-            $mobile = I('post.mobile');
-            $username = I('post.username');
-            if (empty($uid) || !is_array($uid)) {
-                $this->error('请选择需要更新的内容！');
-            }
-            foreach ($uid as $id) {
-                if ($mobile[$id]) {
-                    $db->where(array('uid' => $id))->save(array('mobile' => $mobile[$id]));
-                }
-                if ($username[$id]) {
-                    $db->where(array('uid' => $id))->save(array('username' => $username[$id]));
-                }
-                
-            }
-            $this->success('更新成功！');
-        } else {
-            $data = $db->order(array('uid' => 'DESC'))->select();
-            $this->assign('data', $data);
-            $this->display();
-        }
+	    $db = M('MembermailUser');
+		    $query= I('post.keyword');
+	    if (IS_POST&&empty($query)) {
+		    $uid = I('post.uid');
+		    $mobile = I('post.mobile');
+		    $username = I('post.username');
+		    if (empty($uid) || !is_array($uid)) {
+			    $this->error('请选择需要更新的内容！');
+		    }
+		    foreach ($uid as $id) {
+			    if ($mobile[$id]) {
+				    $db->where(array('uid' => $id))->save(array('mobile' => $mobile[$id]));
+			    }
+			    if ($username[$id]) {
+				    $db->where(array('uid' => $id))->save(array('username' => $username[$id]));
+			    }
+
+		    }
+		    $this->success('更新成功！');
+	    } else {
+			$where=array();
+		    if (!empty($query)) {
+			    $where['username|mobile']=array('LIKE',"%".$query."%");
+		    }
+		    $data = $db->where($where)->order(array('uid' => 'DESC'))->select();
+		    $this->assign('data', $data);
+		    $this->display();
+	    }
     }
 
     //添加信件类型
