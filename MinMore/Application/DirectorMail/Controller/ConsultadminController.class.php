@@ -16,15 +16,26 @@ class ConsultadminController extends AdminBase {
 
     //后台首页
     public function index() {
+	$status=I('get.status');
+        $type = I('get.type');
+        $query= I('post.keyword');
         $where = array(
                 'roleid' => get_site_role(),
                 'type' => I('get.type'),
             );
+	if($status!=""){
+		$where['hfnr']=$status?array('NEQ',''):array('EQ','');
+	}
+        if (!empty($query)) {
+		$where['xm|xjzt|sjhm']=array('LIKE',"%".$query."%");
+        }
         $count = $this->db->where($where)->count();
         $page = $this->page($count, 20);
         $data = $this->db->where($where)->limit($page->firstRow . ',' . $page->listRows)->order(array("id" => "DESC"))->select();
         $this->assign('data', $data);
         $this->assign("Page", $page->show('Admin'));
+        $this->assign("typeid", $status);
+        $this->assign("type", $type);
         $this->display();
     }
 
