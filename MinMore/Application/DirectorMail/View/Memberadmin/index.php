@@ -19,15 +19,6 @@
             <td width="180" align="center">主题</td>
             <td width="150" align="center">来信时间</td>
             <td width="150" align="center">
-            类别：<select name="searchtype" onChange="window.location.href=this.value">
-            <option value="{:U('index', array('type'=>'全部','status'=>$status))}" >全部</option>
-            <option value="{:U('index', array('type'=>'建议','status'=>$status))}" <if condition=" $type eq '建议'">selected</if>>建议</option>
-            <option value="{:U('index', array('type'=>'举报','status'=>$status))}" <if condition=" $type eq '举报'">selected</if>>举报</option>
-            <option value="{:U('index', array('type'=>'投诉','status'=>$status))}" <if condition=" $type eq '投诉'">selected</if>>投诉</option>
-            <option value="{:U('index', array('type'=>'咨询','status'=>$status))}" <if condition=" $type eq '咨询'">selected</if>>咨询</option>
-           </select>
-            </td>
-            <td width="150" align="center">
             状态：<select name="searchtype" onChange="window.location.href=this.value">
             <option value="{:U('index' ,array('isadmin'=>1,'type'=>$type)  )}">全部</option>
             <option value="{:U('index' ,array('isadmin'=>1,'status'=>0,'type'=>$type) )}"<if condition="$status eq '0'">selected</if>>未回复</option>
@@ -45,7 +36,6 @@
               <td align="center">{$vo.username}</td>
               <td align="center">{$vo.zhuti|str_cut=###,20}</td>
               <td align="center">{$vo.createtime|date="Y-m-d H:i:s",###}</td>
-              <td align="center">{$vo['type']}</td>
               <td align="center">
 		<if condition="$vo.reply eq ''">
 			<p style="color:grey">未回复</p>
