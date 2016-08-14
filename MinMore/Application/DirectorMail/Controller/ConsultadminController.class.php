@@ -64,7 +64,7 @@ class ConsultadminController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-            $quickreply = M('DirectormailQuickreply')->getField('quickreply', true);
+            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>get_admin_role()))->getField('quickreply', true);
             if (empty($info)) {
                 $this->error('该信件不存在！');
             }

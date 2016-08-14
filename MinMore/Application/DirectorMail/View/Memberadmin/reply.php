@@ -35,6 +35,16 @@
           </td>
         </tr>
         <tr>
+          <th>回复时间</th>
+          <td>
+		<if condition="$info.reply NEQ ''">
+		{$info.replytime|date="Y-m-d H:i:s",###}
+		<else/>
+		<p>暂无</p>
+		</if>
+	</td>
+        </tr>
+        <tr>
           <th>回复内容</th>
           <td><textarea name="reply" style="width:600px; height:200px;" id="reply">{$info.reply}</textarea></td>
         </tr>

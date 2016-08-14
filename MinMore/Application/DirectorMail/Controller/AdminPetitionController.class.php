@@ -123,6 +123,7 @@ class AdminPetitionController extends AdminBase {
     }
     //信件回复
     public function reply() {
+	$roleid=get_admin_role();
         if (IS_POST) {
             $id = I('post.id', 0, 'intval');
             if (empty($id)) {
@@ -146,7 +147,20 @@ class AdminPetitionController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-            $quickreply = M('DirectormailQuickreply')->getField('quickreply', true);
+		switch($info['type']){
+		case 'mail':
+			$info['type']='信件来访';
+			break;
+		case 'present':
+			$info['type']='现场接访';
+			break;
+		case 'video':
+			$info['type']='视频接访';
+			break;
+		default:
+			$info['type']='未指定';
+		}
+            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>$roleid))->getField('quickreply', true);
             if (empty($info)) {
                 $this->error('该信件不存在！');
             }

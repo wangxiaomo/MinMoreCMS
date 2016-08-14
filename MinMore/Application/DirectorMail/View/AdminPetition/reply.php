@@ -24,6 +24,10 @@
           <td> 手机：{$info.shouji}，Email：{$info.email}</td>
         </tr>
         <tr>
+          <th>信访方式</th>
+          <td>{$info.type}</td>
+        </tr>
+        <tr>
           <th>信访主题</th>
           <td>{$info.zhuti}</td>
         </tr>
@@ -41,6 +45,16 @@
               </volist>
             </select>
           </td>
+        </tr>
+        <tr>
+          <th>回复时间</th>
+          <td>
+		<if condition="$info.reply NEQ ''">
+		{$info.replytime|date="Y-m-d H:i:s",###}
+		<else/>
+		<p>暂无</p>
+		</if>
+	</td>
         </tr>
         <tr>
           <th>回复内容</th>
