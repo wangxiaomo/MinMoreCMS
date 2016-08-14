@@ -930,6 +930,11 @@ function get_site_role() {
     return $role?$role:0;
 }
 
+function get_admin_role() {
+    $role = \Common\Controller\MinMoreCMS::$Cache["ADMIN_ROLE_ID"];
+    return $role?$role:0;
+}
+
 function generate_site_config($role) {
     $configList = D('Common/Config')->where("role=0")->field("varname,info,value,groupid")->select();
     foreach($configList as &$c){
