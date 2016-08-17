@@ -683,20 +683,6 @@ button {
 .friendly-link li:hover{
     background: #f0f0f0;
 }
-.link-content{
-    width: 1002px;
-    height: 70px;
-    background: #f0f0f0;
-}
-.link-content a{
-    text-decoration: none;
-    color: #000000;
-    line-height: 70px;
-    padding: 0 30px;
-}
-.link-content a:hover{
-    color: #0a62be;
-}
 .introduce-info{
     width: 1002px;
     height: 130px;
@@ -1164,6 +1150,7 @@ tr.large-table-row {
     width: 1000px;
     height: 70px;
     background: #f0f0f0;
+    padding-left:17px;
 }
 .link-content a{
     text-decoration: none;
