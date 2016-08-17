@@ -87,6 +87,7 @@
                     <span id="hitCount"></span>
                 </div>
                 <div class="article-content">
+                    <template file="Content/Mods/view_helper.php" />
                     <if condition="$catid eq 7">
                         <div style="text-align:center">
                             <iframe src="{$description}" allowfullscreen="" class="embed-responsive-item" frameborder="0" height=498 width=510></iframe>

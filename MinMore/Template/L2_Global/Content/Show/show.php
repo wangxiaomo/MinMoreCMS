@@ -25,6 +25,7 @@
         	<h3>{$title}</h3>
             <p class="details_time"><span class="float_left">来源：{$copyfrom|default='本站提供'}</span><span class="float_right">发布时间：{$updatetime|strtotime=###|date='Y-m-d',###}</span></p>
             <div class="details_text">
+                <template file="Content/Mods/view_helper.php" />
                 <if condition="$catid eq 7">
                     <div style="text-align:center">
                         <iframe src="{$description}" allowfullscreen="" class="embed-responsive-item" frameborder="0" height=498 width=510></iframe>
