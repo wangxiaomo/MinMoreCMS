@@ -229,13 +229,18 @@ $(function(){
         }
     });
 
-    $(".search-btn").on("click", function(e){
+    var searchQuery = function(e) {
         e.preventDefault();
         var keyword = $.trim($(".search-box").val());
         if(keyword){
             window.location = "{$config_siteurl}index.php?g=Search&g=Search&q=" + encodeURI(keyword);
         }
+    };
+    $(".search-box").on("keypress", function(e){
+        if(e.keyCode == 13) searchQuery(e);
     });
+    $(".search-btn").on("click", searchQuery);
+    
 
     $(".disabled-link").on("click", function(e){
         e.preventDefault();
