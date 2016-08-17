@@ -120,7 +120,7 @@ window.onload = function (){
         </div>
     </div>
 </div>
-<div class="banner"><img src="{$config_siteurl}statics/themes/L2_Global/images/banner.png" /></div>
+<div class="banner"><img src="{$config_siteurl}statics/themes/L2_Global/images/banner.gif" /></div>
 <div class="content_down">
 	<div class="down_left float_left">
         <div class="hall">
