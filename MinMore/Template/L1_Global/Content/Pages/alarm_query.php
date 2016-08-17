@@ -27,7 +27,7 @@
                 <p>警情受理查询</p>
                 <a href="{:U('Content/Site/sunshine_police')}"> << 返回首页 </a>
             </div>
-            <div class="query-area">
+            <div class="query-area alarm-query">
                 <div class="query-condition">
                     <h3>警情受理查询</h3>
                     <p class="case-num">警情编号：<input type="text" name="caseID"/></p>

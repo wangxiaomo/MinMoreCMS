@@ -91,6 +91,9 @@ img{
     background: url("../images/query-condition.png") no-repeat;
     margin: 20px auto;
 }
+.alarm-query {
+    background: url("../images/query-condition2.png") no-repeat;
+}
 .query-condition{
     width: 350px;
     height: 280px;
