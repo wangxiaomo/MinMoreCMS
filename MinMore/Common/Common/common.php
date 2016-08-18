@@ -1103,3 +1103,31 @@ function get_director_petition($oid){
 	C('DB_PREFIX','minmore_');
 	return $chief;
 }
+function get_redis_value($key, $kv_type=null){
+    //wangxiaomo:get redis value which is first matched when kv_type is null
+    $conditions = array("key"   =>  $key);
+    if(!empty($kv_type)) $conditions["kv_type"] = $kv_type;
+    $r = D("Redis")->where($conditions)->find();
+    return $r?$r['value']:'';
+}
+
+function set_redis_value($kv_type, $key, $value){
+    D("")->execute("insert into minmore_redis (`kv_type`,`key`,`value`) values('$kv_type', '$key', '$value') on duplicate key update value='$value';");
+}
+
+function increase_pv_count(){
+    $kv_type = 'minmore_pv_count';
+    $key = 'pv' . date('Y-m-d', time());
+    D("")->execute("insert into minmore_redis (`kv_type`,`key`,`value`) values('$kv_type', '$key', '1') on duplicate key update value=value+1;");
+}
+
+function get_pv_count(){
+    $kv_type = 'minmore_pv_count';
+    $key = 'pv' . date('Y-m-d', time());
+    $today = get_redis_value($key, $kv_type);
+    $total = D("Redis")->where("kv_type='$kv_type'")->sum('value');
+    return array(
+        'today' =>  $today,
+        'total' =>  $total,
+    );
+}

@@ -30,6 +30,8 @@ class MinMoreCMS extends \Think\Controller {
     public function __construct() {
         parent::__construct();
         self::$_app = $this;
+        increase_pv_count();
+        $this->assign("pv", get_pv_count());
     }
 
     protected function setTheme($theme) {
