@@ -88,5 +88,6 @@
             });
         });
     </script>
-</body>
 <template file="Content/Mods/footer.php" />
+<template file="Content/Mods/quick_nav.php" />
+</body>

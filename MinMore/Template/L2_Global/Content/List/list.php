@@ -61,5 +61,6 @@
 </div>
 <template file="Content/Mods/footer.php" />
 </div>
+<template file="Content/Mods/quick_nav.php" />
 </body>
 </html>
