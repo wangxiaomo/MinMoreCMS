@@ -34,6 +34,9 @@ class AdvertiseModel extends Model {
             $this->error = '没有数据！';
             return false;
         }
+	if(!preg_match('/(http:\/\/)|(https:\/\/)/i', $data['link'])){
+		$data['link']="http://".$data['link'];	
+	}
         $data = $this->create($data, 1);
         if ($data) {
             $posid = $this->add($data);

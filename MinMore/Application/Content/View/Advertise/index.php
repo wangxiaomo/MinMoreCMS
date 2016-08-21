@@ -45,11 +45,11 @@
             <td align="center">
             <if condition="$vo.status eq 0">
 		<p>
-		未启用|<a class="J_ajax_update" href="{:U("operate", array('id'=>$vo['id'],'name'=>'status','op'=>'open'))}">开启</a>
+		<span style="color:grey">未启用</span>|<a class="J_ajax_update" href="{:U("operate", array('id'=>$vo['id'],'name'=>'status','op'=>'open'))}">开启</a>
 		</p>
             <else />
 		<p>
-		已启用|<a href="{:U('operate',array('id'=>$vo['id'],name=>'status','op'=>'close'))}">关闭</a>
+		<span style="color:green">已启用</span>|<a href="{:U('operate',array('id'=>$vo['id'],name=>'status','op'=>'close'))}">关闭</a>
 		</p>
             </if>
             </td>
@@ -64,7 +64,7 @@
             <if condition="empty($vo['link'])">
 		<p>未添加链接</p>
             <else/>
-		<a href="http://{$vo.link}" target="_blank">{$vo.link}</a>
+		<a href="{$vo.link}" target="_blank">{$vo.link}</a>
             </if>
             </td>
               <td align="center">
