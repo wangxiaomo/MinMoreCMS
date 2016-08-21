@@ -48,8 +48,8 @@
 .gg_cont ul li{font-size:13px;height:30px;overflow:hidden;}
 .gg_cont ul li img{vertical-align:middle;}
 .gg_cont ul li a{font-size:13px;line-height:30px;vertical-align:middle;margin-left:5px;}
-.enter{width:260px;padding-top:14px;}
-.enter ul li{width:260px;height:50px;overflow:hidden;margin-bottom:9px; background:#fff; cursor:pointer;}
+.enter{width:260px;padding-top:16px;}
+.enter ul li{width:260px;height:50px;overflow:hidden;margin-bottom:20px; background:#fff; cursor:pointer;}
 .enter ul li:hover{width:258px;height:48px;border:1px solid #5b89d6}
 /*banner图*/
 .banner{width:1000px;height:120px;margin:20px auto 15px auto;}
@@ -61,8 +61,8 @@
 
 .down_right{width:260px;background:#fff;margin-top:5px;}
 .sun_title{width:110px;height:34px;margin:-5px auto 0 auto; background:url(../images/title_5.png) no-repeat; text-align:center; line-height:34px; color:#fff; font-size:15px; font-weight:bold;}
-.sun_cont{width:230px;margin:20px auto;}
-.sun_cont a{display:block;width:226px;height:44px;border:2px solid #5b89d6;background:#e3edff;margin-bottom:11px;overflow:hidden;}
+.sun_cont{width:230px;margin:22px auto;}
+.sun_cont a{display:block;width:226px;height:44px;border:2px solid #5b89d6;background:#e3edff;margin-bottom:26px;overflow:hidden;}
 .sun_cont span.sun_img{margin:0 10px;}
 .sun_cont span.sun_text{line-height:46px;font-size:15px;margin-left:5px;color:#000;}
 .sun_cont span.sun_text:hover{color:#0062bf}
