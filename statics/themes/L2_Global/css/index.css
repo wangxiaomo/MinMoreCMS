@@ -69,7 +69,7 @@
 /*--------------警营风采----------------*/
 .police_cont{
 	width:1000px;
-	height:250px;
+	height:225px;
 	margin:20px auto;
 }
 .police_cont .part_title {
@@ -77,19 +77,18 @@
 }
 .style-bg{
     width: 1000px;
-    height: 250px;
+    height: 200px;
     background: #ffffff;
 }
 .police-style{
     width: 997px;
     background-image: url("../images/police-style-bg.png");
-    margin:2 2px;
     overflow: hidden;
 }
 .police-style ul{
     width: 1350px;
     height: 180px;
-    margin: 45px 2px;
+    margin: 15px 2px;
     overflow: hidden;
 }
 .police-style li{
