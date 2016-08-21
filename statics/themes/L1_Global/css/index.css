@@ -1139,3 +1139,52 @@ img{
     padding:20px 40px;
     min-height:400px;
 }
+/*--广告位--*/
+.ad_left{
+    width:150px;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    margin-left: 0px;
+    z-index:999;
+}
+.ad_left img{
+    max-width: 150px;
+    max-height: 180px;
+}
+.ad_right{
+    width:150px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-left: 580px;
+    z-index:999;
+}
+.ad_right img{
+    max-width: 150px;
+    max-height: 180px;
+}
+.ad_fload{
+    width:150px;
+    position:absolute;
+    z-index:1000;
+}
+.ad_fload img{
+    max-width: 150px;
+    max-height: 180px;
+}
+.ad_topic{
+    width:110px;
+    overflow:hide;
+}
+.ad_close{
+    position:absolute;
+    right:0;
+    top:-10px;
+    width:40px;
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+}
+.ad_close a{
+    color:white;
+}

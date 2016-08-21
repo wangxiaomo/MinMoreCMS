@@ -458,6 +458,7 @@
         <template file="Content/Mods/footer.php" />
     </div>
     <template file="Content/Mods/QR.php"/>
+    <template file="Content/Mods/AD.php"/>
     <template file="Content/Mods/quick_nav.php"/>
     <template file="Content/utils.php"/>
 </div>

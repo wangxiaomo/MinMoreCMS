@@ -84,4 +84,32 @@ class AdvertiseModel extends Model {
         return true;
     }
 
+    /**
+     * 广告操作
+     * @param type $id 广告ID $type 操作类型
+     * @return boolean
+     */
+    public function advertiseGet($type) {
+        if (empty($type)) {
+            $this->error = '请指定广告位类型！';
+            return false;
+        }
+	switch($type){
+		case 'left':
+        	$where['type'] = 1;
+		break;
+		case 'right':
+        	$where['type'] = 2;
+		break;
+		case 'float':
+        	$where['type'] = 3;
+		break;
+		default:
+		return false;
+	}
+	$where['rolid']=get_site_role();
+        $where['status'] = 1;
+	$ad=$this->where($where)->order(array('id'=>'DESC'))->find();
+        return $ad;
+    }
 }
