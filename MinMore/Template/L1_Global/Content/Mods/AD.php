@@ -4,25 +4,28 @@ ad_pos:ad_left,ad_right,ad_fload
 -->
 <div class="ad_left" style="display:none">
 	<p class="ad_topic"></p>
+	<a  href="javascript:;" onclick="javascript:$('.ad_left').hide();">
 	<div class="ad_close">
-	<a  href="javascript:;" onclick="javascript:$('.ad_left').hide();">关闭</a>
 	</div>
+	</a>
 	<a class="link" href="" target="_blank">
 		<img src="" alt=""/>
 	</a>
 </div>
 <div class="ad_right" style="display:none">
+	<a href="javascript:;" onclick="javascript:$('.ad_right').hide();">
 	<div class="ad_close">
-	<a href="javascript:;" onclick="javascript:$('.ad_right').hide();">关闭</a>
 	</div>
+ 	</a>
 	<a class="link" href="" target="_blank">
 		<img src="" alt=""/>
 	</a>
 </div>
 <div  class="ad_fload" style="display:none">
-	<div class="ad_close">
-	<a href="javascript:;" onclick="javascript:$('.ad_fload').hide();clearInterval(ad_itl);">关闭</a>
+     <a href="javascript:;" onclick="javascript:$('.ad_fload').hide();clearInterval(ad_itl);">
+      	<div class="ad_close">
 	</div>
+     </a>
 	<a class="link" href="" target="_blank">
 		<img src="" alt=""/>
 	</a>
