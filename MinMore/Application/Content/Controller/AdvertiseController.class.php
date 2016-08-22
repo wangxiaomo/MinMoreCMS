@@ -23,7 +23,8 @@ class AdvertiseController extends AdminBase {
 
 	//广告位列表
 	public function index() {
-		$data = M('Advertise')->order(array('status'=>'DESC','type'=>'ASC','id' => 'DESC'))->select();
+		$where['roleid']=$this->role;
+		$data = M('Advertise')->where($where)->order(array('status'=>'DESC','type'=>'ASC','id' => 'DESC'))->select();
 		$this->assign('data', $data)
 			->display();
 	}
