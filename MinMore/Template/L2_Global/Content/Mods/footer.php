@@ -21,4 +21,5 @@
         <a href="http://xjzd.gaqgaj.gov.cn/"><img src="{$config_siteurl}statics/themes/L2_Global/images/img/link_4.jpg" /></a>
     </if>
 </div>
+<template file="Mods/AD.php"/>
 <div class="footer">{$global_role_name} 版权所有</div>

@@ -110,7 +110,7 @@ class AdvertiseModel extends Model {
 		default:
 		return false;
 	}
-	$where['rolid']=get_site_role();
+	$where['roleid']=get_site_role();
         $where['status'] = 1;
 	$ad=$this->where($where)->order(array('id'=>'DESC'))->find();
         return $ad;

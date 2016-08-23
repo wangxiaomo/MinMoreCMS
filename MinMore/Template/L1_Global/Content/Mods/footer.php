@@ -27,5 +27,6 @@
         <a href="http://special.scol.com.cn/13dxpjn/">广安视窗</a>
         <a href="http://www.cpd.com.cn/">广安社区服务网</a>
     </div>
+    <template file="Mods/AD.php"/>
     <template file="Content/Mods/base_footer.php" />
 </div>
