@@ -455,8 +455,8 @@
                 <a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/interaction4.png" alt=""/></a>
             </div>
         </div>
-        <template file="Content/Mods/footer.php" />
     </div>
+    <template file="Content/Mods/footer.php" />
     <template file="Content/Mods/QR.php"/>
     <template file="Content/Mods/quick_nav.php"/>
     <template file="Content/utils.php"/>
