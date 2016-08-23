@@ -294,4 +294,31 @@ class MinMoreCMS extends \Think\Controller {
         $this->error('该页面不存在！');
     }
 
+    /**
+     * 广告数据请求
+     */
+    public function advertise() {
+	    if(IS_AJAX){
+		    $db=D('Content/Advertise');
+		    $left=$db->advertiseGet('left');
+		    $right=$db->advertiseGet('right');
+		    $float=$db->advertiseGet('float');
+		    $ads=array();
+		    if($left){
+			    $ads['left']=$left;
+		    }
+		    if($right){
+			    $ads['right']=$right;
+		    }
+		    if($float){
+			    $ads['fload']=$float;
+		    }
+		    if(!empty($ads)){
+			    $this->success($ads);
+		    }else{
+			    $this->error("未配置广告位");
+		    }
+	    }
+    }
+
 }

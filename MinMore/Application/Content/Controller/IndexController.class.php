@@ -330,5 +330,4 @@ class IndexController extends Base {
         $this->assign($info);
         $this->display("Tags/tag");
     }
-
 }
