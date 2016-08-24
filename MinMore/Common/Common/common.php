@@ -1103,6 +1103,22 @@ function get_director_petition($oid){
 	C('DB_PREFIX','minmore_');
 	return $chief;
 }
+function get_department_id (){
+    //wangxiaomo:hard coding
+    $role = get_site_role();
+    switch($role){
+        case '3':  return 1;    //主站
+        case '7':  return 399;  //lsx
+        case '8':  return 211;  //yc
+        case '14': return 605;  //jk
+        case '15': return 175;  //qf
+        case '4':  return 109;  //ga
+        case '10': return 512;  //hy
+        case '16': return 623;  //xx
+        case '13': return 318;  //ws
+        case '12': return 642;  //zs
+    }
+}
 function get_redis_value($key, $kv_type=null){
     //wangxiaomo:get redis value which is first matched when kv_type is null
     $conditions = array("key"   =>  $key);
