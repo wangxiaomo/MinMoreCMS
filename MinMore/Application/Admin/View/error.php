@@ -23,7 +23,7 @@
 <script language="javascript">
 setTimeout(function(){
 	location.href = '{$jumpUrl}';
-},{$waitSecond});
+},{$waitSecond*1000});
 </script>
 </body>
 </html>
