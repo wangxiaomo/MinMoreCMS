@@ -74,13 +74,31 @@ class User {
         return (int) $userId;
     }
 
+    private function get_virtual_role($r) {
+        if($r){
+            $department_id = $r['ouoid'];
+            C("DB_PREFIX", "huoyi_");
+            $result = D("Office")->where("oid=$department_id")->find();
+            C("DB_PREFIX", "minmore_");
+            return $result?$result['oname'] . ' ' . $r['ouwork']:'';
+        }
+    }
+
+    private function get_mock_role_id($r){
+        if($r && $r['virtual_user'] && $r['role']){
+            $result = D("Role")->where("name='" . $r['role'] . "'")->find();
+            return $result?$result['id']:self::administratorRoleId;
+        }
+    }
+
     private function update_virtual_user($r){
         if($r){
             $r['id'] = $r['ouid'];
             $r['username'] = $r['oucompellation'];
-            $r['role'] = $r['ouwork'];
+            $r['role'] = $this->get_virtual_role($r);
             $r['virtual_user'] = true;
             $r['status'] = 1;
+            $r['role_id'] = $this->get_mock_role_id($r);
         }
         return $r;
     }

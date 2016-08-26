@@ -77,7 +77,7 @@ class MenuModel extends Model {
             $result = array_merge($result2, $result);
         }
         //是否超级管理员
-        if (\Admin\Service\User::getInstance()->isAdministrator()) {
+        if (\Admin\Service\User::getInstance()->isAdministrator()){
             //如果角色为 1 直接通过
             return $result;
         }
