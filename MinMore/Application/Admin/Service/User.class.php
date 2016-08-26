@@ -74,6 +74,39 @@ class User {
         return (int) $userId;
     }
 
+    private function update_virtual_user($r){
+        if($r){
+            $r['id'] = $r['ouid'];
+            $r['username'] = $r['oucompellation'];
+            $r['role'] = $r['ouwork'];
+            $r['virtual_user'] = true;
+            $r['status'] = 1;
+        }
+        return $r;
+    }
+
+    private function check_virtual_user_login($username, $password) {
+        if(empty($username) || empty($password)) return false;
+        $conditions = array(
+            'oucompellation' => $username,
+            'oupwd' => md5($password)
+        );
+        C("DB_PREFIX", "huoyi_");
+        $r = D("OfficeUser")->where($conditions)->find();
+        $r = $this->update_virtual_user($r);
+        C("DB_PREFIX", "minmore_");
+        return $r;
+    }
+
+    public function get_virtual_user_by_id(int $id){
+        
+        C("DB_PREFIX", "huoyi_");
+        $r = D("OfficeUser")->where("ouid=$id")->find();
+        $r = $this->update_virtual_user($r);
+        C("DB_PREFIX", "minmore_");
+        return $r;
+    }
+
     //登录后台
     public function login($identifier, $password) {
         if (empty($identifier) || empty($password)) {
@@ -82,15 +115,24 @@ class User {
         //验证
         $userInfo = $this->getUserInfo($identifier, $password);
         if (false == $userInfo) {
-            //记录登录日志
-            $this->record($identifier, $password, 0);
-            return false;
+            //wangxiaomo:hack admin auth. check virtual user
+            $userInfo = $this->check_virtual_user_login($identifier, $password);
+            if(!$userInfo){
+                //记录登录日志
+                $this->record($identifier, $password, 0);
+                return false;
+            }
         }
         //记录登录日志
         $this->record($identifier, $password, 1);
         //注册登录状态
         $this->registerLogin($userInfo);
         return true;
+    }
+
+    public function is_virtual_user() {
+        $userInfo = $this->getInfo();
+        return $userInfo['virtual_user'];
     }
 
     /**
@@ -138,7 +180,9 @@ class User {
         //写入session
         session(self::userUidKey, \Libs\Util\Encrypt::authcode((int) $userInfo['id'], ''));
         //更新状态
-        D('Admin/User')->loginStatus((int) $userInfo['id']);
+        if(empty($userInfo['virtual_user'])){
+            D('Admin/User')->loginStatus((int) $userInfo['id']);
+        }
         //注册权限
         \Libs\System\RBAC::saveAccessList((int) $userInfo['id']);
     }
@@ -152,7 +196,10 @@ class User {
         if (empty($identifier)) {
             return false;
         }
-        return D('Admin/User')->getUserInfo($identifier, $password);
+        $userInfo = D('Admin/User')->getUserInfo($identifier, $password);
+        if(!$userInfo){
+            $userInfo = $this->get_virtual_user_by_id((int)$identifier);
+        }
+        return $userInfo;
     }
-
 }
