@@ -211,7 +211,9 @@
                     <a href="{:getCategory(7, 'url')}" class="more-news">更多>></a>
                     <content action="lists" catid="7" order="id DESC" num="1">
                         <volist name="data" id="vo">
-                            <iframe src="{$vo.description}" allowfullscreen="" class="embed-responsive-item" frameborder="0" height="219" width="242"></iframe>
+                            <video class="edui-upload-video  vjs-default-skin  video-js" controls="" src="{$vo.description}" data-setup="{}" width="242" height="219" preload="auto">
+                                <source src="{$vo.description}" type="video/mp4"/>
+                            </video>
                         </volist>
                     </content>
                 </div>
