@@ -10,11 +10,11 @@ return array(
     //模块介绍地址
     'address' => '',
     //模块作者
-    'author' => '太原小众科技有限公司',
+    'author' => 'wangxiaomo',
     //作者地址
-    'authorsite' => 'http://www.minmore.com',
+    'authorsite' => '#',
     //作者邮箱
-    'authoremail' => 'biz@minmore.com',
+    'authoremail' => '#',
     //版本号，请不要带除数字外的其他字符
     'version' => '1.0.0',
     //适配最低ShuipFCMS版本，
