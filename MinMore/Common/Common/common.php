@@ -1087,19 +1087,19 @@ function get_director_city(){
 }
 function get_director_barue($city){
 	C('DB_PREFIX','');
-	$barues=D("huoyi_office")->where("olevel=1 and oheadid=$city and substr(osn,1,6)<>'000000' and substr(osn,7,6)='000000' ")->select();
+	$barues=D("huoyi_office")->where("olevel=1 and oheadid=%d and substr(osn,1,6)<>'000000' and substr(osn,7,6)='000000' ", $city)->select();
 	C('DB_PREFIX','minmore_');
 	return $barues;
 }
 function get_director_station($barue){
 	C('DB_PREFIX','');
-	$stations=D("huoyi_office")->where("olevel=2 and oheadid=$barue and substr(osn,1,10)<>'000000' and substr(osn,11,2)='00' ")->select();
+	$stations=D("huoyi_office")->where("olevel=2 and oheadid=%d and substr(osn,1,10)<>'000000' and substr(osn,11,2)='00' ", $barue)->select();
 	C('DB_PREFIX','minmore_');
 	return $stations;
 }
 function get_director_petition($oid){
 	C('DB_PREFIX','');
-	$chief=D("officer")->where("oid=$oid and is_delete=0")->select();
+	$chief=D("officer")->where("oid=%d and is_delete=0", $oid)->select();
 	C('DB_PREFIX','minmore_');
 	return $chief;
 }
