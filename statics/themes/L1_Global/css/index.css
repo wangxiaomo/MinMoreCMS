@@ -1037,15 +1037,18 @@ img{
     background: #f0f0f0;
 }
 .link-content{
-    width: 1000px;
-    height: 70px;
     background: #f0f0f0;
+    float:left;
 }
 .link-content a{
     text-decoration: none;
     color: #000000;
-    line-height: 70px;
+    line-height: 45px;
     padding: 0 30px;
+    display:block;
+    height:45px;
+    width:auto;
+    float:left;
 }
 .link-content a:hover{
     color: #0a62be;
