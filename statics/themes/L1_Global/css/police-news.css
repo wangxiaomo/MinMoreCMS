@@ -511,11 +511,12 @@ img{
     background: #ffffff;
 }
 .police-style{
-    width: 997px;
+    width: 988px;
     height: 227px;
     background-image: url("../images/police-style-bg.png");
-    margin:0 1px;
+    margin:0 6px;
     overflow: hidden;
+    border-right:1px solid #c9c9c9;
 }
 .police-style ul{
     width: 1350px;
