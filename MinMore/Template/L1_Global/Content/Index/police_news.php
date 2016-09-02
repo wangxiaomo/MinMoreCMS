@@ -211,7 +211,7 @@
                     <a href="{:getCategory(7, 'url')}" class="more-news">更多>></a>
                     <content action="lists" catid="7" order="id DESC" num="1">
                         <volist name="data" id="vo">
-                            <video class="edui-upload-video  vjs-default-skin  video-js" controls="" src="{$vo.description}" data-setup="{}" width="242" height="219" preload="auto">
+                            <video class="edui-upload-video  vjs-default-skin  video-js" src="{$vo.description}" width="242" height="219" preload autoplay controls>
                                 <source src="{$vo.description}" type="video/mp4"/>
                             </video>
                         </volist>
