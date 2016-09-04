@@ -285,7 +285,7 @@ class AdminController extends AdminBase {
 				$this->error($error ? $error : '转发失败！');
 			}else{
 				$this->db->commit();
-				$this->success("信件转发成功");
+				$this->success("信件转发成功",U('index'));
 			}
 		}else{
 		    $this->error("转发失败:获取目标部门(detp:$target)失败！");

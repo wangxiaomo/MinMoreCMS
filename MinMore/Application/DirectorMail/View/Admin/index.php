@@ -49,8 +49,7 @@
               <td align="center">
 		<a class="J_ajax_del"  href="{:U("delete",array("id"=>$vo['id'],'isadmin'=>1))}" style="color:red;">删除</a> 
 		| <a href="{:U("reply",array("id"=>$vo['id'],'isadmin'=>1))}">回复</a>
-		| <a class="forward" href="javascript:void(0);" onclick="showSubDept({$vo['id']},'{$vo.zhuti}')"
-		 value="{$vo['id']}">转发</a>
+		| <a class="forward" href="javascript:void(0);" onclick="showSubDept({$vo['id']},'{$vo.zhuti}')">转发</a>
 		| <a href="{:U("reply",array("id"=>$vo['id'],'isadmin'=>1))}">详情>></a>
 	      </td>
             </tr>
