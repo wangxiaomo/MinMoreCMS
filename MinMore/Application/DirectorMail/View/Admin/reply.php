@@ -266,5 +266,6 @@ function closeSubDept(show_div,bg_div)
     color: white;
     font-size: 18pt;
 }
+</style>
 </body>
 </html>
