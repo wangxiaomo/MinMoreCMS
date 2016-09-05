@@ -94,7 +94,7 @@ class User {
     private function update_virtual_user($r){
         if($r){
             $r['id'] = $r['ouid'];
-            $r['username'] = $r['oucompellation'];
+            $r['username'] = $r['oupolicesn'];
             $r['role'] = $this->get_virtual_role($r);
             $r['virtual_user'] = true;
             $r['status'] = 1;
@@ -106,7 +106,7 @@ class User {
     private function check_virtual_user_login($username, $password) {
         if(empty($username) || empty($password)) return false;
         $conditions = array(
-            'oucompellation' => $username,
+            'oupolicesn' => $username,
             'oupwd' => md5($password)
         );
         C("DB_PREFIX", "huoyi_");

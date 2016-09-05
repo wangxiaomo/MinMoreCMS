@@ -2,6 +2,7 @@
 
 namespace DirectorMail\Controller;
 
+use Admin\Service\User;
 use Common\Controller\AdminBase;
 
 class AdminController extends AdminBase {
@@ -11,6 +12,8 @@ class AdminController extends AdminBase {
 
     protected function _initialize() {
         parent::_initialize();
+	$userInfo = User::getInstance()->getInfo();
+	$this->deptid=$userInfo['ouoid'];
         $this->db = D('DirectorMail/Directormail');
     }
 
@@ -18,7 +21,7 @@ class AdminController extends AdminBase {
     public function index() {
         $status= I('get.status');
         $where = array(
-		'deptid'=>get_department_id()
+		'deptid'=>$this->deptid
             );
 	
         $typeId = I('get.typeid');
@@ -53,7 +56,7 @@ class AdminController extends AdminBase {
                 $this->error('回复信件错误！');
             }
             $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=get_department_id()){
+	    if($info['deptid']!=$this->deptid){
 		$this->error("您无权回复该信件");
 		}
             if (empty($info)) {
@@ -73,7 +76,7 @@ class AdminController extends AdminBase {
         } else {
             $id = I('get.id', 0, 'intval');
             $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=get_department_id()){
+	    if($info['deptid']!=$this->deptid){
 		$this->error("您无权查看该信件");
 		}
 	    $comments=M('comment')->where(array('mailid'=>$id,'mailtype'=>1))->order(array('createtime'=>asc))->select();
@@ -106,7 +109,7 @@ class AdminController extends AdminBase {
             $ids = I('get.id', 0, 'intval');
         }
 	    $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=get_department_id()){
+	    if($info['deptid']!=$this->deptid){
 		$this->error("您无权查看该信件");
 		}
         if (empty($ids)) {
@@ -224,7 +227,7 @@ class AdminController extends AdminBase {
     }
     //获取可转发的下级部门
     public function get_sub_department(){
-	    $dept_id=get_department_id();
+	    $dept_id=$this->deptid;
 	    C('DB_PREFIX',"");
 	    $M_office=M('huoyi_office');
 	    C('DB_PREFIX',"minmore_");
@@ -253,10 +256,10 @@ class AdminController extends AdminBase {
 		    $mailid=I('post.fd_mailid');
 		    $mailtype=1;
 		    $comment=I('post.fd_comment');
-		    $source=get_department_id();
+		    $source=$this->deptid;
 		    $target=I('post.fd_target');
 	    $info = $this->db->where(array('id' => $mailid))->find();
-	    if($info['deptid']!=get_department_id()){
+	    if($info['deptid']!=$this->deptid){
 		$this->error("您无权操作该信件");
 		}
 		$this->db->startTrans();
