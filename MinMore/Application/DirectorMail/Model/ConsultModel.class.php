@@ -22,6 +22,7 @@ class ConsultModel extends Model {
     protected $_auto = array(
         //array(填充字段,填充内容,填充条件,附加规则)
         array('tjsj', 'time', 1, 'function'),
+        array('deptid', get_department_id,1,'function')
     );
 
     /**

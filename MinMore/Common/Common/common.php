@@ -1117,6 +1117,7 @@ function get_department_id (){
         case '16': return 623;  //xx
         case '13': return 318;  //ws
         case '12': return 642;  //zs
+	default:return false;
     }
 }
 function get_redis_value($key, $kv_type=null){

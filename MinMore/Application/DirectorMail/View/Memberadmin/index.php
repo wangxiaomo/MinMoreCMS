@@ -46,6 +46,7 @@
               <td align="center">
 		<a class="J_ajax_del" href="{:U("delete",array("id"=>$vo['id'],'isadmin'=>1))}">删除</a>
 		| <a href="{:U("reply",array("id"=>$vo['id'],'isadmin'=>1))}">回复</a>
+		| <a class="forward" href="javascript:void(0);" onclick="showSubDept({$vo['id']},'{$vo.zhuti}')">转发</a>
 		| <a href="{:U("reply",array("id"=>$vo['id'],'isadmin'=>1))}">详情>></a>
 		</td>
             </tr>
@@ -64,6 +65,199 @@
     </div>
   </form>
 </div>
+<div id="overlay" class="black_overlay">  
+</div>  
+<div id="fd_modal"  class="white_content_small">  
+<div class="model_title" style="background:grey;height:30px">
+<div class="title" style="text-align:center;font-size:20px;color:white;float:left;width:80%">
+	<p>信件转发</p>
+</div>
+   <a style="color:white;font-size:18px;" herf="javascrip:void(0)" onclick="closeSubDept()">
+  <div class="close_modal">  
+  </div>  
+</a>  
+</div>
+    <div class="fd_modal_container"> 
+    <div class="fd_description">
+	<H4>说明:转发后该信件将会从您的信件列表里被移除</H4>
+    </div>
+    <form class="fd_form" method="post" action=""> 
+	<div class="fd_item">
+	<span for="fd_title">信件标题:</span>
+	<input type="text" name="fd_title" class="fd_title" disabled="disabled"></input>
+	<input type="text" name="fd_mailid" value="" style="display:none"></input>
+	</div>
+	<div class="fd_item">
+	<span for="fd_target">下级部门:</span>
+	<select name="fd_target" class="fd_target">
+		<option value="0">--请选择--</option>
+	</select>
+	</div>
+	<div class="fd_item">
+	<span for="fd_comment">意&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;见:</span>
+	<textarea class="fd_comment" name="fd_comment">
+	</textarea>
+	</div>
+	<div class="fd_item">
+	<button class="bt_reset" type="reset">重置</button>
+	<button class="bt_submit" type="submit">确认转发</button>
+	</div>
+    </form> 
+        </div> 
+    </div> 
+</div> 
+<script src="{$config_siteurl}statics/js/common.js?v"></script>
+<script>
+function showSubDept(mailid,title){
+        var url="{:U('get_sub_department')}";
+        var request={mailid:mailid};
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: request,
+            timeout: 3000,
+            error: function () {
+                alert("网络错误，请稍候尝试！");
+            },
+            success: function (resp){
+                $("select[name='fd_target']").empty();
+                $("select[name='fd_target']").append("<option value='0'>--请选择--</option>");
+                var data=resp.info;
+                if(resp.status==0){
+                alert("获取子部门失败,"+resp.info);
+                return;
+                }
+                var count = data.length;
+                var i = 0;
+                var b = "";
+                for (i = 0; i < count; i++) {
+                    b += "<option value='" + data[i].oid + "'>" + data[i].oname+ "</option>";
+                }
+                $("select[name='fd_target']").append(b);
+		$("input[name='fd_title']").val(title);
+		$("input[name='fd_mailid']").val(mailid);
+		var action="{:U('forward',array('id'=>mailid))}"
+		$(".fd_form").attr("action",action);
+		$("#fd_modal").show();
+		$("#overlay").show();
+                }
+        });
+}
+function closeSubDept(show_div,bg_div)  
+{  
+	$('#fd_modal').hide();  
+	$('#overlay').hide();  
+}; 
+</script>
+<style>
+.black_overlay{  
+ display: none;  
+ position: absolute;  
+ top: 0%;  
+ left: 0%;  
+ width: 100%;  
+ height: 100%;  
+ background-color: black;  
+ z-index:1001;  
+ opacity:0.6;  
+ filter: alpha(opacity=80);  
+}  
+.white_content {  
+ display: none;  
+ position: absolute;  
+ top: 0;  
+ left: 0;  
+ right: 0;  
+ bottom: 0;  
+ margin:auto;
+ width: 800px;  
+ height: 600px;  
+ border: 10px solid lightgrey;  
+ border-radius: 15px;
+ background-color:white;  
+ z-index:1002;  
+ overflow: auto;  
+}  
+.white_content_small {  
+ display: none;  
+ position: absolute;  
+ top: 0;  
+ left: 0;  
+ right: 0;  
+ bottom: 0;  
+ margin:auto;
+ width: 600px;  
+ height: 450px;  
+ border: 5px solid lightgrey;  
+ background-color: white;  
+ z-index:1002;  
+ overflow: auto;  
+}  
+.fd_modal_container {
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+}
+.fd_modal_container span{
+    width:20%;
+}
+.fd_modal_container .fd_title{
+    width:80%;
+    overflow:hide;
+    height:30px;
+}
+.fd_modal_container .fd_target{
+    width:80%;
+    overflow:hide;
+    height:30px;
+}
+.fd_modal_container .fd_comment{
+    width:80%;
+    height:150px;
+}
+.fd_item {
+    margin:20px;
+}
+.fd_modal_container .bt_reset{
+    background: lightcoral;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    margin: 0px 10%;
+    cursor: pointer;
+}
+.fd_modal_container .bt_submit{
+    background: #1b75b6;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    margin: 0px 10%;
+    cursor: pointer;
+}
+.close_modal {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    line-height: 25px;
+    text-align: center;
+}
+.close_modal::before {
+    display: inline-block;
+    content: "\2716";
+    color: white;
+    font-size: 18pt;
+}
+</style>  
 <script src="{$config_siteurl}statics/js/common.js?v"></script>
 </body>
 </html>
