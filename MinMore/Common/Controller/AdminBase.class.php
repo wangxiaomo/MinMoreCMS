@@ -27,6 +27,9 @@ class AdminBase extends MinMoreCMS {
             "NOT_AUTH_MODULE" => "Public", //无需认证模块
             "USER_AUTH_GATEWAY" => U("Admin/Public/login"), //登录地址
         ));
+
+        if(C("DISALLOW_ADMIN")) die;
+
         if (false == RBAC::AccessDecision(MODULE_NAME)) {
             //检查是否登录
             if (false === RBAC::checkLogin()) {

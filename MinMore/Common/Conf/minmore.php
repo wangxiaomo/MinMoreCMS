@@ -18,4 +18,5 @@ return array(
     "HACK_SMS_VCODE"    =>  "345211",
     "MINMORE_REGISTER_URL"  =>  "http://s1.minmore.com:28081/wsga/wsga/web/personal-center/user-regist.htm",
     "MINMORE_LOGIN_URL"     =>  "http://s1.minmore.com:28081/wsga/wsga/web/personal-center/user-login.htm",
+    "DISALLOW_ADMIN"    =>  false,
 );
