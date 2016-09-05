@@ -68,6 +68,7 @@
               	<div id="uploader-vedio">
               	    <input type="hidden" id="video" name="video" value="{$obj.video}" />
 				    <div id="showideo"><a src='{$obj.video}' >{$obj.video}</a></div>
+					 <div id="fileList" class="uploader-list"></div>
 				    <div id="filePicker-vedio">选择视频</div>
 				</div>
 			</th>
@@ -160,26 +161,24 @@ var uploader_video = WebUploader.create({
     }
 });
 
-//文件上传过程中创建进度条实时显示。
-uploader_video.on( 'uploadProgress', function( file, percentage ) {
-    var $li = $( '#'+file.id ),
-        $percent = $li.find('.progress span');
-
-    // 避免重复创建
-    if ( !$percent.length ) {
-        $percent = $('<p class="progress"><span></span></p>')
-                .appendTo( $li )
-                .find('span');
-    }
-
-    $percent.css( 'width', percentage * 100 + '%' );
-});
-
 // 文件上传成功，给item添加成功class, 用样式标记上传成功。
 uploader_video.on( 'uploadSuccess', function( file,response ) {
 	$("#video").val("__ROOT__"+response.data);
     $("#showideo").html("<a src='"+response.data+"' >"+response.filename+"</a>");
 });
+
+
+uploader_video.on( 'uploadProgress', function( file, percentage ) {
+	var per = percentage*100+"";
+	if(per.indexOf(".")==1)
+	    per = per.substring(0,1);
+	else if(per.indexOf(".")==2) per = per.substring(0,2);
+	per = per.substring(0,3);
+	
+	$("#fileList").html("已经完成:"+per+"%"); 
+});
+
+
 
 // 文件上传失败，显示上传出错。
 uploader_video.on( 'uploadError', function( file ) {

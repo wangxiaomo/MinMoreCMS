@@ -37,7 +37,6 @@ class IndexController extends Base {
     		$interview_m    =  M("interview as a");
     		$where["id"]    =  $id;
     		$obj            =  $interview_m->where($where)->find();
-			
     		$interviewMsg_m 		 =  M("interview_message");
     		$wherereply["view_id"]   =  $id;
     		$dataList          		 =  $interviewMsg_m->where($wherereply)->limit(5)->order(array("id" => "DESC"))->select();

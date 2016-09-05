@@ -140,20 +140,27 @@
 	                    </dl>
                   	</volist>  
                   </div>
-                  <div class="NetMagges">
-				    <input  id="view_id" type="hidden" value="{$obj.id}" />
-					<textarea id="msg" style="margin: 0px; width: 260px; height: 37px;"></textarea>
-                    <dl>手机号：<input  id="tel"  type="text" class="TextBox"><span>*</span>姓名：<input id="username" type="text" class="TextBox"></dl>
-                  <!--  <dl>验证码：<input  id="code" type="text" class="TextBox"><samp>7364</samp></dl> --> 
-                    <dl>验证码：<input  id="code" type="text" class="TextBox">
-                    <img class="yanzheng_img" style="margin-bottom: -5px;" id="code_img" alt="" src="{:U('Api/Checkcode/index','code_len=4&font_size=15&width=120&height=25&font_color=&background=')}" onClick="refreshs()" >
-                    <br/>
-                     <div style="float:right;" >点击验证码刷新</div>
-                     <br/>
-                    </dl>
-                    <dl><input name="" type="button" value="提交" class="Netbtn" onclick="sendmsg()">
-					<input name="" type="button" value="清除" class="Netbtn" onclick="cleanform()"></dl>
-                  </div>
+				  
+				  <if condition="$vo.is_open_msg eq on">
+					<div class="NetMagges">
+						<input  id="view_id" type="hidden" value="{$obj.id}" />
+						<textarea id="msg" style="margin: 0px; width: 260px; height: 37px;"></textarea>
+						<dl>手机号：<input  id="tel"  type="text" class="TextBox"><span>*</span>姓名：<input id="username" type="text" class="TextBox"></dl>
+						<dl>验证码：<input  id="code" type="text" class="TextBox">
+							<img class="yanzheng_img" style="margin-bottom: -5px;" id="code_img" alt="" src="{:U('Api/Checkcode/index','code_len=4&font_size=15&width=120&height=25&font_color=&background=')}" onClick="refreshs()" >
+							<br/>
+							<div style="float:right;" >点击验证码刷新</div>
+							<br/>
+						</dl>
+						<dl><input name="" type="button" value="提交" class="Netbtn" onclick="sendmsg()">
+						<input name="" type="button" value="清除" class="Netbtn" onclick="cleanform()"></dl>
+					</div>
+				 <else />
+				 <script>
+					$("#guestmsginfo").css("height","345px");
+				 </script>
+				 
+				 </if>
                </div>
            </div>
         </div>
