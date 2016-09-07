@@ -141,8 +141,8 @@ class IndexController extends Base {
         }
         $this->assign("parent", $parent);
         $this->assign("children", $children);
-	//把查询关键词传递给模板
-	$this->assign("condition",$queryCondition);
+        //把查询关键词传递给模板
+        $this->assign("condition",$queryCondition);
         //把分页分配到模板
         $this->assign(C("VAR_PAGE"), $page);
         //分配变量到模板 
