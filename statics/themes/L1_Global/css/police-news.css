@@ -155,11 +155,11 @@ img{
 
 /*-----------------导航栏----------------*/
 .banner-nav{
-    width: 1000PX;
+    width: 1002px;
     height: 45px;
 }
 .banner-nav li{
-    width: 166px;
+    width: 167px;
     height: 45px;
     background: #2f6ebe;
     line-height: 45px;
@@ -525,7 +525,8 @@ img{
 }
 .police-style li{
     float: left;
-    margin-right: 15px;
+    margin-right: 14px;
+    margin-left: 1px;
 }
 .police-style a{
     text-decoration: none;
