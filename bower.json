@@ -20,6 +20,8 @@
     "bootstrap": "^3.3.6",
     "jquery.browser": "^0.1.0",
     "font-awesome": "fontawesome#^4.6.3",
-    "fex-webuploader": "fex-team/webuploader#^0.1.5"
+    "fex-webuploader": "fex-team/webuploader#^0.1.5",
+    "chart.js": "npm:chart.js#^2.2.2",
+    "underscore": "^1.8.3"
   }
 }
