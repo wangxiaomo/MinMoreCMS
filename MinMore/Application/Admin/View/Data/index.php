@@ -29,11 +29,11 @@ $(function(){
     return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
   };
   var serviceSummaryData = {
-    labels: ['局长信箱', '代表委员会', '网上举报', '群众投诉', '网上咨询', '建言献策', '网上信访'],
+    labels: {$sumaryLabel},
     datasets: [{
       backgroundColor: _.times(7, randomColor),
-      data: [20,30,40,10,2,10,30]
-    }]
+      data: {$sumaryData}
+	  }]
   };
   var serviceSummaryDataChart = new Chart($("#service-summary-data"), {
     type: 'polarArea',
@@ -48,6 +48,33 @@ $(function(){
       }
     }
   });
+  var serviceData = {
+    labels: {$trendMonth},
+    datasets: [
+	<volist name="trendData" id="vo">
+      {
+        label: {$key},
+        fill: false,
+        data: {$vo},
+        backgroundColor: randomColor(),
+      }<if condition="$i neq count($trendData)">,</if>
+	</volist>
+    ]
+  };
+  _.map(serviceData.datasets, function(n){
+    n.borderColor = n.backgroundColor;
+  });
+  var serviceDataChart = new Chart($("#service-data"), {
+    type: 'line',
+    data: serviceData,
+    options: {
+      title: {
+        display: true,
+        text: '业务数据趋势'
+      }
+    }
+  });
+  /*
   var serviceData = {
     labels: ['1月', '2月', '3月', '4月', '5月'],
     datasets: [
@@ -78,6 +105,7 @@ $(function(){
       }
     }
   });
+  */
   var responseSpeedData = {
     labels: ['局长信箱', '代表委员会', '网上举报', '群众投诉', '网上咨询', '建言献策', '网上信访'],
     datasets: [
