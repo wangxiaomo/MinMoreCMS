@@ -117,9 +117,19 @@ class DirectormailModel extends Model {
             return false;
         }
         $id = $this->add($data);
-        if ($id) {
-            return $id;
-        }
+		if ($id) {
+			$nowtime=time();
+			$flow=array(
+					'mailtype'=>1
+					,'mailid'=>$id
+					,'deptid'=>get_department_id()
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			$ret=M('workflow')->add($flow);
+			return $id;
+		}
         $this->error = '填写信件失败！';
         return false;
     }
@@ -141,6 +151,19 @@ class DirectormailModel extends Model {
             $where['id'] = $ids;
         }
         $this->where($where)->delete();
+		$deptid=get_department_id();
+		foreach($ids as $id){
+			$nowtime=time();
+			$flow=array(
+					'mailtype'=>1
+					,'mailid'=>$id
+					,'status'=>2
+					,'deptid'=>$deptid
+					,'out'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			$ret=M('workflow')->where(array('mailtype'=>1,'mailid'=>$id,'deptid'=>$deptid))->save($flow);
+		}
         return true;
     }
 
