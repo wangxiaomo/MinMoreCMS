@@ -21,8 +21,7 @@ class DataController extends AdminBase {
 		parent::_initialize();
 		$userInfo = User::getInstance()->getInfo();
 		$this->deptid=$userInfo['ouoid'];
-	}   
-
+	}
 
 	public function index() {
 		$sumary=$this->getSumary();
@@ -36,16 +35,20 @@ class DataController extends AdminBase {
 			$trendData["'".$label."'"]=json_encode(array_values($data));
 		}
 
-		$response=array();
+		$response=$this->getResponseTime();
+		$responseLabel=array_keys($response);
+		$responseData=$this->statResponse($response);
 
 		$this->assign("sumaryLabel",json_encode($sumaryLabel));
 		$this->assign("sumaryData",json_encode($sumaryData));
 		$this->assign("trendMonth",json_encode($trendMonth));
 		$this->assign("trendData",$trendData);
-		$this->assign("response",$response);
+		$this->assign("responseLabel",json_encode($responseLabel));
+		$this->assign("responseData",$responseData);
+
 		$this->display();
 	}
-	
+
 	protected function getSumary()
 	{  
 		$mDirectorMail=M('directormail');
@@ -91,43 +94,59 @@ class DataController extends AdminBase {
 		return $trend;
 	}
 
-	/*
 	protected function getResponseTime()
 	{  
-		$deptid=$this->deptid;
-		$mDirectorMail=M('directormail');
-		$mPetition=M('petition');
-		$mConsult=M('consult');
-		$mMemberMail=M('membermail');
-		$mComment=M('comment');
-		$stat=array();
-		$mailist=$mDirectorMail->field('id,createtime,replytime,deptid')->select();
-		foreach($mailist as $mail)
-		{
-			$stat[$mail['deptid']][$mail['id']]['in']=$mail['createtime'];
-			$comments=$mComment->where(array('mailid'=>$mail['id'],'mailtype'=>1))->select();
-			foreach($comments as $c)
-			{
-				if(isset($stat[$c['from']]))
-				{
-					$stat[$c['from']]=array();
+		$deptid=$this->deptid?$this->deptid:0;
+		$mWorkflow=M('workflow');
+		$Model=new \Think\Model();
+		$Model->execute("update __PREFIX__workflow wf set wf.responsetime=wf.out-wf.in where id>0 and status<>0;");
+		$response['局长信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=1 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['代表委员信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=2 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上举报']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wsjb' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['群众投诉']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='qzts' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上咨询']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wszx' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['建言献策']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='jyxc' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上信访']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=4 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		return $response;
+	}
+
+	protected function statResponse($response)
+	{
+		foreach($response as $label=>$data){
+			if(empty($data)){
+				$responseData["'".'三天内'."'"][]=0;
+				$responseData["'".'七天内'."'"][]=0;
+				$responseData["'".'七天后'."'"][]=0;
+				continue;
+			}
+			$count=array('3'=>0,'7'=>0,'8'=>0);
+			foreach($data as $pair){
+				$day=intval($pair['day']);
+				$c=intval($pair['count']);
+				$count=array();
+				switch($day){
+					case $day>0&&$day<3:
+						$count['3']+=$c;
+						break;
+					case $day>=3&&$day<=7:
+						echo $label.":".$day.":".$c."\n";
+						$count['7']+=$c;
+						break;
+					case $day>7:
+						$count['8']+=$c;
+						break;
+					default:
+						$count['0']+=$c;
 				}
-				if(isset($stat[$c['from']][$c['mailid']]))
-				{
-					$stat[$c['from']][$c['mailid']]=array();
-				}
-				$stat[$c['from']][$c['mailid']]['out']=$c['createtime'];
-				if(isset($stat[$c['to']]))
-				{
-					$stat[$c['to']]=array();
-				}
-				if(isset($stat[$c['to']][$c['mailid']]))
-				{
-					$stat[$c['to']][$c['mailid']]=array();
-				}
-				$stat[$c['to']][$c['mailid']]['in']=$c['createtime'];
+				$responseData["'".'三天内'."'"][]=$count['3']?$count['3']:0;
+				$responseData["'".'七天内'."'"][]=$count['7']?$count['7']:0;
+				$responseData["'".'七天后'."'"][]=$count['8']?$count['8']:0;
 			}
 		}
+		$responseData["'".'三天内'."'"]=json_encode($responseData["'".'三天内'."'"]);
+		$responseData["'".'七天内'."'"]=json_encode($responseData["'".'七天内'."'"]);
+		$responseData["'".'七天后'."'"]=json_encode($responseData["'".'七天后'."'"]);
+
+		return $responseData;
 	}
-	*/
 }
