@@ -38,7 +38,7 @@ class MainController extends AdminBase {
         );
 
 		$todo=array(
-				'局长信箱'=>array('link'=>U('DirectorMail/Admin/index',array('menuid'=>205)),'count'=>$this->getTodoCount($this->deptid,1)),
+				'局长信箱'=>array('link'=>U('DirectorMail/Admin/index'),'count'=>$this->getTodoCount($this->deptid,1)),
 				'代表委员信箱'=>array('link'=>U('DirectorMail/Memberadmin/index'),'count'=>$this->getTodoCount($this->deptid,2)),
 				'网上举报'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'wsjb')),'count'=>$this->getTodoCount($this->deptid,3,'wsjb')),
 				'群众投诉'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'qzts')),'count'=>$this->getTodoCount($this->deptid,3,'qzts')),
@@ -80,7 +80,7 @@ class MainController extends AdminBase {
         $this->ajaxReturn($data);
     }
 
-	private function getTodoCount($deptid,$mailtype=null,$subtype=null){
+	private function getTodoCount($deptid=null,$mailtype=null,$subtype=null){
 		$mWorkflow=M('workflow');
 		$map['status']=array('eq',0);
 		if($mailtype!=null){
@@ -89,8 +89,10 @@ class MainController extends AdminBase {
 		if($subtype!=null){
 			$where['subtype']=$subtype;
 		}
-		if($deptid!=0){
+		if($deptid!=null){
 			$where['deptid']=$deptid;
+		}else{
+			$where['deptid']='0';
 		}
 			$count=$mWorkflow->where($map)->where($where)->count();
 			$count=$count?$count:0;

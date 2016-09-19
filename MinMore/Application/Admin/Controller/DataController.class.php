@@ -100,6 +100,7 @@ class DataController extends AdminBase {
 		$mWorkflow=M('workflow');
 		$Model=new \Think\Model();
 		$Model->execute("update __PREFIX__workflow wf set wf.responsetime=wf.out-wf.in where id>0 and status<>0;");
+		if($deptid!=0){
 		$response['局长信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=1 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
 		$response['代表委员信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=2 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
 		$response['网上举报']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wsjb' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
@@ -107,6 +108,15 @@ class DataController extends AdminBase {
 		$response['网上咨询']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wszx' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
 		$response['建言献策']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='jyxc' and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
 		$response['网上信访']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=4 and deptid=$deptid")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		}else{
+		$response['局长信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=1")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['代表委员信箱']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=2")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上举报']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wsjb'")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['群众投诉']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='qzts'")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上咨询']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='wszx'")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['建言献策']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=3 and subtype='jyxc'")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		$response['网上信访']=$mWorkflow->alias('wf')->where("status<>0 and mailtype=4")->field('floor(wf.responsetime/86400) day,count(id) count')->group('day')->order('day','asc')->select();
+		}
 		return $response;
 	}
 
