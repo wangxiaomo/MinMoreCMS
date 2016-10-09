@@ -1148,3 +1148,8 @@ function get_pv_count(){
         'total' =>  $total,
     );
 }
+
+function get_site_cache($name){
+    $role = get_site_role();
+    return cache("Config${role}.${name}");
+}

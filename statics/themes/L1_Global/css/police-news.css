@@ -31,7 +31,7 @@ img{border:none}
 .imgList li{display:none}
 .imgList .imgOn{display:inline}
 .banner-sign{position:absolute;left:600px;top:0}
-.banner-nav{width:1002px;height:45px}
+.banner-nav{width:1000px;height:45px}
 .banner-nav li{width:167px;height:45px;background:#2f6ebe;line-height:45px;font-size:20px;font-weight:700;font-family:Arial,Verdana,Sans-serif;color:#fff;text-align:center}
 .banner-nav li.on,.banner-nav li:hover{background:#e5840d}
 .survey-news{width:1000px;height:302px;background:#fff;padding-top:13px}
@@ -49,7 +49,7 @@ img{border:none}
 #myjQueryNav a{display:block;margin:0 auto;text-transform:uppercase;width:45px;color:#fff;line-height:22px;position:relative;height:22px;z-index:20}
 #myjQueryNav .current{background:#347e0d}
 #myjQueryNav .current A{color:#fff}
-.news-active{width:431px;height:300px;margin-left:7px;background:#f4ffff;border:1px solid #000;position:relative}
+.news-active{width:430px;height:300px;margin-left:4px;background:#f4ffff;border:1px solid #000;position:relative}
 .news-active h3{width:100%;text-align:center;color:red;margin:15px 0}
 .news-active p{width:370px;height:70px;margin:0;padding:0 10px}
 .news-active span{line-height:20px}

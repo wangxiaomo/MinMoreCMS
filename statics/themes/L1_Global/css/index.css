@@ -4,13 +4,13 @@ a,body,li{color:#4b4344}
 #myjQuery,#myjQueryContent,#myjQueryNav,.banner,.main,.news-carousel,.service-menu{overflow:hidden}
 .bottom-branch a,.child-menu a,.feature-service li,.introduce-info a,.link-content a,.news-active a,.service-menu a,.user-action a,a,li{text-decoration:none}
 .banner-nav li,.feature-service li,.mail-connect li,.nav-search,.nav-weather,.news-active,.news-carousel,.news-title .title-child,.public-logo,.top-nav-img,.user-action,.view-window{float:left}
-body{font-family:微软雅黑}
+body{font-family:微软雅黑;}
 a,li{list-style:none}
 img{border:none}
 .head,.main{margin:0 auto}
 .main{width:100%;background:url(../images/mainbackground.png) fixed}
 .head{width:1000px;height:248px;background:url(../images/top-logobg.png) 0 32px no-repeat}
-.top-nav{width:1002px;height:38px;background-image:url(../images/top-nav-bg.png)}
+.top-nav{width:1000px;height:38px;background-image:url(../images/top-nav-bg.png)}
 .user-action{width:300px;height:38px;margin-right:20px}
 .top-nav-img{width:21px;height:21px;margin:0 10px 0 35px;padding-top:9px}
 .user-action a{color:#fff;line-height:38px;margin-right:20px}
@@ -36,10 +36,10 @@ img{border:none}
 .imgList li{display:none}
 .imgList .imgOn{display:inline}
 .banner-sign{position:absolute;left:600px;top:0}
-.banner-nav{width:1002PX;height:45px}
+.banner-nav{width:1000px;height:45px}
 .banner-nav li{width:167px;height:45px;background:#2f6ebe;line-height:45px;font-size:20px;font-weight:700;font-family:Arial,Verdana,Sans-serif;color:#fff;text-align:center}
 .banner-nav li.on,.banner-nav li:hover{background:#e5840d}
-.police-news{width:1002px;height:362px;background:#fff;padding-top:13px}
+.police-news{width:1000px;height:362px;background:#fff;padding-top:13px}
 .news-title{width:100%;height:37px;background-image:url(../images/news-bg.png)}
 #myjQuery,#myjQueryContent,#myjQueryContent img,.news-carousel{height:300px;width:560px}
 .slider{width:600px;margin:12px 20px}
@@ -59,7 +59,7 @@ img{border:none}
 #myjQueryNav a{display:block;margin:0 auto;text-transform:uppercase;width:45px;color:#fff;line-height:22px;position:relative;height:22px;z-index:20}
 #myjQueryNav .current{background:#347e0d}
 #myjQueryNav .current A{color:#fff}
-.news-active{width:433px;height:300px;margin-left:7px;background:#f4ffff;border:1px solid #000;position:relative}
+.news-active{width:430px;height:300px;margin-left:4px;background:#f4ffff;border:1px solid #000;position:relative}
 .news-active h3{width:100%;text-align:center;color:red;margin:15px 0}
 .news-active p{width:370px;height:70px;margin:0;padding:0 10px}
 .news-active span{line-height:20px}
@@ -67,15 +67,15 @@ img{border:none}
 .news-active ul{width:393px;padding:0;margin:0}
 .news-active li{width:393px;list-style:none;padding:5px;height:20px}
 .news-active li:hover{background:#b3f8ff}
-.mail-connect,.work-build{background:#fff;width:1002px}
+.mail-connect,.work-build{background:#fff;width:1000px}
 .news-active li a{color:#4b4344;margin-left:20px}
 .news-active .news-more{position:absolute;top:15px;left:370px}
 .mail-connect{height:100px}
 .mail-connect li{margin:10px 10px 0 0}
 .mail-connect img{border:none}
 .work-build{height:370px}
-.work-build-top{width:1002px;height:37px;background-image:url(../images/workbuild-top.png)}
-.work-build-con{width:1002px;height:325px;background-image:url(../images/work-build_bg.png);background-position:0 -220px;padding-top:1px;position:relative}
+.work-build-top{width:1000px;height:37px;background-image:url(../images/workbuild-top.png)}
+.work-build-con{width:1000px;height:325px;background-image:url(../images/work-build_bg.png);background-position:0 -220px;padding-top:1px;position:relative}
 .welcome,.work-area{position:absolute;overflow:hidden}
 .work-view{width:694px;height:95px;margin:59px 0 0 152px;overflow:hidden;z-index:1}
 .work-view li,.work-view ul{height:100%;width:694px}
@@ -83,10 +83,10 @@ img{border:none}
 .work-view li{background-size:auto;background-position:0 -70px;display:none}
 .view-list .imgOn,.work-area a{display:block}
 .view-list{width:694px;height:95px}
-.welcome{width:1002px;height:110px;top:68px;left:30px}
+.welcome{width:1000px;height:110px;top:68px;left:30px}
 .welcome ul{width:1098px;height:66px;padding-left:10px}
 .welcome li{width:90px;height:56px;line-height:15px;background-image:url(../images/welcome.png);font-size:12px;padding:20px 0 0 5px;font-family:Arial;visibility:hidden}
-.work-area{width:1002px;height:110px;top:128px;left:0}
+.work-area{width:1000px;height:110px;top:128px;left:0}
 .work-area ul{width:1098px;height:100px;overflow:hidden;padding-left:10px}
 .work-area li{width:96px;height:100px;z-index:10}
 .work-area a{width:96px;height:100px}
@@ -113,8 +113,8 @@ img{border:none}
 .work-prev{left:5px}
 .work-next{right:5px}
 .work-next:hover,.work-prev:hover{background:#393939;cursor:pointer}
-.build-bottom-logo{width:1002px;height:91px;margin-bottom:10px;background-image:url(../images/build-logo.gif)}
-.feature-service{width:1002px;height:390px;margin-bottom:10px;background:url(../images/tesefuwu-bg.png) #fefdfd}
+.build-bottom-logo{width:1000px;height:91px;margin-bottom:10px;background-image:url(../images/build-logo.gif)}
+.feature-service{width:1000px;height:390px;margin-bottom:10px;background:url(../images/tesefuwu-bg.png) #fefdfd}
 .bianmin-lbtn,.bianmin-rbtn{width:20px;height:60px}
 .interaction,.sunshine-police{height:132px;float:left;padding-top:40px;background-repeat:no-repeat}
 .bianmin-lbtn:hover,.bianmin-rbtn:hover{cursor:pointer;outline:#838383 solid 2px}
@@ -124,7 +124,7 @@ img{border:none}
 .interaction{width:338px;margin:20px 0 0 5px;background-image:url(../images/interaction-bg.png);border:1px solid #e0e0e0;border-top:none}
 .interaction img{border:none;margin:13px 0 0 10px}
 .interaction img:hover{margin-bottom:-5px}
-.link-content{width:1002px;height:70px;background:#f0f0f0}
+.link-content{width:1000px;height:70px;background:#f0f0f0}
 .fast-nav{width:150px;height:166px;background-image:url(../images/fast-nav.png);background-position:5px;position:absolute;top:400px;left:-119px}
 .police-news-nav,.sunshine-nav,.work-build-nav{background-position:28px;background-repeat:no-repeat;height:166px}
 .fast-nav p{width:20px;float:right;text-align:center;margin:40px 7px 0 0;color:#fff;font-size:14px}

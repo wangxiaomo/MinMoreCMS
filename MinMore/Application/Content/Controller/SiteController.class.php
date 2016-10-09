@@ -75,10 +75,9 @@ class SiteController extends Base {
                 "id"    =>  $cat["catid"],
             );
         }
-        //hotfix:add guangan map url
         $children[] = array(
             "name"  =>  "电子地图",
-            "url"   =>  "http://j.map.baidu.com/yc88C",
+            "url"   =>  get_site_cache('baidu_loc'),
         );
         $this->assign("catid", "21");
         $this->assign("parent", $parent);

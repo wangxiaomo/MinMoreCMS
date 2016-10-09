@@ -24,7 +24,7 @@
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="{:U('Content/Site/police_interaction')}"><li>警民互动</li></a>
-            <a href="{:U('Content/Site/service_people')}"><li>服务民生</li></a>
+            <a href="{:U('Content/Site/service_people')}"><li style="width:165px;">服务民生</li></a>
         </ul>
     </div>
     <!-- content-->
@@ -341,7 +341,7 @@
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_5.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/dianziditu.png" alt="电子地图"/><br/>
-                        <a href="http://j.map.baidu.com/yc88C">电子地图</a>
+                        <a href="{:get_site_cache('baidu_loc')}">电子地图</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_6.png')">
                         <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示"/><br/>
@@ -381,7 +381,6 @@
                             },4000
                     );
                 }
-                /*
                 servicecaurousel();
                 $(function(){
                     $(".service-menu li").hover(function(){
@@ -390,7 +389,6 @@
                         servicecaurousel()
                     });
                 });
-                */
                 //---------前进-----------
                 $(".bianmin-rbtn").hover(function(){
                     var $ul = $(".service-menu").find("ul");

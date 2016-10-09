@@ -26,7 +26,7 @@
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="{:U('Content/Site/police_interaction')}"><li>警民互动</li></a>
-            <a href="{:U('Content/Site/service_people')}"><li class="on">服务民生</li></a>
+            <a href="{:U('Content/Site/service_people')}"><li class="on" style="width:165px;">服务民生</li></a>
         </ul>
     </div>
 
