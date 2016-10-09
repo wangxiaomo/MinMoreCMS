@@ -39,25 +39,21 @@
                        <div class="cty-ws" id="dis">
                         <div class="cty-title"><a href="{:get_site_url('武胜县公安')}">武胜县公安局</a></div>
                         <ul class="cty-List">
-                          <li><a href="{:get_site_url('三溪')}">三溪派出所</a></li>
-                          <li><a href="{:get_site_url('双星')}">双星派出所</a></li>
-                          <li><a href="{:get_site_url('乐善')}">乐善派出所</a></li>
-                          <li><a href="{:get_site_url('永胜')}">永胜派出所</a></li>
-                          <li><a href="{:get_site_url('胜利')}">胜利派出所</a></li>
-                          <li><a href="{:get_site_url('龙女')}">龙女派出所</a></li>
-                          <li><a href="{:get_site_url('华封')}">华封派出所</a></li>
-                          <li><a href="{:get_site_url('街子')}">街子派出所</a></li>
-                          <li><a href="{:get_site_url('龙庭')}">龙庭派出所</a></li>
-                          <li><a href="{:get_site_url('城中')}">城中派出所</a></li>
-                          <li><a href="{:get_site_url('万隆')}">万隆派出所</a></li>
-                          <li><a href="{:get_site_url('飞龙')}">飞龙派出所</a></li>
-                          <li><a href="{:get_site_url('宝派')}">宝派派出所</a></li>
-                          <li><a href="{:get_site_url('旧县')}">旧县派出所</a></li>
-                          <li><a href="{:get_site_url('新学')}">新学乡派出所</a></li>
-                          <li><a href="{:get_site_url('白坪')}">白坪派出所</a></li>
-                          <li><a href="{:get_site_url('猛山')}">猛山派出所</a></li>
+                          <li><a href="{:get_site_url('武胜城中')}">城中派出所</a></li>
+                          <li><a href="{:get_site_url('武胜城北')}">城北派出所</a></li>
                           <li><a href="{:get_site_url('烈面')}">烈面派出所</a></li>
+                          <li><a href="{:get_site_url('飞龙')}">飞龙派出所</a></li>
+                          <li><a href="{:get_site_url('中心')}">中心派出所</a></li>
+                          <li><a href="{:get_site_url('万善')}">万善派出所</a></li>
+                          <li><a href="{:get_site_url('乐善')}">乐善派出所</a></li>
+                          <li><a href="{:get_site_url('街子')}">街子派出所</a></li>
+                          <li><a href="{:get_site_url('金牛')}">金牛派出所</a></li>
+                          <li><a href="{:get_site_url('赛马')}">赛马派出所</a></li>
+                          <li><a href="{:get_site_url('万隆')}">万隆派出所</a></li>
                           <li><a href="{:get_site_url('鼓匠')}">鼓匠派出所</a></li>
+                          <li><a href="{:get_site_url('华封')}">华封派出所</a></li>
+                          <li><a href="{:get_site_url('龙女')}">龙女派出所</a></li>
+                          <li><a href="{:get_site_url('胜利')}">胜利派出所</a></li>
                         </ul>
                        </div>
                    </li>
@@ -66,25 +62,28 @@
                      <div class="cty-yc" id="dis">
                        <div class="cty-title"><a href="{:get_site_url('岳池县公安')}">岳池县公安局</a></div>
                        <ul class="cty-List">
-                          <li><a href="#">三溪派出所</a></li>
-                          <li><a href="#">双星派出所</a></li>
-                          <li><a href="#">乐善派出所</a></li>
-                          <li><a href="#">永胜派出所</a></li>
-                          <li><a href="#">胜利派出所</a></li>
-                          <li><a href="#">龙女派出所</a></li>
-                          <li><a href="#">华封派出所</a></li>
-                          <li><a href="#">街子派出所</a></li>
-                          <li><a href="#">龙庭派出所</a></li>
-                          <li><a href="#">城中派出所</a></li>
-                          <li><a href="#">万隆派出所</a></li>
-                          <li><a href="#">飞龙派出所</a></li>
-                          <li><a href="#">宝派派出所</a></li>
-                          <li><a href="#">旧县派出所</a></li>
-                          <li><a href="#">新学乡派出所</a></li>
-                          <li><a href="#">白坪派出所</a></li>
-                          <li><a href="#">猛山派出所</a></li>
-                          <li><a href="#">烈面派出所</a></li>
-                          <li><a href="#">鼓匠派出所</a></li>
+                          <li><a href="{:get_site_url('岳池城东')}">城东派出所</a></li>
+                          <li><a href="{:get_site_url('岳池城南')}">城南派出所</a></li>
+                          <li><a href="{:get_site_url('岳池城北')}">城北派出所</a></li>
+                          <li><a href="{:get_site_url('石垭')}">石垭派出所</a></li>
+                          <li><a href="{:get_site_url('普安')}">普安派出所</a></li>
+                          <li><a href="{:get_site_url('裕民')}">裕民派出所</a></li>
+                          <li><a href="{:get_site_url('罗渡')}">罗渡派出所</a></li>
+                          <li><a href="{:get_site_url('伏龙')}">伏龙派出所</a></li>
+                          <li><a href="{:get_site_url('中和')}">中和派出所</a></li>
+                          <li><a href="{:get_site_url('花园')}">花园派出所</a></li>
+                          <li><a href="{:get_site_url('顾县')}">顾县派出所</a></li>
+                          <li><a href="{:get_site_url('苟角')}">苟角派出所</a></li>
+                          <li><a href="{:get_site_url('天平')}">天平派出所</a></li>
+                          <li><a href="{:get_site_url('乔家')}">乔家派出所</a></li>
+                          <li><a href="{:get_site_url('新场')}">新场派出所</a></li>
+                          <li><a href="{:get_site_url('白庙')}">白庙派出所</a></li>
+                          <li><a href="{:get_site_url('酉溪')}">酉溪派出所</a></li>
+                          <li><a href="{:get_site_url('龙孔')}">龙孔派出所</a></li>
+                          <li><a href="{:get_site_url('坪滩')}">坪滩派出所</a></li>
+                          <li><a href="{:get_site_url('镇裕')}">镇裕派出所</a></li>
+                          <li><a href="{:get_site_url('同兴')}">同兴派出所</a></li>
+                          <li><a href="{:get_site_url('兴隆')}">兴隆派出所</a></li>
                        </ul>
                     </div>
                    </li>
@@ -94,23 +93,22 @@
                      <div class="cty-ga" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('广安区公安')}">广安区公安分局</a></div>
                          <ul class="cty-List">
-                          <li>小井派出所</li>
-                          <li>浓回派出所</li>
-                          <li>方坪乡派出所</li>
-                          <li>苏溪派出所</li>
-                          <li>协兴派出所</li>
-                          <li>东岳派出所</li>
-                          <li>兴平派出所</li>
-                          <li>代市派出所</li>
-                          <li>观阁派出所</li>
-                          <li>花桥派出所</li>
-                          <li>恒升派出所</li>
-                          <li>白市派出所</li>
-                          <li>广福派出所</li>
-                          <li>石笋派出所</li>
-                          <li>大寨派出所</li>
-                          <li>万盛派出所</li>
-                          <li>北辰派出所</li>
+                           <li><a href="{:get_site_url('广福')}">广福派出所</a></li>
+                           <li><a href="{:get_site_url('万盛')}">万盛派出所</a></li>
+                           <li><a href="{:get_site_url('大寨')}">大寨派出所</a></li>
+                           <li><a href="{:get_site_url('中桥')}">中桥派出所</a></li>
+                           <li><a href="{:get_site_url('浓洄')}">浓洄派出所</a></li>
+                           <li><a href="{:get_site_url('北辰')}">北辰派出所</a></li>
+                           <li><a href="{:get_site_url('龙台')}">龙台派出所</a></li>
+                           <li><a href="{:get_site_url('官盛')}">官盛派出所</a></li>
+                           <li><a href="{:get_site_url('崇望')}">崇望派出所</a></li>
+                           <li><a href="{:get_site_url('悦来')}">悦来派出所</a></li>
+                           <li><a href="{:get_site_url('井河')}">井河派出所</a></li>
+                           <li><a href="{:get_site_url('花桥')}">花桥派出所</a></li>
+                           <li><a href="{:get_site_url('恒升')}">恒升派出所</a></li>
+                           <li><a href="{:get_site_url('肖溪')}">肖溪派出所</a></li>
+                           <li><a href="{:get_site_url('石笋')}">石笋派出所</a></li>
+                           <li><a href="{:get_site_url('大安')}">大安派出所</a></li>
                          </ul>
                      </div>
                    </li>
@@ -120,12 +118,11 @@
                      <div class="cty-xx" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('协兴园区公安')}">协兴园区公安分局</a></div>
                          <ul class="cty-List">
-                          <li>协兴派出所</li>
-                          <li>小平故里</li>
-                          <li>水上派出所</li>
-                          <li>浓溪派出所</li>
+                           <li><a href="{:get_site_url('协兴派出所')}">协兴派出所</a></li>
+                           <li><a href="{:get_site_url('邓小平故居派出所')}">邓小平故居派出所</a></li>
+                           <li><a href="{:get_site_url('浓溪')}">浓溪派出所</a></li>
                          </ul>
-                     </div
+                     </div>
                    </li>
                    
                    <li style="position:absolute; z-index:10; display:block; top:237px; left:495px; display:block;">
@@ -133,11 +130,11 @@
                      <div class="cty-jk" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('经开区公安')}">经开区公安分局</a></div>
                          <ul class="cty-List">
-                          <li>奎阁派出所</li>
-                          <li>护安派出所</li>
-                          <li>新桥派出所</li>
+                           <li><a href="{:get_site_url('奎阁')}">奎阁派出所</a></li>
+                           <li><a href="{:get_site_url('护安')}">护安派出所</a></li>
+                           <li><a href="{:get_site_url('新桥')}">新桥派出所</a></li>
                          </ul>
-                     </div
+                     </div>
                    </li>
                                                       
                    <li style="position:absolute; z-index:1; display:block; top:270px; left:437px; display:block;">
@@ -145,8 +142,10 @@
                      <div class="cty-zsyq" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('枣山园区公安')}">枣山园区公安分局</a></div>
                          <ul class="cty-List">
-                          <li>枣山派出所</li>
-                          <li>广门派出所</li>
+                           <li><a href="{:get_site_url('枣山派出所')}">枣山派出所</a></li>
+                           <li><a href="{:get_site_url('广门')}">广门派出所</a></li>
+                           <li><a href="{:get_site_url('穿石')}">穿石派出所</a></li>
+                           <li><a href="{:get_site_url('红庙')}">红庙派出所</a></li>
                          </ul>
                      </div>
                    </li>
@@ -156,19 +155,19 @@
                      <div class="cty-hj" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('华蓥市公安')}">华蓥市公安局</div>
                          <ul class="cty-List">
-                          <li>双河派出所</li>
-                          <li>天池派出所</li>
-                          <li>禄市派出所</li>
-                          <li>永兴派出所</li>
-                          <li>明月派出所</li>
-                          <li>阳和派出所</li>
-                          <li>高兴派出所</li>
-                          <li>溪口派出所</li>
-                          <li>华庆派出所</li>
-                          <li>红岩派出所</li>
-                          <li>古桥派出所</li>
-                          <li>观音派出所</li>
-                          <li>华龙派出所</li>
+                           <li><a href="{:get_site_url('双河')}">双河派出所</a></li>
+                           <li><a href="{:get_site_url('天池')}">天池派出所</a></li>
+                           <li><a href="{:get_site_url('红岩')}">红岩派出所</a></li>
+                           <li><a href="{:get_site_url('禄市')}">禄市派出所</a></li>
+                           <li><a href="{:get_site_url('华龙')}">华龙派出所</a></li>
+                           <li><a href="{:get_site_url('永兴')}">永兴派出所</a></li>
+                           <li><a href="{:get_site_url('明月')}">明月派出所</a></li>
+                           <li><a href="{:get_site_url('古桥')}">古桥派出所</a></li>
+                           <li><a href="{:get_site_url('阳和')}">阳和派出所</a></li>
+                           <li><a href="{:get_site_url('高兴')}">高兴派出所</a></li>
+                           <li><a href="{:get_site_url('观音溪')}">观音溪派出所</a></li>
+                           <li><a href="{:get_site_url('溪口')}">溪口派出所</a></li>
+                           <li><a href="{:get_site_url('庆华')}">庆华派出所</a></li>
                          </ul>
                      </div>
                    </li>
@@ -178,27 +177,22 @@
                      <div class="cty-ls" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('邻水县公安')}">邻水县公安局</a></div>
                          <ul class="cty-List">
-                          <li>九峰派出所</li>
-                          <li>鼎屏派出所</li>
-                          <li>城南派出所</li>
-                          <li>城北派出所</li>
-                          <li>梁桥派出所</li>
-                          <li>八耳派出所</li>
-                          <li>古路派出所</li>
-                          <li>复盛派出所</li>
-                          <li>九龙派出所</li>
-                          <li>高滩镇派出所</li>
-                          <li>龙安派出所</li>
-                          <li>柑子派出所</li>
-                          <li>王家派出所</li>
-                          <li>兴仁派出所</li>
-                          <li>城东派出所</li>
-                          <li>关河派出所</li>
-                          <li>牟家镇派出所</li>
-                          <li>西天派出所</li>
-                          <li>风垭乡派出所</li>
-                          <li>石滓派出所</li>
-                          <li>两河派出所</li>
+                           <li><a href="{:get_site_url('鼎屏')}">鼎屏派出所</a></li>
+                           <li><a href="{:get_site_url('邻水城东')}">城东派出所</a></li>
+                           <li><a href="{:get_site_url('邻水城北')}">城北派出所</a></li>
+                           <li><a href="{:get_site_url('邻水城南')}">城南派出所</a></li>
+                           <li><a href="{:get_site_url('柑子')}">柑子派出所</a></li>
+                           <li><a href="{:get_site_url('坛同')}">坛同派出所</a></li>
+                           <li><a href="{:get_site_url('高滩')}">高滩派出所</a></li>
+                           <li><a href="{:get_site_url('牟家')}">牟家派出所</a></li>
+                           <li><a href="{:get_site_url('合流')}">合流派出所</a></li>
+                           <li><a href="{:get_site_url('袁市')}">袁市派出所</a></li>
+                           <li><a href="{:get_site_url('九龙')}">九龙派出所</a></li>
+                           <li><a href="{:get_site_url('丰禾')}">丰禾派出所</a></li>
+                           <li><a href="{:get_site_url('石永')}">石永派出所</a></li>
+                           <li><a href="{:get_site_url('石滓')}">石滓派出所</a></li>
+                           <li><a href="{:get_site_url('王家')}">王家派出所</a></li>
+                           <li><a href="{:get_site_url('兴仁')}">兴仁派出所</a></li>
                          </ul>
                      </div>
                    </li>
@@ -208,16 +202,16 @@
                      <div class="cty-qf" id="dis">
                          <div class="cty-title"><a href="{:get_site_url('前锋区公安')}">前锋区公安分局</a></div>
                          <ul class="cty-List">
-                          <li>前锋派出所</li>
-                          <li>广兴派出所</li>
-                          <li>龙滩派出所</li>
-                          <li>观阁派出所</li>
-                          <li>小井派出所</li>
-                          <li>桂兴派出所</li>
-                          <li>虎城派出所</li>
-                          <li>观增派出所</li>
-                          <li>代市派出所</li>
-                          <li>光辉派出所</li>
+                           <li><a href="{:get_site_url('大佛寺')}">大佛寺派出所</a></li>
+                           <li><a href="{:get_site_url('广兴')}">广兴派出所</a></li>
+                           <li><a href="{:get_site_url('龙滩')}">龙滩派出所</a></li>
+                           <li><a href="{:get_site_url('观阁')}">观阁派出所</a></li>
+                           <li><a href="{:get_site_url('小井')}">小井派出所</a></li>
+                           <li><a href="{:get_site_url('桂兴')}">桂兴派出所</a></li>
+                           <li><a href="{:get_site_url('虎城')}">虎城派出所</a></li>
+                           <li><a href="{:get_site_url('观塘')}">观塘派出所</a></li>
+                           <li><a href="{:get_site_url('代市')}">代市派出所</a></li>
+                           <li><a href="{:get_site_url('光辉')}">光辉派出所</a></li>
                          </ul>
                      </div>
                    </li>
