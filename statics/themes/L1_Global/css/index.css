@@ -23,8 +23,8 @@ img{border:none}
 .service-menu{width:880px;height:90px;margin:0 10px}
 .service-menu ul{width:1120px;height:90px;margin:0;padding:0}
 .feature-service li{width:80px;height:80px;margin:5px 0 5px 40px;list-style:none}
-.service-menu img{margin:2px 20px}
-.service-menu a{width:100%;text-align:center;display:block;margin-top:10px;color:#fff}
+.service-menu img{margin:13px 21px 10px;width:40px;height:30px;}
+.service-menu a{width:100%;text-align:center;display:block;color:#fff}
 .service-menu a:hover{color:red;cursor:pointer}
 .search-logo{width:16px;height:17px;position:absolute;top:12px;left:10px}
 .top-logo{width:100%;height:165px;margin:0;padding:0;position:relative}
@@ -114,14 +114,14 @@ img{border:none}
 .work-next{right:5px}
 .work-next:hover,.work-prev:hover{background:#393939;cursor:pointer}
 .build-bottom-logo{width:1002px;height:91px;margin-bottom:10px;background-image:url(../images/build-logo.gif)}
-.feature-service{width:1002px;height:380px;margin-bottom:10px;background:url(../images/tesefuwu-bg.png) #fefdfd}
+.feature-service{width:1002px;height:390px;margin-bottom:10px;background:url(../images/tesefuwu-bg.png) #fefdfd}
 .bianmin-lbtn,.bianmin-rbtn{width:20px;height:60px}
 .interaction,.sunshine-police{height:132px;float:left;padding-top:40px;background-repeat:no-repeat}
 .bianmin-lbtn:hover,.bianmin-rbtn:hover{cursor:pointer;outline:#838383 solid 2px}
 .sunshine-police{width:650px;margin:20px 0 0 -26px;background-image:url(../images/sunshine-bg.png);border:1px solid #e0e0e0;border-top:none}
 .sunshine-police img{border:none;margin:10px 0 0 8px}
 .sunshine-police img:hover{margin-bottom:-5px}
-.interaction{width:338px;margin:20px 0 0 10px;background-image:url(../images/interaction-bg.png);border:1px solid #e0e0e0;border-top:none}
+.interaction{width:338px;margin:20px 0 0 5px;background-image:url(../images/interaction-bg.png);border:1px solid #e0e0e0;border-top:none}
 .interaction img{border:none;margin:13px 0 0 10px}
 .interaction img:hover{margin-bottom:-5px}
 .link-content{width:1002px;height:70px;background:#f0f0f0}

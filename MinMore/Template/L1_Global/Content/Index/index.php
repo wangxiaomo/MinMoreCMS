@@ -324,7 +324,7 @@
             <div class="service-menu">
                 <ul>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_1.png')">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/banshichaxun.png" alt="办事查询" style="margin-top: 13px"/><br/>
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/banshichaxun.png" alt="办事查询" /><br/>
                         <a href="#" class="disabled-link">办事查询</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_2.png')">
@@ -332,7 +332,7 @@
                         <a href="{:U('Content/Site/service_people')}">便民服务</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_3.png')">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/shiwuzhaoling.png" alt="失物招领" style="margin-left: 25px"/><br/>
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/shiwuzhaoling.png" alt="失物招领"/><br/>
                         <a href="{:getCategory(18,'url')}">{:getCategory(18,'catname')}</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_4.png')">
@@ -344,7 +344,7 @@
                         <a href="http://j.map.baidu.com/yc88C">电子地图</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_6.png')">
-                        <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示" style="margin-top: 13px"/><br/>
+                        <img src="{$config_siteurl}statics/themes/L1_Global/images/jingfangtishi.png" alt="警方提示"/><br/>
                         <a href="{:getCategory(3,'url')}">{:getCategory(3,'catname')}</a>
                     </li>
                     <li style="background-image:url('{$config_siteurl}statics/themes/L1_Global/images/bianmin_7.png')">
@@ -381,6 +381,7 @@
                             },4000
                     );
                 }
+                /*
                 servicecaurousel();
                 $(function(){
                     $(".service-menu li").hover(function(){
@@ -389,6 +390,7 @@
                         servicecaurousel()
                     });
                 });
+                */
                 //---------前进-----------
                 $(".bianmin-rbtn").hover(function(){
                     var $ul = $(".service-menu").find("ul");
