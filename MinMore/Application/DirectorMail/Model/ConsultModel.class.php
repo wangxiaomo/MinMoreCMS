@@ -64,6 +64,17 @@ class ConsultModel extends Model {
         }
         $id = $this->add($data);
         if ($id) {
+			$nowtime=time();
+			$flow=array(
+					'mailtype'=>3
+					,'subtype'=>$data['type']
+					,'mailid'=>$id
+					,'deptid'=>get_department_id()
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			$ret=M('workflow')->add($flow);
             return $id;
         }
         $this->error = '填写网上咨询失败！';

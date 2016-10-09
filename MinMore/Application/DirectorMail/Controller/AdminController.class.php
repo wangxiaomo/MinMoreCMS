@@ -10,12 +10,13 @@ class AdminController extends AdminBase {
     //信件模型
     private $db = NULL;
 
-    protected function _initialize() {
-        parent::_initialize();
-	$userInfo = User::getInstance()->getInfo();
-	$this->deptid=$userInfo['ouoid'];
-        $this->db = D('DirectorMail/Directormail');
-    }
+	protected function _initialize() {
+		parent::_initialize();
+		$userInfo = User::getInstance()->getInfo();
+		$this->deptid=$userInfo['ouoid'];
+		$this->mailtype=1;
+		$this->db = D('DirectorMail/Directormail');
+	}
 
     //后台首页
     public function index() {
@@ -49,79 +50,121 @@ class AdminController extends AdminBase {
     }
 
     //信件回复
-    public function reply() {
-        if (IS_POST) {
-            $id = I('post.id', 0, 'intval');
-            if (empty($id)) {
-                $this->error('回复信件错误！');
-            }
-            $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=$this->deptid){
-		$this->error("您无权回复该信件");
+	public function reply() {
+		if (IS_POST) {
+			$id = I('post.id', 0, 'intval');
+			if (empty($id)) {
+				$this->error('回复信件错误！');
+			}
+			$info = $this->db->where(array('id' => $id))->find();
+			if($info['deptid']!=$this->deptid){
+				$this->error("您无权回复该信件");
+			}
+			if (empty($info)) {
+				$this->error('该信件不存在！');
+			}
+			$reply = I('post.reply');
+			$qreply = I('post.quickreply');
+			if (empty($reply) && empty($qreply)) {
+				$this->error('回复内容不能为空！');
+			}
+			if ($this->db->replyDirectorMail(array('id' => $id, 'reply' => $reply))) {
+				$nowtime=time();
+				$endflow=array('mailid'=>$id
+						,'mailtype'=>$this->mailtype
+						,'deptid'=>$this->deptid
+						,'status'=>3
+						,'out'=>$nowtime
+						,'updatetime'=>$nowtime
+						);
+				D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
+				$this->success('回复成功！', U('index', "typeid={$info['tupeid']}&isadmin=1"));
+			} else {
+				$error = $this->db->getError();
+				$this->error($error ? $error : '回复失败！');
+			}
+		} else {
+			$id = I('get.id', 0, 'intval');
+			$info = $this->db->where(array('id' => $id))->find();
+			if($info['deptid']!=$this->deptid){
+				$this->error("您无权查看该信件");
+			}
+			$comments=M('comment')->where(array('mailid'=>$id,'mailtype'=>1))->order(array('createtime'=>asc))->select();
+			C('DB_PREFIX',"");
+			foreach($comments as &$cmt){
+				$cmt['from']=M("huoyi_office")->where(array('id'=>$cmd['from']))->getField('oname');
+				//$cmt['to']=M("huoyi_office")->where(array('id'=>$cmd['to']))->getField('oname');
+			}
+			C('DB_PREFIX',"minmore_");
+			$quickreply = M('DirectormailQuickreply')->where(array('roleid'=>get_admin_role()))->getField('quickreply', true);
+			if (empty($info)) {
+				$this->error('该信件不存在！');
+			}
+			if (!empty($quickreply)) {
+				$this->assign('quickreply', $quickreply);    
+			}
+			if (!empty($comments)) {
+				$this->assign('comments', $comments);    
+			}
+			$this->assign('info', $info);
+			$this->display();
 		}
-            if (empty($info)) {
-                $this->error('该信件不存在！');
-            }
-            $reply = I('post.reply');
-            $qreply = I('post.quickreply');
-            if (empty($reply) && empty($qreply)) {
-                $this->error('回复内容不能为空！');
-            }
-            if ($this->db->replyDirectorMail(array('id' => $id, 'reply' => $reply))) {
-                $this->success('回复成功！', U('index', "typeid={$info['tupeid']}&isadmin=1"));
-            } else {
-                $error = $this->db->getError();
-                $this->error($error ? $error : '回复失败！');
-            }
-        } else {
-            $id = I('get.id', 0, 'intval');
-            $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=$this->deptid){
-		$this->error("您无权查看该信件");
-		}
-	    $comments=M('comment')->where(array('mailid'=>$id,'mailtype'=>1))->order(array('createtime'=>asc))->select();
-	C('DB_PREFIX',"");
-	    foreach($comments as &$cmt){
-			$cmt['from']=M("huoyi_office")->where(array('id'=>$cmd['from']))->getField('oname');
-			//$cmt['to']=M("huoyi_office")->where(array('id'=>$cmd['to']))->getField('oname');
-		}
-	C('DB_PREFIX',"minmore_");
-            $quickreply = M('DirectormailQuickreply')->where(array('roleid'=>get_admin_role()))->getField('quickreply', true);
-            if (empty($info)) {
-                $this->error('该信件不存在！');
-            }
-            if (!empty($quickreply)) {
-                $this->assign('quickreply', $quickreply);    
-            }
-            if (!empty($comments)) {
-                $this->assign('comments', $comments);    
-            }
-            $this->assign('info', $info);
-            $this->display();
-        }
-    }
+	}
 
     //删除信件
-    public function delete() {
-        if (IS_POST) {
-            $ids = I('post.ids');
-        } else {
-            $ids = I('get.id', 0, 'intval');
-        }
-	    $info = $this->db->where(array('id' => $id))->find();
-	    if($info['deptid']!=$this->deptid){
-		$this->error("您无权查看该信件");
+	public function delete() {
+		if (IS_POST) {
+			$ids = I('post.ids');
+		} else {
+			$ids = I('get.id', 0, 'intval');
 		}
-        if (empty($ids)) {
-            $this->error('请指定需要删除的信件！');
-        }
-        if ($this->db->deleteDirectorMail($ids)) {
-            $this->success('信件删除成功！');
-        } else {
-            $error = $this->db->getError();
-            $this->error($error ? $error : '删除失败！');
-        }
-    }
+		if (empty($ids)) {
+			$this->error('请指定需要删除的信件！');
+		}
+		if(!is_array($ids)){
+			$info = $this->db->where(array('id' => $ids))->find();
+			if($info['deptid']!=$this->deptid){
+				$this->error("您无权查看该信件");
+			}
+		}else{
+			foreach($ids as $id){
+				$info = $this->db->where(array('id' => $id))->find();
+				if($info['deptid']!=$this->deptid){
+					$this->error("您无权查看该信件");
+				}
+			}
+		}
+		if ($this->db->deleteDirectorMail($ids)) {
+			$nowtime=time();
+			if(!is_array($ids)){
+				$id=$ids;
+				$endflow=array('mailid'=>$id
+						,'mailtype'=>$this->mailtype
+						,'deptid'=>$this->deptid
+						,'status'=>2
+						,'out'=>$nowtime
+						,'updatetime'=>$nowtime
+						);
+				D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
+			}
+			else{
+				foreach($ids as $id){
+					$endflow=array('mailid'=>$id
+							,'mailtype'=>$this->mailtype
+							,'deptid'=>$this->deptid
+							,'status'=>2
+							,'out'=>$nowtime
+							,'updatetime'=>$nowtime
+							);
+					D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
+				}
+			}
+			$this->success('信件删除成功！');
+		} else {
+			$error = $this->db->getError();
+			$this->error($error ? $error : '删除失败！');
+		}
+	}
 
     //信件类型管理
     public function type() {
@@ -271,18 +314,37 @@ class AdminController extends AdminBase {
 				$flag=0;		
 				$error = $this->db->getError();
 			}
+			$nowtime=time();
 			$forward=array('mailid'=>$mailid
 					,'mailtype'=>$mailtype
 					,'from'=>$source
 					,'to'=>$target
 					,'comment'=>$comment
-					,'createtime'=>date("Y-m-d H:i:s")
+					,'createtime'=>date("Y-m-d H:i:s",$nowtime)
 					);
 			$ret=D("comment")->add($forward);
 			if(!$ret){
 				$flag=0;		
 				$error=$M_comment->getError();
 			}
+
+			$endflow=array('mailid'=>$mailid
+					,'mailtype'=>$mailtype
+					,'deptid'=>$source
+					,'status'=>1
+					,'out'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			D('workflow')->where(array('mailtype'=>$mailtype,'mailid'=>$mailid,'deptid'=>$source))->save($endflow);
+			$startflow=array('mailid'=>$mailid
+					,'mailtype'=>$mailtype
+					,'deptid'=>$target
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			D('workflow')->add($startflow);
+
 			if(!$flag){
 				$this->db->rollback();
 				$this->error($error ? $error : '转发失败！');

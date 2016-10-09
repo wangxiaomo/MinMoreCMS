@@ -10,9 +10,17 @@
 
 namespace Admin\Controller;
 
+use Admin\Service\User;
 use Common\Controller\AdminBase;
 
 class MainController extends AdminBase {
+
+	protected function _initialize() {
+
+		parent::_initialize();
+		$userInfo = User::getInstance()->getInfo();
+		$this->deptid=$userInfo['ouoid']?$userInfo['ouoid']:0;
+	}
 
     public function index() {
         //服务器信息
@@ -29,6 +37,17 @@ class MainController extends AdminBase {
             '剩余空间' => round((@disk_free_space(".") / (1024 * 1024)), 2) . 'M',
         );
 
+		$todo=array(
+				'局长信箱'=>array('link'=>U('DirectorMail/Admin/index'),'count'=>$this->getTodoCount($this->deptid,1)),
+				'代表委员信箱'=>array('link'=>U('DirectorMail/Memberadmin/index'),'count'=>$this->getTodoCount($this->deptid,2)),
+				'网上举报'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'wsjb')),'count'=>$this->getTodoCount($this->deptid,3,'wsjb')),
+				'群众投诉'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'qzts')),'count'=>$this->getTodoCount($this->deptid,3,'qzts')),
+				'网上咨询'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'wszx')),'count'=>$this->getTodoCount($this->deptid,3,'wszx')),
+				'建言献策'=>array('link'=>U('DirectorMail/Consultadmin/index',array('type'=>'jyxc')),'count'=>$this->getTodoCount($this->deptid,3,'jyxc')),
+				'网上信访'=>array('link'=>U('DirectorMail/AdminPetition/index'),'count'=>$this->getTodoCount($this->deptid,4))
+				);
+
+        $this->assign('todo_list', $todo);
         $this->assign('server_info', $info);
         $this->display();
     }
@@ -60,5 +79,24 @@ class MainController extends AdminBase {
         }
         $this->ajaxReturn($data);
     }
+
+	private function getTodoCount($deptid=null,$mailtype=null,$subtype=null){
+		$mWorkflow=M('workflow');
+		$map['status']=array('eq',0);
+		if($mailtype!=null){
+			$where['mailtype']=$mailtype;
+		}
+		if($subtype!=null){
+			$where['subtype']=$subtype;
+		}
+		if($deptid!=null){
+			$where['deptid']=$deptid;
+		}else{
+			$where['deptid']='0';
+		}
+			$count=$mWorkflow->where($map)->where($where)->count();
+			$count=$count?$count:0;
+			return $count;
+	}
 
 }

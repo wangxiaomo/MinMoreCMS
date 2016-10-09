@@ -29,11 +29,11 @@ $(function(){
     return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
   };
   var serviceSummaryData = {
-    labels: ['局长信箱', '代表委员会', '网上举报', '群众投诉', '网上咨询', '建言献策', '网上信访'],
+    labels: {$sumaryLabel},
     datasets: [{
       backgroundColor: _.times(7, randomColor),
-      data: [20,30,40,10,2,10,30]
-    }]
+      data: {$sumaryData}
+	  }]
   };
   var serviceSummaryDataChart = new Chart($("#service-summary-data"), {
     type: 'polarArea',
@@ -49,20 +49,16 @@ $(function(){
     }
   });
   var serviceData = {
-    labels: ['1月', '2月', '3月', '4月', '5月'],
+    labels: {$trendMonth},
     datasets: [
+	<volist name="trendData" id="vo">
       {
-        label: '局长信箱',
+        label: {$key},
         fill: false,
-        data: [10,30,44,70,90],
+        data: {$vo},
         backgroundColor: randomColor(),
-      },
-      {
-        label: '代表委员会',
-        fill: false,
-        data: [0,11,13,25,90],
-        backgroundColor: randomColor(),
-      }
+      }<if condition="$i neq count($trendData)">,</if>
+	</volist>
     ]
   };
   _.map(serviceData.datasets, function(n){
@@ -79,23 +75,16 @@ $(function(){
     }
   });
   var responseSpeedData = {
-    labels: ['局长信箱', '代表委员会', '网上举报', '群众投诉', '网上咨询', '建言献策', '网上信访'],
+    labels: {$responseLabel},
     datasets: [
+	<volist name="responseData" id="vo">
       {
-        label: '三天内',
+        label: {$key},
         backgroundColor: randomColor(),
-        data: [10,30,20,5,4,40,3]
-      },
-      {
-        label: '七天内',
+        data: {$vo},
         backgroundColor: randomColor(),
-        data: [5,10,3,1,14,20,2]
-      },
-      {
-        label: '七天后',
-        backgroundColor: randomColor(),
-        data: [15,20,13,0,4,5,4]
-      }
+      }<if condition="$i neq count($responseData)">,</if>
+	</volist>
     ]
   };
   var responseSpeedChart = new Chart($("#response-speed-data"), {

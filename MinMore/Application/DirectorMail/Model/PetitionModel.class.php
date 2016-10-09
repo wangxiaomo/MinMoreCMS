@@ -64,12 +64,21 @@ class PetitionModel extends Model {
         if (!$data) {
             return false;
         }
-        //检查信件类型是否存在
         $db = M('petition');
         $id = $this->add($data);
-        if ($id) {
-            return $id;
-        }
+		if ($id) {
+			$nowtime=time();
+			$flow=array(
+					'mailtype'=>1
+					,'mailid'=>$id
+					,'deptid'=>get_department_id()
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			$ret=M('workflow')->add($flow);
+			return $id;
+		}
         $this->error = '填写信件失败！';
         return false;
     }

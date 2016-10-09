@@ -3,6 +3,21 @@
 <body>
 <div class="wrap">
   <div id="home_toptip"></div>
+  <h2 class="h_a">待处理业务</h2>
+  <div class="home_info">
+    <ul>
+      <volist name="todo_list" id="vo">
+        <li>
+	   	<em>{$key}:</em>
+			<if condition="$vo['count'] neq 0">
+			<a href="{$vo['link']}" target="_blank">(<h style="color:red">{$vo['count']}</h>件待处理) 立即处理>></a> 
+			<else/>
+			暂无待处理
+			</if>
+		</li>
+      </volist>
+    </ul>
+  </div>
   <h2 class="h_a">系统信息</h2>
   <div class="home_info">
     <ul>

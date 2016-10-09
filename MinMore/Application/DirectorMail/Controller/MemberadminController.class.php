@@ -10,12 +10,13 @@ class MemberadminController extends AdminBase {
     //信件模型
     private $db = NULL;
 
-    protected function _initialize() {
-        parent::_initialize();
-	$userInfo = User::getInstance()->getInfo();
-	$this->deptid=$userInfo['ouoid'];
-        $this->db = D('DirectorMail/Membermail');
-    }
+	protected function _initialize() {
+		parent::_initialize();
+		$userInfo = User::getInstance()->getInfo();
+		$this->deptid=$userInfo['ouoid'];
+		$this->mailtype=2;
+		$this->db = D('DirectorMail/Membermail');
+	}
 
     //后台首页
     public function index() {
@@ -62,6 +63,15 @@ class MemberadminController extends AdminBase {
                 $this->error('回复内容不能为空！');
             }
             if ($this->db->replyMembermail(array('id' => $id, 'reply' => $reply))) {
+				$nowtime=time();
+				$endflow=array('mailid'=>$id
+						,'mailtype'=>$this->mailtype
+						,'deptid'=>$this->deptid
+						,'status'=>3
+						,'out'=>$nowtime
+						,'updatetime'=>$nowtime
+						);
+				D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
                 $this->success('回复成功！', U('index', "typeid={$info['tupeid']}&isadmin=1"));
             } else {
                 $error = $this->db->getError();
@@ -107,7 +117,44 @@ class MemberadminController extends AdminBase {
         if (empty($ids)) {
             $this->error('请指定需要删除的信件！');
         }
+		if(!is_array($ids)){
+			$info = $this->db->where(array('id' => $ids))->find();
+			if($info['deptid']!=$this->deptid){
+				$this->error("您无权查看该信件");
+			}
+		}else{
+			foreach($ids as $id){
+				$info = $this->db->where(array('id' => $id))->find();
+				if($info['deptid']!=$this->deptid){
+					$this->error("您无权查看该信件");
+				}
+			}
+		}
         if ($this->db->deleteMembermail($ids)) {
+			$nowtime=time();
+			if(!is_array($ids)){
+				$id=$ids;
+				$endflow=array('mailid'=>$id
+						,'mailtype'=>$this->mailtype
+						,'deptid'=>$this->deptid
+						,'status'=>2
+						,'out'=>$nowtime
+						,'updatetime'=>$nowtime
+						);
+				D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
+			}
+			else{
+				foreach($ids as $id){
+					$endflow=array('mailid'=>$id
+							,'mailtype'=>$this->mailtype
+							,'deptid'=>$this->deptid
+							,'status'=>2
+							,'out'=>$nowtime
+							,'updatetime'=>$nowtime
+							);
+					D('workflow')->where(array('mailtype'=>$this->mailtype,'mailid'=>$id,'deptid'=>$this->deptid))->save($endflow);
+				}
+			}
             $this->success('信件删除成功！');
         } else {
             $error = $this->db->getError();
@@ -220,18 +267,38 @@ class MemberadminController extends AdminBase {
 				$flag=0;		
 				$error = $this->db->getError();
 			}
+			$nowtime=time();
 			$forward=array('mailid'=>$mailid
 					,'mailtype'=>$mailtype
 					,'from'=>$source
 					,'to'=>$target
 					,'comment'=>$comment
-					,'createtime'=>date("Y-m-d H:i:s")
+					,'createtime'=>date("Y-m-d H:i:s",$nowtime)
 					);
 			$ret=D("comment")->add($forward);
 			if(!$ret){
 				$flag=0;		
 				$error=$M_comment->getError();
 			}
+
+
+			$endflow=array('mailid'=>$mailid
+					,'mailtype'=>$mailtype
+					,'deptid'=>$source
+					,'status'=>1
+					,'out'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			D('workflow')->where(array('mailtype'=>$mailtype,'mailid'=>$mailid,'deptid'=>$source))->save($endflow);
+			$startflow=array('mailid'=>$mailid
+					,'mailtype'=>$mailtype
+					,'deptid'=>$target
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			D('workflow')->add($startflow);
+
 			if(!$flag){
 				$this->db->rollback();
 				$this->error($error ? $error : '转发失败！');

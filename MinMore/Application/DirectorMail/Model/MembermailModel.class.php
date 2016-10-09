@@ -58,6 +58,16 @@ class MembermailModel extends Model {
         }
         $id = $this->add($data);
         if ($id) {
+			$nowtime=time();
+			$flow=array(
+					'mailtype'=>2
+					,'mailid'=>$id
+					,'deptid'=>get_department_id()
+					,'status'=>0
+					,'in'=>$nowtime
+					,'updatetime'=>$nowtime
+					);
+			$ret=M('workflow')->add($flow);
             return $id;
         }
         $this->error = '提交建议失败！';
