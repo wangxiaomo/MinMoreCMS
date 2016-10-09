@@ -1,0 +1,708 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    color: #4b4344;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li,a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #4b4344;
+}
+img{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.main{
+    width: 100%;
+    height: 2041px;
+    margin: 0 auto;
+    position: relative;
+    background: url("../images/mainbackground.png") fixed;
+    overflow: hidden;
+}
+.head{
+    width: 1000px;
+    height: 248px;
+    margin: 0 auto;
+    background: url("../images/top-logobg.png") no-repeat;
+    background-position: 0 32px;
+}
+.content{
+    width: 1000px;
+    height: 1773px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+/*-------------------头部导航---------------*/
+.top-nav{
+    width: 1000px;
+    height: 38px;
+    background-image: url("../images/top-nav-bg.png");
+}
+.top-nav-img,.user-action,.nav-weather,.nav-search{
+    float: left;
+}
+.user-action{
+    width: 300px;
+    height: 38px;
+    margin-right: 20px;
+}
+.top-nav-img{
+    width: 21px;
+    height: 21px;
+    margin:0 10px 0 35px;
+    padding-top: 9px;
+}
+.user-action a{
+    text-decoration: none;
+    color: #fff;
+    line-height: 38px;
+    margin-right: 20px;
+}
+.user-action a:hover{
+    color: red;
+}
+.nav-weather{
+    width: 375px;
+    height: 38px;line-height:38px;vertical-align:middle;
+    color: #fff;
+}
+.nav-search{
+    position: relative;
+    padding-top: 8px;
+}
+.nav-search .search-box{
+    width: 135px;
+    padding-left: 30px;
+    border-radius: 8px;
+    outline: none;
+}
+.nav-search .search-btn{
+    background-color: #f7a52c;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+    outline: none;
+}
+.search-logo{
+    width: 16px;
+    height: 17px;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+/*---公安标志----*/
+.top-logo{
+    width: 100%;
+    height: 165px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.public-logo,.view-window{
+    float: left;
+}
+.top-logo .public-logo{
+    width: 600px;
+    height: 165px;
+    background-image: url("../images/banner-logo_1.png");
+    background-repeat: no-repeat;
+    background-position: -33px -30px;
+}
+.public-logo img{
+    width: 339px;
+    height: 89px;
+    margin: 40px 0 0 250px;
+    opacity: 0.1;
+}
+.top-logo .view-window{
+    width: 325px;
+    height: 165px;
+    position: relative;
+    margin-left: 50px;
+}
+.banner{
+    width: 350px;
+    height: 165px;
+    overflow: hidden;
+}
+.imgList{
+    width:350px;
+    height:165px;
+    z-index: 10;
+}
+.imgList li{
+    display: none;
+}
+.imgList .imgOn{
+    display: inline;
+}
+.banner-sign{
+    width: 350px;
+    height: 165px;
+    position: absolute;
+    left: 600px;
+    top: 0;
+}
+
+/*-----------------导航栏----------------*/
+.banner-nav{
+    width: 1002px;
+    height: 45px;
+}
+.banner-nav li{
+    width: 167px;
+    height: 45px;
+    background: #2f6ebe;
+    line-height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial,Verdana,Sans-serif;
+    color: #ffffff;
+    float: left;
+    text-align: center;
+}
+.banner-nav li.on,
+.banner-nav li:hover{
+    background: #e5840d;
+}
+
+/*-----------------资讯概况----------------*/
+.survey-news{
+    width: 1000px;
+    height: 302px;
+    background: #ffffff;
+    padding-top: 13px;
+}
+.survey-content{
+    width: 1000px;
+    height: 300px;
+    position: relative;
+}
+
+/*资讯轮播*/
+.news-carousel,.news-active{
+    float: left;
+}
+.news-carousel{
+    width: 560px;
+    height: 300px;
+    overflow: hidden;
+}
+#myjQuery {
+    background: #000;
+    overflow: hidden;
+    width: 560px;
+    position: relative;
+    height: 300px;
+}
+#myjQueryContent {
+    overflow: hidden;
+    width: 560px;
+    height: 300px;
+}
+#myjQueryContent div {
+    position: absolute;
+    height: 300px;
+}
+#myjQueryContent .smask { z-index: -1; }
+#myjQueryContent img {
+    width: 560px;
+    height: 300px;
+    border: 0;
+}
+#myjQueryNav {
+    display: block;
+    text-align:center;
+    overflow: hidden;
+    width: 560px;
+    height: 40px;
+    position: absolute;
+    top: 260px;
+    left: 0;
+    z-index: 5;
+    background: rgba(0,0,0,0.5);
+    text-align:center;
+}
+#myjQueryNav li {
+    display: inline;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 5px;
+    background: #666;
+    color: #fff;
+}
+#myjQueryNav img{
+    width: 80px;
+    height: 40px;
+}
+#myjQueryNav .nbg { outline: solid white 2px }
+#myjQueryNav a {
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    width: 45px;
+    color: #ffffff;
+    line-height: 22px;
+    position: relative;
+    height: 22px;
+    z-index: 20;
+}
+#myjQueryNav .current { background: #347e0d; }
+#myjQueryNav .current A { color: #fff; }
+
+/*活动简介*/
+.news-active{
+    width: 431px;
+    height: 300px;
+    margin-left: 7px;
+    background: #f4ffff;
+    border: 1px solid black;
+    position: relative;
+}
+.news-active h3{
+    width: 100%;
+    text-align: center;
+    color: red;
+    margin: 15px 0;
+}
+.news-active p{
+    width: 370px;
+    height: 70px;
+    margin: 0;
+    padding: 0 10px;
+}
+.news-active span {
+    line-height:20px;
+}
+.news-active .news-divline{
+    width: 400px;
+    height: 1px;
+    border-top: 1px dashed black;
+    margin: 0 auto;
+    margin-bottom:10px;
+}
+.news-active a{
+    text-decoration: none;
+}
+.news-active ul{
+    width: 393px;
+    padding: 0;
+    margin: 0;
+}
+.news-active li{
+    width: 393px;
+    list-style: none;
+    padding:5px;
+    height:20px;
+}
+.news-active li:hover{
+    background: #b3f8ff;
+}
+.news-active li a{
+    margin-left: 20px;
+}
+.news-active .news-more{
+    position: absolute;
+    top: 15px;
+    left: 370px;
+}
+
+.mail-connect{
+    width: 1000px;
+    height: 90px;
+    background: #ffffff;
+}
+.mail-connect li{
+    margin:5px 9px 0 0;
+    float: left;
+}
+.mail-connect li:first-child{
+    margin-left: 1px;
+}
+.mail-connect img{
+    border: none;
+}
+/*---------资讯内容----------*/
+.police-news{
+    width: 1000px;
+    height: 852px;
+    background: #ffffff;
+    padding-top: 5px;
+}
+.news-top{
+    width: 1000px;
+    height: 520px;
+}
+.police-news h3,.police-style h3{
+    width: 160px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin:0;
+    color: #fff;
+    float: left;
+}
+.more-news{
+    margin: 10px 5px 0 0;
+    float: right;
+}
+.police-news a:hover{
+    color: #286bca;
+}
+.public-collect li,.notice-news li,.police-report li,.police-active li,.police-case li{
+    width: 100%;
+    height: 19px;
+    list-style: inherit;
+    font-size: 14px;
+    color: #2782e0;
+    margin: 6px;
+}
+.public-collect-con,.notice-news-con,.police-report-con,.police-active-con,.police-case-con{
+    width: 265px;
+    height: 13px;
+    line-height: 13px;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.public-collect-time,.notice-news-time,.police-report-time,.police-active-time,.police-case-time{
+    width: 40px;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    display: inline-block;
+    margin: -3px 0 0 20px;
+    color: #000;
+}
+/*公示公告*/
+.notice-news{
+    width:369px;
+    height: 255px;
+    background-image: url("../images/news-bg1.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 3px;
+}
+.notice-news ul,.police-active ul,.public-collect ul,.police-report ul{
+    width:349px;
+    height: 215px;
+    margin:45px 0 0 19px;
+}
+/*警务动态*/
+.police-active{
+    width:369px;
+    height: 255px;
+    background-image: url("../images/news-bg1.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-left:7px;
+}
+
+/*案侦快讯*/
+.police-case{
+    width:242px;
+    height: 255px;
+    background-image: url("../images/news-bg3.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-left:7px;
+}
+.police-case ul{
+    width:222px;
+    height: 215px;
+    margin:45px 0 0 19px;
+}
+.police-case-con{
+    width: 150px;
+}
+/*民意征集*/
+.public-collect{
+    width:369px;
+    height: 255px;
+    background-image: url("../images/news-bg1.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin:7px 0 0 3px;
+}
+/*警方报道*/
+.police-report{
+    width:369px;
+    height: 255px;
+    background-image: url("../images/news-bg1.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin:7px 0 0 7px;
+}
+.police-report-small {
+  height:214px;border-bottom:1px solid #ccc;
+}
+/*警方视频*/
+.police-video{
+    width:242px;
+    height: 255px;
+    background-image: url("../images/news-bg3.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin:7px 0 0 7px;
+}
+.news-mid img{
+   margin: 10px 0 7px 2px;
+}
+/*在线访谈/在线调查*/
+.visit-online,.investigate-online{
+    width:369px;
+    height: 221px;
+    background-image: url("../images/news-bg2.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-left:3px;
+}
+.visit-content,.investigate-content{
+    width: 345px;
+    height: 160px;
+    margin: 50px 0 0 19px;
+    overflow: auto;
+}
+.visit-content p,.investigate-content p{
+    width: 310px;
+    margin: 5px 0;
+    font-size: 14px;
+}
+/*快速链接*/
+.fast-link{
+    width: 241px;
+    height: 221px;
+    float: left;
+    margin-left: 7px;
+    margin-top: 6px;
+}
+.fast-link p{
+    width: 241px;
+    height: 68px;
+    margin: 2px 0 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    line-height: 68px;
+}
+.fast-link p:hover{
+    font-size: 25px;
+    color: #000000;
+}
+/*--------------警营风采----------------*/
+.style-bg{
+    width: 1000px;
+    height: 247px;
+    background: #ffffff;
+}
+.police-style{
+    width: 988px;
+    height: 227px;
+    background-image: url("../images/police-style-bg.png");
+    margin:0 6px;
+    overflow: hidden;
+    border-right:1px solid #c9c9c9;
+}
+.police-style ul{
+    width: 1350px;
+    height: 180px;
+    margin: 45px 2px;
+}
+.police-style li{
+    float: left;
+    margin-right: 14px;
+    margin-left: 1px;
+}
+.police-style a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+.police-style img{
+    width: 185px;
+    height: 145px;
+}
+.police-style p{
+    width: 185px;
+    height: 20px;
+    margin: 0;
+    text-align: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/*-------------foot-----------------*/
+.bottom-content{
+    width: 1000px;
+    height: 315px;
+    margin: 10px auto;
+}
+.bottom-branch{
+    width: 1000px;
+    height: 40px;
+    background: #ffffff;
+    background-image: url("../images/bottom-branch-bg.png");
+}
+.bottom-branch p{
+    width: 190px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+.bottom-branch a{
+    display: inline-block;
+    width: 83px;
+    height: 40px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+.friendly-link{
+    width: 1000px;
+    height: 41px;
+    background: #d9d9d9;
+    border-top: 4px solid #0a62be;
+    margin-top: 2px;
+}
+.friendly-link p{
+    width: 265px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin: 0;
+    float: left;
+}
+.friendly-link ul{
+    float: left;
+}
+.friendly-link li{
+    width: 130px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    float: left;
+}
+.friendly-link li:hover{
+    background: #f0f0f0;
+}
+.link-content{
+    background: #f0f0f0;
+    float:left;
+}
+.link-content a{
+    text-decoration: none;
+    color: #000000;
+    line-height: 45px;
+    padding: 0 30px;
+    display:block;
+    height:45px;
+    width:auto;
+    float:left;
+}
+.link-content a:hover{
+    color: #0a62be;
+}
+.introduce-info{
+    width: 1000px;
+    height: 110px;
+    padding-top: 30px;
+    background: #ffffff;
+}
+.introduce-info p{
+    width: 1000px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.introduce-info a{
+    text-decoration: none;
+    color: #000000;
+}
+.introduce-info a:hover{
+    color: red;
+}
+.fast-nav{
+    width: 150px;
+    height: 166px;
+    background-image: url("../images/fast-nav.png");
+    background-position:5px;
+    position: absolute;
+    top: 400px;
+    left: -119px;
+}
+.fast-nav p{
+    width: 20px;
+    float: right;
+    text-align: center;
+    margin: 40px 7px 0 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+.work-build-nav{
+    width: 119px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/work-build-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
+}
+.work-build-nav p{
+    margin-top: 60px;
+}
+.work-build-nav p:hover{
+    color: black;
+}
+.police-news-nav{
+    width: 91px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/police-news-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
+}
+.sunshine-nav{
+    width: 63px;
+    height: 166px;
+    float: left;
+    background-image: url("../images/sunshine-nav.png");
+    background-position:28px;
+    background-repeat:no-repeat;
+}
+.home-nav{
+    width: 30px;
+    height: 166px;
+    float: left;
+    background:#1869A2;
+    border-radius:0px 8px 8px 0px;
+    box-shadow:1px 1px 2px #555;
+}
+.erweima{
+    width: 120px;
+    position: fixed;
+    bottom: 20%;
+    top: 20%;
+    left: 50%;
+    margin-left: 520px;
+}
+.erweima img{
+    margin: 10px 0;
+}

@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    color: #4b4344;
+}
+
+ul,li,dl,dt,dd,tr,td,table{
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+/*--电子地图--*/
+.map{width:1000px; height:auto; overflow:hidden; background-color:#FFF}
+.map-top{width:100%; height:auto; overflow:hidden; margin:10px auto}
+.map-top dt{float:left; font-size:14px; margin:0px 10px; line-height:23px}
+.map-top dd{background:url(../images/map11.png) no-repeat; width:78px; height:23px; line-height:23px; float:left; text-align:center; margin-right:10px}
+.map-MaxPic{width:1000px; height:860px; overflow:hidden; background:url(../images/mapBG.png) no-repeat; padding:10px 0px 0px;}
+.bottom-content {margin:0px;}
+.map-MaxPic p{text-align:center}
+.map-Img{width:1000px; height:860px; overflow:hidden; z-index:1; position:relative; background:url(../images/map01.png) no-repeat center top}
+.map-Img li{z-index:2}
+.map-Img ul li #dis {display:none; border-top:solid 1px #e5e5e5}
+
+.map-Img ul li:hover #dis,.map-Img ul li a:hover #dis,.map-Img ul li a:active #dis{display:block}
+
+
+.cty-ws{width:362px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:200px; z-index:99}
+.cty-yc{width:362px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:-100px; z-index:99; left:-200px;}
+.cty-ga{width:362px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:-50px; z-index:99; left:100px;}
+.cty-xx{width:213px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:-50px; z-index:99; left:20px;}
+.cty-jk{width:182px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:50px; z-index:99; left:0px;}
+.cty-zsyq{width:198px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:50px; z-index:99; left:0px;}
+.cty-qf{width:274px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:50px; z-index:999; left:20px;}
+.cty-hj{width:194px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:50px; z-index:99; left:-100px;}
+.cty-ls{width:362px; height:auto; overflow:hidden; background-color:#FFF; -moz-border-radius:10px; border-radius:10px; position:absolute; display:none; top:100px; z-index:99; left:-100px;}
+.cty-title{width:100%; height:auto; overflow:hidden; text-align:left; margin:10px auto; padding-left:10px; font-size:18px; color:#19559e; font-weight:bold}
+.cty-title a,.cty-title a:visited,.cty-title a:active { color:#19559e;}
+.cty-List{width:100%; height:auto; overflow:hidden; margin:0 auto}
+.cty-List li{background:url(../images/map13.png) no-repeat; width:80px; height:21px; line-height:21px; font-size:12px; float:left;  margin:0px 0px 10px 8px; text-align:center; cursor:hand}
+.cty-List li, .cty-List li a{color:#323232; text-decoration: none;}

@@ -1,366 +1,68 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 微软雅黑;
-    color: #4b4344;
-}
-ul,p{
-    margin: 0;
-    padding: 0;
-}
-li,a{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    color: #4b4344;
-}
-img{
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-.main{
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    background: url("../images/main-bg.png") fixed;
-    background-position: -50px 0;
-    overflow: hidden;
-}
-.content{
-    width: 1072px;
-    margin: 0 auto;
-}
-.move-top{
-    width: 60px;
-    height: 60px;
-    background-image: url("../images/move-top.png");
-    position: fixed;
-    bottom: 4%;
-    left: 50%;
-    margin-left: 560px;
-}
-/*-----------head-----------------*/
-.head{
-    width: 1072px;
-    height: 193px;
-    background-image: url("../images/head-logo-bg.png");
-    background-position: 75px 70px;
-    background-repeat: no-repeat;
-    padding: 1px;
-}
-/*------------body-con---------------*/
-.body-con{
-    width: 1072px;
-    height: 1050px;
-    background: #fff;
-    margin-top: 100px;
-}
-.body-top{
-    width: 1072px;
-    height: 30px;
-    line-height: 22px;
-    background: #46b3f5;
-}
-.body-top img{
-    margin-top: 4px;
-    float: left;
-    margin-left: 10px;
-}
-.body-top p{
-    width: 200px;
-    height: 30px;
-    line-height: 30px;
-    float: left;
-    color: #fff;
-}
-.body-top a{
-    height: 30px;
-    line-height: 30px;
-    float: right;
-    color: #fff;
-    margin-right: 10px;
-}
-.body-top a:hover{
-    color: #e9a733;
-}
-.query-area{
-    width: 701px;
-    height: 280px;
-    background: url("../images/query-condition.png") no-repeat;
-    margin: 20px auto;
-}
-.alarm-query {
-    background: url("../images/query-condition2.png") no-repeat;
-}
-.query-condition{
-    width: 350px;
-    height: 280px;
-    margin-left: 330px;
-}
-.query-condition h3{
-    width: 350px;
-    height: 70px;
-    line-height: 70px;
-    margin: 0;
-    text-align: center;
-    color: #0048b1;
-}
-.query-condition p{
-    width: 350px;
-    height: 35px;
-    line-height: 35px;
-}
-.case-num input,.phone-num input{
-    width: 250px;
-}
-.phone-num,.phone-code{
-    text-indent: 15px;
-}
-.phone-code input{
-     width: 120px;
- }
-.query-btn{
-    text-align: center;
-    margin-top: 15px;
-}
-.query-btn input{
-    width: 100px;
-    height: 35px;
-    background: #0048b1;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-.query-detail{
-    width: 701px;
-    height: 350px;
-    margin: 50px auto;
-}
-.query-detail table{
-    width: 700px;
-    table-layout:fixed;
-    border-collapse:collapse;
-    border:none;
-    background: #f3ffff;
-}
-.query-detail td{
-    border:solid #000 1px;
-    padding: 10px;
-}
-.first-td{
-    width:100px;
-    text-align: right;
-}
-.submit-btn{
-    width: 100px;
-    height: 35px;
-    background: #46b3f5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 30px 45%;
-    font-size: 18px;
-}
-/*-------------foot-----------------*/
-.introduce-info{
-    width: 1072px;
-    height: 130px;
-    padding-top: 20px;
-}
-.introduce-info p{
-    width: 1002px;
-    text-align: center;
-}
-.introduce-info a{
-    text-decoration: none;
-    color: #4b4344;
-}
-.introduce-info a:hover{
-    color: #8c0000;
-}
-/*--快速导航栏--*/
-.fast-nav{
-    width: 150px;
-    height: 166px;
-    background-image: url("../images/fast-nav.png");
-    background-position:5px;
-    position: absolute;
-    top: 400px;
-    left: -119px;
-}
-.fast-nav p{
-    width: 20px;
-    float: right;
-    text-align: center;
-    margin: 40px 7px 0 0;
-    color: #ffffff;
-    font-size: 14px;
-}
-.work-build-nav{
-    width: 119px;
-    height: 166px;
-    float: left;
-    background-image: url("../images/work-build-nav.png");
-    background-position:28px;
-    background-repeat:no-repeat;
-}
-.work-build-nav p{
-    margin-top: 60px;
-}
-.work-build-nav p:hover{
-    color: black;
-}
-.police-news-nav{
-    width: 91px;
-    height: 166px;
-    float: left;
-    background-image: url("../images/police-news-nav.png");
-    background-position:28px;
-    background-repeat:no-repeat;
-}
-.sunshine-nav{
-    width: 63px;
-    height: 166px;
-    float: left;
-    background-image: url("../images/sunshine-nav.png");
-    background-position:28px;
-    background-repeat:no-repeat;
-}
-.home-nav{
-    width: 30px;
-    height: 166px;
-    float: left;
-    background:#1869A2;
-    border-radius:0px 8px 8px 0px;
-    box-shadow:1px 1px 2px #555;
-}
-/*loading*/
-.body-con{
-    position: relative;
-}
-.loading-page{
-    width: 1050px;
-    height: 780px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1px;
-    z-index: 99;
-    display: none;
-}
-.loading-con{
-    width: 500px;
-    height: 160px;
-    background: #fff;
-    border: 5px solid #848484;
-    margin: 200px 0 0 300px;
-    padding-top: 70px;
-}
-.loading-con img{
-    display: block;
-    margin: 10px auto;
-}
-.loading-con p{
-    width: 500px;
-    height: 20px;
-    text-align: center;
-}
-.clear {
-  clear:both;margin-bottom:20px;
-}
-/*-------------foot-----------------*/
-/*-------------foot-----------------*/
-.bottom-content{
-    width: 100%;
-    height: 315px;
-    margin: 10px auto;
-}
-.bottom-branch{
-    width: 100%;
-    height: 40px;
-    background: #ffffff;
-    background-image: url("../images/bottom-branch-bg.png");
-}
-.bottom-branch p{
-    width: 190px;
-    height: 40px;
-    margin: 0;
-    color: #ffffff;
-    line-height: 40px;
-    text-align: center;
-    display: inline-block;
-}
-.bottom-branch a{
-    display: inline-block;
-    width: 83px;
-    height: 40px;
-    margin: 0;
-    color: #ffffff;
-    line-height: 40px;
-    text-align: center;
-    text-decoration: none;
-}
-.friendly-link{
-    width: 100%;
-    height: 41px;
-    background: #d9d9d9;
-    border-top: 4px solid #0a62be;
-    margin-top: 2px;
-}
-.friendly-link p{
-    width: 265px;
-    height: 41px;
-    line-height: 41px;
-    text-align: center;
-    margin: 0;
-    float: left;
-}
-.friendly-link ul{
-    float: left;
-}
-.friendly-link li{
-    width: 130px;
-    height: 41px;
-    line-height: 41px;
-    text-align: center;
-    float: left;
-}
-.friendly-link li:hover{
-    background: #f0f0f0;
-}
-.link-content{
-    background: #f0f0f0;
-    float:left;
-}
-.link-content a{
-    text-decoration: none;
-    color: #000000;
-    line-height: 45px;
-    padding: 0 30px;
-    display:block;
-    height:45px;
-    width:auto;
-    float:left;
-}
-.link-content a:hover{
-    color: #0a62be;
-}
-.introduce-info{
-    width: 100%;
-    height: 110px;
-    background: #ffffff;
-}
-.introduce-info p{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.introduce-info a{
-    text-decoration: none;
-    color: #000000;
-}
-.introduce-info a:hover{
-    color: red;
-}
+a,body,li{color:#4b4344}
+a,body,img,li,p,ul{margin:0;padding:0}
+.bottom-branch a,.introduce-info a,.link-content a,a,li{text-decoration:none}
+body{font-family:微软雅黑}
+a,li{list-style:none}
+img{border:none}
+.main{width:100%;margin:0 auto;position:relative;background:url(../images/main-bg.png) -50px 0 fixed;overflow:hidden}
+.content{width:1072px;margin:0 auto}
+.move-top{width:60px;height:60px;background-image:url(../images/move-top.png);position:fixed;bottom:4%;left:50%;margin-left:560px}
+.body-con,.body-top,.head{width:1072px}
+.head{height:193px;background-image:url(../images/head-logo-bg.png);background-position:75px 70px;background-repeat:no-repeat;padding:1px}
+.body-con{height:1050px;background:#fff;margin-top:100px}
+.body-top{height:30px;line-height:22px;background:#46b3f5}
+.body-top a,.body-top p{height:30px;line-height:30px;color:#fff}
+.body-top img{margin-top:4px;float:left;margin-left:10px}
+.body-top p{width:200px;float:left}
+.body-top a{float:right;margin-right:10px}
+.body-top a:hover{color:#e9a733}
+.query-area{width:701px;height:280px;background:url(../images/query-condition.png) no-repeat;margin:20px auto}
+.alarm-query{background:url(../images/query-condition2.png) no-repeat}
+.query-condition{width:350px;height:280px;margin-left:330px}
+.query-condition h3{width:350px;height:70px;line-height:70px;margin:0;text-align:center;color:#0048b1}
+.query-condition p{width:350px;height:35px;line-height:35px}
+.case-num input,.phone-num input{width:250px}
+.phone-code,.phone-num{text-indent:15px}
+.phone-code input{width:120px}
+.query-btn{text-align:center;margin-top:15px}
+.query-btn input{width:100px;height:35px;background:#0048b1;color:#fff;border:none;cursor:pointer}
+.query-detail{width:701px;height:350px;margin:50px auto}
+.query-detail table{width:700px;table-layout:fixed;border-collapse:collapse;border:none;background:#f3ffff}
+.query-detail td{border:1px solid #000;padding:10px}
+.first-td{width:100px;text-align:right}
+.submit-btn{width:100px;height:35px;background:#46b3f5;color:#fff;border:none;cursor:pointer;margin:30px 45%;font-size:18px}
+.introduce-info{padding-top:20px}
+.fast-nav{width:150px;height:166px;background-image:url(../images/fast-nav.png);background-position:5px;position:absolute;top:400px;left:-119px}
+.police-news-nav,.sunshine-nav,.work-build-nav{background-position:28px;background-repeat:no-repeat}
+.fast-nav p{width:20px;float:right;text-align:center;margin:40px 7px 0 0;color:#fff;font-size:14px}
+.home-nav,.police-news-nav,.sunshine-nav,.work-build-nav{height:166px;float:left}
+.work-build-nav{width:119px;background-image:url(../images/work-build-nav.png)}
+.work-build-nav p{margin-top:60px}
+.work-build-nav p:hover{color:#000}
+.police-news-nav{width:91px;background-image:url(../images/police-news-nav.png)}
+.sunshine-nav{width:63px;background-image:url(../images/sunshine-nav.png)}
+.home-nav{width:30px;background:#1869A2;border-radius:0 8px 8px 0;box-shadow:1px 1px 2px #555}
+.body-con{position:relative}
+.loading-page{width:1050px;height:780px;position:absolute;top:0;left:0;padding:1px;z-index:99;display:none}
+.loading-con{width:500px;height:160px;background:#fff;border:5px solid #848484;margin:200px 0 0 300px;padding-top:70px}
+.loading-con img{display:block;margin:10px auto}
+.loading-con p{width:500px;height:20px;text-align:center}
+.clear{clear:both;margin-bottom:20px}
+.bottom-content{width:100%;height:315px;margin:10px auto}
+.bottom-branch a,.bottom-branch p{display:inline-block;height:40px;margin:0;color:#fff;line-height:40px}
+.bottom-branch{width:100%;height:40px;background:url(../images/bottom-branch-bg.png) #fff}
+.bottom-branch p{width:190px;text-align:center}
+.bottom-branch a{width:83px;text-align:center}
+.friendly-link li,.friendly-link p{height:41px;line-height:41px;float:left;text-align:center}
+.friendly-link{width:100%;height:41px;background:#d9d9d9;border-top:4px solid #0a62be;margin-top:2px}
+.friendly-link li:hover,.link-content{background:#f0f0f0}
+.friendly-link p{width:265px;margin:0}
+.friendly-link ul{float:left}
+.friendly-link li{width:130px}
+.link-content{float:left}
+.link-content a{color:#000;line-height:45px;padding:0 30px;display:block;height:45px;width:auto;float:left}
+.link-content a:hover{color:#0a62be}
+.introduce-info{width:100%;height:110px;background:#fff}
+.introduce-info p{width:100%;text-align:center;margin-bottom:10px}
+.introduce-info a{color:#000}
+.introduce-info a:hover{color:red}

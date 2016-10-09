@@ -1,94 +1,26 @@
-.interact-table1{
-	width:1000px; 
-	height:auto; 
-	overflow:hidden;
-	padding-top:8px
-}
-
-.interact-mail{
-	width:710px; 
-	height:316px; 
-	overflow:hidden;
-	float:left;
-	border:solid 1px #e0e0e0
-}
-.interact-mail-title{
-	width:710px;
-	height:30px;
-	background-color:#007abb;
-	line-height:30px;
-	font-size:16px;
-	color:#FFF;
-	font-weight:bold;
-	margin-bottom:10px
-	
-}
-.interact-mail-title img{
-	float:left; 
-	margin:0px 10px
-}
-.interact-mail-title span{
-	float:right; 
-	font-size:14px; 
-	margin-right:10px
-}
-
-.interact-mail-img{
-	width:215px;
-	height:auto;
-	overflow:hidden;
-	text-align:center;
-	float:left;
-	font-size:14px;
-}
-
-.interact-mail-text{
-	width:495px;
-	height:306px;
-	float:right;
-	
-}
-
-.interact-mail-text ul{width:495px; height:155px;margin-top:20px;}
-.interact-mail-text ul li{float:left; margin:10px 5px; line-height:32px}
+.interact-table1{width:1000px;height:auto;overflow:hidden;padding-top:8px}
+.interact-mail{width:710px;height:316px;overflow:hidden;float:left;border:1px solid #e0e0e0}
+.interact-mail-title{width:710px;height:30px;background-color:#007abb;line-height:30px;font-size:16px;color:#FFF;font-weight:700;margin-bottom:10px}
+.interact-mail-title img{float:left;margin:0 10px}
+.interact-mail-title span{float:right;font-size:14px;margin-right:10px}
+.interact-mail-img{width:215px;height:auto;overflow:hidden;text-align:center;float:left;font-size:14px}
+.interact-mail-text{width:495px;height:306px;float:right}
+.interact-mail-text ul{width:495px;height:155px;margin-top:20px}
+.interact-mail-text ul li{float:left;margin:10px 5px;line-height:32px}
 .interact-mail-text ul li img{float:left}
-.mail-button, .mail-button a{background:url(../images/interact2.png) no-repeat; width:118px; height:35px; text-align:center; color:#FFF; font-weight:bold}
-
-
-.interact-mail-text-down{
-	background:url(../images/interact8.png)no-repeat;
-	color:#FFF;
-    width:479ox; 
-	height:122px;
-	font-size:16px;
-	font-weight:bold;
-	line-height:30px
-}
-
-.interact-table1-right{
-	width:280px;
-	height:auto;
-	overflow:hidden;
-	float:right;
-	text-align:center;
-}
-
-.interact-table2{
-	width:1000px; 
-	height:auto; 
-	overflow:hidden;
-	padding-top:8px
-}
-.interact-table2-tab1, .interact-table2-tab2{width:350px; height:226px; overflow:hidden; float:left;border:solid 1px #c9c9c9; margin-right:7px}
-.interact-table2-tab3{width:280px; height:226px; overflow:hidden; float:right;border:solid 1px #c9c9c9;}
-.interact-table2-titele{background:url(../images/interact11.png) no-repeat bottom; width:100%; height:36px; line-height:36px}
-.interact-table2-titele span{background:url(../images/interact12.png) no-repeat bottom; width:161px; height:37px; font-size:16px; display:block; font-weight:bold; color:#FFF; text-align:center}
-.interact-table2-titele samp{float:right; font-size:14px; margin-right:10px;}
-.interact-table2-text{width:95%; height:auto; overflow:hidden; margin:10px auto; font-size:12px; line-height:24px}
-.interact-table2-text ul li img{float:left; margin-right:10px}
-.interact-table2-text ul li span{float:right; font-size:12px}
-
-.interact-table2-tab3 dl{width:260px; height:auto; overflow:hidden; margin:9px auto}
-.interact-table2-tab3 dt{float:left; overflow:hidden; width:105px; height:170px}
-.interact-table2-tab3 dd{float:right; overflow:hidden; widows:115px !important; height:auto; line-height:30px; margin:10px 0px}
+.mail-button,.mail-button a{background:url(../images/interact2.png) no-repeat;width:118px;height:35px;text-align:center;color:#FFF;font-weight:700}
+.interact-mail-text-down{background:url(../images/interact8.png) no-repeat;color:#FFF;width:479ox;height:122px;font-size:16px;font-weight:700;line-height:30px}
+.interact-table1-right{width:280px;height:auto;overflow:hidden;float:right;text-align:center}
+.interact-table2{width:1000px;height:auto;overflow:hidden;padding-top:8px}
+.interact-table2-tab1,.interact-table2-tab2{width:350px;height:226px;overflow:hidden;float:left;border:1px solid #c9c9c9;margin-right:7px}
+.interact-table2-tab3{width:280px;height:226px;overflow:hidden;float:right;border:1px solid #c9c9c9}
+.interact-table2-titele{background:url(../images/interact11.png) bottom no-repeat;width:100%;height:36px;line-height:36px}
+.interact-table2-titele span{background:url(../images/interact12.png) bottom no-repeat;width:161px;height:37px;font-size:16px;display:block;font-weight:700;color:#FFF;text-align:center}
+.interact-table2-titele samp{float:right;font-size:14px;margin-right:10px}
+.interact-table2-text{width:95%;height:auto;overflow:hidden;margin:10px auto;font-size:12px;line-height:24px}
+.interact-table2-text ul li img{float:left;margin-right:10px}
+.interact-table2-text ul li span{float:right;font-size:12px}
+.interact-table2-tab3 dl{width:260px;height:auto;overflow:hidden;margin:9px auto}
+.interact-table2-tab3 dt{float:left;overflow:hidden;width:105px;height:170px}
+.interact-table2-tab3 dd{float:right;overflow:hidden;widows:115px!important;height:auto;line-height:30px;margin:10px 0}
 .interact-table2-tab3 dd span{color:#2372f5}
