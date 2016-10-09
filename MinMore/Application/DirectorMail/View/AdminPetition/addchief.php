@@ -1,7 +1,6 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <Admintemplate file="Common/Nav"/>
   <form class="J_ajaxForm" action="{:U('addchief','isadmin=1')}" method="post" id="myform">
     <div class="h_a">基本属性</div>
     <div class="table_full">

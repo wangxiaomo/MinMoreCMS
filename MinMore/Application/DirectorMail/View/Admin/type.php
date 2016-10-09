@@ -1,7 +1,6 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-<Admintemplate file="Common/Nav"/>
 <div class="h_a">说明</div>
 <div class="prompt_text">
   <p>删除分类会同时删除该分类下的信息！</p>

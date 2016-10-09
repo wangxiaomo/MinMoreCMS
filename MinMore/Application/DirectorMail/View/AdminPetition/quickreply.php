@@ -1,7 +1,6 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-<Admintemplate file="Common/Nav"/>
 <div class="h_a">说明</div>
 <form class="J_ajaxForm" action="{:U('quickreply','isadmin=1')}" method="post">
   <div class="table_list">

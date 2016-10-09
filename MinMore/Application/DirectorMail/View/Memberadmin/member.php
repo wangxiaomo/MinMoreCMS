@@ -1,7 +1,6 @@
 <Admintemplate file="Common/Head"/>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-<Admintemplate file="Common/Nav"/>
   <form name="query"  class="J_ajaxForm" action="{:U('member','isadmin=1')}" method="post">
 	<div style="margin:10px">
 	<span>查询关键词:</span>	<input name="keyword" placeholder="姓名，手机号"></input>

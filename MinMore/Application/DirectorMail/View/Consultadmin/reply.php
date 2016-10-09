@@ -8,7 +8,6 @@
 </script>
 <body class="J_scroll_fixed">
 <div class="wrap J_check_wrap">
-  <Admintemplate file="Common/Nav"/>
   <div class="h_a">回复评论</div>
   <form name="myform" action="{:U("reply","isadmin=1")}" method="post" class="J_ajaxForm">
     <input type="hidden" name="id" value="{$info.id}">
