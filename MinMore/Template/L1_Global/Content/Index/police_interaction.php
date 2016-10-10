@@ -66,7 +66,7 @@
             </div>   
         </div>
         
-        <div class="interact-table1"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact10.png"></div>
+        <div class="interact-table1"><img src="{$config_siteurl}statics/themes/L1_Global/images/mid-logo-bg.gif"></div>
         <div class="interact-table2">
            <div class="interact-table2-tab1">
               <div class="interact-table2-titele"><samp><a href="{:getCategory(10,'url')}">更多>></a></samp><span>{:getCategory(10,'catname')}</span></div>
