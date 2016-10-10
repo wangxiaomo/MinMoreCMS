@@ -50,7 +50,7 @@
                     <li><img src="{$config_siteurl}statics/themes/L1_Global/images/interact9.png">热点咨询：0</li>
                   </ul>
                   -->
-                 <div style="width:100%;text-align:center;margin-top:50px;">
+                 <div style="width:100%;text-align:center;margin-top:30px;">
                     <li class="mail-button" style="display:inline-block;margin:20px;"><a href="{:U('DirectorMail/Index/add')}" style="line-height:30px;">我要写信</a></li>
                     <li class="mail-button" style="display:inline-block;margin:20px;"><a href="{:U('DirectorMail/Index/search')}" style="line-height:30px;">信件查询</a></li>
                  </div>

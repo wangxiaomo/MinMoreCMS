@@ -4,7 +4,7 @@
 .interact-mail-title img{float:left;margin:0 10px}
 .interact-mail-title span{float:right;font-size:14px;margin-right:10px}
 .interact-mail-img{width:215px;height:auto;overflow:hidden;text-align:center;float:left;font-size:14px}
-.interact-mail-text{width:495px;height:306px;float:right}
+.interact-mail-text{width:478px;height:241px;float:left;background:#5BA8E0;}
 .interact-mail-text ul{width:495px;height:155px;margin-top:20px}
 .interact-mail-text ul li{float:left;margin:10px 5px;line-height:32px}
 .interact-mail-text ul li img{float:left}
