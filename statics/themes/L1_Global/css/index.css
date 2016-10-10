@@ -174,7 +174,7 @@ img{border:none}
 .bottom-branch a{width:83px;text-align:center}
 .friendly-link li,.friendly-link p{height:41px;line-height:41px;text-align:center;float:left}
 .friendly-link{width:1000px;height:41px;background:#d9d9d9;border-top:4px solid #0a62be;margin-top:2px}
-.friendly-link p{width:265px;margin:0}
+.friendly-link p{width:265px;margin:0;text-align:left;margin-left:38px;}
 .friendly-link ul{float:left}
 .friendly-link li{width:130px}
 .friendly-link li:hover{background:#f0f0f0}
