@@ -11,9 +11,11 @@
 <body>
 <!-- main-->
 <div class="main">
+    <div class="head">
+        <template file="Content/Mods/top_header.php" />
+    </div>
     <!-- content-->
     <div class="content">
-        <template file="Content/Mods/top_header.php" />
         <!--导航条-->
         <ul class="banner-nav">
             <a href="/"><li>首页</li></a>
@@ -21,7 +23,7 @@
             <a href="{:U('Content/Site/work_building')}"><li>办事大厅</li></a>
             <a href="{:U('Content/Site/sunshine_police')}"><li>阳光警务</li></a>
             <a href="{:U('Content/Site/police_interaction')}"><li class="on">警民互动</li></a>
-            <a href="{:U('Content/Site/service_people')}"><li>服务民生</li></a>
+            <a href="{:U('Content/Site/service_people')}"><li style="width:165px;">服务民生</li></a>
         </ul>
         <div class="sub-menu">
           <ul>
@@ -53,7 +55,7 @@
           <div class="sidebar">
             <div class="sidebar-menu">
               <img src="{$model_extresdir}images/sidebar-top.png" />
-              <div>
+              <div style="margin-top:-2px;">
                 <ul>
                     <li><a href="{:U('DirectorMail/Index/add')}" class="{$director_mail_page?'menu-on':''}">局长信箱</a></li>
                     <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'jyxc'))}" class="{$headicon=='建言献策'?'menu-on':''}">建言献策</a></li>

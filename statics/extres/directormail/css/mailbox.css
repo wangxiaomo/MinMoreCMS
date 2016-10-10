@@ -42,13 +42,13 @@ button {
 }
 .content{
     width: 1000px;
-    height: 1773px;
     margin: 0px auto;
     font-size: 16px;
+    background-color:#fff;
 }
 /*---头部导航----*/
 .top-nav{
-    width: 1002px;
+    width: 1000px;
     height: 38px;
     background-image: url("../images/top-nav-bg.png");
 }
@@ -87,17 +87,12 @@ button {
 }
 .nav-search .search-box{
     width: 135px;
+    height:21px;
     padding-left: 30px;
     border-radius: 8px;
     outline: none;
 }
-.nav-search .search-btn{
-    background-color: #f7a52c;
-    color: #ffffff;
-    border-radius: 5px;
-    font-weight: bold;
-    outline: none;
-}
+.nav-search .search-btn{background-color:#f7a52c;color:#fff;font-weight:700;outline:0;padding:1px 5px;width:43px;height:24px;border-radius:5px;}
 .search-logo{
     width: 16px;
     height: 17px;
@@ -162,7 +157,7 @@ button {
 
 /*--导航栏--*/
 .banner-nav{
-    width: 1002PX;
+    width: 1000px;
     height: 45px;
 }
 .banner-nav li{
@@ -184,7 +179,7 @@ button {
 
 /*--警界资讯--*/
 .police-news{
-    width: 1002px;
+    width: 1000px;
     height: 362px;
     background: #ffffff;
     padding-top: 13px;
@@ -217,7 +212,7 @@ button {
     color: red;
 }
 .news-content{
-    width: 1002px;
+    width: 1000px;
     height: 300px;
     margin-top: 25px;
     position: relative;
@@ -349,7 +344,7 @@ button {
 }
 
 .mail-connect{
-    width: 1002px;
+    width: 1000px;
     height: 100px;
     background: #ffffff;
 }
@@ -363,17 +358,17 @@ button {
 
 /*--办事大厅--*/
 .work-build{
-    width: 1002px;
+    width: 1000px;
     height: 370px;
     background: #ffffff;
 }
 .work-build-top{
-    width: 1002px;
+    width: 1000px;
     height: 37px;
     background-image: url("../images/workbuild-top.png");
 }
 .work-build-con{
-    width: 1002px;
+    width: 1000px;
     height: 325px;
     background-image: url("../images/work-build_bg.png");
     background-position:0 -220px;
@@ -406,7 +401,7 @@ button {
     display: block;
 }
 .work-area{
-    width: 1002px;
+    width: 1000px;
     height: 110px;
     overflow: hidden;
     position: absolute;
@@ -537,7 +532,7 @@ button {
     cursor: pointer;
 }
 .build-bottom-logo{
-    width: 1002px;
+    width: 1000px;
     height: 91px;
     margin-bottom: 10px;
     background-image: url("../images/build-logo.png");
@@ -545,7 +540,7 @@ button {
 
 /*--特色服务--*/
 .feature-service{
-    width: 1002px;
+    width: 1000px;
     height: 380px;
     background: #fefdfd;
     background-image: url("../images/tesefuwu-bg.png");
@@ -634,7 +629,7 @@ button {
 }
 /*--底部链接--*/
 .bottom-branch{
-    width: 1002px;
+    width: 1000px;
     height: 40px;
     background: #ffffff;
     background-image: url("../images/bottom-branch-bg.png");
@@ -659,7 +654,7 @@ button {
     text-decoration: none;
 }
 .friendly-link{
-    width: 1002px;
+    width: 1000px;
     height: 41px;
     background: #d9d9d9;
     border-top: 4px solid #0a62be;
@@ -687,7 +682,7 @@ button {
     background: #f0f0f0;
 }
 .link-content{
-    width: 1002px;
+    width: 1000px;
     height: 70px;
     background: #f0f0f0;
 }
@@ -701,12 +696,12 @@ button {
     color: #0a62be;
 }
 .introduce-info{
-    width: 1002px;
+    width: 1000px;
     height: 130px;
     background: #ffffff;
 }
 .introduce-info p{
-    width: 1002px;
+    width: 1000px;
     text-align: center;
 }
 .introduce-info a{
@@ -786,8 +781,7 @@ button {
 }
 
 .sub-menu {
-  width:100%;height:32px;background:#f0f0f0;position:relative;border-bottom:1px solid #e8e8e8;
-  box-shadow:1px 1px #e8e8e8;
+  width:100%;height:40px;background:#f0f0f0;position:relative;border-bottom:1px solid #e8e8e8;
 }
 .banner-nav {
   position:relative;overflow:hidden;
@@ -800,13 +794,13 @@ button {
   list-style:none;padding-left:50px;
 }
 .sub-menu ul li {
-  float:left;color:#909090;display:inline-block;padding:8px;z-index:999;
+  float:left;color:#909090;display:inline-block;padding:8px;z-index:999;line-height:25px;font-size:14px;
 }
 .sub-menu ul li a {
   color:#909090;text-decoration:none;
 }
-.sub-menu ul li:hover {
-  background-color:#ddd;
+.sub-menu ul li:hover a {
+  color:#e5840d;
 }
 .crumb {
   background:url('../images/crumb-bg.png') repeat-x;height:40px;background-color:#fff;
@@ -822,7 +816,7 @@ button {
   width:100%;padding-top:20px;background:#fff;
 }
 .sidebar {
-  float:left;width:18.4%;margin-left:20px;
+  float:left;width:181px;margin-left:20px;
 }
 .content-box {
   float:right;width:78%;
@@ -1213,10 +1207,11 @@ p.download-files.row-title {
 }
 .page-point{
     width: 1000px;
-    height: 40px;
+    height: 35px;
     background: #e6f0fd;
     border-bottom: 1px solid #808183;
     font-size:14px;
+    margin-top:10px;
 }
 .page-point p{
     width: 180px;

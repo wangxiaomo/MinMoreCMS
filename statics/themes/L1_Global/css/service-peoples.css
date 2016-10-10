@@ -2,7 +2,7 @@
 .child-menu ul{width:900px}
 .content-right{overflow:auto;width:705px;outline:0}
 .interact-menu{background-image:url(../images/interact-menu-bg.png);background-repeat:no-repeat}
-.interact-menu ul{margin-left:0;width:175px;height:auto;border:5px solid #288cc8}
+.interact-menu ul{margin-left:0;width:173px;height:auto;border:5px solid #288cc8}
 .content-right-service{overflow:auto;width:750px;outline:0;padding:14px;margin-top:10px}
 .service-list{width:100%;height:auto;padding-left:50px}
 .service-list li{width:170px;height:auto;overflow:hidden;float:left;text-align:center;margin-top:10px;margin-bottom:20px}
@@ -14,4 +14,4 @@
 .service-head p{height:34px;line-height:40px;float:left;margin-left:22px;font-size:16px;font-weight:700}
 .fast-service a{width:108px;height:120px;text-align:center;float:left;position:relative;color:#4690c6;font-weight:700}
 .fast-service a:hover{color:red}
-.fast-service span{width:110px;position:absolute;left:0;bottom:0;text-align:center}
+.fast-service span{width:125px;height:30px;line-height:30px;position:absolute;left:0;bottom:0;text-align:center;background:url(../images/interact2.png) no-repeat;}
