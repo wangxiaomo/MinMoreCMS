@@ -55,7 +55,7 @@ class MinMoreCMS extends \Think\Controller {
             $this->assign("global_role", $r["id"]);
             $this->assign("global_role_name", $r["name"]);
         }else{
-            $url = sprintf("%s://%s/%s", $_SERVER["REQUEST_SCHEME"], $domain, 'admin.php');
+            $url = sprintf("%s://%s/%s", 'http', $domain, 'admin.php');
             die(header("Location:$url"));
         }
     }
