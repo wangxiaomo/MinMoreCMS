@@ -8,6 +8,7 @@
     <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>{$SEO['site_title']}</title>
     <meta name="description" content="{$SEO['description']}" />
     <meta name="keywords" content="{$SEO['keyword']}" />
+    <link href="{$config_siteurl}statics/themes/common.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{$config_siteurl}statics/themes/L4_Global/css/style.css">
 </head>
 <body>

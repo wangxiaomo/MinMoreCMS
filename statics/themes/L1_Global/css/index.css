@@ -39,7 +39,7 @@ img{border:none}
 .banner-nav{width:1000px;height:45px}
 .banner-nav li{width:167px;height:45px;background:#2f6ebe;line-height:45px;font-size:20px;font-weight:700;font-family:Arial,Verdana,Sans-serif;color:#fff;text-align:center}
 .banner-nav li.on,.banner-nav li:hover{background:#e5840d}
-.police-news{width:1000px;height:362px;background:#fff;padding-top:13px}
+.police-news{width:1000px;height:345px;background:#fff;padding-top:13px}
 .news-title{width:100%;height:37px;background-image:url(../images/news-bg.png)}
 #myjQuery,#myjQueryContent,#myjQueryContent img,.news-carousel{height:300px;width:560px}
 .slider{width:600px;margin:12px 20px}
@@ -71,7 +71,7 @@ img{border:none}
 .news-active li a{color:#4b4344;margin-left:20px}
 .news-active .news-more{position:absolute;top:15px;left:370px}
 .mail-connect{height:100px}
-.mail-connect li{margin:10px 10px 0 0}
+.mail-connect li{margin:5px 10px 0 0}
 .mail-connect img{border:none}
 .work-build{height:370px}
 .work-build-top{width:1000px;height:37px;background-image:url(../images/workbuild-top.png)}
