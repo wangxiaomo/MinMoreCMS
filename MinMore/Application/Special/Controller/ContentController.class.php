@@ -273,7 +273,7 @@ class ContentController extends AdminBase {
                 $this->error('请选择需要生成的信息！');
             }
             foreach ($ids as $id) {
-                $SpecialHtml = get_instance_of('SpecialHtml');
+                $SpecialHtml = new \SpecialHtml();
                 $SpecialHtml->show($id);
             }
             $this->success('页面生成完毕！');

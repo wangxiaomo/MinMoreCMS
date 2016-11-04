@@ -79,7 +79,7 @@ class SpecialContentModel extends Model {
         $data = $this->create($data, 1);
         if ($data) {
             import("@.ORG.SpecialUrl");
-            $url = new SpecialUrl();
+            $url = new \SpecialUrl();
             //检查专题是否存在
             $special = D('Special')->where(array('id' => $data['specialid']))->find();
             if (empty($special)) {
@@ -129,7 +129,7 @@ class SpecialContentModel extends Model {
                 $attachment = service("Attachment");
                 $attachment->api_update('', 'special-' . $data['specialid'] . '-' . $id, 2);
                 import("@.ORG.SpecialHtml");
-                $SpecialHtml = get_instance_of('SpecialHtml');
+                $SpecialHtml = new \SpecialHtml();
                 $SpecialHtml->show($id);
                 return true;
             } else {
@@ -187,7 +187,7 @@ class SpecialContentModel extends Model {
             //更新
             if (false !== $this->where(array('id' => $id))->save($data)) {
                 import("@.ORG.SpecialUrl");
-                $url = new SpecialUrl();
+                $url = new \SpecialUrl();
                 //转向地址
                 $urls = array();
                 if ($data['islink']) {
@@ -203,7 +203,7 @@ class SpecialContentModel extends Model {
                 $attachment = service("Attachment");
                 $attachment->api_update('', 'special-' . $data['specialid'] . '-' . $id, 2);
                 import("@.ORG.SpecialHtml");
-                $SpecialHtml = get_instance_of('SpecialHtml');
+                $SpecialHtml = new \SpecialHtml();
                 $SpecialHtml->show($id);
                 return true;
             } else {
@@ -240,7 +240,7 @@ class SpecialContentModel extends Model {
             if (false !== $this->where(array('id' => $id))->delete()) {
                 //取得该内容生成地址
                 import("@.ORG.SpecialUrl");
-                $url = get_instance_of('SpecialUrl');
+                $url = \SpecialUrl();
                 $urls = $url->show($info, $specialInfo);
                 $fileurl = $urls['path'];
                 //删除静态文件

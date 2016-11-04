@@ -804,8 +804,9 @@ class MinMore extends TagLib {
 
         //拼接php代码
         $parseStr = '<?php';
-        $parseStr .= '  import("' . $mo . 'TagLib", APP_PATH . "' . $mo . '/TagLib/"); ';
-        $parseStr .= '  $' . $mo . 'TagLib = \Think\Think::instance("\\' . $mo . '\\TagLib\\' . $mo . 'TagLib"); ';
+        //$parseStr .= '  import("' . $mo . 'TagLib", APP_PATH . "' . $mo . '/TagLib/"); ';
+        //$parseStr .= '  $' . $mo . 'TagLib = \Think\Think::instance("\\' . $mo . '\\TagLib\\' . $mo . 'TagLib"); ';
+        $parseStr .= '  $' . $mo . 'TagLib = \Think\Think::instance("\Special\TagLib\SpecialTagLib");';
         //如果有传入$page参数，则启用分页。
         if ($page) {
             //分页配置处理

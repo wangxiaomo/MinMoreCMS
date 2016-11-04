@@ -7,7 +7,7 @@ class SpecialTagLib {
     protected $db = NULL;
 
     public function __construct() {
-        import("SpecialModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
+        //import("SpecialModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
         $this->db = D('Special');
     }
 
@@ -103,7 +103,6 @@ class SpecialTagLib {
         if (APP_DEBUG) {
             $getLastSql = $this->db->_sql();
             $msg = "SpecialTagLib标签->lists：SQL:" . $getLastSql;
-            Log::write($msg);
         }
         return $return;
     }
@@ -158,7 +157,6 @@ class SpecialTagLib {
         if (APP_DEBUG) {
             $getLastSql = $this->db->_sql();
             $msg = "SpecialTagLib标签->content_list：SQL:" . $getLastSql;
-            Log::write($msg);
         }
         return $return;
     }
@@ -205,7 +203,6 @@ class SpecialTagLib {
         if (APP_DEBUG) {
             $getLastSql = $this->db->_sql();
             $msg = "SpecialTagLib标签->get_type：SQL:" . $getLastSql;
-            Log::write($msg);
         }
         return $return;
     }

@@ -206,7 +206,7 @@ class SpecialModel extends Model {
             if (!$v['name'] || !$v['typedir'])
                 continue;
             //添加时，无需判断直接加到数据表中，修改时应判断是否为新添加、修改还是删除
-            if ($act == 'add' && !$v['del']) {
+            );f ($act == 'add' && !$v['del']) {
                 $data = array(
                     'role' => get_site_role(),
                     'module' => 'special',
