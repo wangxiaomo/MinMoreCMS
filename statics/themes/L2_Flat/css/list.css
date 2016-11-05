@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+.notice-bar{width:258px;border:1px solid #58b7ed;}
+.notice-con{width:228px;height:248px; padding:15px 15px;}
+.notice-con li{width:208px; height:32px; padding-left:20px; background:url(../images/le-point.png) no-repeat left center; line-height:32px; overflow:hidden}
+.open-bar{width:258px;border:1px solid #58b7ed;}
+.open-con{width:228px; padding:15px 15px;}
+.open-con li{width:228px; height:38px; background:url(../images/open-bg.jpg) repeat-x; line-height:38px; overflow:hidden;margin-bottom:10px;}
+.open-con li img{float:left;}
+.open-con li a{float:left; display:block;width:134px; line-height:38px; height:38px; padding-left:30px; text-align:left; color:#6293dc; font-size:20px; background:url(../images/open-list.png) no-repeat right top}
+.list-bar{width:698px;border:1px solid #58b7ed; position:relative;}
+.list-con{width:660px; padding:19px;}
+.list-floor{width:660px; border-bottom:1px solid #aaaaaa; padding-bottom:15px; margin-bottom:20px;}
+.list-floor-title{height:30px; margin-bottom:10px; line-height:30px;}
+.list-floor-title a{float:left;display:block; width:500px; overflow:hidden; font-weight:bold; font-size:15px;}
+.list-floor-title span{float:right; color:#4263d8}
+.list-floor p{height:48px; line-height:24px; color:#666666; font-size:12px;}
+.page{width:220px; overflow:hidden; margin:0 auto;}
+.page span,select{float:left; display:block; border:1px solid #4263d8; width:68px;text-align:center; }
+.page span{ height:26px; line-height:26px; cursor:pointer;}
+.page span:hover{ background:#4263d8; color:#ffffff;}
+.page select{ height:28px; line-heihgt:28px; padding-left:5px; margin:0 5px; outline:none}
+
+
+.details-titlt{width:640px; line-height:30px; font-size:18px; text-align:center; border-bottom:1px solid #cccccc; font-weight:normal; padding-bottom:10px; margin:0 auto 20px auto;}
+.details-text{width:640px;background:#fff;font-size:13px;line-height:24px; margin:0 auto;}
+.details-text p{ text-indent:2em; }
+
+

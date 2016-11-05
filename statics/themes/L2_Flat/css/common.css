@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+html,body{width:100%;}
+body{ font-family:"微软雅黑"; font-size:13px; background:#d7e8fa;}
+a{ text-decoration:none; color:#333}
+a:hover{color:#4263d8; text-decoration:underline}
+ul,li{ list-style:none;}
+img{border:0;}
+.wrapper{width:982px; overflow:hidden; margin:0 auto;}
+.wrapper-2{width:1002px; overflow:hidden; margin:0 auto;}
+.pull-left{float:left;}
+.pull-right{float:right;}
+.mar-r10{margin-right:10px;}
+.mar-r40{margin-right:40px;}
+.mar-t30{margin-top:30px;}
+.mar-t20{margin-top:20px;}
+.mar-t10{margin-top:10px;}
+.mar-b5{margin-bottom:5px;}
+.font-nor{font-weight:normal}
+.padding-b20{padding-bottom:20px;}
+.width-298{width:298px;}
+.width-348{width:348px;}
+.color-white{color:#ffffff;}
+
+
+/*---------头部------------*/
+.top-bar{width:100%; min-width:1002px; background:url(../images/top-bg.png) repeat-x; height:38px; line-height:38px;color:#fff; overflow:hidden;}
+.top-left a{margin:0 8px}
+.top-left a:hover{color:#fff;}
+.search{width:180px; height:22px;  margin-top:8px;position:relative;}
+.search-int{width:140px; padding:0 30px 0 10px; border:0; outline:none; border-radius:10px; height:22px; background:#ffffff;}
+.search a{display:block;width:30px; height:22px; text-align:left; position:absolute; top:0; right:0; border:0; background:none; cursor:}
+
+.logo-bar{width:100%; min-width:1002px; background:url(../images/top-banner.png) repeat-x;  overflow:hidden}
+.nav-bar{width:100%; min-width:1002px; background:url(../images/nav-bg.png) repeat-x; height:44px; line-height:44px;}
+.nav-bar a,span{float:left; display:block;}
+.nav-bar a{width:98px; color:#fff; text-align:center; font-size:14px; font-weight:bold;}
+.nav-bar a.nav-active{ background:url(../images/nav-active.jpg) repeat-x;}
+.nav-bar a:hover{ background:url(../images/nav-active.jpg) repeat-x; color:#fff; text-decoration:none}
+/*---------头部over------------*/
+/*---------尾部------------*/
+.link{ background:url(../images/link-bg.jpg) repeat-x; height:40px;}
+.link p{width:135px; height:40px; line-height:40px; text-align:left; padding-left:20px; background:url(../images/link-title.png) no-repeat; color:#fff; font-size:17px;}
+.link .link-con{width:800px;margin-left:20px;}
+.link-con select{float:left;width:188px; margin:10px 5px; height:24px; border:1px solid #cccccc;}
+.footer{width:100%; min-width:1002px; overflow:hidden; height:86px; background:url(../images/foot-bg.png) repeat-x; padding-top:14px; text-align:center}
+.footer p{margin:10px auto; height:60px; line-height:30px; color:#fff; text-align:left; vertical-align:middle}
+/*---------尾部over------------*/
+
+.wei{width:100px; position:absolute; top:300px; right:20px; text-align:center}
+.wei img{ margin:0 auto 10px auto; }
+.wei img:hover{box-shadow:3px 3px 3px #9299e9;-webkit-box-shadow:3px 3px 3px #9299e9; -moz-box-shadow:3px 3px 3px #9299e9; }
+
+/*---------标题样式------------*/
+.content-bar{
+	width:1002px;
+	background:#fff;
+    margin:0 auto; 
+	box-shadow:5px 0 30px 5px #9299e9;
+	-webkit-box-shadow:5px 0 30px 5px #9299e9; 
+	-moz-box-shadow:5px 0 30px 5px #9299e9;  
+	box-shadow:0 5px 30px 5px #9299e9;
+	-webkit-box-shadow: 0 5px 30px 5px #9299e9; 
+	-moz-box-shadow: 0 5px 30px 5px #9299e9; }
+.left-title{width:100%; height:40px; background:url(../images/le-title-2.jpg) repeat-x;}
+.left-title h3{width:184px; height:42px; background:url(../images/le-title.png) no-repeat; text-align:center; color:#fff; padding-top:5px; font-size:17px; font-weight:normal; position:absolute; top:-7px; left:10px; z-index:999;}
+.left-title-text{width:480px;margin-left:200px; overflow:hidden;height:40px; line-height:40px;}
+.right-title{height:40px; line-height:40px; background:url(../images/nt-bg.png) repeat-x; overflow:hidden;}
+.right-title h4{float:left;background:url(../images/r-title.png) no-repeat; width:98px; padding-left:28px; color:#ffffff; line-height:40px; height:40px; font-size:17px; font-weight:normal}
+.global_quick_nav {
+  position:fixed;top:45%;right:1%;width:120px;
+}
+.global_quick_nav a {
+  width:100%;float:left;margin-top:10px;
+}

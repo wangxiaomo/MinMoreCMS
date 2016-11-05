@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+/*----------公安动态-----------*/
+.state-bar{width:698px; border:#58b7ed 1px solid; height:318px; position:relative}
+.state-con{width:668px; padding:20px 15px;}
+.state-part{border:1px solid #58b7ed;}
+.state-con .state-part h4{height:32px; line-height:32px;padding-left:10px; background:url(images/sp-bg.jpg) repeat-x; font-size:14px; color:#4263d8;}
+.state-part-con{width:290px;height:190px;padding:10px 4px;}
+.state-part-con ul{width:320px;padding:4px 14px;}
+.state-part-con ul li{width:306px; padding-left:14px; background:url(../images/list-point.png) no-repeat left center; overflow:hidden; line-height:26px;}
+.state-part-con li a{float:left;display:block;width:260px;}
+.state-part-con li span{float:right;}
+/*轮播图*/
+.state-part-img{ width:290px;height:190px;padding:10px 4px;}
+.state-part-img .focus{ width:290px; height:190px; overflow:hidden; position:relative; }
+.state-part-img .focus .slider img{ width:290px; height:190px; display:block; }
+.state-part-img .focus .slider{ width:25000px;position:absolute; }
+.state-part-img .focus .slider li{ float:left; }
+.state-part-img .focus .num{ position:absolute; right:5px; bottom:7px; }
+.state-part-img .focus .num li{ float: left; width: 12px; height: 12px; font-family: Arial; cursor: pointer; overflow: hidden; margin: 3px 5px; border: 1px solid #fff; }
+.state-part-img .focus .num li.on{ width:14px; height:14px; margin: 2px 1px; border: 0; background-color: #ff7300; }
+/*---------通知公告------------*/
+.notice-bar{width:258px;border:1px solid #58b7ed;}
+.notice-con{width:228px;height:248px; padding:15px 15px;}
+.notice-con li{width:208px; height:32px; padding-left:20px; background:url(../images/le-point.png) no-repeat left center; line-height:32px; overflow:hidden}
+/*---------阳光警务------------*/
+.sun-bar{width:258px;border:1px solid #58b7ed; height:364px;}
+.sun-con{width:240px;padding:9px;}
+.sun-con a.sc-img-1{display:block; width:190px; height:33px; line-height:33px; border:1px solid #5deeff; margin-bottom:6px; text-align:center; padding-left:48px; color:#095cf8;}
+.sc-icon-1{ background:url(../images/yg-1.jpg) no-repeat left center #c8e8f3;}
+.sc-icon-2{ background:url(../images/yg-2.jpg) no-repeat left center #c8e8f3;}
+.sc-icon-3{ background:url(../images/yg-3.jpg) no-repeat left center #c8e8f3;}
+.sc-icon-4{ background:url(../images/yg-4.jpg) no-repeat left center #c8e8f3;}
+.sc-img-2{float:left;width:113px; height:68px; border:1px solid #5deeff; margin-bottom:5px;}
+.sc-img-2 span{display:block; width:100%;text-align:center; background:#bfedfe; height:26px; line-height:26px;color:#095cf8;}
+.sc-img-2 p{width:100%; text-align:center; height:42px;}
+.sun-con a:hover{ border:1px solid #095cf8; text-decoration:none;}
+
+/*---------网上办事------------*/
+.enter-bar-1{width:698px;border:#58b7ed 1px solid; height:364px; position:relative;}
+.enter-con{width:698p;height:328px;overflow:hidden; background:url(../images/con-bg.png) no-repeat;}
+.enter-con .ec-img-box{width:450px; height:188px; overflow:hidden;margin:60px auto 0 auto;}
+.ec-img-box img{float:left;width:66px; height:66px; margin:14px 12px;}
+
+/*---------列表------------*/
+.ban-bar{width:700px;overflow:hidden;}
+.ban-bar .ban-part{width:338px; border:#58b7ed 1px solid;}
+.ban-part .ban-part-title{padding:0 10px; background:url(../images/sp-bg.jpg) repeat-x; height:32px; line-height:32px; font-size:14px;color:#4263d8; font-weight:bold;}
+.ban-pert-con{width:310px; padding:14px;}
+.ban-pert-con li{ padding-left:15px; background:url(../images/list-point.png) no-repeat left center; line-height:30px; height:30px; overflow:hidden;}
+/*---------快速入口------------*/
+.enter-bar-2{width:250px;}
+.enter-bar-2 a{display:block; width:250px; height:50px; margin-bottom:25px;}
+/*---------警营风采------------*/
+.jing-bar{width:980px;border:#58b7ed 1px solid; position:relative; margin-top:10px;}
+.jing-con{width:970px;height:177px; padding:15px 5px; overflow:hidden;}
+.jing-con .jing-con-img{float:left;width:182px; height:172px; margin:5px; overflow:hidden;}
+.jing-con-img img{width:180px; height:140px; border:1px solid #b5b5b5;}
+.jing-con-img a{display:block;width:178px; text-align:center; line-height:30px;}
+.jing-con-img a:hover{ color:#4263d8}
+
+
+
+
