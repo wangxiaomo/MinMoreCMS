@@ -58,9 +58,8 @@ class IndexController extends Base {
             die(header("Location:$url"));
         }
         //wangxiaomo:template hack
-        $config = get_site_config();
-        if($config["theme"] != "L2_Global" && $catid==45){
-            die("L1_Global Theme 不需要此页面");
+        if($catid==45 && !check_theme_level("L2")){
+            //die("404");
         }
 
         //分页

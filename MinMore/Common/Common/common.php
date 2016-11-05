@@ -1153,3 +1153,9 @@ function get_site_cache($name){
     $role = get_site_role();
     return cache("Config${role}.${name}");
 }
+
+function check_theme_level($level){
+    $config = get_site_config();
+    $theme = $config["theme"];
+    return strpos($theme, $level) === 0;
+}
