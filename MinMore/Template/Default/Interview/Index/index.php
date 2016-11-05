@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{$model_extresdir}css/int.css" />
 <template file="DirectorMail/Public/header.php"/>
  
-<div clkss="content-fd">
+<div class="content-fd">
 	<div class="int-right">
 		<div class="intTitle"><img src="{$model_extresdir}/images/int01.png">在线访谈</div>
 		<div class="int-imglist">

@@ -59,7 +59,7 @@
 	
 </script>
 
-<div clkss="content-fd">
+<div class="content-fd">
 	<div class="int-right"  style="margin:0px; ">
 			<div class="int-contTitle">{$obj.title}</div>
 			<div class="int-contMain">

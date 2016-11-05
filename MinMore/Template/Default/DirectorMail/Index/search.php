@@ -2,7 +2,7 @@
 <template file="DirectorMail/Public/mailbox.php"/> 
 <template file="DirectorMail/Public/button.php"/>
   </div>
-  <div clkss="content-fd">
+  <div class="content-fd">
   <div class="mailbox-list" style="margin-top:-80px;">
     <div class="content-hd">
       局长信箱－信件查询
