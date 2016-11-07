@@ -209,6 +209,11 @@ function get_avatar($id_or_email, $size = '96', $default = '', $alt = false) {
  * @param type $config 配置，会覆盖默认设置
  * @return \Page|array
  */
+function specialpage($total, $size=0, $number=0, $config=array()){
+    $Page = new \Libs\Util\SpecialPage($total, $size, $number);
+    return $Page;
+}
+
 function page($total, $size = 0, $number = 0, $config = array()) {
     //配置
     $defaultConfig = array(
