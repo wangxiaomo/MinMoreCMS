@@ -113,6 +113,9 @@ class IndexController extends Base {
         if (empty($info)) {
             $this->error('该信息不存在！');
         }
+        $role = get_site_role();
+        $type = D('SpecialType')->where(array('typeid' => $info['typeid'],'role'=>$role))->find();
+        $info['name'] = $type['name'];
         //转向地址不需要生成
         if ($info['islink']) {
             redirect($info['url']);
