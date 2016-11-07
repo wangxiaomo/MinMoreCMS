@@ -36,9 +36,12 @@ class MinMoreCMS extends \Think\Controller {
 
     protected function setTheme($theme) {
         if(!$theme) _404();
-        \Common\Controller\MinMoreCMS::$Cache["Config"]['theme'] = $theme;
         $config = get_site_config();
         $config["theme"] = $theme;
+        if(I("system_theme")){
+            $config["theme"] = I("system_theme");
+        }
+        \Common\Controller\MinMoreCMS::$Cache["Config"]['theme'] = $config["theme"];
         update_site_config($config);
     }
 
