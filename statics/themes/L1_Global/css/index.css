@@ -54,10 +54,10 @@ img{border:none}
 #myjQueryContent .smask{z-index:-1}
 #myjQueryContent img{border:0}
 #myjQueryNav{display:block;width:560px;height:40px;position:absolute;top:260px;left:0;z-index:5;background:rgba(0,0,0,.5);text-align:center}
-#myjQueryNav li{display:inline;cursor:pointer;text-align:center;margin-left:5px;background:#666;color:#fff}
+#myjQueryNav li{display:inline;cursor:pointer;text-align:center;margin-left:22px;background:#666;color:#fff}
 #myjQueryNav .nbg{outline:#fff solid 2px}
 #myjQueryNav a{display:block;margin:0 auto;text-transform:uppercase;width:45px;color:#fff;line-height:22px;position:relative;height:22px;z-index:20}
-#myjQueryNav .current{background:#347e0d}
+#myjQueryNav .current{background:#347e0d;margin-left:0px;}
 #myjQueryNav .current A{color:#fff}
 .news-active{width:430px;height:300px;margin-left:4px;background:#f4ffff;border:1px solid #000;position:relative}
 .news-active h3{width:100%;text-align:center;color:red;margin:15px 0}

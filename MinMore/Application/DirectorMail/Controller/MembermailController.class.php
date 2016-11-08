@@ -91,4 +91,21 @@ class MembermailController extends Base {
         }
         return $uid;
     }
+
+    public function verification(){
+        $mobile = $_POST['tel'];
+        $username = $_POST['username'];
+        $where['mobile']=$mobile;
+        $res=M("membermail_user")->getField("username",true);
+        $result=M("membermail_user")->where($where)->getField("username");
+        if(in_array($username,$res)){
+            if($result==$username){
+                echo "result1";
+            }else{
+                echo "result2";
+            }
+        }else{
+            echo "result3";
+        }
+    }
 }

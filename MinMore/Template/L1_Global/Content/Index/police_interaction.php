@@ -35,7 +35,7 @@
         <div class="interact-table1">
             <div class="interact-mail">
                <div class="interact-mail-title"><img src="{$config_siteurl}statics/themes/L1_Global/images/interact1.png">局长信箱</div>
-               <div class="interact-mail-img"><p><img src="{$config_siteurl}statics/themes/L1_Global/images/interact7.png"></p><p style="line-height:25px;">广安市人民政府副市长邓文国</p></div>
+               <div class="interact-mail-img"><p><img src="{$config_siteurl}statics/themes/L1_Global/images/interact7.png"></p><p style="line-height:25px;font-size:12px;">广安市人民政府副市长 公安局长 王峰</p></div>
                <div class="interact-mail-text">
                   <div class="interact-mail-text-down"><p style="width:440px; height:auto; overflow:hidden; margin:0 auto;font-weight:normal;letter-spacing:2px;">您好：<br>{:nbsp(6)}欢迎您在局长信箱留言！您的诉求，意见和建议，我们在倾听，您的期待就是我们工作努力的方向，我们将热诚为您服务。</p></div>
                   <!--

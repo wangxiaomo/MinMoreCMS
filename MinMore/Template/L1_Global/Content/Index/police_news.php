@@ -62,13 +62,13 @@
                 <div class="news-active">
                     <volist name="data" id="vo" offset="0" length="1">
                         <h3>{$vo.data.title|str_cut=###,16}</h3>
-                        <p style="position:relative;height:70px;">
-                            <span>{$vo.data.description|str_cut=###,54}</span>
+                        <p style="position:relative;height:70px;overflow:hidden;margin-left:22px;">
+                            <span>{:nbsp(7)}{$vo.data.description|str_cut=###,54}</span>
                             <a href="{$vo.data.url}" style="position:absolute;right:4%;">[详细内容]</a>
                         </p>
                     </volist>
                     <div class="news-divline"></div>
-                    <ul>
+                    <ul style="margin-left:8px;">
                         <volist name="data" id="vo" offset="1" length="5">
                             <li><a href="{$vo.data.url}">·{$vo.data.title|str_cut=###,20}</a></li>
                         </volist>
@@ -127,11 +127,11 @@
 
         <!-- 局长信箱-->
         <ul class="mail-connect">
-            <li><a href="{:U('DirectorMail/Index/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
+            <li><a href="{:U('Content/Site/police_interaction')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_1.png" alt="局长信箱"/></a></li>
             <li><a href="{:U('DirectorMail/Membermail/add')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/xinxiang_2.png" alt="代表委员直通车"/></a></li>
             <li><a href="{:U('DirectorMail/Consult/add', array('type'=>'wszx'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/zixun.png" alt="网上咨询"/></a></li>
             <li style="margin-right: 7px"><a href="{:U('DirectorMail/Consult/add', array('type'=>'qzts'))}"><img src="{$config_siteurl}statics/themes/L1_Global/images/tousu.png" alt="群众投诉"/></a></li>
-            <li style="margin:6px 0"><a href="#" class="disabled-link"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
+            <li style="margin:6px 0"><a href="{:U('Content/Site/special_list')}"><img src="{$config_siteurl}statics/themes/L1_Global/images/zhuantijujiao.png" alt="专题聚焦"/></a></li>
         </ul>
         <!-- 资讯内容-->
         <div class="police-news">
@@ -211,7 +211,7 @@
                     <a href="{:getCategory(7, 'url')}" class="more-news">更多>></a>
                     <content action="lists" catid="7" order="id DESC" num="1">
                         <volist name="data" id="vo">
-                            <video class="edui-upload-video  vjs-default-skin  video-js" src="{$vo.description}" width="242" height="219" preload autoplay controls>
+                            <video class="edui-upload-video  vjs-default-skin  video-js" src="{$vo.description}" width="242" height="219" preload controls>
                                 <source src="{$vo.description}" type="video/mp4"/>
                             </video>
                         </volist>

@@ -11,7 +11,6 @@
     <meta name="keywords" content="{$SEO['keyword']}" />
     <link rel="stylesheet" href="{$config_siteurl}statics/themes/L1_Global/css/case-query.css"/>
     <script src="{$config_siteurl}statics/js/jquery.js" type="text/javascript"></script>
-    <script src="{$config_siteurl}statics/js/alarmUtils.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- main-->
@@ -30,12 +29,13 @@
             <div class="query-area alarm-query">
                 <div class="query-condition">
                     <h3>警情受理查询</h3>
-                    <p class="case-num">警情编号：<input type="text" name="caseID"/></p>
-                    <p class="phone-num">手机号：<input type="text" name="mobile"/></p>
-                    <p class="phone-code">验证码：<input type="text" name="code"/>&nbsp;<input type="button" class="send-sms-vcode" value="手机获取验证码"/></p>
+                    <p class="case-num">警情编号：<input type="text" name="caseID" id="x_casenum"/></p>
+                    <p class="phone-num">手机号：<input type="text" name="mobile" id="x_phonenum"/></p>
+                    <p class="phone-code">验证码：<input type="text" name="code" id="phonecode"/>&nbsp;<input type="button" class="send-sms-vcode" value="手机获取验证码"/></p>
                     <p class="query-btn"><input type="button" value="查询"/></p>
                 </div>
             </div>
+            <input type="hidden" id="jjsldw">
             <div class="query-detail">
                 <table>
                     <tr>
@@ -52,18 +52,21 @@
                     </tr>
                     <tr style="height:200px;">
                         <td class="first-td">进展状态：</td>
-                        <td class="data-sl_ajclqk"></td>
+                        <td class="data-sl_ajclqk">
+                            <p class="data-zyaq"></p>
+                            <p class="data-ajclqk" style="margin-top: 10px;color: orangered"></p>
+                        </td>
                     </tr>
                     <tr>
                         <td class="first-td">评价信息：</td>
                         <td>
-                            <label><input type="radio" name="evaluate" checked="checked"/>满意</label>
-                            <label><input type="radio" name="evaluate"/>基本满意</label>
-                            <label><input type="radio" name="evaluate"/>不满意</label>
+                            <label><input type="radio" name="evaluate" checked="checked" value="1"/><span class="t_span">满意</span></label>
+                            <label><input type="radio" name="evaluate" value="0"/><span class="t_span">基本满意</span></label>
+                            <label><input type="radio" name="evaluate" value="-1"/><span class="t_span">不满意</span></label>
                         </td>
                     </tr>
                 </table>
-                <input type="button" value="提 交" class="submit-btn"/>
+                <input type="button" value="提 交" class="submit-btn" id="pingjia"/>
             </div>
             <div class="loading-page">
                 <div class="loading-con">
@@ -74,12 +77,62 @@
         </div>
         <script>
             $(function(){
-                $(".submit-btn").on("click", function(e){
-                    if($.trim($(".data-zyaq").text())){
-                        alert("评价成功,重复评价无效!");
+                var wait = 90,
+                    tic = function() {
+                        if(wait == 1) {
+                            $(".send-sms-vcode")
+                                .val("手机获取验证码")
+                                .prop("disabled", false);
+                            wait = 90;
+                        }else{
+                            $(".send-sms-vcode")
+                                .prop("disabled", true)
+                                .val(wait + "秒后可重新发送");
+                            wait--;
+                            setTimeout(tic,1000);
+                        }
+                    };
+                $(".send-sms-vcode")
+                    .prop("disabled", false);
+
+                $(".send-sms-vcode").on("click", function(){
+                    var caseID= $.trim($("input[name=caseID]").val());
+                    var mobile = $.trim($("input[name=mobile]").val());
+                    if(caseID!==''&&mobile!==''&&caseID.length==25&&mobile.length==11){
+                        if(!(/^1(3|4|5|7|8)\d{9}$/.test(mobile))){
+                            alert("手机号码有误，请重填");
+                            return false;
+                        }
+                        setTimeout(tic,1000);
+                        var charactors="1234567890";
+                        var value='',i;
+                        for(j=1;j<=4;j++){
+                            i = parseInt(10*Math.random());
+                            value = value + charactors.charAt(i);
+                        }
+                    $.post("/index.php?g=api&m=site&a=query_alarm_phone", {caseID:caseID,mobile:mobile,round:value}, function(d){
+                        if(d==0){
+                            alert("警情编号或者手机号码不正确，请核对后重新获取验证码");
+                        }else {
+                            if(mobile && mobile.length == 11){
+                                $.post("/index.php?g=api&m=sms&a=send", {mobile:mobile}, function(d){
+                                });
+                                tic();
+                            }else{
+                                alert("请正确填写手机号码!");
+                            }
+                        }
+                    });
+                    }else {
+                        alert("警情编号或者手机号码不正确，请重新填写")
                     }
                 });
-
+            });
+        </script>
+        <script>
+            $(function(){
+                $('#pingjia').attr('disabled','true');
+                $('#pingjia').attr('title','请成功查询后再评价');
                 var loading = function() {
                         $(".loading-page").css("display","block");
                     }, loadingDismissed = function() {
@@ -88,29 +141,54 @@
                             $(".query-result").css("visibility","visible");
                         },1000);
                     };
-
                 $(".query-btn input").click(function(){
                     var caseID = $.trim($("input[name=caseID]").val()),
                         mobile = $.trim($("input[name=mobile]").val()),
                         code = $.trim($("input[name=code]").val());
-                    if(caseID && mobile && code){
+                    if(caseID.length<=25 && mobile.length==11 && code.length==4){
                         loading();
                         $.post("/index.php?g=api&m=site&a=query_alarm", {
                             caseID:caseID,mobile:mobile,code:code
                         },function(d){
                             loadingDismissed();
-                            if(d.r == 1){
-                                $(".data-sljjdw").text(d.data.sljjdw);
-                                $(".data-mjxm").text(d.data.mjxm);
-                                $(".data-mjdh").text(d.data.mjdh);
-                                $(".data-sl_ajclqk").text(d.data.sl_ajclqk);
+                            if(d == 0){
+                                alert("手机验证码不正确，查询失败");
                             }else{
-                                alert(d.msg);
+                                var dd=eval("("+d+")");
+                                $(".data-sljjdw").text(dd['sljjdw']);
+                                $(".data-mjxm").text(dd['mjxm']);
+                                $(".data-mjdh").text(dd['mjdh']);
+                                if(dd['slAjclqk']!==''){
+                                    $(".data-ajclqk").text(dd['slAjclqk']);
+                                }else {
+                                    $(".data-ajclqk").text("正在处理中");
+                                }
+                                $("#jjsldw").val(dd['sljjdw']);
+                              $('#pingjia').removeAttr('disabled');
                             }
-                        });   
+                        });
                     }else{
                         alert("请正确输入信息!");
                     }
+                })
+            })
+        </script>
+        <script>
+            $(function(){
+                $('#pingjia').on("click",function(){
+                        var xuan=$("input[type='radio']:checked").val();
+                        $.post("/index.php?g=api&m=site&a=alarm_pingjia",{kuang:xuan},function(data){
+                            if(data==1){
+                                alert("提交成功，感谢您的评价");
+                                $('#pingjia').attr('disabled','true');
+                                $("#pingjia").val("提交成功");
+                                $('#pingjia').attr('title','您已评价，请勿重复评价');
+                            }else {
+                                alert("提交失败，请您重新评价");
+                                $('#pingjia').attr('disabled','false');
+                                $("#pingjia").val("提交");
+                            }
+                        });
                 })
             })
         </script>
