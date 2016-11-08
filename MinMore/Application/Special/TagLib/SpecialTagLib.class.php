@@ -36,7 +36,7 @@ class SpecialTagLib {
             }
             return $this->db->where($where)->count('id');
         } else if ($data['action'] == 'content_list') {//专题信息
-            import("SpecialContentModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
+            //import("SpecialContentModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
             $this->db = D('SpecialContent');
             $where = array();
             //专题ID
@@ -124,7 +124,7 @@ class SpecialTagLib {
         if ($cache && $return = S($cacheID)) {
             return $return;
         }
-        import("SpecialContentModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
+        //import("SpecialContentModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
         $this->db = D('SpecialContent');
         $where = array();
         //专题ID
@@ -176,7 +176,7 @@ class SpecialTagLib {
         if ($cache && $return = S($cacheID)) {
             return $return;
         }
-        import("SpecialTypeModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
+        //import("SpecialTypeModel", APP_PATH . C("APP_GROUP_PATH") . '/Special/Model/');
         $this->db = D('SpecialType');
         $where = array();
         //专题ID
