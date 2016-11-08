@@ -133,4 +133,11 @@ class SiteController extends Base {
         //link => site map
         $this->display("Pages/map");
     }
+
+    public function special_list() {
+        $role = get_site_role();
+        $specials = D('Special')->where("role=$role")->select();
+        $this->assign('specials', $specials);
+        $this->display("Pages/special_list");
+    }
 }
