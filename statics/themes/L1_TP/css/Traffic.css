@@ -1,0 +1,27 @@
+.Traffic-leftTop{width:520px; height:auto; overflow:hidden; float:left}
+
+
+.Traffic-rightTop{width:500px; height:auto; overflow:hidden; float:right}
+.NewList{width:99%; height:auto; overflow:hidden; margin:0px auto}
+.NewList li i{margin:-3px 10px 0px 0px; float:left}
+
+.Traffic-leftMid{width:746px; height:auto; overflow:hidden}
+.AllNews{width:365px; height:auto; overflow:hidden}
+.Title{
+	width:100%; 
+	height:auto;
+	overflow:hidden;
+	border-bottom:solid 2px #3ca6fa;
+	background:url(../images/TitBG.png) no-repeat left;
+	color:#fff;
+	padding-left:20px;
+	line-height:33px
+}
+.padding10{padding:1px 10px}
+.Traffic-rightMid{width:276px; height:auto; overflow:hidden}
+.TrafficBut{width:100%; height:auto; overflow:hidden}
+.TrafficBut li{width:100%; height:60px; line-height:60px; overflow:hidden; background:url(../images/GA37.png) no-repeat; text-align:center; color:#FFF; font-size:20px}
+.TrafficBut li a{color:#fff}
+.TrafficBut li i{float:left; margin:5px 0px 0px 15px}
+.HotClick{width:100%; height:auto; overflow:hidden; padding:7px 0px}
+.HotClick dt{width:20px; height:20px; border-radius:50%; color:#fff; text-align:center}

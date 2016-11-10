@@ -1,0 +1,507 @@
+.LeftTop{
+	width:292px; 
+	height:auto; 
+	overflow:hidden; 
+	padding:10px 0px;
+}
+.Query{
+	width:240px;
+	height:auto;
+	margin:0px auto;
+	overflow:hidden;
+	line-height:30px
+}
+.QueTit{
+	width:50%;
+	margin:0px auto;
+	font-size:18px;
+}
+.Query ul{
+	width:100%; 
+	height:auto; 
+	overflow:hidden
+}
+.Query ul Li{
+	width:33.3%;
+	height:auto;
+	overflow:hidden;
+	float:left;
+	font-size:14px
+}
+.QueTit img{
+	margin-top:2px
+}
+
+.LeftTop-down{
+	width:240px;
+	height:auto;
+	margin:0px auto;
+	overflow:hidden;
+}
+.LeftTop-down li{
+	width:100%;
+	height:auto; 
+	overflow:hidden;
+	line-height:30px;
+	max-height:30px;
+	margin:5px 0px;
+}
+.LeftTop-down li, .LeftTop-down li a{color:#4a4a4a}
+
+
+.MidTop{
+	float:left;
+	width:529px;
+	height:auto;
+	overflow:hidden;
+	margin-left:15px
+}
+
+.RgihtTop{
+	width:180px;
+	height:auto; 
+	overflow:hidden;
+}
+.MidTit{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	line-height:30px;
+}
+.headlines{
+	background:url(../images/GA07.png) no-repeat; 
+	width:69px;
+	height:27px;
+	line-height:20px;
+	overflow:hidden;
+	color:#fff;
+	font-size:12px;
+	text-align:center;
+	float:left;
+	margin:5px 10px 0px 30px
+}
+
+
+.MidPic{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	line-height:30px;
+}
+
+
+.RgihtTop-List{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	border-top:solid 1px #b5b5b5;
+}
+.RgihtTop-List li{
+	width:89px;
+	height:94px;
+	float:left;
+	text-align:center;
+	border-bottom:solid 1px #b5b5b5;
+	padding-top:10px;
+}
+.RgihtTop-List li p{
+	margin:10px 0px
+}
+.RgihtTop-List li ol{
+	height:50px;
+}
+.border_r{
+	border-right:solid 1px #b5b5b5;
+}
+	
+	
+.LavenderBG{
+	width:100%;
+	height:50px;
+	line-height:50px; 
+	overflow:hidden;
+	background-color:#ccdefd;
+}
+.LavenderBG span{
+	float:right;
+	margin-right:30px;
+	color:#4a4a4a
+}
+.LavenderBG i{
+	float:left;
+	margin:0px 20px 0px 50px
+}
+
+
+.mailbox{
+	width:250px;
+	height:auto;
+	overflow:hidden
+}
+.dynamic{
+	width:569px;
+	height:auto;
+	overflow:hidden;
+	margin-left:15px
+}
+
+.xq{
+	width:569px; 
+	height:auto; 
+	overflow:hidden; 
+	margin:0 auto; 
+	padding:10px 0px
+}
+.xqer ul{
+	width:569px; 
+	height:30px; 
+	margin:0 auto; 
+	overflow:hidden; 
+	border-bottom:solid 3px #238cfa;
+	font-size:16px;
+	cursor:pointer
+}
+.xqer ul li{
+	float:left; 
+	width:100px; 
+	height:30px; 
+	text-align:center
+}
+.hovertab{
+	overflow:hidden; 
+	color:#238cfa;
+	background:url(../images/San.png) no-repeat bottom center
+}
+.jsp{
+	width:569px; 
+	height:auto; 
+	margin:0 auto; 
+	overflow:hidden; 
+	padding:10px 0px
+}
+.profile{
+	width:100%;
+	height:auto; 
+	overflow:hidden;
+	border-bottom:dashed 1px #4a4a4a;
+	color:#4a4a4a;
+	padding:10px 0px;
+	line-height:25px;
+	font-size:14px;
+}
+.SmallNew{
+	width:100%; 
+	height:auto; 
+	overflow:hidden;
+	padding:10px 0px
+}
+.SmallNew li{
+	width:250px;
+	background:url(../images/Yuan.png) no-repeat left;
+	float:left;
+	padding-left:10px;
+	margin-right:20px;
+	line-height:30px;
+	color:#4a4a4a;
+}
+
+
+.MidRight{
+	width:186px;
+	min-height:1px; 
+	overflow:hidden
+}
+
+
+.MidMain{
+	width:773px;
+	min-height:1px;
+	overflow:hidden
+}
+.Title{
+	width:100%; 
+	height:auto;
+	overflow:hidden;
+	border-bottom:solid 2px #3ca6fa;
+	background:url(../images/TitBG.png) no-repeat left;
+	color:#fff;
+	padding-left:20px;
+	line-height:33px
+}
+.colorTit{
+	width:38px;
+	height:auto;
+	overflow:hidden;
+	border-radius:0px 10px 10px 0px;
+	background-color:#fba254;
+	color:#fff;
+	line-height:20px;
+	padding:5px 0px;
+	text-align:center
+}
+
+.MaiboxTxt{
+	width:190px;
+	height:auto;
+	overflow:hidden;
+	float:right;
+	line-height:30px;
+	font-size:16px;	
+}
+.MaiboxTxt li{
+	max-height:30px
+}
+
+
+.PolicMain{
+	width:570px;
+	height:auto;
+	overflow:hidden;
+	float:left;
+}
+
+.PolicMain li{
+	width:180px;
+	height:auto;
+	overflow:hidden;
+	float:left;
+	margin-right:10px;
+	line-height:30px;
+}
+.TitBG{
+	width:100%;
+	line-height:50px;
+	color:#FFFFFF
+}
+.TitBG img{
+	float:left;
+	margin:0px 10px 0px !important
+}
+
+
+.Topic{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+}
+.Topic li{
+	float:left;
+	width:170px;
+	text-align:center;
+	margin:0px 11px 20px
+}
+.TopImg img{
+	width:170px;
+	margin:5px
+}
+
+.MaiboxTxt img{
+	width:20px;
+	float:left;
+	margin-top:5px;
+	margin-right:10px
+}
+
+.downTitle{
+	width:100%;
+	height:32px;
+	font-size:22px;
+	border-bottom:solid 1px #b5b5b5;
+	padding:5px 0px 
+}
+.downTitle span{
+	padding:2px 5px;
+	color:#fff;
+	font-size:14px !important;
+	position:relative;
+	top:7px;
+	margin-left:410px
+}
+.downTitle samp{
+	margin-left:25px
+}
+.WeiXin{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	padding:10px 0px;
+	line-height:30px
+}
+
+.WeiXin img{
+	width:100px;
+	float:right
+}
+
+.AskList{
+	width:562px;
+	height:auto;
+  min-height:275px;
+	float:left;
+	overflow:hidden
+}
+.question, .ask{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	margin:10px 0px;
+}
+
+.Qbox, .Abox{
+	width:20px;
+	height:20px;
+	float:left;
+	text-align:center;
+	overflow:hidden;
+	color:#fff;
+	padding:2px;
+}
+.question p{
+	width:530px;
+	height:auto;
+	overflow:hidden;
+	float:right;
+}
+.ask p{
+	width:530px;
+	height:auto;
+	overflow:hidden;
+	float:right;
+	color:#4a4a4a;
+}
+
+.micro{
+	width:185px;
+	height:auto;
+	overflow:hidden;
+	float:right;
+	margin-top:10px
+}
+.microPic{
+	width:46px;
+	height:46px;
+	border-radius:50%;
+	overflow:hidden;
+	float:left;
+}
+.microName{
+	margin-left:50px;
+}
+
+.WeiBoBut{
+	width:50px; 
+	height:19px;
+	float:right;
+	background-color:#e67032;
+	border-radius:4px;
+	border:none;
+	color:#fff;
+	font-size:12px;
+	margin-top:4px
+}
+.microTxt{
+	width:98%;
+	height:175px;
+	overflow:hidden;
+	border:solid 1px #b5b5b5;
+	margin:10px 0px
+}
+
+.microTxt ul{
+	width:170px;
+	height:auto;
+	overflow:hidden;
+	margin:0px auto;
+	padding:10px auto
+}
+
+.Traffic{
+	width:99.8%;
+	height:auto;
+  min-height:180px;
+	overflow:hidden;
+	border:solid 1px #b5b5b5
+}
+.Traffic ul{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	padding:5px
+}
+.Traffic ul li{
+	width:191px;
+	float:left;
+	padding:10px 7px;
+	text-align:center;
+	
+}
+.Traffic ul li img{width:180px; border:solid 1px #b5b5b5; padding:5px}
+
+
+
+
+/* 图片切换 */
+.flexslider {
+	margin: 0px auto 0px;
+	position: relative;
+	width:529px;
+	height:340px;
+	overflow: hidden;
+	zoom: 1;
+	
+}
+
+.flexslider .slides li {
+	width: 100%;
+	height: 100%;
+	
+}
+.flex-control-nav {
+	width:auto;
+	position:relative;
+	top:310px;
+	float:right;
+	text-align: right;
+	margin-right:18px;
+	z-index:999
+}
+
+.flex-control-nav li {
+	margin: 0 2px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	
+}
+
+.flex-control-paging li a {
+	background: url(../images/dot.png) no-repeat 0 -15px;
+	display: block;
+	height: 16px;
+	overflow: hidden;
+	text-indent: -99em;
+	width: 16px;
+	cursor: pointer;
+	size:99
+	
+}
+
+.flex-control-paging li a.flex-active,
+.flex-control-paging li.active a {
+	background-position: 0 0;
+}
+
+.flexslider .slides a img {
+	width: 100%;
+	height: 340px;
+	display: block;
+	
+}
+.bannerTxt{width:100%; z-index:10; height:36px; line-height:36px; bottom:0px; position:absolute; }
+.bannerBG{ width:100%; height:36px; background-color:#000; opacity:0.57;filter:alpha(opacity=57); z-index:-1; position:absolute;}
+.bannerTxt p{width:98%; height:auto; margin:0px auto; text-align:left; color:#fff}
+
+.login-btn,
+.register-btn {
+  cursor:pointer;
+}

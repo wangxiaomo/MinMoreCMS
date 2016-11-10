@@ -31,6 +31,12 @@ class IndexController extends Base {
         $this->assign("SEO", $SEO);
         //把分页分配到模板
         $this->assign(C("VAR_PAGE"), $page);
+        //wangxiaomo hack:assign specials to template when theme is L1_交警
+        if(\Common\Controller\MinMoreCMS::$Cache["Config"]['theme'] == 'L1_交警'){
+            $role = get_site_role();
+            $specials = D('Special')->where("role=$role")->select();
+            $this->assign('specials', $specials);
+        }
         $this->display("Index:" . $tp[0]);
     }
 
