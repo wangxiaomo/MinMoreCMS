@@ -352,7 +352,7 @@ $(function() {
     <!-- 宣传视频 -->
     <div class="mailbox fl">
       <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(81,'url')}">查看更多</a></samp><span class="fs18 yellow">宣传</span>视频</div>
-      <content action="lists" catid="81" order="ide DESC" num="4">
+      <content action="lists" catid="81" order="id DESC" num="4">
       <div class="MaiboxPic marginT20 marginb10">
         <volist name="data" id="vo" offset="0" length="1">
             <a href="{$vo.url}"><img src="{$vo.thumb}"></a>
