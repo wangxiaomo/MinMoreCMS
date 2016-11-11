@@ -68,6 +68,10 @@ class IndexController extends Base {
             //die("404");
         }
 
+        if(in_array($catid, array(76,77,78,79,80))){
+            $this->assign("show_L1_gongkai", true);
+        }
+
         //分页
         $page = isset($_GET[C("VAR_PAGE")]) ? $_GET[C("VAR_PAGE")] : 1;
         //获取栏目数据

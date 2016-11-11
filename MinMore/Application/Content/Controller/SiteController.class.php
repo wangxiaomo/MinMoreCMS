@@ -140,4 +140,14 @@ class SiteController extends Base {
         $this->assign('specials', $specials);
         $this->display("Pages/special_list");
     }
+
+    public function news() {
+        $this->assign("show_L1_news", true);
+        $this->display("Index/news");
+    }
+
+    public function xuanchuan() {
+        $this->assign("show_L1_xuanchuan", true);
+        $this->display("Index/xuanchuan");
+    }
 }
