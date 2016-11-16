@@ -141,7 +141,7 @@
                   	</volist>  
                   </div>
 				  
-				  <if condition="$vo.is_open_msg eq on">
+				  <if condition="$obj.is_open_msg eq on">
 					<div class="NetMagges">
 						<input  id="view_id" type="hidden" value="{$obj.id}" />
 						<textarea id="msg" style="margin: 0px; width: 260px; height: 37px;"></textarea>
