@@ -13,9 +13,6 @@
     <link href="{$config_siteurl}statics/themes/L1_TP/css/public.css" type="text/css" rel="stylesheet">
     <!-- 交警资讯样式 -->
     <link href="{$config_siteurl}statics/themes/L1_TP/css/Traffic.css" type="text/css" rel="stylesheet">
-    <style>
-.NewList { height: 340px; }
-    </style>
 </head>
 
 <body>
@@ -92,7 +89,7 @@ $(function() {
          <ul class="NewList line-height35">
           <content action="lists" catid="68" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>
@@ -107,7 +104,7 @@ $(function() {
          <ul class="NewList line-height35">
           <content action="lists" catid="69" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>
@@ -142,7 +139,7 @@ $(function() {
          <ul class="NewList line-height35">
           <content action="lists" catid="70" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>
@@ -157,7 +154,7 @@ $(function() {
          <ul class="NewList line-height35">
           <content action="lists" catid="71" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>

@@ -26,28 +26,28 @@
       <div class="Query">
         <div class="QueTit hlde"><img src="{$config_siteurl}statics/themes/L1_TP/images/GA01.png" class="fl marginR10"><h3 class="Zanglan">查询中心</h3></div>
         <ul>
-          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/">机动车违法</a></li>
-          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/">驾驶证记分</a></li>
-          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/">报废车辆</a></li>
+          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/views/inquiry.html">机动车违法</a></li>
+          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/views/inquiry.html">驾驶证记分</a></li>
+          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/views/inquiry.html">报废车辆</a></li>
         </ul>
         <hr>
       </div>
       <div class="Query">
         <div class="QueTit hlde"><img src="{$config_siteurl}statics/themes/L1_TP/images/GA02.png" class="fl marginR10"><h3 class="Zanglan">机动车</h3></div>
         <ul>
-          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/">机动车好牌</a></li>
-          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/">联系变更</a></li>
-          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/">车检预约</a></li>
+          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/m/showPageVeh">机动车号牌</a></li>
+          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/views/member/vehiclemodify.html">联系变更</a></li>
+          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/veh/nsyy/initNsyyQuery">车检预约</a></li>
         </ul>
         <hr>
       </div>
       <div class="Query">
         <div class="QueTit hlde"><img src="{$config_siteurl}statics/themes/L1_TP/images/GA03.png" class="fl marginR10"><h3 class="Zanglan">驾驶证</h3></div>
         <ul>
-          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/">期满换证</a></li>
-          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/">遗失补证</a></li>
-          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/">考试预约</a></li>
-          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/">损毁换证</a></li>
+          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/m/showPageDrv">期满换证</a></li>
+          <li class="aLi text-fm"><a href="http://sc.122.gov.cn/m/showPageDrv">遗失补证</a></li>
+          <li class="aLi text-fr"><a href="http://sc.122.gov.cn/drv/yy/initYyQuery">考试预约</a></li>
+          <li class="aLi text-fl"><a href="http://sc.122.gov.cn/m/showPageDrv">损毁换证</a></li>
         </ul>
         <hr>
       </div>
@@ -63,7 +63,7 @@
       <div class="MidTit"><div class="headlines">头条热点</div>
         <content action="lists" catid="67" order="id DESC" num="1">
             <volist name="data" id="vo">
-                <a href="{$vo.url}">{$vo.title}</a>
+                <a href="{$vo.url}">{$vo.title|str_cut=###,20}</a>
             </volist>
         </content>
       </div>
@@ -123,12 +123,12 @@ $(function() {
         <div class="col-md-6 fr text-fm marginT10"><input type="button" class="But orangeBG fs16 register-btn" value="注册" data-url="{:C('MINMORE_REGISTER_URL')}"></div>
       </div>
       <ul class="RgihtTop-List">
-        <a href="http://sc.122.gov.cn/"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA09.png"></ol><p>办事指南</p></li></a>
-        <a href="http://sc.122.gov.cn/"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA10.png"></ol><p>办事指南</p></li></a>
-        <a href="http://sc.122.gov.cn/"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA11.png"></ol><p>办事指南</p></li></a>
-        <a href="http://sc.122.gov.cn/"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA12.png"></ol><p>办事指南</p></li></a>
-        <a href="http://sc.122.gov.cn/"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA13.png"></ol><p>办事指南</p></li></a>
-        <a href="http://sc.122.gov.cn/"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA14.png"></ol><p>办事指南</p></li></a>
+        <a href="http://www.gaga.gov.cn/wsga/wsga/web/index.htm"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA09.png"></ol><p>办事指南</p></li></a>
+        <a href="http://www.sxgajj.gov.cn/About_us/Calculator.html"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA10.png"></ol><p>车检计算器</p></li></a>
+        <a href="http://www.gaga.gov.cn/index.php?g=DirectorMail&m=Consult&a=add&type=wszx"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA11.png"></ol><p>智能问答</p></li></a>
+        <a href="http://sc.122.gov.cn"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA12.png"></ol><p>网上驾校</p></li></a>
+        <a href="http://www.scjj.gov.cn/"><li class="border_r"><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA13.png"></ol><p>在线选号</p></li></a>
+        <a href="http://sc.122.gov.cn/views/member/violation.html"><li><ol><img src="{$config_siteurl}statics/themes/L1_TP/images/GA14.png"></ol><p>违法查询</p></li></a>
       </ul>
     </div>
     <!-- 第一栏右结束 -->
@@ -140,7 +140,7 @@ $(function() {
     <span class="fs14"><a href="{:getCategory(72,'url')}">更多内容</a></span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/GA15.png"></i><samp class="Light-blue">最新公告：</samp>
     <content action="lists" catid="72" order="id DESC" num="1">
         <volist name="data" id="vo">
-            <samp class="red"><a href="{$vo.url}">{$vo.title}</a></samp>
+            <samp class="red"><a href="{$vo.url}">{$vo.title|str_cut=###,20}</a></samp>
         </volist>
     </content>
   </div>
@@ -161,80 +161,80 @@ $(function() {
     <div class="dynamic fl">
       <div id="tb_" class="xqer">
         <ul>
-          <li id="tb_1" class="hovertab" onClick="x:hoverLi(1);" data-url="{:getCategory(68,'url')}">交管要文</li>
-          <li id="tb_2" class="normaltab" onClick="i:hoverLi(2);" data-url="{:getCategory(69, 'url')}">交管动态</li>
-          <li id="tb_3" class="normaltab" onClick="o:hoverLi(3);" data-url="{:getCategory(70, 'url')}">媒体报道</li>
-          <li id="tb_4" class="normaltab" onClick="p:hoverLi(4);" data-url="{:getCategory(71, 'url')}">安全宣传</li>
+          <li id="tb_1" class="hovertab news-tab-hd" onClick="x:hoverLi(1);" data-url="{:getCategory(68,'url')}">交管要文</li>
+          <li id="tb_2" class="normaltab news-tab-hd" onClick="i:hoverLi(2);" data-url="{:getCategory(69, 'url')}">交管动态</li>
+          <li id="tb_3" class="normaltab news-tab-hd" onClick="o:hoverLi(3);" data-url="{:getCategory(70, 'url')}">媒体报道</li>
+          <li id="tb_4" class="normaltab news-tab-hd" onClick="p:hoverLi(4);" data-url="{:getCategory(71, 'url')}">安全宣传</li>
           <span class="More fr tabs-show-more pointer-cursor">查看更多</span>
         </ul>
       </div>
-      <div class="dis" id="tbc_01"> 
+      <div class="dis news-tab" id="tbc_01"> 
         <div class="jsp">
          <content action="lists" catid="68" order="id DESC" num="5">
             <volist name="data" id="vo" offset="0" length="1">
               <dl>
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
-                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,40}</a></dd>
+                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
-              <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
+              <div class="profile">{$vo.description|str_cut=###,120}<span class="red">【详细内容】</span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
-                <li><a href="{$vo.url}">{$vo.title|str_cut=###,20}</a></li>
+                <li><a href="{$vo.url}">{$vo.title|str_cut=###,14}</a></li>
             </volist>
           </ul>
           </content>
         </div>
       </div>
-      <div class="undis" id="tbc_02"> 
+      <div class="undis news-tab" id="tbc_02"> 
         <div class="jsp">
          <content action="lists" catid="69" order="id DESC" num="5">
             <volist name="data" id="vo" offset="0" length="1">
               <dl>
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
-                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,40}</a></dd>
+                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
               <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
-                <li><a href="{$vo.url}">{$vo.title|str_cut=###,20}</a></li>
+                <li><a href="{$vo.url}">{$vo.title|str_cut=###,14}</a></li>
             </volist>
           </ul>
           </content>
         </div>
       </div>
-      <div class="undis" id="tbc_03"> 
+      <div class="undis news-tab" id="tbc_03"> 
         <div class="jsp">
          <content action="lists" catid="70" order="id DESC" num="5">
             <volist name="data" id="vo" offset="0" length="1">
               <dl>
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
-                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,40}</a></dd>
+                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
               <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
-                <li><a href="{$vo.url}">{$vo.title|str_cut=###,20}</a></li>
+                <li><a href="{$vo.url}">{$vo.title|str_cut=###,14}</a></li>
             </volist>
           </ul>
           </content>
         </div>
       </div>
-      <div class="undis" id="tbc_04"> 
+      <div class="undis news-tab" id="tbc_04"> 
         <div class="jsp">
          <content action="lists" catid="71" order="id DESC" num="5">
             <volist name="data" id="vo" offset="0" length="1">
               <dl>
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
-                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,40}</a></dd>
+                <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
               <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
-                <li><a href="{$vo.url}">{$vo.title|str_cut=###,20}</a></li>
+                <li><a href="{$vo.url}">{$vo.title|str_cut=###,14}</a></li>
             </volist>
           </ul>
           </content>
@@ -282,7 +282,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="76" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,16}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -293,7 +293,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="77" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,16}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -304,7 +304,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="78" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,16}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -315,7 +315,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="79" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,16}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -326,7 +326,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="80" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,16}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -450,7 +450,7 @@ $(function() {
        <ul>
          <content action="lists" catid="83" order="id DESC" num="5">
             <volist name="data" id="vo"> 
-                 <li><a href="{$vo.url}"><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,14}</p></a></li>
+                 <li><a href="{$vo.url}"><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,10}</p></a></li>
             </volist>
          </content>
        </ul>

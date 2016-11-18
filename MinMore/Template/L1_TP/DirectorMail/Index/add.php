@@ -27,7 +27,7 @@
     <div class="Traffic-leftMid fl">
                 <div class="mailbox-list">
                     <div class="content-hd">
-                        局长信箱－信件填写
+                        支队长信箱－信件填写
                     </div>
                 </div>
                 <div class="director-mail-description">
@@ -76,7 +76,7 @@
                         <div class="data-line data-textarea">
                             <span class="prompt">详细内容：</span>
                             <div>
-                                <p class="small-prompt">***至少20字</p>
+                                <p class="small-prompt" style="margin-left:0px;font-size:14px;height:20px;">***至少20字</p>
                                 <textarea name="introduce"></textarea>
                             </div>
                         </div>

@@ -85,12 +85,12 @@ $(function() {
     <div class="Traffic-leftMid fl">
        <!-- 交管要闻 -->
        <div class="AllNews fl">
-         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(68,'url')}">查看更多</a></samp><span class="fs18 yellow">交管</span>要闻</div>
+         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(84,'url')}">查看更多</a></samp><span class="fs18 yellow">政策</span>法规</div>
          <div class="padding10 border">
          <ul class="NewList line-height35">
-          <content action="lists" catid="68" order="id DESC" num="10">
+          <content action="lists" catid="84" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>
@@ -100,12 +100,12 @@ $(function() {
        
        <!-- 交管动态 -->
        <div class="AllNews fr">
-         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(69,'url')}">查看更多</a></samp><span class="fs18 yellow">交管</span>动态</div>
+         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(69,'url')}">查看更多</a></samp><span class="fs18 yellow">交警</span>提示</div>
          <div class="padding10 border">
          <ul class="NewList line-height35">
-          <content action="lists" catid="69" order="id DESC" num="10">
+          <content action="lists" catid="85" order="id DESC" num="10">
             <volist name="data" id="vo">
-               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,20}</li></a>
+               <a href="{$vo.url}"><li><span class="fs14 fr">{$vo.updatetime|date='Y-m-d',###}</span><i><img src="{$config_siteurl}statics/themes/L1_TP/images/yuan.png"></i>{$vo.title|str_cut=###,15}</li></a>
             </volist>
           </content>
          </ul>

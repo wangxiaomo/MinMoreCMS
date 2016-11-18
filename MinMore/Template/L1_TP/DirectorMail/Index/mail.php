@@ -27,7 +27,7 @@
     <div class="Traffic-leftMid fl">
               <div class="mailbox-list">
                 <div class="content-hd">
-                  局长信箱－信件查看
+                  支队长信箱－信件查看
                 </div>
               </div>
                <br/>

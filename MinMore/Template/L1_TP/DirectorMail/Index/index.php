@@ -27,7 +27,7 @@
     <div class="Traffic-leftMid fl">
               <div class="mailbox-list">
                 <div class="content-hd">
-                  局长信箱－最新回复信件
+                  支队长信箱－最新回复信件
                 </div>
                 <div class="mailbox-data-list">
                   <table>
