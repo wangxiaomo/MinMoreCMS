@@ -185,12 +185,14 @@ window.onload = function (){
                 <ul>
                     <content action="lists" catid="59" order="id DESC" num="6">
                         <volist name="data" id="vo">
+                            <if condition="$vo['thumb']">
                             <li>
                                 <a href="{$vo.url}">
                                     <img src="{$vo.thumb}" alt="{$vo.title}"/>
                                     <p>{$vo.title}</p>
                                 </a>
                             </li>
+                            </if>
                         </volist>
                     </content>
                 </ul>

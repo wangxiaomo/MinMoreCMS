@@ -286,7 +286,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="76" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -297,7 +297,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="77" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -308,7 +308,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="78" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -319,7 +319,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="79" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -330,7 +330,7 @@ $(function() {
         <div class="Policing">
           <content action="lists" catid="80" order="id DESC" num="1">
             <volist name="data" id="vo">
-              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,12}</a></h4>
+              <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
               <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
             </volist>
           </content>
@@ -421,7 +421,7 @@ $(function() {
           <volist name="data" id="vo">
             <li>
               <div class="question"><div class="Qbox blueBG">问</div><p class="fs16 blue">{$vo.title|str_cut=###,30}</p></div>
-              <div class="ask"><div class="Abox blueBG">答</div><p class="fs16">{:get_article_content($vo.id,200)}</p></div>         
+              <div class="ask"><div class="Abox blueBG">答</div><p class="fs16">{:get_article_content($vo['id'],200)}</p></div>         
             </li>
           </volist>
         </content>

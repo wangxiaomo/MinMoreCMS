@@ -133,7 +133,8 @@ h1{
 .Light-blue{
 	color:#3486c5
 }
-.red{
+.red,
+.red a{
 	color:#f73336
 }
 .yellow{
@@ -272,7 +273,7 @@ nav ul li a:hover{
 .content{
 	width:100%;
 	min-height:1px;
-	overflow:hidden;
+	everflow:hidden;
   font-size:14px;
 }
 

@@ -136,7 +136,7 @@ $(function() {
        <ul>
           <content action="lists" catid="81" order="id DESC" num="5">
             <volist name="data" id="vo">
-                 <a href="{$vo.url}"><li><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,20}</p></li></a>
+                 <a href="{$vo.url}"><li><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,10}</p></li></a>
             </volist>
           </content>
        </ul>
@@ -152,7 +152,7 @@ $(function() {
        <ul>
           <content action="lists" catid="83" order="id DESC" num="5">
             <volist name="data" id="vo">
-                 <a href="{$vo.url}"><li><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,20}</p></li></a>
+                 <a href="{$vo.url}"><li><img src="{$vo.thumb}"><p>{$vo.title|str_cut=###,10}</p></li></a>
             </volist>
           </content>
        </ul>
