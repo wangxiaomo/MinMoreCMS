@@ -176,7 +176,7 @@ $(function() {
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
                 <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
-              <div class="profile">{$vo.description|str_cut=###,120}<span class="red">【详细内容】</span></div>
+              <div class="profile">{$vo.description|str_cut=###,120}<span class="red"><a href="{$vo.url}">【详细内容】</a></span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
@@ -194,7 +194,7 @@ $(function() {
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
                 <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
-              <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
+              <div class="profile">{$vo.description|str_cut=###,120}<span class="red"><a href="{$vo.url}">【详细内容】</a></span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
@@ -212,7 +212,7 @@ $(function() {
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
                 <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
-              <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
+              <div class="profile">{$vo.description|str_cut=###,120}<span class="red"><a href="{$vo.url}">【详细内容】</a></span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
@@ -230,7 +230,7 @@ $(function() {
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
                 <dd class="fl fs18"><a href="{$vo.url}">{$vo.title|str_cut=###,25}</a></dd>
               </dl>
-              <div class="profile">{$vo.description|str_cut=###,150}<span class="red">【详细内容】</span></div>
+              <div class="profile">{$vo.description|str_cut=###,120}<span class="red"><a href="{$vo.url}">【详细内容】</a></span></div>
             </volist>
           <ul class="SmallNew">
             <volist name="data" id="vo" offset="1" length="4">
@@ -257,18 +257,22 @@ $(function() {
   <div class="content marginb20">
     <!-- 调查研究 -->
     <div class="mailbox fl">
-      <div class="Title"><samp class="More fs14 fr marginR20">查看更多</samp><span class="fs18 yellow">调查</span>研究</div>
-      <div class="MaiboxPic marginT20 marginb10">
-        <img src="{$config_siteurl}statics/themes/L1_TP/images/GA20.png">
-      </div>
-      <div class="MaiboxPic">        
-        <ul class="MaiboxTxt">
-          <li>广安市政府批准实施过境...</li>
-          <li>广安市政府批准实施过境...</li>
-          <li>广安市政府批准实施过境...</li>
-        </ul>
-        <div class="colorTit">往<br>期<br>回<br>顾</div>
-      </div>      
+      <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(86,'url')}">查看更多</a></samp><span class="fs18 yellow">调查</span>研究</div>
+      <content action="lists" catid="86" order="id DESC" num="4">
+        <volist name="data" id="vo" offset="0" length="1">
+          <div class="MaiboxPic marginT20 marginb10">
+            <a href="{$vo.url}"><img src="{$vo.thumb}" style="width:250px;height:207px;"></a>
+          </div>
+        </volist>
+          <div class="MaiboxPic">        
+            <ul class="MaiboxTxt">
+              <volist name="data" id="vo" offset="1" length="3">
+                  <li><a href="{$vo.url}">{$vo.title|str_cut=###,15}</a></li>
+              </volist>
+            </ul>
+            <div class="colorTit">往<br>期<br>回<br>顾</div>
+          </div>      
+        </content>
     </div>
     <!-- 调查研究结束 -->
     
@@ -355,13 +359,13 @@ $(function() {
       <content action="lists" catid="81" order="id DESC" num="4">
       <div class="MaiboxPic marginT20 marginb10">
         <volist name="data" id="vo" offset="0" length="1">
-            <a href="{$vo.url}"><img src="{$vo.thumb}"></a>
+            <a href="{$vo.url}"><img src="{$vo.thumb}" style="width:250px;height:207px;"></a>
         </volist>
       </div>
       <div class="MaiboxPic">        
         <ul class="MaiboxTxt">
           <volist name="data" id="vo" offset="1" length="3">
-              <li><img src="{$config_siteurl}statics/themes/L1_TP/images/vido.png"><a href="{$vo.url}">{$vo.title|str_cut=###,18}</a></li>
+              <li><img src="{$config_siteurl}statics/themes/L1_TP/images/vido.png"><a href="{$vo.url}">{$vo.title|str_cut=###,15}</a></li>
           </volist>
         </ul>
         <div class="colorTit">往<br>期<br>回<br>顾</div>
@@ -417,7 +421,7 @@ $(function() {
           <volist name="data" id="vo">
             <li>
               <div class="question"><div class="Qbox blueBG">问</div><p class="fs16 blue">{$vo.title|str_cut=###,30}</p></div>
-              <div class="ask"><div class="Abox blueBG">答</div><p class="fs16">{$vo.content|str_cut=###,200}</p></div>         
+              <div class="ask"><div class="Abox blueBG">答</div><p class="fs16">{:get_article_content($vo.id,200)}</p></div>         
             </li>
           </volist>
         </content>

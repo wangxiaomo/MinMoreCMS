@@ -1164,3 +1164,12 @@ function check_theme_level($level){
     $theme = $config["theme"];
     return strpos($theme, $level) === 0;
 }
+
+function get_article_content($id, $cut=-1) {
+    $r = D('ArticleData')->where("id=$id")->find();
+    $content = $r?$r['content']:'';
+    if($cut != -1){
+        $content = str_cut($content, $cut);
+    }
+    return $content;
+}
