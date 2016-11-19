@@ -40,7 +40,7 @@
         <div class="content-right" style="width:930px;margin-left:0px;">
             <volist name="specials" id="v">
                 <div class="special02_yi">
-                    <h1><a href="{$config_siteurl}index.php?g=special&id={$v.id}" target="_blank" ><img src="{$config_siteurl}{$v.thumb}" width="155" height="91" border="0"/></a></h1>
+                    <h1><a href="{$config_siteurl}index.php?g=special&id={$v.id}" target="_blank" ><img src="{$v.thumb}" width="155" height="91" border="0"/></a></h1>
                     <h2><a href="{$config_siteurl}index.php?g=special&id={$v.id}" target="_blank">{$v.title}</a></h2>
                 </div>
             </volist>
