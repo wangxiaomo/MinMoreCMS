@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="canonical" href="{$config_siteurl}" />
-    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>{$SEO['site_title']}</title>
+    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>安全宣传</title>
     <meta name="description" content="{$SEO['description']}" />
     <meta name="keywords" content="{$SEO['keyword']}" />
     <!-- 公共样式 -->
@@ -60,12 +60,12 @@ $(function() {
       
     </div>
     <div class="Traffic-rightTop">
-      <div class="fs20 blue"><span class="fr"><a href="{:getCategory(67,'url')}">更多</a></span>头条热点</div>
-      <content action="lists" catid="67" order="id DESC" num="5">
+      <div class="fs20 blue"><span class="fr"><a href="{:getCategory(88,'url')}">更多</a></span>最新通告</div>
+      <content action="lists" catid="88" order="id DESC" num="5">
         <volist name="data" id="vo" offset="0" length="1">
           <a href="{$vo.url}">
-              <div class="fs18 red" style="text-align:center;">{$vo.title|str_cut=###,20}</div>
-              <div class="fs14 gray line-height30">{$vo.description|str_cut=###,90}<span style="float:right;">[详细内容]</span></div>
+              <div class="fs18 red">{$vo.title|str_cut=###,20}</div>
+              <div class="fs14 gray line-height30">{$vo.description|str_cut=###,90}<span style="float:right;font-weight:bold;">[详细内容]</span></div>
           </a>
         </volist>
       <div class="dashed"></div>
@@ -100,7 +100,7 @@ $(function() {
        
        <!-- 交管动态 -->
        <div class="AllNews fr">
-         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(69,'url')}">查看更多</a></samp><span class="fs18 yellow">交警</span>提示</div>
+         <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:getCategory(85,'url')}">查看更多</a></samp><span class="fs18 yellow">交警</span>提示</div>
          <div class="padding10 border">
          <ul class="NewList line-height35">
           <content action="lists" catid="85" order="id DESC" num="10">

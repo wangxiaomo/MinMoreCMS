@@ -23,6 +23,7 @@
   <div class="content marginT20">
     <!-- 公告列表左 -->
     <div class="Traffic-leftMid fl">
+        <p style="font-size:15px;font-weight:bold;padding:0px 0px 15px;">您所在的位置 广安交警网 &gt; {$catname} </p>
         <content action="lists" catid="$catid" order="id DESC" num="20" page="$page">
        <div class="mentlist">
          <ul class="marginT10">

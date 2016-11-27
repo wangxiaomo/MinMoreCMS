@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="canonical" href="{$config_siteurl}" />
-    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>{$SEO['site_title']}</title>
+    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>交警资讯</title>
     <meta name="description" content="{$SEO['description']}" />
     <meta name="keywords" content="{$SEO['keyword']}" />
     <!-- 公共样式 -->
@@ -63,7 +63,7 @@
       <div class="MidTit"><div class="headlines">头条热点</div>
         <content action="lists" catid="67" order="id DESC" num="1">
             <volist name="data" id="vo">
-                <a href="{$vo.url}">{$vo.title|str_cut=###,20}</a>
+                <a href="{$vo.url}" style="font-size:20px;font-weight:bold;">{$vo.title|str_cut=###,20}</a>
             </volist>
         </content>
       </div>
@@ -161,7 +161,7 @@ $(function() {
     <div class="dynamic fl">
       <div id="tb_" class="xqer">
         <ul>
-          <li id="tb_1" class="hovertab news-tab-hd" onClick="x:hoverLi(1);" data-url="{:getCategory(68,'url')}">交管要文</li>
+          <li id="tb_1" class="hovertab news-tab-hd" onClick="x:hoverLi(1);" data-url="{:getCategory(72,'url')}">交管要闻</li>
           <li id="tb_2" class="normaltab news-tab-hd" onClick="i:hoverLi(2);" data-url="{:getCategory(69, 'url')}">交管动态</li>
           <li id="tb_3" class="normaltab news-tab-hd" onClick="o:hoverLi(3);" data-url="{:getCategory(70, 'url')}">媒体报道</li>
           <li id="tb_4" class="normaltab news-tab-hd" onClick="p:hoverLi(4);" data-url="{:getCategory(71, 'url')}">安全宣传</li>
@@ -170,7 +170,7 @@ $(function() {
       </div>
       <div class="dis news-tab" id="tbc_01"> 
         <div class="jsp">
-         <content action="lists" catid="68" order="id DESC" num="5">
+         <content action="lists" catid="72" order="id DESC" num="5">
             <volist name="data" id="vo" offset="0" length="1">
               <dl>
                 <dt class="Time fr marginT5">{$vo.updatetime|date='Y-m-d',###}</dt>
@@ -287,7 +287,7 @@ $(function() {
           <content action="lists" catid="76" order="id DESC" num="1">
             <volist name="data" id="vo">
               <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
-              <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
+              <p class="fs14 gray">{$vo.description|str_cut=###,20}</p>
             </volist>
           </content>
         </div>
@@ -298,7 +298,7 @@ $(function() {
           <content action="lists" catid="77" order="id DESC" num="1">
             <volist name="data" id="vo">
               <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
-              <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
+              <p class="fs14 gray">{$vo.description|str_cut=###,20}</p>
             </volist>
           </content>
         </div>
@@ -309,7 +309,7 @@ $(function() {
           <content action="lists" catid="78" order="id DESC" num="1">
             <volist name="data" id="vo">
               <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
-              <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
+              <p class="fs14 gray">{$vo.description|str_cut=###,20}</p>
             </volist>
           </content>
         </div>
@@ -320,7 +320,7 @@ $(function() {
           <content action="lists" catid="79" order="id DESC" num="1">
             <volist name="data" id="vo">
               <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
-              <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
+              <p class="fs14 gray">{$vo.description|str_cut=###,20}</p>
             </volist>
           </content>
         </div>
@@ -331,7 +331,7 @@ $(function() {
           <content action="lists" catid="80" order="id DESC" num="1">
             <volist name="data" id="vo">
               <h4 class="marginT10"><a href="{$vo.url}">{$vo.title|str_cut=###,10}</a></h4>
-              <p class="fs14 gray">{$vo.description|str_cut=###,30}</p>
+              <p class="fs14 gray">{$vo.description|str_cut=###,20}</p>
             </volist>
           </content>
         </div>

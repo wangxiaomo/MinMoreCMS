@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="canonical" href="{$config_siteurl}" />
-    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>{$SEO['site_title']}</title>
+    <title><if condition=" isset($SEO['title']) && !empty($SEO['title']) ">{$SEO['title']}</if>警民互动</title>
     <meta name="description" content="{$SEO['description']}" />
     <meta name="keywords" content="{$SEO['keyword']}" />
     <link href="{$config_siteurl}statics/themes/L1_Global/css/index.css" rel="stylesheet" type="text/css" />

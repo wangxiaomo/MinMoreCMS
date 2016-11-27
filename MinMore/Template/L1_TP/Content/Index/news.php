@@ -63,8 +63,8 @@ $(function() {
       <content action="lists" catid="67" order="id DESC" num="5">
         <volist name="data" id="vo" offset="0" length="1">
           <a href="{$vo.url}">
-              <div class="fs18 red" style="text-align:center;">{$vo.title|str_cut=###,20}</div>
-              <div class="fs14 gray line-height30">{$vo.description|str_cut=###,90}<span style="float:right;">[详细内容]</span></div>
+              <div class="fs18 red">{$vo.title|str_cut=###,20}</div>
+              <div class="fs14 gray line-height30">{$vo.description|str_cut=###,90}<span style="float:right;font-weight:bold;">[详细内容]</span></div>
           </a>
         </volist>
       <div class="dashed"></div>
