@@ -376,14 +376,18 @@ $(function() {
     
     <!-- 专题热点 -->
     <div class="MidMain fr">
-      <div class="Title"><samp class="More fs14 fr marginR20"><a href="{:U('Content/Site/special_list')}">查看更多</a></samp><span class="fs18 yellow">专题</span>热点</div>
+      <div class="Title"><span class="fs18 yellow">专题</span>热点</div>
       <ul class="Topic marginT20">
-        <volist name="specials" id="vo">
-            <li>
-              <p class="topImg"><img src="{$vo.thumb}" style="width:160px;height:112px;"></p>
-              <p class="fs16 marginT5 gray">{$vo.title|str_cut=###,18}</p>
-            </li>
-        </volist>
+          <content action="lists" catid="87" order="id DESC" num="8">
+            <volist name="data" id="vo">
+                <a href="{$vo.url}">
+                <li>
+                  <p class="topImg"><img src="{$vo.thumb}" style="width:160px;height:112px;"></p>
+                  <p class="fs16 marginT5 gray">{$vo.title|str_cut=###,18}</p>
+                </li>
+                </a>
+            </volist>
+          </content>
       </ul>
     </div>
     <!-- 专题热点结束 -->

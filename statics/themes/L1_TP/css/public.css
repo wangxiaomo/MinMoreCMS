@@ -273,7 +273,7 @@ nav ul li a:hover{
 .content{
 	width:100%;
 	min-height:1px;
-	everflow:hidden;
+	overflow:hidden;
   font-size:14px;
 }
 
