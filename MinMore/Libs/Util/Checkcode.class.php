@@ -38,7 +38,8 @@ class Checkcode {
     //构造方法初始化
     public function __construct() {
         $this->font = COMMON_PATH . 'Font/elephant.ttf';
-        $checkcode_type = (int) cache('Config.checkcode_type');
+        $config = get_site_config();
+        $checkcode_type = $config['checkcode_type'];
         switch ($checkcode_type) {
             //纯数字
             case 1:
@@ -168,7 +169,7 @@ class Checkcode {
     }
 
     //返回用于存储验证码的会话变量名。
-    protected function getSessionKey() {
+    public function getSessionKey() {
         return md5($this->type);
     }
 
